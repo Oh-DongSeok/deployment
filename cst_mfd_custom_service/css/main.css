@@ -1,0 +1,1950 @@
+body {
+	margin :0px;
+}
+
+/*******************************************************/
+/* V5대응 */
+img {
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+/* 폰트크기 지정 */
+*{
+	font-size:18px;
+}
+select {
+	color: black;
+	background-color: lightgray;
+}
+option {
+	color: black;
+	background-color: white;
+}
+/*******************************************************/
+#btn_Debug_Request {
+	position : absolute;
+ 	top : 620px;
+ 	left : 810px;
+	width : 90px;
+ 	height : 26px;
+	font-size : 18px;
+	line-height : 20px;
+ 	text-align : center;
+}
+
+.bar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 40px;
+}
+
+.page {
+	position : absolute;
+ 	top : 0px;
+ 	left : 0px;
+ 	width : 800px;
+}
+
+/***************************************** Title Bar기본 레이아웃 **********************************************/
+#bar_status {
+	/*background-color: #92FE9D;*/
+	background: #a9a9a9;
+}
+#icn_TB_logo {
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	width: 30px;
+	height: 30px;
+}
+#lbl_TB_csTitle {
+	position: absolute;
+	margin: 2px;
+	top: 5px;
+	left: 40px;
+	width: 450px;
+	height: 26px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+#lyr_TB_trayInfo {
+	position: absolute;
+	top: 0px;
+	left: 512px;
+	width: 288px;
+	height: 40px;
+}
+#icn_TB_trayStatus_0 { position: absolute; top: 5px; left: 36px; width: 32px; height: 32px; }
+#icn_TB_trayStatus_1 { position: absolute; top: 5px; left: 108px; width: 32px; height: 32px; }
+#icn_TB_trayStatus_2 { position: absolute; top: 5px; left: 180px; width: 32px; height: 32px; }
+#icn_TB_trayStatus_3 { position: absolute; top: 5px; left: 252px; width: 32px; height: 32px; }
+
+#lbl_TB_traySize_0 { position: absolute; margin: 2px; top: 5px; left: 0px; width: 32px; height: 26px; font-weight: bold; vertical-align: middle; text-align : center; }
+#lbl_TB_traySize_1 { position: absolute; margin: 2px; top: 5px; left: 72px; width: 32px; height: 26px; font-weight: bold; vertical-align: middle; text-align : center; }
+#lbl_TB_traySize_2 { position: absolute; margin: 2px; top: 5px; left: 144px; width: 32px; height: 26px; font-weight: bold; vertical-align: middle; text-align : center; }
+#lbl_TB_traySize_3 { position: absolute; margin: 2px; top: 5px; left: 216px; width: 32px; height: 26px; font-weight: bold; vertical-align: middle; text-align : center; }
+
+/***************************************** Menu 페이지 기본 레이아웃 **********************************************/
+#bg_page_menu {
+	position : absolute;
+ 	top : 40px;
+ 	left : 0px;
+ 	width : 800px;
+	background: #2b2b2b;
+
+	/*
+	background: linear-gradient(270deg, rgba(23,0,36,1) 0%, rgba(12,12,83,1) 40%, rgba(16,98,198,1) 100%);
+	background-color: #3F2B96;
+	background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+	background: linear-gradient(90deg, #3F2B96 0%, #A8C0FF 100%);
+	background-color: #0093E9;
+	background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+	*/
+
+}
+#lyr_MP_content{
+	position : absolute;
+	top: 5px;
+	left: 5px;
+	width: 790px;
+}
+/* Menu button area */
+#lyr_MP_serviceMenu{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 790px;
+}
+.menu_btn{
+	display:inline-block;
+ 	width : 187px;
+	height: 250px;
+	vertical-align: middle;
+
+	margin-top: 38px;
+    margin-right: 104px;
+    margin-bottom: 38px;
+    margin-left: 104px;
+	/*
+	2= margin: px;
+	3= margin: 38px;
+	4= margin: 5px;
+	*/
+}
+#btn_MP_func_Print,
+#btn_MP_func_Copy,
+#btn_MP_func_Scan,
+#btn_MP_func_FAX{
+	top: 33px;
+}
+.btnBg{
+	position: absolute;
+}
+.mpIcn{
+	margin-top: 30px;
+	margin-left: 45px;
+}
+.mpLbl{
+	margin-top: 50px;
+	margin-left: 5px;
+	margin-right: 5px;
+	width: 177px;
+	height: 20px;
+	color:#fff;
+	text-align: center;
+	font-weight: bold;
+}
+#btn_MP_faxinfo{
+	position: absolute;
+	top: 280px;
+	left: 595px;
+	width: 187px;
+	height: 35px;
+	color: #fff;
+	background-color: #404040;
+	font-weight: bold;
+}
+/* Language setting area */
+#lyr_MP_language{
+	position: absolute;
+	left: 582px;
+	width: 208px;
+	height: 100px;
+	color: #fff
+
+}
+.btn_lang{
+	position: absolute;
+
+	margin-top: 4px;
+    margin-right: 10px;
+    margin-bottom: 4px;
+    margin-left: 10px;
+}
+#btn_MP_language_ko{
+	left: 0px;
+}
+#btn_MP_language_en{
+	left: 104px;
+}
+
+/* Message area */
+#lyr_MP_message{
+	position: absolute;
+	left:0px;
+	width: 582px;
+	height: 100px;
+	background-color: white;
+	opacity: 0.1;
+
+	border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+	border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+#txt_MP_message{
+	position: absolute;
+	left: 0px;
+	margin: 17px;
+	width: 550px;
+	height: 70px;
+	font-weight: bold;
+	color: white;
+}
+/***************************************** OTID 페이지 기본 레이아웃 **********************************************/
+#lyr_OTID_wrapper{
+	position : absolute;
+ 	top : 40px;
+ 	left : 0px;
+ 	width : 800px;
+	background-color: #4b6cb7;
+}
+#lyr_Chg_wrapper{
+	position : absolute;
+ 	top : 0px;
+ 	left : 0px;
+ 	width : 800px;
+	background-color: #4b6cb7;
+}
+#lbl_OTID_guide {
+	position : absolute;
+	top : 90px;
+	left : 40px;
+	display : block;
+	width : 400px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+#tbx_OTID {
+	position : absolute;
+	top : 157px;
+	left : 40px;
+	width : 400px;
+	height: 60px;
+	font-size : 30px;
+	background: white;
+}
+#lyr_OTID_btn_wrapper {
+	position : absolute;
+	top : 280px;
+	left : 30px;
+	width : 400px;
+	height: 47px;
+}
+#btn_OTID_confirm {
+	position : absolute;
+	top : 0px;
+	left : 0px;
+	font-weight: bold;
+}
+
+#btn_OTID_cancel {
+	position : absolute;
+	top : 0px;
+	right : 172px;
+	font-weight: bold;
+}
+
+#btn_OTID_confirm > .lbl, #btn_OTID_cancel > .lbl {
+	position : absolute;
+    width : 172px;
+    height : 47px;
+    line-height : 47px;
+    text-align: center;
+}
+/**************************************file list start**************************************/
+#page_FileList{
+	position : absolute;
+ 	top : 40px;
+ 	left : 0px;
+ 	width : 800px;
+	height: 440px;
+	background-color : #00d2ff;
+	/*
+ 	background-color : #e6e7e6;
+	*/
+}
+
+.txt_FL_NotifyMsg{
+ 	position : absolute;
+ 	width : 600px;
+ 	height : 20px;
+ 	line-height : 20px;
+ 	text-align : left;
+ 	display: block;
+}
+.loaded>.txt_FL_NotifyMsg{
+ 	display: none;
+}
+
+#txt_FL_SelectInfo1{
+	position : absolute;
+ 	top : 12px;
+ 	left : 20px;
+ 	width : 600px;
+ 	height : 20px;
+ 	color : #070707;
+ 	font-size : 20px;
+ 	line-height : 145%;
+ 	text-align : left;
+}
+
+#txt_FL_SelectInfo2{
+	position : absolute;
+ 	top : 34px;
+ 	left : 20px;
+ 	width : 600px;
+ 	height : 20px;
+ 	color : #070707;
+ 	font-size : 20px;
+ 	line-height : 145%;
+ 	text-align : left;
+}
+
+#txt_FL_Msg0 {
+ 	position : absolute;
+ 	top : 6px;
+ 	left : 20px;
+ 	width : 600px;
+ 	height : 20px;
+ 	color : #ffffff;
+ 	font-size : 16px;
+ 	line-height : 145%;
+ 	text-align : left;
+}
+
+#txt_FL_Msg1 {
+ 	position : absolute;
+ 	top : 28px;
+ 	left : 20px;
+ 	width : 600px;
+ 	height : 20px;
+ 	color : #ffffff;
+ 	font-size : 16px;
+ 	line-height : 145%;
+ 	text-align : left;
+}
+
+#btn_FL_PrintAll {
+ 	position : absolute;
+ 	top : 7px;
+ 	left : 630px;
+ 	width : 160px;
+ 	height : 40px;
+}
+
+#lbl_FL_SelectedFile {
+ 	position : absolute;
+ 	top : 78px;
+ 	left : 25px;
+ 	width : 200px;/* 2016.05.25 chone 다언어대응 */
+ 	height : 20px;
+ 	font-size : 20px;
+ 	line-height : 20px;
+ 	text-align : left;
+}
+
+#txt_FL_SelectedFile {
+ 	position : absolute;
+ 	top : 78px;
+ 	left : 93px;
+ 	width : 170px;
+ 	height : 20px;
+ 	font-size : 20px;
+ 	line-height : 20px;
+ 	text-align : left;
+}
+
+#pul_FL_FileDisplayType {
+ 	position : absolute;
+ 	top : 70px;
+ 	left : 210px;
+ 	width : 232px;
+ 	height : 32px;
+}
+
+#chk_FL_RmvFileAfterPrint {
+ 	position : absolute;
+ 	top : 70px;
+ 	left : 462px;
+ 	width : 32px;
+ 	height : 32px;
+}
+
+#lbl_FL_UserBalance {
+ 	position : absolute;
+ 	top : 78px;
+ 	right : 65px;
+ 	width : 160px;
+ 	height : 20px;
+ 	font-size : 20px;
+ 	line-height : 20px;
+ 	text-align : right;
+}
+
+#btn_FL_Refresh {
+ 	position : absolute;
+ 	top : 70px;
+ 	left : 670px;
+ 	width : 120px;
+ 	height : 32px;
+}
+
+#img_FL_Refresh {
+ 	position : absolute;
+ 	top : 0px;
+ 	left : 0px;
+ 	width : 120px;
+ 	height : 32px;
+}
+
+#lbl_FL_Refresh {
+ 	position : absolute;
+ 	top : 6px;
+ 	left : 34px;
+ 	width : 80px;
+ 	height : 20px;
+ 	font-size : 20px;
+ 	line-height : 20px;
+ 	text-align : left;
+}
+
+#lyr_FL_Display_Area {
+	position: absolute;
+	top: 66px;
+	left: 15px;
+	width: 706px;
+	height: 283px;
+	background-color: #c6cad1;
+	border: solid 1px #999;
+}
+
+#btn_FL_pageFirst{
+position: absolute;
+top: 66px;
+right:15px;
+width: 60px;
+height: 56px;
+}
+#btn_FL_pageUp {
+position: absolute;
+top: 125px;
+right:15px;
+width: 60px;
+height: 56px;
+}
+
+#txt_FL_CurrentPage {
+position: absolute;
+top: 181px;
+right:15px;
+width: 60px;
+height: 55px;
+text-align: center;
+vertical-align: middle;
+font-size: 16px;
+line-height: 56px;
+}
+
+#btn_FL_pageDown {
+position: absolute;
+top: 236px;
+right:15px;
+width: 60px;
+height: 56px;
+}
+#btn_FL_pageLast {
+position: absolute;
+top: 295px;
+right:15px;
+width: 60px;
+height: 56px;
+}
+
+#btn_FL_SelectAll {
+ 	position : absolute;
+	top:363px;
+ 	left : 15px;
+}
+
+#img_FL_SelectAll {
+ 	position : relative;
+}
+
+#lbl_FL_SelectAll {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 164px;
+	font-size: 20px;
+	line-height: 62px;
+	text-align: left;
+	text-indent: 48px;
+}
+
+#btn_FL_DeleteFile {
+ 	position : absolute;
+	top:363px;
+ 	left : 185px;
+}
+
+#img_FL_DeleteFile {
+ 	position : absolute;
+}
+
+#lbl_FL_DeleteFile {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 114px;
+	font-size: 20px;
+	line-height: 62px;
+	text-align: left;
+	text-indent: 48px;
+}
+
+#btn_FL_Print {
+ 	position : absolute;
+	top:363px;
+ 	left : 551px;
+}
+#img_FL_Print {
+ 	position : absolute;
+}
+#btn_FL_Print > .lbl{
+	position : absolute;
+	width: 234px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+#txt_FL_NotifyMsg0 { top : 26px; left : 25px;}
+#txt_FL_NotifyMsg1 { top : 56px; left : 25px;}
+#txt_FL_NotifyMsg2 { top : 86px; left : 25px;}
+#txt_FL_NotifyMsg3 { top : 116px; left : 25px;}
+#txt_FL_NotifyMsg4 { top : 146px; left : 25px;}
+
+#lyr_FL_Display_Area.loading > .txt_FL_NotifyMsg{
+ 	display:block;
+}
+#lyr_FL_Display_Area > .txt_FL_NotifyMsg{
+ 	display:none;
+}
+#lyr_FL_Display_Area.loading > .btn{
+ 	display:none !important;
+}
+#lyr_FL_Display_Area > .btn {
+	position: relative;
+	width: 702px;
+	height: 55px;
+	margin: 0 0 1px 2px;
+	display: block;
+	box-sizing: border-box;
+	border: solid 1px #999;
+	overflow: hidden;
+}
+#lyr_FL_Display_Area #btnDocItem0 {
+	margin-top: 2px;
+}
+#lyr_FL_Display_Area > .btn > * {
+ 	position: absolute;
+ 	text-align: left;
+}
+#lyr_FL_Display_Area > .btn > .fileName { top: 3px;left: 55px;width: 650px;height: 28px;overflow: hidden;line-height: 28px;font-size: 24px; }
+#lyr_FL_Display_Area > .btn > .fileDate { top:33px; left:55px; }
+#lyr_FL_Display_Area > .btn > .filePages { top:33px; left:245px; }
+#lyr_FL_Display_Area > .btn > .fileQat { top:33px; left:326px; }
+#lyr_FL_Display_Area > .btn > img.fileColor { top:29px; left:386px; }
+#lyr_FL_Display_Area > .btn > .fileColor { top:33px; left:412px; }
+#lyr_FL_Display_Area > .btn > img.fileMS { top:29px; left:471px; }
+#lyr_FL_Display_Area > .btn > .fileMS { top:33px; left:465px; }
+#lyr_FL_Display_Area > .btn > .filePrice {font-weight:bold; top:3px; left:517px; }
+#lyr_FL_Display_Area > .btn > .fileNup { top:33px; left:537px; }
+#lyr_FL_Display_Area > .btn > .filePlex { top:33px; left:597px; }
+#lyr_FL_Display_Area > .btn > .fileDate ,
+#lyr_FL_Display_Area > .btn > .filePages,
+#lyr_FL_Display_Area > .btn > .fileQat ,
+#lyr_FL_Display_Area > .btn > .fileColor,
+#lyr_FL_Display_Area > .btn > .fileMS,
+#lyr_FL_Display_Area > .btn > .filePlex ,
+#lyr_FL_Display_Area > .btn > .fileNup,
+#lyr_FL_Display_Area > .btn > .fileDelete { font-size:16px; }
+#lyr_FL_Display_Area > .btn > .filePrice { font-size:18px; }
+
+
+/***************************************** 팝업공통             **********************************************/
+#pop_chargeInfoPopup{
+	/*background-image:url(../image/BG_PATTERN.png);*/
+	background-color: #33405b;
+}
+/***************************************** 결제금액확인팝업    **********************************************/
+#pop_chargeInfoPopup{
+	position : absolute;
+ 	top : 40px;
+ 	left : 0px;
+ 	width : 800px;
+	height: 440px;
+	z-index:10;
+}
+#lyr_CP_wrapper{
+	position: absolute;
+	width: 800px;
+	height: 440px;
+	top:0px;
+	left:0px;
+}
+#pop_chargeInfoPopup #lbl_CP_msg {
+	position: absolute;
+	width: 740px;
+	top: 223px;
+	left: 0px;
+	margin: 30px;
+	line-height: 36px;
+	font-size: 24px;
+	text-align: center;
+	color: white;
+}
+
+#pop_chargeInfoPopup #btn_confirm{
+	position: absolute;
+	left: 100px;
+	top: 370px;
+}
+
+#pop_chargeInfoPopup #btn_DP_confirm{
+	position: absolute;
+	left: 40px;
+	top: 370px;
+}
+
+#pop_chargeInfoPopup #btn_CP_confirm{
+	position: absolute;
+	left: 290px;
+	top: 370px;
+}
+
+#pop_chargeInfoPopup #btn_DP_CP_cancel{
+	position: absolute;
+	left:480px;
+	top: 370px;
+}
+
+#pop_noticePopup #btn_NT_confirm{
+	position: absolute;
+	left: 480px;
+	top: 370px;
+}
+#btn_NT_retry{
+	position: absolute;
+	left: 480px;
+	top: 370px;
+}
+#btn_NT_admin{
+	position: absolute;
+	left: 86px;
+	top: 370px;
+}
+
+#btn_DP_confirm>.lbl, #btn_CP_confirm>.lbl,  #btn_DP_CP_cancel>.lbl, #btn_confirm>.lbl, #btn_NT_confirm>.lbl, #btn_NT_retry>.lbl, #btn_NT_admin>.lbl{
+	position: absolute;
+	line-height: 60px;
+	font-size: 20px;
+}
+#lbl_DP_confirm,#lbl_CP_confirm,#lbl_DP_CP_cancel,#lbl_confirm,#lbl_NT_confirm,#lbl_NT_retry,#lbl_NT_admin{
+	position: absolute;
+	width:234px;
+	height:62px;
+	clear:both;
+	text-align:center;
+}
+#tit_CP_outputMediumSize,#tit_CP_colorMode,#tit_CP_copies,#tit_CP_joblist, #txt_CP_outSize,#txt_CP_outPages,#txt_CP_outDuplex{
+	position: absolute;
+	left: 110px;
+	width: 250px;
+	color:#ccc;
+}
+
+#tit_CP_pages,#tit_CP_outplex,#tit_CP_unitPrice,#tit_CP_totalPrice, #txt_CP_outCopies,#txt_CP_colorMode{
+	position: absolute;
+	left: 480px;
+	width: 250px;
+	color:#ccc;
+}
+#tit_CP_joblist{top:190px;}
+#tit_CP_outputMediumSize{top: 40px;}
+
+#txt_CP_outPages{top: 40px;}
+#txt_CP_outCopies{top: 40px;}
+
+#txt_CP_colorMode{top: 90px;}
+#txt_CP_outSize{top: 90px;}
+
+#txt_CP_outDuplex{top: 140px;}
+
+#tit_CP_pages{top: 40px;}
+#tit_CP_outplex{top: 90px;}
+#tit_CP_unitPrice{top: 180px;}
+
+#tit_CP_copies{top: 240px;}
+#tit_CP_totalPrice{top: 190px;}
+
+#lbl_CP_outputMediumSize,#lbl_CP_colorMode,#lbl_CP_copies,#lbl_CP_joblist{
+	position: absolute;
+	left: 288px;
+	width: 120px;
+	color:#fff;
+	text-align: left;
+}
+#lbl_CP_pages,#lbl_CP_outplex,#lbl_CP_unitPrice,#lbl_CP_totalPrice{
+	position: absolute;
+	left: 610px;
+	width: 120px;
+	color:#fff;
+	text-align: left;
+}
+#lbl_CP_joblist{top:190px;}
+
+#lbl_CP_outputMediumSize{top: 40px;}
+#lbl_CP_colorMode{top: 90px;}
+
+#lbl_CP_pages{top: 40px;}
+#lbl_CP_outplex{top: 90px;}
+
+#lbl_CP_unitPrice{top: 180px;}
+
+#lbl_CP_copies{top: 240px;}
+
+#lbl_CP_totalPrice{top: 190px;}
+
+div#tit_CP_unitPrice, div#lbl_CP_unitPrice{
+	color:#ea3;
+}
+div#tit_CP_totalPrice, div#lbl_CP_totalPrice{
+	color:#ff0;
+}
+/* 카드 인식 retry */
+#pop_paymentRetryPopup{
+	height: 480px;
+	margin-top: -60px;
+	z-index:10;
+}
+
+#pop_paymentRetryPopup #lbl_RT_msg {
+	position: absolute;
+	width: 740px;
+	top: 239px;
+	left: 0px;
+	margin: 30px;
+	line-height: 36px;
+	font-size: 24px;
+	text-align: center;
+	color: white;
+}
+
+#pop_paymentRetryPopup #btn_RT_start{
+	position: absolute;
+	left: 283px;
+	top: 340px;
+}
+
+
+#img_card_reader_retry{
+	position: absolute;
+	top: 10px;
+	left: 250px;
+	width: 330px;
+	height: 221px;
+}
+
+
+/***************************************** 결제요청팝업    **********************************************/
+#pop_paymentPopup{
+	height: 480px;
+	margin-top: -60px;
+	z-index:10;
+}
+
+#img_progressing_pay{
+	position:absolute;
+	width:128px;
+	height:128px;
+	top: 176px;
+	left: 336px;
+}
+
+/**************************************printing popup start**************************************/
+/***************************************** 인쇄중팝업         **********************************************/
+#pop_printingPopup{
+	position:absolute;
+	top:40;
+	height: 440px;
+	margin-top:0;
+	padding-top:0;
+	z-index:10;
+	background-color: #33405b;
+}
+#lyr_PP_aniWrapper{
+	position:absolute;
+	top: 145px;
+	left: 325px;
+	width: 135px;
+	height: 73px;
+	display:block;
+}
+#printing_animation{
+	position:absolute;
+	top: 139px;
+	left: 918px;
+}
+
+#img_printer{
+position: absolute;
+top: 25px;
+left: 263px;
+}
+#slidebox {overflow:hidden; }
+#slider { position: relative; list-style: none; margin: 0; padding: 0; }
+#slider li { position: absolute; left: 0; top: 0; width:300px; height:240px; }
+
+/* 2016.05.16 chone 프린팅 화면 결제 금액 표시 개선 요청 Start */
+#lbl_pay_amount {
+	position		: absolute;
+	top			: 215px;
+	left			: 0px;
+	width		: 800px;
+	text-align	: center;
+	color			: #ff0;
+}
+
+#lbl_printing_progress {
+	position		: absolute;
+	top			: 360px;
+	left			: 0px;
+	width		: 800px;
+	text-align	: center;
+	color			: white;
+}
+
+#img_printing_progress_bar {
+	position		: absolute;
+	top			: 400px;
+	left			: 156px;
+}
+
+#thankyou_additional_base{
+	position:relative;
+}
+
+/**************************************printing popup end**************************************/
+/*************************************Copy Main Menu Start*************************************/
+#page_copy_main{
+	position:absolute;
+	top:40;
+	height: 440px;
+	margin-top:0;
+	padding-top:0;
+	z-index:10;
+	background-color: #006c9b;
+}
+#lyr_copy_main_wrapper{
+	position:absolute;
+	top:0;
+	left:0;
+	width:800px;
+	height:440px;
+}
+
+#copy_setting_src_duplex_label{
+	position:absolute;
+	top: 15px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#copy_setting_duplex_label{
+	position:absolute;
+	top: 15px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#copy_setting_color_label{
+	position:absolute;
+	top: 92px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#copy_setting_dpi_label{
+	position:absolute;
+	top: 92px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#copy_setting_mag_label{
+	position:absolute;
+	top: 171px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#copy_setting_output_size_label{
+	position:absolute;
+	top: 171px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#copy_setting_src_duplex{
+	position:absolute;
+	top: 40px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#copy_setting_duplex{
+	position:absolute;
+	top: 40px;
+    left: 450px;
+    height: 45;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#copy_setting_dpi{
+	position:absolute;
+	top: 116px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#copy_setting_color{
+	position:absolute;
+	top: 116px;
+    left: 450px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#copy_setting_output_size{
+	position:absolute;
+	top: 195px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#copy_setting_mag{
+	position:absolute;
+	top: 195px;
+    left: 450px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#copy_setting_start_btn {
+ 	position : absolute;
+	top:350px;
+ 	left : 485px;
+}
+#img_copy_setting_start_btn {
+ 	position : absolute;
+}
+#lbl_copy_setting_start_btn{
+	position : absolute;
+	width: 234px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+#copy_setting_copies_label{
+	position:absolute;
+	top: 250px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#box_copy_setting_copies{
+	position:absolute;
+	top: 274px;
+    left: 120px;
+    height: 45px;
+    width: 160px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+	background: white;
+}
+#copy_setting_copies_plus_btn{
+	position:absolute;
+	top: 274px;
+    left: 50px;
+    height: 45px;
+    width: 70px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+}
+#copy_setting_copies_minus_btn{
+	position:absolute;
+	top: 274px;
+    left: 280px;
+    height: 45px;
+    width: 70px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+}
+#copy_setting_mag_manual_label{
+	position:absolute;
+	top: 250px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#box_copy_setting_manual_mag{
+	position:absolute;
+	top: 274px;
+    left: 520px;
+    height: 45px;
+    width: 160px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+	background: white;
+}
+#copy_setting_manual_mag_plus_btn{
+	position:absolute;
+	top: 274px;
+    left: 450px;
+    height: 45px;
+    width: 70px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+}
+#copy_setting_manual_mag_minus_btn{
+	position:absolute;
+	top: 274px;
+    left: 680px;
+    height: 45px;
+    width: 70px;
+	text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+}
+/*************************************Scan Main Menu Start*************************************/
+#page_scan_main{
+	position:absolute;
+	top:40;
+	height: 440px;
+	margin-top:0;
+	padding-top:0;
+	z-index:10;
+	background-color: #006c9b;
+}
+#lyr_scan_main_wrapper{
+	position:absolute;
+	top:0;
+	left:0;
+	height: 440px;
+	width: 800px;
+}
+#txt_scan_to_pc_setting{
+	position:absolute;
+	top: 50px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#scan_setting_src_duplex_label{
+	position:absolute;
+	top: 140px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#scan_setting_color_label{
+	position:absolute;
+	top: 140px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#scan_setting_dpi_label{
+	position:absolute;
+	top: 240px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#scan_setting_mag_label{
+	position:absolute;
+	top: 240px;
+    left: 450px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#scan_setting_src_duplex{
+	position:absolute;
+	top: 165px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#scan_setting_duplex{
+	position:absolute;
+	top: 65px;
+    left: 450px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#scan_setting_dpi{
+	position:absolute;
+	top: 265px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#scan_setting_color{
+	position:absolute;
+	top: 165px;
+    left: 450px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#scan_setting_mag{
+	position:absolute;
+	top: 265px;
+    left: 450px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#scan_setting_start_btn {
+ 	position : absolute;
+	top:350px;
+ 	left : 485px;
+}
+#img_scan_setting_start_btn {
+ 	position : absolute;
+}
+#lbl_scan_setting_start_btn{
+	position : absolute;
+	width: 234px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+/* 2016.05.16 chone 프린팅 화면 결제 금액 표시 개선 요청 Start */
+#pop_scanningPopup{
+	position:absolute;
+	top:40px;
+	height: 440px;
+	margin-top:0px;
+	padding-top:0px;
+	z-index:10;
+	background-color: #33405b;
+}
+#lyr_SP_wrapper{
+	position:absolute;
+	top:0px;
+	left:0px;
+	width:800px;
+	height:440px;
+}
+#lbl_scanning_progress {
+	position		: absolute;
+	top			: 360px;
+	left			: 0px;
+	width		: 800px;
+	text-align	: center;
+	color			: white;
+}
+
+#img_scanning_progress_bar {
+	position		: absolute;
+	top			: 400px;
+	left			: 156px;
+}
+
+#thankyou_additional_base{
+	position:relative;
+}
+
+/*************************************Fax Main Menu Start*************************************/
+#page_fax_main{
+	position:absolute;
+	top:40;
+	height: 440px;
+	margin-top:0;
+	padding-top:0;
+	z-index:10;
+	background-color: #006c9b;
+}
+#lyr_fax_main_wrapper{
+	position:absolute;
+	top:0;
+	left:0;
+	width:800px;
+	height:440px;
+}
+#faxarea_input_label{
+	position:absolute;
+	top:30;
+	left: 50px;
+	height: 22px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#faxnumber_input_label{
+	position:absolute;
+	top:30px;
+	left: 160px;
+	height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#faxnumber_input_info{
+	position:absolute;
+	top: 107px;
+	left: 50px;
+	height: 22px;
+    width: 700px;
+    font-size: 20px;
+    font-weight: bold;
+	color: yellow;
+}
+#faxnumber_input_info2{
+	position:absolute;
+	top: 132px;
+	left: 50px;
+	height: 22px;
+    width: 700px;
+    font-size: 20px;
+    font-weight: bold;
+	color: yellow;
+}
+
+#fax_setting_src_hp_label{
+	position:absolute;
+	top: 140px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#fax_setting_src_duplex_label{
+	position:absolute;
+	top: 170px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#fax_setting_dpi_label{
+	position:absolute;
+	top: 255px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+#fax_setting_color_label{
+	position:absolute;
+	top: 340px;
+    left: 50px;
+    height: 22px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: white;
+}
+
+#tbx_faxarea_input{
+	position:absolute;
+	top:60;
+	left: 50px;
+	height: 45px;
+    width: 100px;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+	background: white;
+}
+#tbx_faxnumber_input{
+	position:absolute;
+	top:60;
+	left: 150px;
+	height: 45px;
+    width: 250px;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+	background: white;
+}
+#fax_setting_src_hp{
+	position:absolute;
+	top: 165px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+	color: black;
+}
+#fax_setting_src_duplex{
+	position:absolute;
+	top: 195px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#fax_setting_dpi{
+	position:absolute;
+	top: 280px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#fax_setting_color{
+	position:absolute;
+	top: 365px;
+    left: 50px;
+    height: 45px;
+    width: 300px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#fax_setting_start_btn {
+ 	position : absolute;
+	top:350px;
+ 	left : 485px;
+}
+#img_fax_setting_start_btn {
+ 	position : absolute;
+}
+#lbl_fax_setting_start_btn{
+	position : absolute;
+	width: 234px;
+	height: 62px;
+	line-height: 62px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+/**************************************Notice popup start**************************************/
+#pop_noticePopup{
+	position: absolute;
+	top		: 40px;
+	left	: 0px;
+	width	: 800px;
+	background-color: #bfbfff;
+}
+
+#tit_NT_title{
+	position: absolute;
+	top		: 5px;
+	left	: 20px;
+	width	: 760px;
+	height	: 25px;
+	font-weight: bold;
+}
+
+#tit_NT_message{
+	position: absolute;
+	top		: 40px;
+	left	: 20px;
+	width	: 760px;
+	height	: 300px;
+}
+
+#img_NT_qrcode{
+	position: absolute;
+	top		: 100px;
+	left	: 240px;
+	width	: 320px;
+	height	: 240px;
+}
+
+/**************************************Preference Page start**************************************/
+#page_preference{
+	position: absolute;
+	top		: 40px;
+	left	: 0px;
+	width	: 800px;
+	background-color: #0396FF;
+}
+
+#tit_PF_title{
+	position: absolute;
+	top		: 5px;
+	left	: 20px;
+	width	: 760px;
+	height	: 25px;
+	font-weight: bold;
+}
+#lbl_PF_bar_title{
+	position: absolute;
+	top		: 50px;
+	left	: 10px;
+}
+
+#lbl_PF_server_url{
+	position: absolute;
+	top		: 110px;
+	left	: 10px;
+}
+#lbl_PF_service_scan{
+	position: absolute;
+	top		: 180px;
+	left	: 10px;
+}
+#lbl_PF_service_native_scan{
+	position: absolute;
+	top		: 180px;
+	left	: 300px;
+}
+#lbl_PF_service_fax{
+	position: absolute;
+	top		: 240px;
+	left	: 10px;
+}
+#lbl_PF_service_native_fax{
+	position: absolute;
+	top		: 240px;
+	left	: 300px;
+}
+#lbl_PF_fax_area_code{
+	position: absolute;
+	top		: 180px;
+	left	: 600px;
+}
+#lbl_PF_charge_mode{
+	position: absolute;
+	top		: 290px;
+	left	: 10px;
+}
+#lbl_PF_charge_url{
+	position: absolute;
+	top		: 340px;
+	left	: 10px;
+}
+#tbx_PF_bar_title{
+	position: absolute;
+	top		: 47px;
+	left	: 100px;
+	width	: 600px;
+	height	: 35px;
+}
+#tbx_PF_server_url{
+	position: absolute;
+	top		: 107px;
+	left	: 100px;
+	width	: 600px;
+	height	: 35px;
+}
+#tbx_PF_charge_url{
+	position: absolute;
+	top		: 337px;
+	left	: 140px;
+	width	: 600px;
+	height	: 35px;
+}
+#scan_use_setting{
+	position: absolute;
+	top		: 177px;
+	left	: 100px;
+	width	: 150px;
+	height	: 35px;
+}
+#scan_native_setting{
+	position: absolute;
+	top		: 177px;
+	left	: 420px;
+	width	: 150px;
+	height	: 35px;
+}
+#fax_use_setting{
+	position: absolute;
+	top		: 237px;
+	left	: 100px;
+	width	: 150px;
+	height	: 35px;
+}
+#fax_native_setting{
+	position: absolute;
+	top		: 237px;
+	left	: 420px;
+	width	: 150px;
+	height	: 35px;
+}
+#fax_area_code{
+	position: absolute;
+	top		: 237px;
+	left	: 600px;
+	width	: 150px;
+	height	: 35px;
+}
+#select_PF_charge_mode{
+	position: absolute;
+	top		: 287px;
+	left	: 140px;
+	width	: 150px;
+	height	: 35px;
+}
+#msg_PF_scan_set_fail{
+	position: absolute;
+	top		: 152px;
+	left	: 100px;
+	font-weight: bold;
+	color:#f00;
+}
+#msg_PF_fax_set_fail{
+	position: absolute;
+	top		: 212px;
+	left	: 100px;
+	font-weight: bold;
+	color:#f00;
+}
+#btn_PF_setting_save{
+	position: absolute;
+	top		: 5px;
+	left	: 585px;
+	width	: 100px;
+	height	: 30px;
+}
+#btn_PF_setting_cancel{
+	position: absolute;
+	top		: 5px;
+	left	: 690px;
+	width	: 100px;
+	height	: 30px;
+}
+#btn_PF_mfd_home{
+	position: absolute;
+	top		: 390px;
+	left	: 300px;
+	width	: 200px;
+	height	: 30px;
+}
+#btn_PF_find_scan_pc{
+	position: absolute;
+	top		: 390px;
+	left	: 50px;
+	width	: 200px;
+	height	: 30px;
+}
+#btn_PF_find_scan_msg{
+	position: absolute;
+	top		: 392px;
+	left	: 300px;
+	font-weight: bold;
+	color:#f00;
+}
+#lbl_PF_scan_type_setting{
+	position: absolute;
+	top		: 290px;
+	left	: 320px;
+}
+#select_scan_type_setting{
+	position: absolute;
+	top		: 287px;
+	left	: 450px;
+	width	: 150px;
+	height	: 35px;
+}
+
+/**************************************Preference2 Page start**************************************/
+#page_preference2{
+	position: absolute;
+	top		: 40px;
+	left	: 0px;
+	width	: 800px;
+	background-color: #0396FF;
+}
+
+#tit_PF2_title{
+	position: absolute;
+	top		: 5px;
+	left	: 20px;
+	width	: 760px;
+	height	: 25px;
+	font-weight: bold;
+}
+#btn_PF2_setting_save{
+	position: absolute;
+	top		: 5px;
+	left	: 585px;
+	width	: 100px;
+	height	: 30px;
+}
+#btn_PF2_setting_cancel{
+	position: absolute;
+	top		: 5px;
+	left	: 690px;
+	width	: 100px;
+	height	: 30px;
+}
+#btn_PF2_mfd_home{
+	position: absolute;
+	top		: 390px;
+	left	: 300px;
+	width	: 200px;
+	height	: 30px;
+}
+#lbl_PF2_ip{
+	position: absolute;
+	top		: 50px;
+	left	: 150px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_name{
+	position: absolute;
+	top		: 50px;
+	left	: 400px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_pc0{
+	position: absolute;
+	top		: 100px;
+	left	: 20px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_pc1{
+	position: absolute;
+	top		: 150px;
+	left	: 20px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_pc2{
+	position: absolute;
+	top		: 200px;
+	left	: 20px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_pc3{
+	position: absolute;
+	top		: 250px;
+	left	: 20px;
+	font-weight: bold;
+	color:#000;
+}
+#lbl_PF2_pc4{
+	position: absolute;
+	top		: 300px;
+	left	: 20px;
+	font-weight: bold;
+	color:#000;
+}
+#tbx_PF2_pc_ip0{
+	position: absolute;
+	top		: 96px;
+	left	: 110px;
+	width	: 180px;
+	height	: 35px;
+}
+#tbx_PF2_pc_ip1{
+	position: absolute;
+	top		: 146px;
+	left	: 110px;
+	width	: 180px;
+	height	: 35px;
+}
+#tbx_PF2_pc_ip2{
+	position: absolute;
+	top		: 196px;
+	left	: 110px;
+	width	: 180px;
+	height	: 35px;
+}
+#tbx_PF2_pc_ip3{
+	position: absolute;
+	top		: 246px;
+	left	: 110px;
+	width	: 180px;
+	height	: 35px;
+}
+#tbx_PF2_pc_ip4{
+	position: absolute;
+	top		: 296px;
+	left	: 110px;
+	width	: 180px;
+	height	: 35px;
+}
+#tbx_PF2_pc_name0{
+	position: absolute;
+	top		: 96px;
+	left	: 300px;
+	width	: 300px;
+	height	: 35px;
+}
+#tbx_PF2_pc_name1{
+	position: absolute;
+	top		: 146px;
+	left	: 300px;
+	width	: 300px;
+	height	: 35px;
+}
+#tbx_PF2_pc_name2{
+	position: absolute;
+	top		: 196px;
+	left	: 300px;
+	width	: 300px;
+	height	: 35px;
+}
+#tbx_PF2_pc_name3{
+	position: absolute;
+	top		: 246px;
+	left	: 300px;
+	width	: 300px;
+	height	: 35px;
+}
+#tbx_PF2_pc_name4{
+	position: absolute;
+	top		: 296px;
+	left	: 300px;
+	width	: 300px;
+	height	: 35px;
+}
+
+
+/**************************************Scan type select page**************************************/
+#page_scan_type_select{
+	position:absolute;
+	top:40;
+	width: 800px;
+	height: 440px;
+	margin-top:0;
+	padding-top:0;
+	z-index:10;
+	background-color: #006c9b;
+}
+#lyr_scan_type_select_wrapper{
+	position: absolute;
+	top		: 0px;
+	left	: 0px;
+	width	: 800px;
+	height	: 440px;
+}
+#msg_not_scan_to_usb{
+	position: absolute;
+	top		: 50px;
+	left	: 100px;
+	font-weight: bold;
+	color:#fff;
+}
+#img_usb_input{
+	position: absolute;
+	top		: 5px;
+	left	: 50px;
+}
+#img_center_line{
+	position: absolute;
+	top		: 10px;
+	left	: 399px;
+}
+
+#btn_scan_to_usb{
+	position: absolute;
+	top		: 300px;
+	left	: 114px;
+	font-weight: bold;
+}
+
+#btn_scan_to_pc0{
+	position: absolute;
+	top		: 34px;
+	left	: 514px;
+	font-weight: bold;
+}
+#btn_scan_to_pc1{
+	position: absolute;
+	top		: 115px;
+	left	: 514px;
+	font-weight: bold;
+}
+#btn_scan_to_pc2{
+	position: absolute;
+	top		: 196px;
+	left	: 514px;
+	font-weight: bold;
+}
+#btn_scan_to_pc3{
+	position: absolute;
+	top		: 277px;
+	left	: 514px;
+	font-weight: bold;
+}
+#btn_scan_to_pc4{
+	position: absolute;
+	top		: 358px;
+	left	: 514px;
+	font-weight: bold;
+}
+
+#btn_scan_to_usb > .lbl, #btn_scan_to_pc0 > .lbl, #btn_scan_to_pc1 > .lbl, #btn_scan_to_pc2 > .lbl, #btn_scan_to_pc3 > .lbl, #btn_scan_to_pc4 > .lbl {
+	position : absolute;
+	width : 172px;
+	height : 47px;
+	line-height : 47px;
+	text-align: center;
+}
+/************************************* Soft Core Keypad Start **************************************/
+#soft_core_keypad{
+	position: absolute;
+	top: 50px;
+	left: 490px;
+	width: 224px;
+	height: 278px;
+	background-color: lightgray;
+	overflow:auto;
+}
+#btn_num_key1{		position:absolute; top:11px; left:9px; width: 68px; height:63px;color: #ffffff}
+#btn_num_key2{		position:absolute; top:11px; left:78px; width: 68px; height:63px;}
+#btn_num_key3{		position:absolute; top:11px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key4{		position:absolute; top:75px; left:9px; width: 68px; height:63px;}
+#btn_num_key5{		position:absolute; top:75px; left:78px; width: 68px; height:63px;}
+#btn_num_key6{		position:absolute; top:75px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key7{		position:absolute; top:139px; left:9px; width: 68px; height:63px;}
+#btn_num_key8{		position:absolute; top:139px; left:78px; width: 68px; height:63px;}
+#btn_num_key9{		position:absolute; top:139px; left:147px; width: 68px; height:63px;}
+
+#btn_mul_key{		position:absolute; top:203px; left:9px; width: 68px; height:63px;}
+#btn_num_key0{		position:absolute; top:203px; left:78px; width: 68px; height:63px;}
+#btn_sharp_key{		position:absolute; top:203px; left:147px; width: 68px; height:63px;}
+
+/************************************* Soft Core Keypad End **************************************/
