@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<InstallerConfig>
+	<UserInterface>
+		<MultipleSetup>
+			<MaxDeviceCount>10</MaxDeviceCount>
+		</MultipleSetup>
+	</UserInterface>
+	<SettingChange>
+		<Security>
+			<SSLCommunication>
+				<SetEnable>
+					<RollbackAfterSetup></RollbackAfterSetup>
+				</SetEnable>
+			</SSLCommunication>
+		</Security>
+		<CustomService>
+			<EnableCustomServiceManager></EnableCustomServiceManager>
+		</CustomService>
+	</SettingChange>
+</InstallerConfig>
+

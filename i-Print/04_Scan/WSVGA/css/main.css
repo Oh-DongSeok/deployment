@@ -1,0 +1,2446 @@
+﻿/***************************************** CS 기본설정     **********************************************/
+
+body {
+    margin: 0px;
+    overflow: hidden;
+    font-size: 24px;
+    color: #444;
+}
+
+img {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+}
+
+.smallFont {
+    font-size: 18px;
+}
+
+li {
+    list-style: none;
+    position: relative;
+}
+
+img {
+    -webkit-user-drag: none;
+    /*EWB5.0 Image drag 대응*/
+}
+
+#debug {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.statusBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 60px;
+    background-image: url('../image/BG_TITLE.png');
+    z-index: 1;
+}
+
+
+/*예약어*/
+
+
+/*
+_btn
+_title
+_lbl
+_icon
+_bg
+ */
+
+.title {
+    display: inline-block;
+    line-height: 60px;
+    color: white;
+}
+
+
+/***************************************** 페이지 기본 레이아웃 **********************************************/
+
+.pageWrapper {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    /*background-image: url('../image/BG_COMMON.png');*/
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(241, 241, 241, 1)), color-stop(100%, rgba(204, 204, 204, 1)));
+    background: -webkit-radial-gradient(center, circle cover, rgba(241, 241, 241, 1) 0%, rgba(204, 204, 204, 1) 100%);
+    background: radial-gradient(circle at center, rgba(241, 241, 241, 1) 0, rgba(204, 204, 204, 1) 100%);
+    /*overflow : hidden;*/
+}
+
+
+/*초기표시의 잔상이 남지 않게 하기 위해*/
+
+.pageWrapper>* {
+    display: none;
+}
+
+.page {
+    position: absolute;
+    top: 120px;
+    height: 420px;
+    overflow: hidden;
+    padding: 0 4px;
+    width: 792px;
+}
+
+
+/*줄간격 조정*/
+
+.page>div>* {
+    /**background-color: rgba(255,0,0,0.2);**/
+    display: block;
+    /*	margin-top: 0.4em;*/
+}
+
+.page.basePage {
+    display: block;
+}
+
+.page.modal {
+    top: 0;
+    width: 800px;
+    height: 600px;
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 20;
+}
+
+.focused {
+    display: block;
+}
+
+.btn {
+    position: relative;
+}
+
+.btn>.btnBg {
+    position: relative;
+}
+
+.page img.btn {
+    width: auto;
+}
+
+.btn.disabled .lbl {
+    color: #808080;
+}
+
+.btn>.lbl {
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    clear: both;
+    /*margin-top:-62px;*/
+    /*line-height:62px;*/
+    /*text-indent:10px;*/
+    text-align: center;
+}
+
+.radio>li>.btn>.lbl {
+    text-indent: 54px;
+    text-align: left;
+}
+
+.btn>.icn {
+    /*margin-top: -62px;
+	padding-top: 2px;*/
+    position: absolute;
+    /*top: 8px;
+	left: 10px;*/
+    top: 10px;
+    left: 10px;
+}
+
+#btn_EP_headposition_top>.icn,
+#btn_EP_headposition_left>.icn,
+#btn_EP_bgElimination_none>.icn,
+#btn_EP_bgElimination_set>.icn {
+    top: 8px;
+    left: 10px;
+}
+
+.btn>.trayIcn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.disableFont {
+    color: #999;
+}
+
+
+/***************************************** 팝업공통             **********************************************/
+
+#pop_processingPopup,
+#pop_chargeInfoPopup,
+#pop_paymentPopup,
+#pop_printingPopup,
+#TraySelectionPopup,
+#pop_ResultPopup,
+#pop_chargeResultPopup {
+    /*background-image:url(../image/BG_PATTERN.png);*/
+    background-color: #33405b;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAGCAYAAAAPDoR2AAAAVklEQVQIW2PUsQz9zwAELCysIAoFMGqaBv//9+8/AysbM1gBCwszw58/f4H4NwMjXp0GtpFAYxnBxoFUI1vBaOIY+//Pnz9AiT8Mv3/9BUvCrGDEpxMAPuwinuCq3/QAAAAASUVORK5CYII=');
+    background-repeat: repeat;
+}
+
+
+/***************************************** 에러팝업             **********************************************/
+
+
+/***************************************** 스테이터스바　**********************************************/
+
+
+/***************************************** 메시지에리어　**********************************************/
+
+
+/*#message_area{position:absolute; color:#ffffff;width:800px;}
+#txt_message_1{position:absolute;top:15px;left:55px;}
+#txt_message_2{position:absolute;top:50px;left:55px;}*/
+
+#message_area {
+    overflow: hidden;
+}
+
+#message_area,
+#img_MA_backGroundImage {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+._1line {
+    width: 800px;
+    height: 52px;
+}
+
+._2line {
+    width: 800px;
+    height: 90px;
+}
+
+._3line {
+    width: 800px;
+    height: 128px;
+}
+
+._1line>#img_MA_backGroundImage {
+    clip: rect(0px, 800px, 52px, 0px);
+    margin-top: 0px;
+    margin-left: 0px
+}
+
+._2line>#img_MA_backGroundImage {
+    clip: rect(60px, 800px, 150px, 0px);
+    margin-top: -60px;
+    margin-left: 0px
+}
+
+._3line>#img_MA_backGroundImage {
+    clip: rect(160px, 800px, 288px, 0px);
+    margin-top: -160px;
+    margin-left: 0px
+}
+
+
+/*#txt_message_1{ position : absolute; left:55px; top:10px; width:720px;height:20px;}
+#txt_message_2{ position : absolute; left:55px; top:32px; width:720px;height:20px;}*/
+
+div#message_area>.lbl {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    line-height: 36px;
+    height: 36px;
+    font-size: 24px;
+    text-indent: 55px;
+    color: #fff;
+}
+
+div#message_area>.lbl:first-of-type {
+    margin-top: 8px;
+}
+
+
+/***************************************** 풀다운　               **********************************************/
+
+.pulldown {
+    position: relative;
+    overflow: hidden;
+}
+
+.pulldown>.icn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.pulldown>.lbl {
+    position: absolute;
+    top: 0;
+    text-indent: 54px;
+    line-height: 62px;
+}
+
+.pullPop {
+    width: 273px;
+}
+
+.pullPop>div {
+    position: relative;
+    display: block;
+    padding: 5px;
+}
+
+.pullPop {
+    position: absolute;
+}
+
+.pullPop>.pullBg {
+    position: absolute;
+}
+
+.pullPop>.bg>ul {
+    margin-left: 5px;
+}
+
+.pullPop .btn {
+    position: relative;
+    height: 62px;
+}
+
+.pullPop .btn>.bg {
+    /*크기확보용*/
+}
+
+.pullPop .btn>.icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+.pullPop .btn>.lbl {
+    top: 0;
+    line-height: 62px;
+    height: 62px;
+    text-indent: 54px;
+    text-align: left;
+}
+
+.lbl0 {
+    position: absolute;
+    top: 0;
+    height: 62px;
+    text-indent: 54px;
+    line-height: 62px;
+}
+
+.lbl1 {
+    position: absolute;
+    top: 0;
+    height: 62px;
+    text-indent: 137px;
+    line-height: 62px;
+    font-size: 18px;
+}
+
+
+/*영어일때 위치보정(입출력 양단면표시) Start*/
+
+#lbl_MP_inplex_menu_1_1,
+#lbl_MP_inplex_menu_2_1,
+#lbl_MP_outplex_menu_1_1,
+#lbl_MP_outplex_menu_2_1 {
+    top: -15px;
+}
+
+#lbl_MP_inplex_menu_1_2,
+#lbl_MP_inplex_menu_2_2,
+#lbl_MP_outplex_menu_1_2,
+#lbl_MP_outplex_menu_2_2 {
+    top: 10px;
+}
+
+#lbl_MP_inplex>p:first-child,
+#lbl_MP_outplex>p:first-child,
+#lbl_PS_boundAt_1>p:first-child,
+#lbl_PS_boundAt_2>p:first-child,
+#lbl_PS_boundAt_3>p:first-child {
+    position: absolute;
+    top: -15px;
+}
+
+#lbl_MP_inplex>p:last-child,
+#lbl_MP_outplex>p:last-child,
+#lbl_PS_boundAt_1>p:last-child,
+#lbl_PS_boundAt_2>p:last-child,
+#lbl_PS_boundAt_3>p:last-child {
+    position: absolute;
+    top: 10px;
+}
+
+
+/*영어일때 위치보정(입출력 양단면표시) End*/
+
+
+/**************************************confirm popup start**************************************/
+
+#pop_confirm .btn {
+    position: absolute;
+}
+
+div#lyr_CF_wrapper {
+    width: 626px;
+    height: 315px;
+    position: absolute;
+    top: 82px;
+    left: 87px;
+    background-color: #ECEFF3;
+    border: solid 6px #D6DEEA;
+    box-shadow: 0 0 0 1px #fff, inset 0 0 0 1px #fff, inset 0 0 15px 4px #B4BCC4;
+    box-sizing: border-box;
+    border-bottom-width: 72px;
+    border-radius: 3px;
+}
+
+
+/*img#img_CF_BG {
+	position: absolute;
+	top: 81px;
+	left: 86px;
+}*/
+
+#lbl_CF_Guide {
+    position: absolute;
+    left: 135px;
+    top: 110px;
+    width: 530px;
+    height: 190px;
+}
+
+#btn_CF_confirm,
+#btn_CF_cancel {
+    top: 340px;
+    width: 172px;
+    height: 47px;
+}
+
+#btn_CF_confirm {
+    left: 200px;
+}
+
+#btn_CF_cancel {
+    right: 200px;
+}
+
+#btn_CF_confirm>.lbl,
+#btn_CF_cancel>.lbl {
+    line-height: 47px;
+}
+
+
+/**************************************confirm popup end**************************************/
+
+
+/***************************************** 대기화면              **********************************************/
+
+.title {
+    display: inline-block;
+    line-height: 60px;
+    color: white;
+}
+
+#icn_title {
+    padding: 6px;
+    float: left;
+    background-size: 48px;
+}
+
+#btn_serviceSelect {
+    position: absolute;
+    top: 6px;
+    right: 84px;
+    width: 64px;
+    height: 47px;
+    display: none;
+}
+
+#btn_logout {
+    position: absolute;
+    top: 6px;
+    right: 15px;
+    width: 64px;
+    height: 47px;
+    display: none;
+}
+
+#logo {
+    /*position:absolute;
+	width:270px;
+	height:270px;*/
+    margin: auto;
+    /*top:28px;
+	left:265px*/
+    display: block;
+    margin-top: 130px;
+}
+
+#RAD_WP_lang {
+    position: absolute;
+    left: 647px;
+    top: 23px;
+}
+
+#RAD_WP_lang_top,
+#RAD_WP_lang_bot {
+    position: relative;
+    width: 124px;
+    height: 62px;
+    overflow: hidden;
+}
+
+#RAD_WP_lang_top>.btnBg,
+#RAD_WP_lang_bot>.btnBg {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#RAD_WP_lang_top>.lbl,
+#RAD_WP_lang_bot>.lbl {
+    position: relative;
+    line-height: 62px;
+    text-align: center;
+}
+
+#btn_WP_start,
+#btn_WP_start .lbl {
+    height: 62px;
+}
+
+#btn_WP_start {
+    position: absolute;
+    top: 323px;
+    left: 278px;
+}
+
+#btn_WP_start .lbl {
+    display: block;
+    color: white;
+    text-align: center;
+    width: 234px;
+}
+
+.btn-cell {
+    display: inline-block;
+    text-align: center;
+}
+
+.waiting.page .lbl {
+    position: absolute;
+    line-height: 62px;
+    /*	margin-top: -62px;*/
+    text-align: center;
+}
+
+#lbl_WP_guideMessage {
+    position: absolute;
+    top: 323px;
+    width: 98%;
+    text-align: center;
+}
+
+
+/***************************************** 메인화면 **********************************************/
+
+#lyr_MP_pageType {
+    width: 234px;
+    height: 62px;
+}
+
+#btn_MP_pageType_0 {
+    width: 117px;
+    height: 62px;
+}
+
+#btn_MP_pageType_1 {
+    width: 117px;
+    height: 62px;
+}
+
+#pul_MP_inplex,
+#pul_MP_magnification,
+#pul_MP_tray,
+#pul_MP_outplex,
+#pul_MP_colorMode {
+    width: 234px;
+    height: 62px;
+}
+
+#lyr_MP_pageSet {}
+
+#btn_MP_etcFunc {
+    width: 234px;
+    height: 62px;
+}
+
+#btn_MP_Start {
+    width: 234px;
+    height: 62px;
+}
+
+#pul_MP_inplex_popup .btn,
+#pul_MP_magnification_popup .btn,
+#pul_MP_tray_popup .btn,
+#pul_MP_outplex_popup .btn,
+#pul_MP_colorMode_popup .btn {
+    width: 261px;
+    height: 62px;
+}
+
+#tit_MP_pageType,
+#tit_EP_pageType {
+    position: absolute;
+    top: 13px;
+    left: 19px;
+}
+
+#pul_MP_inplex_popup {
+    top: 97px;
+    left: 518px;
+}
+
+#pul_MP_outplex_popup {
+    top: 97px;
+    left: 275px;
+}
+
+#pul_MP_magnification_popup {
+    top: 148px;
+    left: 518px;
+}
+
+#pul_MP_nup_popup {
+    top: 148;
+    left: 275px;
+}
+
+#pul_MP_colorMode_popup {
+    top: 252px;
+    left: 275px;
+}
+
+#pul_MP_tray_popup {
+    top: 134px;
+    left: 518px;
+}
+
+#lyr_MP_pageType,
+#lyr_EP_pageType {
+    left: 19px;
+    top: 43px;
+    position: absolute;
+}
+
+#btn_MP_pageType_1,
+#btn_EP_pageType_1 {
+    margin-left: -7px
+}
+
+#btn_MP_pageType_1,
+#btn_EP_pageType_1 {
+    position: absolute;
+    left: 124px;
+    top: 0px;
+}
+
+#btn_MP_pageType_0>.icn,
+#btn_MP_pageType_1>.icn,
+#btn_EP_pageType_0>.icn,
+#btn_EP_pageType_1>.icn {
+    top: 2px;
+    left: 30px;
+}
+
+#lyr_MP_pageType,
+#lyr_EP_pageType {
+    height: 62px;
+}
+
+#img_MP_preview,
+#img_EP_preview {
+    position: absolute;
+    left: 19px;
+    top: 117px;
+    width: 232px;
+    height: 216px;
+    background: #e5e5e5;
+    border: solid 1px #B9B9B9;
+}
+
+#btn_MP_etcFunc,
+#btn_EP_back {
+    position: absolute;
+    top: 343px;
+    left: 19px;
+}
+
+
+/*#lbl_usb_chk{
+	position:absolute;
+	top:-15px;
+	width:740%;
+}
+#btn_usb_chk{
+	position:absolute;
+	top:360px;
+	left:300px;
+}*/
+
+#tit_MP_inplex {
+    position: absolute;
+    left: 283px;
+    top: 120px;
+}
+
+#pul_MP_inplex {
+    position: absolute;
+    left: 283px;
+    top: 153px;
+}
+
+#tit_MP_magnification {
+    position: absolute;
+    left: 283px;
+    top: 124px;
+}
+
+#pul_MP_magnification {
+    position: absolute;
+    left: 283px;
+    top: 154px;
+}
+
+#tit_MP_tray {
+    position: absolute;
+    left: 283px;
+    top: 235px;
+}
+
+#pul_MP_tray {
+    position: absolute;
+    left: 283px;
+    top: 265px;
+}
+
+#tit_MP_outplex {
+    position: absolute;
+    left: 547px;
+    top: 13px;
+}
+
+#pul_MP_outplex {
+    position: absolute;
+    left: 547px;
+    top: 43px;
+}
+
+#tit_MP_colorMode {
+    position: absolute;
+    left: 547px;
+    top: 230px;
+}
+
+#pul_MP_colorMode {
+    position: absolute;
+    left: 547px;
+    top: 263px;
+}
+
+#tit_MP_imageMode {
+    position: absolute;
+    left: 19px;
+    top: 230px;
+}
+
+#pul_MP_imageMode {
+    position: absolute;
+    left: 19px;
+    top: 263px;
+}
+
+#pul_MP_inplex .lbl,
+#pul_MP_magnification .lbl,
+#pul_MP_tray .lbl,
+#pul_MP_outplex .lbl,
+#pul_MP_colorMode .lbl {
+    width: 100%;
+}
+
+#pul_MP_imageMode_popup {
+    position: absolute;
+    left: 254px;
+    top: 188px;
+}
+
+#tit_MP_destAddInput {
+    position: absolute;
+    left: 19px;
+    top: 12px;
+}
+
+#tit_MP_numberAddInput {
+    position: absolute;
+    left: 19px;
+    top: 67px;
+}
+
+#tit_MP_headPosition {
+    position: absolute;
+    left: 19px;
+    top: 120px;
+}
+
+#pul_MP_headPosition {
+    position: absolute;
+    left: 19px;
+    top: 153px;
+}
+
+#icn_MP_headPosition,
+#icn_MP_headPosition_menu_0,
+#icn_MP_headPosition_menu_1 {
+    width: 40px;
+    height: 40px
+}
+
+#pul_MP_headPosition_popup {
+    position: absolute;
+    left: 254px;
+    top: 176px;
+}
+
+#tit_MP_resolution {
+    position: absolute;
+    left: 547px;
+    top: 120px;
+}
+
+#pul_MP_resolution {
+    position: absolute;
+    left: 547px;
+    top: 154px;
+}
+
+#pul_MP_resolution_popup {
+    position: absolute;
+    left: 275px;
+    top: 118px;
+}
+
+#tit_MP_docFormat {
+    position: absolute;
+    left: 283px;
+    top: 230px;
+}
+
+#pul_MP_docFormat {
+    position: absolute;
+    left: 283px;
+    top: 263px;
+}
+
+#pul_MP_docFormat_popup {
+    position: absolute;
+    left: 518px;
+    top: 250px;
+}
+
+#txt_userInputInfo {
+    position: absolute;
+    left: 180px;
+    top: 5px;
+    height: 45px;
+    width: 590px;
+    font-size: 30px;
+}
+
+#txt_userNumberInputInfo {
+    position: absolute;
+    left: 180px;
+    top: 60px;
+    height: 45px;
+    width: 590px;
+    font-size: 30px;
+}
+
+#lbl_MP_pages {
+    width: 90px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border: solid 3px #cdcdcd;
+    background-color: #ededed;
+}
+
+#lbl_MP_pages,
+#btn_MP_pages_down,
+#btn_MP_pages_up {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#btn_MP_pages_down,
+#lbl_MP_pages,
+#btn_MP_pages_up {
+    float: left;
+}
+
+#btn_MP_pages_down,
+#lbl_MP_pages {
+    margin-right: 7px;
+}
+
+#lbl_MP_Start,
+#lbl_EP_Start {
+    color: #ffffff;
+}
+
+#tit_MP_pageSet {
+    position: absolute;
+    left: 547px;
+    top: 235px;
+}
+
+#lyr_MP_pageSet {
+    position: absolute;
+    left: 547px;
+    top: 265px;
+}
+
+#lyr_MP_pageSet>* {
+    margin-top: 0;
+}
+
+#btn_MP_Start,
+#btn_EP_Start {
+    position: absolute;
+    top: 343px;
+    left: 547px;
+    height: 74px;
+}
+
+#btn_MP_Start,
+#btn_MP_etcFunc,
+#pul_MP_inplex,
+#pul_MP_magnification,
+#pul_MP_tray,
+#pul_MP_outplex,
+#pul_MP_colorMode {
+    width: 234px;
+    height: 62px;
+}
+
+
+/***************************************** 기타설정화면    **********************************************/
+
+#pul_EP_imageMode_popup {
+    top: 198px;
+    left: 518px;
+    width: 234px;
+}
+
+#tit_EP_headposition {
+    position: absolute;
+    top: 13px;
+    left: 283px
+}
+
+#lyr_EP_headposition {
+    position: absolute;
+    top: 43px;
+    left: 283px;
+}
+
+#tit_EP_imageMode {
+    position: absolute;
+    top: 235px;
+    left: 283px;
+}
+
+#pul_EP_imageMode {
+    position: absolute;
+    top: 265px;
+    left: 283px;
+}
+
+#tit_EP_bgElimination {
+    position: absolute;
+    top: 13px;
+    left: 547px;
+}
+
+#lyr_EP_bgElimination {
+    position: absolute;
+    top: 43px;
+    left: 547px;
+}
+
+#tit_EP_darkness {
+    position: absolute;
+    top: 235px;
+    left: 547px;
+}
+
+#lyr_EP_darkness {
+    position: absolute;
+    top: 261px;
+    left: 547px;
+}
+
+#pul_EP_imageMode,
+#btn_EP_back,
+#btn_EP_Start {
+    width: 234px;
+    height: 62px;
+}
+
+#btn_EP_headposition_top,
+#btn_EP_headposition_left,
+#btn_EP_bgElimination_set,
+#btn_EP_bgElimination_none {
+    position: relative;
+    width: 234px;
+    height: 87px;
+}
+
+#btn_EP_headposition_left,
+#btn_EP_bgElimination_set {
+    margin-top: 0;
+}
+
+#btn_EP_headposition_top,
+#btn_EP_headposition_left,
+#btn_EP_bgElimination_none,
+#btn_EP_bgElimination_set {
+    width: 234px;
+    height: 87px;
+}
+
+#page_etcFunc #lbl_EP_headposition_top,
+#page_etcFunc #lbl_EP_headposition_left,
+#page_etcFunc #lbl_EP_bgElimination_set,
+#page_etcFunc #lbl_EP_bgElimination_none {
+    height: 87px;
+    line-height: 87px;
+    text-align: left;
+}
+
+#lbl_EP_headposition_top,
+#lbl_EP_headposition_left {
+    text-indent: 112px;
+}
+
+#lbl_EP_bgElimination_set,
+#lbl_EP_bgElimination_none {
+    text-indent: 97px;
+}
+
+#lbl_EP_imageMode {
+    width: 100%;
+}
+
+#lyr_EP_darkness>* {
+    display: inline-block;
+}
+
+#btn_EP_darkness_deep,
+#btn_EP_darkness_light {
+    width: 62px;
+    height: 62px;
+}
+
+#lyr_EP_darknessBar {
+    position: relative;
+    bottom: -2px;
+    padding: 0 3px 0 2px;
+    width: 105px;
+}
+
+#img_EP_darknessKnob {
+    position: absolute;
+    left: 44px;
+}
+
+#img_EP_darknessKnob.d3 {
+    left: 2px;
+}
+
+#img_EP_darknessKnob.d2 {
+    left: 16px;
+}
+
+#img_EP_darknessKnob.d1 {
+    left: 30px;
+}
+
+#img_EP_darknessKnob.l1 {
+    left: 58px;
+}
+
+#img_EP_darknessKnob.l2 {
+    left: 72px;
+}
+
+#img_EP_darknessKnob.l3 {
+    left: 86px;
+}
+
+#img_lyr_bar {
+    position: absolute;
+    left: 265px;
+    top: 70px;
+}
+
+#icn_EP_back {
+    top: 12px;
+}
+
+#lbl_EP_back {
+    text-indent: 54px;
+    text-align: left;
+}
+
+#lbl_EP_pageSplit {
+    text-indent: 54px;
+    text-align: left;
+}
+
+
+/***************************************** 배율설정팝업    **********************************************/
+
+#pop_magnification {
+    background-image: url(../image/BG_PUP.png);
+}
+
+#tit_MG_panel,
+#lbl_MG_explain {
+    display: inline-block;
+}
+
+#tit_MG_panel {
+    margin-top: 70px;
+    margin-left: -100px;
+}
+
+#lbl_MG_explain {
+    font-size: 18px;
+}
+
+#pop_magnification .subTitle {
+    float: left;
+    margin-top: 6px;
+    line-height: 52px;
+    color: white;
+    padding-left: 19px;
+}
+
+#btn_MG_confirm,
+#btn_MG_cancel {
+    float: right;
+    width: 172px;
+    margin-top: 9px;
+    margin-right: 6px;
+}
+
+div#btn_MG_confirm {
+    margin-right: 16px;
+}
+
+#pop_magnification #lbl_MG_confirm,
+#pop_magnification #lbl_MG_cancel {
+    line-height: 47px;
+    text-align: left;
+    text-indent: 54px;
+}
+
+#tit_MG_inputMS {
+    position: absolute;
+    left: 291px;
+    top: 70px;
+}
+
+#RAD_MG_inputMS {
+    position: absolute;
+    left: 291px;
+    top: 100px;
+}
+
+#tit_MG_tray,
+#tit_PS_order {
+    position: absolute;
+    left: 291px;
+    top: 70px;
+}
+
+#RAD_MG_tray,
+#RAD_PS_order {
+    position: absolute;
+    left: 291px;
+    top: 100px;
+}
+
+#tit_MG_outputMS {
+    position: absolute;
+    left: 547px;
+    top: 70px;
+}
+
+#RAD_MG_outputMS {
+    position: absolute;
+    left: 547px;
+    top: 100px;
+}
+
+#RAD_MG_inputMS .btn,
+#RAD_MG_outputMS .btn,
+#RAD_MG_tray .btn,
+#RAD_MG_preset .btn {
+    width: 234px;
+    height: 62px;
+}
+
+#btn_MG_down,
+#btn_MG_up,
+#btn_MP_pages_down,
+#btn_MP_pages_up,
+#btn_PS_centerEraseDown,
+#btn_PS_centerEraseUp {
+    width: 62px;
+    height: 62px;
+}
+
+#btn_MG_down,
+#lbl_MG_magniVal,
+#btn_MG_up {
+    float: left;
+}
+
+#btn_MG_down,
+#lbl_MG_magniVal {
+    margin-right: 7px;
+}
+
+#lbl_MG_FIX100,
+#lbl_MG_AUTO {
+    text-align: left;
+    text-indent: 54px
+}
+
+#lbl_MG_magniVal {
+    width: 90px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border: solid 3px #cdcdcd;
+    background-color: #ededed;
+}
+
+#RAD_MG_tray .btn {
+    width: 234px;
+    height: 62px;
+}
+
+#RAD_MG_inputMS .lbl,
+#RAD_MG_outputMS .lbl {
+    text-indent: 10px;
+    text-align: left;
+}
+
+#lyr_MG_magnif {
+    position: absolute;
+    top: 100px;
+    left: 17px;
+    height: 62px;
+}
+
+#RAD_MG_preset {
+    position: absolute;
+    top: 224px;
+    left: 20px;
+    height: 124px;
+}
+
+#tit_MG_preset {
+    position: absolute;
+    top: 194px;
+    left: 20px;
+}
+
+#lbl_MG_gide {
+    position: absolute;
+    bottom: 33px;
+    left: 283px;
+    font-size: 18px;
+}
+
+
+/***************************************** 책복사 설정 팝업    **********************************************/
+
+#pop_pageSplit {
+    background-image: url(../image/BG_PUP.png);
+}
+
+#tit_PS_direction {
+    position: absolute;
+    top: 70px;
+    left: 20px;
+}
+
+#RAD_PS_direction {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+}
+
+#page_main .btn>.lbl,
+#page_etcFunc .btn>.lbl,
+#pop_pageSplit .btn>.lbl,
+#pop_magnification .btn>.lbl {
+    line-height: 62px;
+}
+
+#pop_pageSplit .subTitle {
+    float: left;
+    margin-top: 6px;
+    line-height: 52px;
+    color: white;
+    padding-left: 19px;
+}
+
+#btn_PS_confirm,
+#btn_PS_cancel {
+    float: right;
+    width: 172px;
+    margin-top: 9px;
+    margin-right: 6px;
+}
+
+#pop_pageSplit #lbl_PS_confirm,
+#pop_pageSplit #lbl_PS_cancel {
+    line-height: 47px;
+    text-align: left;
+    text-indent: 54px;
+}
+
+#lyr_PS_order,
+#lyr_PS_centerErase {
+    display: none;
+}
+
+#img_PS_explain {
+    left: 60px;
+    top: 10px;
+}
+
+#lyr_PS_explain {
+    position: absolute;
+    left: 280px;
+    top: 153px;
+    width: 485px;
+}
+
+#lyr_PS_centerErase {
+    margin-top: 0.4em;
+    position: absolute;
+    top: 287px;
+    left: 280px;
+}
+
+#tit_PS_centerErase {
+    display: inline-block;
+    margin-left: 11px;
+}
+
+#tit_PS_centerEraseRange {
+    font-size: 18px;
+    display: inline-block;
+}
+
+#btn_PS_centerEraseDown,
+#btn_PS_centerEraseUp {
+    float: left;
+}
+
+#btn_PS_centerEraseDown {
+    padding-right: 7px;
+}
+
+#btn_PS_centerEraseUp {
+    padding-left: 7px;
+}
+
+#lbl_PS_centerErase {
+    float: left;
+    width: 90px;
+    height: 55px;
+    line-height: 55px;
+    text-align: center;
+    border: solid 3px #cdcdcd;
+    background-color: #ededed;
+}
+
+#lyr_PS_CE_spinner {
+    margin-top: 6px;
+    margin-left: 11px;
+}
+
+#lbl_PS_explain {
+    display: block;
+}
+
+#lyr_PS_subExplain {
+    position: absolute;
+    top: 90px;
+    left: 555px;
+    width: 225px;
+}
+
+#RAD_PS_direction .btn,
+#RAD_PS_order .btn {
+    width: 234px;
+    height: 62px;
+}
+
+#RAD_PS_order>li,
+#RAD_PS_order .btn #RAD_PS_order .lbl {
+    height: 62px;
+}
+
+
+/***************************************** 트레이 설정팝업 **********************************************/
+
+#pop_traySelectionPopup {
+    top: 0;
+    height: 600px;
+    width: 800px;
+    padding: 0;
+    z-index: 100;
+}
+
+#lyr_TS_wrapper {
+    position: absolute;
+    width: 700px;
+    height: 400px;
+    background-color: #ECEFF3;
+    top: 40px;
+    left: 50px;
+    box-sizing: border-box;
+    border: solid 1px #fff;
+    border-radius: 10px;
+}
+
+#lbl_TS_guide {
+    position: absolute;
+    top: 80px;
+    width: 330px;
+    left: 380px;
+    color: #000;
+    text-align: center;
+    /* background: red; */
+    line-height: 30px;
+}
+
+div#lyr_TS_tray {
+    position: absolute;
+    top: 80px;
+    left: 80px;
+}
+
+#lyr_TS_tray .btn {
+    height: 62px;
+}
+
+#btn_TS_confirm,
+#btn_TS_cancel {
+    position: absolute;
+    top: 360px;
+    width: 172px;
+}
+
+#btn_TS_confirm {
+    left: 200px;
+}
+
+#btn_TS_cancel {
+    right: 200px;
+}
+
+#btn_TS_confirm>.bg,
+#btn_TS_cancel>.bg {
+    position: absolute;
+}
+
+#btn_TS_confirm>.lbl,
+#btn_TS_cancel>.lbl {
+    position: absolute;
+    width: 100%;
+    line-height: 47px;
+}
+
+
+/***************************************** 결제금액확인팝업    **********************************************/
+
+#pop_chargeInfoPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#pop_chargeInfoPopup #lbl_CP_msg {
+    position: absolute;
+    width: 740px;
+    top: 243px;
+    left: 0px;
+    margin: 30px;
+    line-height: 36px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+}
+
+#pop_chargeInfoPopup #btn_DP_confirm {
+    position: absolute;
+    left: 40px;
+    top: 380px;
+}
+
+#pop_chargeInfoPopup #btn_CP_confirm {
+    position: absolute;
+    left: 290px;
+    top: 380px;
+}
+
+#pop_chargeInfoPopup #btn_DP_CP_cancel {
+    position: absolute;
+    right: 25px;
+    top: 380px;
+}
+
+#btn_DP_confirm>.lbl,
+#btn_CP_confirm>.lbl,
+#btn_DP_CP_cancel>.lbl,
+#btn_CRP_confirm>.lbl {
+    line-height: 60px;
+    font-size: 20px;
+}
+
+#tit_CP_unitPrice,
+#tit_CP_outputMediumSize,
+#tit_CP_colorMode,
+#tit_CP_copies,
+#tit_CP_totalPrice {
+    position: absolute;
+    left: 130px;
+    width: 160px;
+    color: #ccc;
+}
+
+#tit_CRP_price {
+    position: absolute;
+    left: 130px;
+    width: 160px;
+    color: #ccc;
+}
+
+#tit_CRP_chargeRemains {
+    position: absolute;
+    left: 130px;
+    width: 160px;
+    color: #ccc;
+}
+
+#tit_CP_pages,
+#tit_CP_outplex,
+#tit_CP_copiesPrice {
+    position: absolute;
+    left: 490px;
+    width: 160px;
+    color: #ccc;
+}
+
+#tit_CP_outputMediumSize {
+    top: 80px;
+    display: none;
+}
+
+#tit_CP_colorMode {
+    top: 130px;
+    display: none;
+}
+
+#tit_CP_pages {
+    top: 80px;
+    display: none;
+}
+
+#tit_CP_outplex {
+    top: 130px;
+    display: none;
+}
+
+#tit_CP_unitPrice,
+div#tit_CRP_price {
+    top: 130px;
+}
+
+#tit_CP_copiesPrice {
+    top: 180px;
+    display: none;
+}
+
+#tit_CP_copies {
+    top: 230px;
+    display: none;
+}
+
+#tit_CP_totalPrice,
+#tit_CRP_chargeRemains {
+    top: 180px;
+}
+
+#lbl_CP_unitPrice,
+#lbl_CP_outputMediumSize,
+#lbl_CP_colorMode,
+#lbl_CP_copies {
+    position: absolute;
+    /*left: 235px;*/
+    width: 120px;
+    color: #fff;
+    text-align: left;
+}
+
+#lbl_CP_outputMediumSize {
+    left: 285px;
+}
+
+#lbl_CP_unitPrice,
+#lbl_CRP_price {
+    left: 245px;
+}
+
+#lbl_CP_colorMode,
+#lbl_CP_copies {
+    left: 235px;
+}
+
+#lbl_CP_pages,
+#lbl_CP_outplex,
+#lbl_CP_copiesPrice,
+#lbl_CP_totalPrice,
+#lbl_CRP_chargeRemains,
+#lbl_CRP_price {
+    position: absolute;
+    /*left: 525px;*/
+    width: 120px;
+    color: #fff;
+    text-align: left;
+}
+
+#lbl_CP_pages,
+#lbl_CP_outplex {
+    left: 595px;
+}
+
+#lbl_CP_copiesPrice {
+    left: 630px;
+}
+
+#lbl_CP_totalPrice,
+#lbl_CRP_chargeRemains {
+    left: 620px;
+}
+
+#lbl_CP_outputMediumSize {
+    top: 80px;
+}
+
+#lbl_CP_colorMode {
+    top: 130px;
+}
+
+#lbl_CP_pages {
+    top: 80px;
+}
+
+#lbl_CP_outplex {
+    top: 130px;
+}
+
+#lbl_CP_outplex>p {
+    position: relative;
+    left: -60px;
+}
+
+#lbl_CP_outplex.en>p {
+    /* 2016.05.26 chone 다언어대응 - 영어 양면의 경우 대응 */
+    position: relative;
+    left: 0px;
+    width: 200px;
+}
+
+#lbl_CP_copiesPrice {
+    top: 180px;
+}
+
+#lbl_CP_unitPrice,
+#lbl_CRP_price {
+    top: 130px;
+}
+
+#lbl_CP_copies {
+    top: 230px;
+}
+
+#lbl_CP_totalPrice {
+    top: 180px;
+    left: 260px
+}
+
+#lbl_CRP_chargeRemains {
+    top: 180px;
+    left: 245px
+}
+
+div#lbl_CP_unitPrice,
+div#tit_CP_unitPrice,
+div#tit_CP_copiesPrice,
+div#lbl_CP_copiesPrice,
+div#tit_CRP_price,
+div#lbl_CRP_price {
+    color: #ea3;
+}
+
+div#tit_CP_totalPrice,
+div#lbl_CP_totalPrice,
+div#tit_CRP_chargeRemains,
+div#lbl_CRP_chargeRemains {
+    color: #ff0;
+}
+
+#btn_CRP_confirm {
+    position: absolute;
+    left: 283px;
+    top: 380px;
+}
+
+
+/* 카드 인식 retry */
+
+#pop_paymentRetryPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#pop_paymentRetryPopup #lbl_RT_msg {
+    position: absolute;
+    width: 740px;
+    top: 279px;
+    left: 0px;
+    margin: 30px;
+    line-height: 36px;
+    font-size: 24px;
+    text-align: center;
+    color: white;
+}
+
+#pop_paymentRetryPopup #btn_RT_start {
+    position: absolute;
+    left: 283px;
+    top: 380px;
+}
+
+#img_card_reader_retry {
+    position: absolute;
+    top: 50px;
+    left: 250px;
+    width: 330px;
+    height: 221px;
+}
+
+#pop_processingPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#pop_chargeResultPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+
+/***************************************** 결제요청팝업    **********************************************/
+
+#pop_paymentPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#img_progressing_pay {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 176px;
+    left: 336px;
+}
+
+#lbl_requestCardPayment {
+    /* 2016.05.12 chone 신용/교통 카드 결제 요청 문구 추가 */
+    position: absolute;
+    top: 368px;
+    left: 0px;
+    width: 800px;
+    text-align: center;
+    color: orange;
+}
+
+
+/***************************************** 결과 팝업     ***************************************************/
+
+#thankyou_screen_base {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    background-repeat: no-repeat;
+}
+
+#btn_thankyou_screen_close>.lbl {
+    line-height: 47px;
+}
+
+#eco_text {
+    position: absolute;
+    top: 415px;
+    left: 290px;
+    width: 510px;
+    z-index: 0;
+    font-size: 30px;
+    font-family: sans-serif;
+    white-space: nowrap;
+    background-repeat: no-repeat;
+}
+
+#pop_ResultPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#btn_thankyou_screen_close {
+    position: absolute;
+    top: 90px;
+    left: 530px;
+}
+
+#eco_level1 {
+    position: absolute;
+    top: 396px;
+    left: 102px;
+    z-index: 0;
+    width: 48px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+#eco_level2 {
+    position: absolute;
+    top: 396px;
+    left: 150px;
+    z-index: 0;
+    width: 48px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+#eco_level3 {
+    position: absolute;
+    top: 396px;
+    left: 198px;
+    z-index: 0;
+    width: 48px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+
+/***************************************** 인쇄중팝업         **********************************************/
+
+#pop_printingPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#lyr_PP_aniWrapper {
+    position: absolute;
+    top: 145px;
+    left: 325px;
+    width: 135px;
+    height: 73px;
+    display: block;
+}
+
+#printing_animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#img_printer {
+    position: absolute;
+    top: 25px;
+    left: 263px;
+}
+
+#slidebox {
+    overflow: hidden;
+}
+
+#slider {
+    position: relative;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#slider li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 300px;
+    height: 240px;
+}
+
+
+/* 2016.05.12 chone 프린팅 화면 결제 금액 표시 개선 요청 Start */
+
+#lbl_pay_amount {
+    position: absolute;
+    top: 215px;
+    left: 0px;
+    width: 800px;
+    text-align: center;
+    color: #ff0;
+}
+
+#lbl_printing_progress {
+    position: absolute;
+    top: 360px;
+    left: 0px;
+    width: 800px;
+    text-align: center;
+    color: white;
+}
+
+#img_printing_progress_bar {
+    position: absolute;
+    top: 400px;
+    left: 156px;
+}
+
+
+/* 2016.05.12 chone 프린팅 화면 결제 금액 표시 개선 요청 End */
+
+
+/*
+.ani01{clip:rect(0px,135px,73px,0px);margin-top:0px;margin-left:0px}
+.ani02{clip:rect(0px,275px,73px,140px);margin-top:0px;margin-left:-140px}
+.ani03{clip:rect(0px,415px,73px,280px);margin-top:0px;margin-left:-280px}
+.ani04{clip:rect(0px,555px,73px,420px);margin-top:0px;margin-left:-420px}
+.ani05{clip:rect(0px,695px,73px,560px);margin-top:0px;margin-left:-560px}
+.ani06{clip:rect(80px,135px,153px,0px);margin-top:-80px;margin-left:0px}
+.ani07{clip:rect(80px,275px,153px,140px);margin-top:-80px;margin-left:-140px}
+.ani08{clip:rect(80px,415px,153px,280px);margin-top:-80px;margin-left:-280px}
+.ani09{clip:rect(80px,555px,153px,420px);margin-top:-80px;margin-left:-420px}
+.ani10{clip:rect(80px,695px,153px,560px);margin-top:-80px;margin-left:-560px}
+.ani11{clip:rect(160px,135px,233px,0px);margin-top:-160px;margin-left:0px}
+.ani12{clip:rect(160px,275px,233px,140px);margin-top:-160px;margin-left:-140px}
+.ani13{clip:rect(160px,415px,233px,280px);margin-top:-160px;margin-left:-280px}
+.ani14{clip:rect(160px,555px,233px,420px);margin-top:-160px;margin-left:-420px}
+.ani15{clip:rect(160px,695px,233px,560px);margin-top:-160px;margin-left:-560px}
+.ani16{clip:rect(240px,135px,313px,0px);margin-top:-240px;margin-left:0px}
+.ani17{clip:rect(240px,275px,313px,140px);margin-top:-240px;margin-left:-140px}
+.ani18{clip:rect(240px,415px,313px,280px);margin-top:-240px;margin-left:-280px}
+.ani19{clip:rect(240px,555px,313px,420px);margin-top:-240px;margin-left:-420px}
+.ani20{clip:rect(240px,695px,313px,560px);margin-top:-240px;margin-left:-560px}*/
+
+.ani01 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) 0 0 no-repeat
+}
+
+.ani02 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -140px 0 no-repeat
+}
+
+.ani03 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -280px 0 no-repeat
+}
+
+.ani04 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -420px 0 no-repeat
+}
+
+.ani05 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -560px 0 no-repeat
+}
+
+.ani06 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) 0 -80px no-repeat
+}
+
+.ani07 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -140px -80px no-repeat
+}
+
+.ani08 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -280px -80px no-repeat
+}
+
+.ani09 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -420px -80px no-repeat
+}
+
+.ani10 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -560px -80px no-repeat
+}
+
+.ani11 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) 0 -160px no-repeat
+}
+
+.ani12 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -140px -160px no-repeat
+}
+
+.ani13 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -280px -160px no-repeat
+}
+
+.ani14 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -420px -160px no-repeat
+}
+
+.ani15 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -560px -160px no-repeat
+}
+
+.ani16 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) 0 -240px no-repeat
+}
+
+.ani17 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -140px -240px no-repeat
+}
+
+.ani18 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -280px -240px no-repeat
+}
+
+.ani19 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -420px -240px no-repeat
+}
+
+.ani20 {
+    width: 135px;
+    height: 73px;
+    background: url(../image/BG_PRINT_ANI_SPRITE.png) -560px -240px no-repeat
+}
+
+#thankyou_additional_base {
+    position: absolute;
+}
+
+
+/***************************************** 원고사이즈 취득              **********************************************/
+
+#pop_sizeInfoPopup {
+    height: 600px;
+    margin-top: -60px;
+    z-index: 10;
+}
+
+#img_progressing {
+    position: absolute;
+    width: 128px;
+    height: 128px;
+    top: 176px;
+    left: 336px;
+}
+
+
+/***************************************** 에러팝업              **********************************************/
+
+#pop_errorPopup {
+    top: 0;
+    height: 600px;
+    z-index: 100;
+    background-image: url(../image/BG_PUP_ERR.png);
+}
+
+#lyr_EP_header .subTitle {
+    float: left;
+    margin-top: 6px;
+    margin-left: 10px;
+    line-height: 52px;
+}
+
+#lbl_EP_msg {
+    height: 330px;
+    position: absolute;
+    top: 80px;
+    left: 15px;
+}
+
+#lbl_error_code {
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    left: 10px;
+}
+
+#btn_EP_close {
+    position: relative;
+    width: 172px;
+    height: 47px;
+    margin: 0 auto;
+    top: 485px;
+}
+
+#btn_EP_close>* {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+    font-size: 18px;
+}
+
+#lbl_EP_close {
+    width: 172px;
+    line-height: 30px;
+    margin-top: 0;
+}
+
+#pop_errorPopup>.grid_9>.page .prefix_3 {
+    padding-left: 210px;
+}
+
+
+/***************************************** 경고팝업              **********************************************/
+
+#pop_warnPopup {
+    top: 0;
+    width: 800px;
+    height: 600px;
+    padding: 0;
+    /* background-image: url(../image/BG_PUP_WRN.png); */
+    border: solid 5px #676767;
+    box-sizing: border-box;
+    background-color: #f6efdc;
+    z-index: 10;
+}
+
+div#pop_warnPopup:after {
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    width: 788px;
+    height: 50px;
+    content: ' ';
+    box-sizing: border-box;
+    border: solid 1px #9fa376;
+    background: rgb(253, 219, 120);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(253, 219, 120, 1)), color-stop(50%, rgba(253, 211, 88, 1)), color-stop(100%, rgba(252, 202, 53, 1)));
+    background: -webkit-linear-gradient(top, rgba(253, 219, 120, 1) 0%, rgba(253, 211, 88, 1) 50%, rgba(252, 202, 53, 1) 100%);
+    background: linear-gradient(to bottom, rgba(253, 219, 120, 1) 0%, rgba(253, 211, 88, 1) 50%, rgba(252, 202, 53, 1) 100%);
+}
+
+#lyr_WP_header {
+    position: relative;
+    z-index: 10;
+}
+
+#lyr_WP_header .subTitle {
+    float: left;
+    margin-top: 0px;
+    margin-left: 10px;
+    line-height: 52px;
+}
+
+#lbl_WP_msg {
+    height: 330px;
+    position: absolute;
+    top: 70px;
+    left: 15px;
+}
+
+#lbl_warn_code {
+    position: absolute;
+    bottom: 10px;
+    font-size: 18px;
+    left: 10px;
+}
+
+#btn_WP_close {
+    position: relative;
+    width: 172px;
+    height: 47px;
+    margin: 0 auto;
+    top: 485px;
+    background-color: #ccc;
+    border: #ababab;
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+#btn_WP_close>* {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#lbl_WP_close {
+    width: 172px;
+    line-height: 47px;
+    margin-top: 0;
+}
+
+#pop_warnPopup>.grid_9>.page .prefix_3 {
+    padding-left: 210px;
+}
+
+
+/*********contents information********/
+
+#maintenance_popup {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 800px;
+    height: 600px;
+    z-index: 9999;
+}
+
+
+/**************************** loading animation *****************************/
+
+#floatingCirclesG {
+    position: absolute;
+    top: 176px;
+    ;
+    left: 336px;
+    width: 128px;
+    height: 128px;
+    /*-webkit-transform:scale(0.6);
+transform:scale(0.6);*/
+}
+
+.f_circleG {
+    position: absolute;
+    background-color: #FFFFFF;
+    height: 23px;
+    width: 23px;
+    -webkit-border-radius: 12px;
+    -webkit-animation-name: f_fadeG;
+    /*-webkit-animation-duration:1.04s; chrome용*/
+    -webkit-animation-duration: 5.04s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: linear;
+    border-radius: 12px;
+    animation-name: f_fadeG;
+    /*animation-duration:1.04s; chrome용*/
+    animation-duration: 5.04s;
+    animation-iteration-count: infinite;
+    animation-direction: linear;
+}
+
+#frotateG_01 {
+    left: 0;
+    top: 52px;
+    -webkit-animation-delay: 0.29s;
+    animation-delay: 0.29s;
+    /*-webkit-animation-delay:0.39s;
+animation-delay:0.39s; chrome용*/
+}
+
+#frotateG_02 {
+    left: 15px;
+    top: 15px;
+    -webkit-animation-delay: 2.02s;
+    animation-delay: 2.02s;
+    /*-webkit-animation-delay:0.52s;
+animation-delay:0.52s; chrome용*/
+}
+
+#frotateG_03 {
+    left: 52px;
+    top: 0;
+    -webkit-animation-delay: 2.75s;
+    animation-delay: 2.75s;
+    /*-webkit-animation-delay:0.65s;
+animation-delay:0.65s; chrome용*/
+}
+
+#frotateG_04 {
+    right: 15px;
+    top: 15px;
+    -webkit-animation-delay: 3.28s;
+    animation-delay: 3.28s;
+    /*-webkit-animation-delay:0.78s;
+animation-delay:0.78s; chrome용*/
+}
+
+#frotateG_05 {
+    right: 0;
+    top: 52px;
+    -webkit-animation-delay: 3.81s;
+    animation-delay: 3.81s;
+    /*-webkit-animation-delay:0.91s;
+animation-delay:0.91s; chrome용*/
+}
+
+#frotateG_06 {
+    right: 15px;
+    bottom: 15px;
+    -webkit-animation-delay: 4.34s;
+    animation-delay: 4.34s;
+    /*-webkit-animation-delay:1.04s;
+animation-delay:1.04s; chrome용*/
+}
+
+#frotateG_07 {
+    left: 52px;
+    bottom: 0;
+    -webkit-animation-delay: 4.87s;
+    animation-delay: 4.87s;
+    /*-webkit-animation-delay:1.17s;
+animation-delay:1.17s; chrome용*/
+}
+
+#frotateG_08 {
+    left: 15px;
+    bottom: 15px;
+    -webkit-animation-delay: 5.4s;
+    animation-delay: 5.4s;
+    /*-webkit-animation-delay:1.3s;
+animation-delay:1.3s; chrome용*/
+}
+
+@-webkit-keyframes f_fadeG {
+    0% {
+        background-color: #000000
+    }
+    100% {
+        background-color: #FFFFFF
+    }
+}
+
+@keyframes f_fadeG {
+    0% {
+        background-color: #000000
+    }
+    100% {
+        background-color: #FFFFFF
+    }
+}
+
+/************************************* Soft Core Keypad Start **************************************/
+#soft_core_keypad{
+	position: absolute;
+	top: 0px;
+	left: 800px;
+	width: 224px;
+	height: 600px;
+	background-color: lightgray;
+	overflow:auto;
+}
+#btn_auth_key{		position:absolute; top:11px; left:9px; width: 207px; height:74px;}
+
+#btn_num_key1{		position:absolute; top:96px; left:9px; width: 68px; height:63px;color: #ffffff}
+#btn_num_key2{		position:absolute; top:96px; left:78px; width: 68px; height:63px;}
+#btn_num_key3{		position:absolute; top:96px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key4{		position:absolute; top:160px; left:9px; width: 68px; height:63px;}
+#btn_num_key5{		position:absolute; top:160px; left:78px; width: 68px; height:63px;}
+#btn_num_key6{		position:absolute; top:160px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key7{		position:absolute; top:224px; left:9px; width: 68px; height:63px;}
+#btn_num_key8{		position:absolute; top:224px; left:78px; width: 68px; height:63px;}
+#btn_num_key9{		position:absolute; top:224px; left:147px; width: 68px; height:63px;}
+
+#btn_mul_key{		position:absolute; top:288px; left:9px; width: 68px; height:63px;}
+#btn_num_key0{		position:absolute; top:288px; left:78px; width: 68px; height:63px;}
+#btn_sharp_key{		position:absolute; top:288px; left:147px; width: 68px; height:63px;}
+
+#btn_pause_key{		position:absolute; top:352px; left:9px; width: 68px; height:63px;}
+#btn_comeback_key{	position:absolute; top:352px; left:78px; width: 68px; height:63px;}
+#btn_shorten_key{	position:absolute; top:352px; left:147px; width: 68px; height:63px;}
+
+#btn_menu_key{		position:absolute; top:426px; left:9px; width: 103px; height:74px;}
+#btn_stop_key{		position:absolute; top:426px; left:113px; width: 103px; height:74px;}
+
+#btn_start_key{		position:absolute; top:511px; left:9px; width: 207px; height:79px;}
+/************************************* Soft Core Keypad End **************************************/

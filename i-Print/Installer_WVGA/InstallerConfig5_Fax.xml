@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<InstallerConfig>
+	<UserInterface>
+		<Strings lang="ja">
+			<PackageName>i-Print Billing Fax</PackageName>
+		</Strings>
+		<Strings lang="en">
+			<PackageName>i-Print Billing Fax</PackageName>
+		</Strings>
+		<MultipleSetup>
+			<MaxDeviceCount>10</MaxDeviceCount>
+		</MultipleSetup>
+	</UserInterface>
+
+	<Restrictions>
+	    <DeviceCapability>
+	        <SSMI>
+	            <CheckDefinition>
+	                <XcpPluginManagementService>
+	                    <Enable></Enable>
+	                </XcpPluginManagementService>
+	            </CheckDefinition>
+	        </SSMI>
+	    </DeviceCapability>
+	</Restrictions>
+
+	<SettingChange>
+		<Security>
+			<SSLCommunication>
+				<SetEnable>
+					<RollbackAfterSetup></RollbackAfterSetup>
+				</SetEnable>
+			</SSLCommunication>
+		</Security>
+		<CustomService>
+			<EnableCustomServiceManager></EnableCustomServiceManager>
+		</CustomService>
+	</SettingChange>
+
+	<SinglePackages>
+		<SinglePackage>
+			<FileName>CreateData5_Fax.zip</FileName>
+			<DeviceInterfaceForSetup>
+				<Method>FD</Method>
+			</DeviceInterfaceForSetup>
+		</SinglePackage>
+	</SinglePackages>
+
+</InstallerConfig>
+

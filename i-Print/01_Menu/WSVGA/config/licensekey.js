@@ -1,0 +1,5 @@
+var KEY =
+{
+	SCAN:"c9ee2e8b5761ac9d31aa63957ae09422a2077da48bb09d18c72b2fef1b4b9eb1",
+	FAX:"710ea76a306b988800a1ec78a0419eca2db0d3dad4aacec9274bdf3e18b05a0d"
+}

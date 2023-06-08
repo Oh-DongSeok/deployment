@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFXInstall>
+    <AddCsv>
+        <Name>AIP_53007</Name>
+		<SmallIconUrl>http://localhost/cs/AIP_53007/info/smallicon.png</SmallIconUrl>
+        <DisplayMode>
+			<ToolBar>false</ToolBar>
+			<StatusBar>false</StatusBar>
+            <SoftCoreKeypad>true</SoftCoreKeypad>
+			<SupportedViewModes>
+				<Mode>
+					<Size>WVGA</Size>
+					<Generation>8</Generation>
+				</Mode>
+			</SupportedViewModes>
+        </DisplayMode>
+        <SendInformation>
+            <Status>true</Status>
+        </SendInformation>
+        <SendAuthorizedRight>true</SendAuthorizedRight>
+		<ServiceAccessRule KeepSettings="true">
+            <Authenticate>true</Authenticate>
+            <Visible>true</Visible>
+        </ServiceAccessRule>
+        <FunctionCode>0</FunctionCode>
+        <SetupOptions>
+            <Option>UpgradeInstallation</Option>
+        </SetupOptions>
+    </AddCsv>
+    <UserInterface>
+        <Strings lang="ja">
+            <DisplayName>i-Print Print UI</DisplayName>
+            <DialogTitle>i-Print Print UI</DialogTitle>
+            <Description>i-Print Billing Service Print UI</Description>
+            <VendorName>-</VendorName>
+			<Copyright>© 2023 FUJIFILM Business Innovation Korea Co., Ltd. All rights reserved.</Copyright>
+        </Strings>
+        <Strings lang="en">
+            <DisplayName>i-Print Print UI</DisplayName>
+            <DialogTitle>i-Print Print UI</DialogTitle>
+            <Description>i-Print Billing Service Print UI</Description>
+            <VendorName>-</VendorName>
+			<Copyright>© 2023 FUJIFILM Business Innovation Korea Co., Ltd. All rights reserved.</Copyright>
+        </Strings>
+        <Strings lang="ko">
+            <DisplayName>i-Print Print UI</DisplayName>
+            <DialogTitle>i-Print Print UI</DialogTitle>
+            <Description>i-Print Billing Service Print UI</Description>
+            <VendorName>-</VendorName>
+			<Copyright>© 2023 FUJIFILM Business Innovation Korea Co., Ltd. All rights reserved.</Copyright>
+        </Strings>
+    </UserInterface>
+    <Restrictions>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.2.1</MachineRestriction>
+		<SSLRequired>true</SSLRequired>
+		<InstallTimeout>255</InstallTimeout>
+    </Restrictions>
+</SFXInstall>
