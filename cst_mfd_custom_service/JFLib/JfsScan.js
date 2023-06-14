@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおけるスキャンジョブを扱うクラスを定義する<br>
  * Scanクラス<br><br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2013 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.4.1
  * @lang ja 
  * 
@@ -11,7 +11,7 @@
  * @fileoverview Defines classes handling Scan jobs in Job Flow:<br>
  * Scan Class
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2013 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.4.1
  * @lang en 
  * 
@@ -404,12 +404,6 @@ JFLib.Scan = function()
    * @default 白紙検知しない(false)
    * @lang ja
    */
-  /**
-   * Whether or not to detect blank paper<br>IMPLIED<br>
-   * @type Bool
-   * @default Do not detect blank paper (false)
-   * @lang en
-   */
   this.blankImgCount = false;
 
   /**
@@ -417,12 +411,6 @@ JFLib.Scan = function()
    * @type JFLib.ColorSpace
    * @default null
    * @lang ja
-   */
-  /**
-   * Specifies the color space.
-   * @type JFLib.ColorSpace
-   * @default null
-   * @lang en
    */
   this.colorSpace = null;
 };
@@ -588,7 +576,7 @@ JFLib.Scan.prototype.toXmlNode = function (xml)
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Sharpness', this.sharpness));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Saturation', this.saturation));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'BleedthroughRemoval', this.bleedthroughRemoval));
-  scan.appendChild(xml.createElementNS(XMLLib.NS.JT, 'ImageCount'));
+  scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'ImageCount', "1"));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Resolution', this.resolution));
   var nextoriginal = scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'EnableNextOriginal', this.nextoriginal));
   if (this.whenScannedFrom) {
@@ -716,12 +704,6 @@ JFLib.Scan.OCR.prototype.toXmlNode = function (xml)
  * @class 色空間を指定するクラス
  * @lang ja
  */
-/**
- * Creates ColorSpace instance.
- * @constructor
- * @class This class specifies the color space.
- * @lang en
- */
 JFLib.ColorSpace = function()
 {
 	/**
@@ -730,12 +712,6 @@ JFLib.ColorSpace = function()
 	 * @default null
 	 * @lang ja
 	 */
-	/**
-	 * Specifies the color space name.
-	 * @type JFLib.NAMEDCOLORSPACE/JFLib.DEFAULT
-	 * @default null
-	 * @lang en
-	 */
 	this.named = null;
 };
 
@@ -743,11 +719,6 @@ JFLib.ColorSpace = function()
  * ColorSpaceオブジェクトをxml node化する
  * @private
  * @lang ja
- */
-/**
- * Creates xml node from ColorSpace object.
- * @private
- * @lang en
  */
 JFLib.ColorSpace.prototype.toXmlNode = function(xml)
 {

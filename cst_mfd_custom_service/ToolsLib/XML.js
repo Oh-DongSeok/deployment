@@ -4,7 +4,7 @@
  * XMLSoapクラス<br>
  * SOAPMsgクラス<br>
  * 
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.2.0
  * @lang ja
  */
@@ -14,7 +14,7 @@
  * XMLSoap class<br>
  * SOAPMsg class<br>
  * 
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.2.0
  * @lang en
  */
@@ -112,7 +112,7 @@ XMLLib.NS.SOAPENV = 'http://www.w3.org/2003/05/soap-envelope';
  * @constant
  * @lang en
  */
-XMLLib.NS.JT = 'http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate';
+XMLLib.NS.JT = 'http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate';
 /**
  * SESAMi Service Managementでの指示書管理機能の名前空間URI
  * @final
@@ -127,7 +127,7 @@ XMLLib.NS.JT = 'http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate';
  * @constant
  * @lang en
  */
-XMLLib.NS.JTM = 'http://www.fujixerox.co.jp/2003/12/ssm/management/jobTemplate';
+XMLLib.NS.JTM = 'http://www.fujifilm.com/fb/2021/03/ssm/management/jobTemplate';
 /**
  * SESAMi Service Managementでの指示書実行機能の名前空間URI
  * @final
@@ -142,7 +142,7 @@ XMLLib.NS.JTM = 'http://www.fujixerox.co.jp/2003/12/ssm/management/jobTemplate';
  * @constant
  * @lang en
  */
-XMLLib.NS.JTM2 = 'http://www.fujixerox.co.jp/2005/12/ssm/management/jobTemplate';
+XMLLib.NS.JTM2 = 'http://www.fujifilm.com/fb/2021/04/ssm/management/jobTemplate';
 /**
  * XMLスキーマインスタンス名前空間URI
  * @final
@@ -159,6 +159,22 @@ XMLLib.NS.JTM2 = 'http://www.fujixerox.co.jp/2005/12/ssm/management/jobTemplate'
  */
 XMLLib.NS.XSI = 'http://www.w3.org/2001/XMLSchema-instance';
 /**
+ * XMLスキーマ名前空間URI
+ * @final
+ * @type String
+ * @constant
+ * @lang ja
+ */
+/**
+ * XML schema namespace URI.
+ * @final
+ * @type String
+ * @constant
+ * @lang en
+ * * xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ */
+XMLLib.NS.XS = 'http://www.w3.org/2001/XMLSchema';
+/**
  * SOAPFault名前空間URI
  * @final
  * @type String
@@ -172,7 +188,7 @@ XMLLib.NS.XSI = 'http://www.w3.org/2001/XMLSchema-instance';
  * @constant
  * @lang en
  */
-XMLLib.NS.FAULT = 'http://www.fujixerox.co.jp/2003/12/ssm/management/fault';
+XMLLib.NS.FAULT = 'http://www.fujifilm.com/fb/2021/04/ssm/management/fault';
 /**
  * XMLEncrypt名前空間URI
  * @final
@@ -367,7 +383,7 @@ XMLLib.XMLBase.prototype.createElement = function ( name )
  
  /*
  最終的に下記例のような1つの要素をかえす(例)
-<cfg:GetAttribute xmlns:cfg="http://www.fujixerox.co.jp/2003/12/ssm/management/****">
+<cfg:GetAttribute xmlns:cfg="http://www.fujifilm.com/fb/2021/04/ssm/management/****">
   */
 XMLLib.XMLBase.prototype.createElementNS = function ( namespace, name )
 {
@@ -382,13 +398,19 @@ XMLLib.XMLBase.prototype.createElementNS = function ( namespace, name )
   	var node = this.xmlDoc.createElement( ns.prefix + ":" + name );
 
     //要素へ属性を追加する（属性には属性値となるnamespace値も格納)
-    //例 : xmlns:adrs="http://www.fujixerox.co.jp/2003/12/ssm/management/addressBook"
+    //例 : xmlns:adrs="http://www.fujifilm.com/fb/2021/04/ssm/management/addressBook"
+	if (name == "JobTemplateHeader"){
+		var attrnode = this.xmlDoc.createAttribute("xmlns:jt");
+		attrnode.nodeValue = XMLLib.NS.JT;
+		node.setAttributeNode(attrnode);
+		ns.defined = true;
+	}
 	if (! ns.defined) {
 	    //属性を追加する
 	    //例 : xmlns:adrs
 		var attrnode = this.xmlDoc.createAttribute("xmlns:"+ns.prefix);
 		//属性値としてnamespaceのurlを格納する
-		// xmlns:adrs="http://www.fujixerox.co.jp/2003/12/ssm/management/addressBook"
+		// xmlns:adrs="http://www.fujifilm.com/fb/2021/04/ssm/management/addressBook"
 		attrnode.nodeValue = ns.url;
 		//属性を要素ノードへ追加する
 		node.setAttributeNode(attrnode);
@@ -486,7 +508,7 @@ XMLLib.XMLBase.prototype.addNSDeclaration = function ( namespace, node , force)
 	var ns = this.nss.get(namespace);
 
     //nsがblank or forceがONの場合は、強制的に名前空間参照属性を加える
-    //例:xmlns:cfg="http://www.fujixerox.co.jp/2003/12/ssm/management/****"
+    //例:xmlns:cfg="http://www.fujifilm.com/fb/2021/04/ssm/management/****"
 	if (! ns.defined || force){
 		var attrnode = this.xmlDoc.createAttribute("xmlns:"+ns.prefix);
 		attrnode.nodeValue = ns.url;

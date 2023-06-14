@@ -13,7 +13,7 @@
  * <li>JfsDefCom.js
  * </ul>
  * が自動的にロードされる<br><br>
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang ja
  */
@@ -32,7 +32,7 @@
  * <li>JfsDefCom.js
  * </ul>
  * is loaded automatically.<br><br>
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang en
  */
@@ -721,11 +721,11 @@ JFLib.OutputProcess = function()
 	 */	
 	this.notify = "";
 	/**	一時的に処理対象となる情報を格納するためのノード(XML形式の文字列も可)を設定する<br>設定 - 任意<br> 初期値 - なし<br>
-	 *	ノードを設定する場合は、ルート要素として＜jt:Workspace xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate" ＞を設定し、その子要素として任意に設定すること<br>
+	 *	ノードを設定する場合は、ルート要素として＜jt:Workspace xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" ＞を設定し、その子要素として任意に設定すること<br>
 	 *	@example
 	 *	■使用例 
 	 *		--文字列の場合--
-	 *		this.workSpace = '<jt:Workspace xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate" >
+	 *		this.workSpace = '<jt:Workspace xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" >
 	 *					<jt:Name>name</jt:Name>
 	 *					<jt:Description>this is a test.</jt:Description>
 	 *				</jt:Workspace>'
@@ -738,11 +738,11 @@ JFLib.OutputProcess = function()
 	 */	
 	 
 	/**	Node serving as workspace; i.e. that storing temporary information (may be XML string) for processing.<br>IMPLIED.<br> No default value. <br>
-	 *	Root element of node specified must be <jt:Workspace xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate" >; child elements shall be set accordingly.<br>
+	 *	Root element of node specified must be <jt:Workspace xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" >; child elements shall be set accordingly.<br>
 	 *	@example
 	 *	EXAMPLE: 
 	 *		--When specifying XML string--
-	 *		this.workSpace = '<jt:Workspace xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate" ><jt:Name>name</jt:Name><jt:Description>This is a test.</jt:Description></jt:WorkSpace>'
+	 *		this.workSpace = '<jt:Workspace xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" ><jt:Name>name</jt:Name><jt:Description>This is a test.</jt:Description></jt:WorkSpace>'
 	 *	RESTRICTIONS: 
 	 *		When using EWBV3, parse may fail when element with value of alphanumerics + hyphen (e.g. "abc-") is present. 
 	 * 		It is therefore recommended that a node be first created and set to workSpace.
@@ -1202,10 +1202,10 @@ JFLib.Header = function()
 	/**
 	 * Job Flow Language Specification version.<br> IMPLIED.
 	 * @type String
-	 * @default '3.0.9'
+	 * @default '3.0.9' -> 6.0.0 에 맞도록 일부 수정
 	 * @lang en
 	 */
-	this.version =				'3.0.9';
+	this.version =				'6.0.0';
 	/**
 	 * ジョブフローの言語要素構成の範囲を設定する<br> 設定 - 任意
 	 * @type JFLib.LANGPROFILE
@@ -1231,7 +1231,7 @@ JFLib.Header = function()
 	 * @default null
 	 * @lang en
 	 */
-	this.copyright =			'';
+	this.copyright =			'Copyright (c) 2021 FUJIFILM Business Innovation Corporation, All rights reserved.';
 	/**
 	 * ジョブフローの著作者を設定する<br> 設定 - 任意
 	 * @type String
@@ -1309,7 +1309,7 @@ JFLib.Header = function()
 	 * @default "1.3.6.1.4.1"
 	 * @lang en
 	 */
-	this.machineoid =			new Array("1.3.6.1.4.1");
+	this.machineoid =			new Array("1.3.6.1.4.1.297");
 	/**
 	 * ジョブフローの検索キーワードを設定する<br> 設定 - 任意
 	 * キーワードはpushメソッドにより複数設定することが可能
@@ -1335,6 +1335,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 
 	xml.setAttributeNS(jt, XMLLib.NS.JT, 'version', this.version);
 	xml.setAttributeNS(jt, XMLLib.NS.JT, 'profile', this.profile);
+	jt.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Name', this.name));
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Description', this.description));
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Copyright', this.copyright));
@@ -1367,6 +1368,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 			jobtemplate.notification[i].addRscNode(xml,rsnode);
 		}
 	}
+	/* 2023/06/14 불필요함 (Error 발생)
 	var jobat = node.appendChild(xml.createElementNS(XMLLib.NS.JT, 'JobAttributes'));
 	if(jobtemplate.name) {
 		jobat.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Name', jobtemplate.name));
@@ -1375,6 +1377,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 		var cate = jobat.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Categories'));
 		cate.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Category', jobtemplate.category));
 	}
+	*/
 	var kws = jt.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Keywords'));
 	var keyLen = this.keyword.length;
 	if (keyLen) {
@@ -1391,7 +1394,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
  * JobTemplate インスタンスを作成する
  * @class ジョブフロー作成の基本となるクラス<br>
  * Envelope要素では以下の名前空間がデフォルトで定義される<br>
- * xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate"<br>
+ * xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate"<br>
  * xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"<br>
  * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  * @constructor
@@ -1403,7 +1406,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
  * Creates JobTemplate instance.
  * @class This class is a basis for Job Flow Sheet creation. <br>
  * By default, the following namespaces are defined in Envelope element:<br>
- * xmlns:jt="http://www.fujixerox.co.jp/2003/12/ssm/jobTemplate"
+ * xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate"
  * xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
  * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  * @constructor
@@ -1771,12 +1774,18 @@ JFLib.JobTemplate.prototype.addNotification = function(nt)
  */
 JFLib.JobTemplate.prototype.createProcessRequest = function (xml) 
 {
+	// <jt:ProcessRequest xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
 	var pr = xml.createElementNS(XMLLib.NS.JT, 'ProcessRequest');
+	pr.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
+
+	// 불필요 삭제
+	/*
 	var setup = pr.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Setup'));
 	//setup.appendChild(xml.createElementNS(XMLLib.NS.JT, "OperatorInputs"));
 	var eh = setup.appendChild(xml.createElementNS(XMLLib.NS.JT, 'ExceptionHandler'));
 	var ca = eh.appendChild(xml.createElementNS(XMLLib.NS.JT, 'CatchAll'));
 	xml.setAttributeNS(ca, XMLLib.NS.JT, 'action', this.process);
+	*/
 	return pr;
 };
 

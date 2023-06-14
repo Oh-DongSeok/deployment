@@ -1,31 +1,19 @@
-﻿/**
+/** 
  * @fileoverview デバイスからジョブ情報を取得するためのクラス定義<br>
  * ジョブ情報取得に関して以下のメソッドを提供する<br>
  * GetJobInfo  ジョブ情報取得<br>
  * GetChildJobInfo  親ジョブを含めた子ジョブの情報取得<br>
- * 使用するためには
- * <ul>
- * <li>SSMILib/DefJobInfo.js
- * </ul>
- * のロードが必要となる<br>
- * <br>
- * 使用するには<b>SSMILib/SSMILib.js</b>を参照すること
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ *
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.1
  * @lang ja
  */
- /**
+ /** 
  * @fileoverview Defines classes for retrieving job information from device.<br>
  * Provides the following methods for retrieving job information:s<br>
  * GetJobInfo - Retrieves job information.<br>
  * GetChildJobInfo - Retrieves information on parent job and its child jobs.<br>
- * To use this file,
- * <ul>
- * <li>SSMILib/DefJobInfo.js
- * </ul>
- * must be loaded.<br>
- * <br>
- * To use this file, see <b>SSMILib/SSMILib.js</b>.
+ *
  * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
  * @version 1.0.1
  * @lang en
@@ -225,34 +213,34 @@ SSMILib.JobInfo.prototype.Scope = function()
 	 *	リソース情報の取得する数を設定する
 	 *	@type Int
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Number of resource information sets to retrieve.
 	 *	@type Int
 	 *  @lang en
-	 */
+	 */	
 	this.count = "";
 	/**
 	 *	リソース情報範囲の開始位置を設定する。
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Start position of resource information range.
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.from = "";
 	/**
 	 *	リソース情報範囲の終了位置を設定する
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	End position of resource information range.
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.to = "";
 
 };
@@ -274,34 +262,34 @@ SSMILib.JobInfo.prototype.ExtScope = function()
 	 *	リソース情報の取得する数を設定する
 	 *	@type Int
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Number of resource information sets to retrieve.
 	 *	@type Int
 	 *  @lang en
-	 */
+	 */	
 	this.count = "";
 	/**
 	 *	リソース情報範囲の開始位置を設定する。
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Start position of resource information range.
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.from = "";
 	/**
 	 *	リソース情報範囲の終了位置を設定する
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	End position of resource information range.
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.to = "";
 	/**
 	 *	リソース情報範囲の開始位置を設定する<br>
@@ -309,14 +297,14 @@ SSMILib.JobInfo.prototype.ExtScope = function()
 	 *	<font color = "#ff0000">getChildJobResponseXMLメソッドのみ使用可能</font>
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Start position of resource information range.<br>
 	 *	First resource is that immediately after that specified. (<font color = "#ff0000">Cannot be specified together with "from."</font>)<br>
 	 *	<font color = "#ff0000">Available only for getChildJobResponseXML method.</font>
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.after = "";
 	/**
 	 *	リソース情報範囲の終了位置を設定する<br>
@@ -324,14 +312,14 @@ SSMILib.JobInfo.prototype.ExtScope = function()
 	 *	<font color = "#ff0000">getChildJobResponseXMLメソッドのみ使用可能</font>
 	 *	@type String(JobID)
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	End position of resource information range.<br>
 	 *	Last resource is that immediately preceding that specified. (<font color = "#ff0000">Cannot be specified together with "to."</font>)<br>
 	 *	<font color = "#ff0000">Available only for getChildJobResponseXML method.</font>
 	 *	@type String(JobID)
 	 *  @lang en
-	 */
+	 */	
 	this.before = "";
 
 };
@@ -351,7 +339,7 @@ SSMILib.JobInfo.prototype.SortKey = function()
 	 *	昇順/降順を設定する
 	 *	@type SSMILib.SORTORDER
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Sort order; descending or ascending.
 	 *	@type SSMILib.SORTORDER
@@ -362,12 +350,12 @@ SSMILib.JobInfo.prototype.SortKey = function()
 	 *	ソートするキーとなる、elementを設定する
 	 *	@type SSMILib.JOBDETAIL
 	 *  @lang ja
-	 */
+	 */	
 	/**
 	 *	Element to serve as sort key.
 	 *	@type SSMILib.JOBDETAIL
 	 *  @lang en
-	 */
+	 */	
 	this.element = SSMILib.JOBDETAIL.COMPLETETIME;
 };
 
@@ -379,13 +367,11 @@ SSMILib.JobInfo.prototype.createMsg = function ()
 	var xml = new XMLLib.XMLSOAP();
 	var root = xml.createSOAPEnvelope();
 	var env = root;
-	var _childNode;
-	var _getJobListNode;
 
-	var jobNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management/job";
-	var job2NS	=	"http://www.fujixerox.co.jp/2007/07/ssm/management/job";
-	var mgtNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management";
-	var mgt3NS	=	"http://www.fujixerox.co.jp/2007/07/ssm/management";
+	var jobNS	=	"http://www.fujifilm.com/fb/2021/03/ssm/management/job";
+	var job2NS	=	"http://www.fujifilm.com/fb/2021/04/ssm/management/job";
+	var mgtNS	=	"http://www.fujifilm.com/fb/2020/12/ssm/management";
+	var mgt3NS	=	"http://www.fujifilm.com/fb/2021/02/ssm/management";
 
 	var body = xml.body;
 
@@ -394,40 +380,40 @@ SSMILib.JobInfo.prototype.createMsg = function ()
 
 	if(this.childInfo){
 		xml.addNSPrefix(job2NS, "job2");
-		_getJobListNode = body.appendChild(xml.createElementNS(job2NS, "GetJobListEx"));
+		var _getJobListNode = body.appendChild(xml.createElementNS(job2NS, "GetJobListEx"));
 		xml.addNSDeclaration(job2NS, _getJobListNode, true);
 	} else {
-		_getJobListNode = body.appendChild(xml.createElementNS(jobNS, "GetJobList"));
+		var _getJobListNode = body.appendChild(xml.createElementNS(jobNS, "GetJobList"));
 	}
 
 	xml.addNSDeclaration(mgtNS, _getJobListNode, true);
 	xml.addNSDeclaration(jobNS, _getJobListNode, true);
-
+	
 	/* <GetJobList>/<GetJobListEx>以下のノード作成 */
 	if(this.listType) {
-		_childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "ListType"));
+		var _childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "ListType"));
 		_childNode.appendChild(xml.createTextNode(this.listType));
 	}
 	if(this.jobUser){
-		_childNode = _getJobListNode.appendChild(xml.createElement("User"));
+		var _childNode = _getJobListNode.appendChild(xml.createElement("User"));
 		_childNode.appendChild(xml.createTextNode(this.jobUser));
 	}
 	if(this.jobID){
-		_childNode = _getJobListNode.appendChild(xml.createElement("JobID"));
+		var _childNode = _getJobListNode.appendChild(xml.createElement("JobID"));
 		_childNode.appendChild(xml.createTextNode(this.jobID));
 	} else if(!this.jobID && (this.scope.from || this.scope.to || this.scope.count || this.scope.after || this.scope.before)){
 		if(this.childInfo){
 			xml.addNSPrefix(mgt3NS, "mgt3");
-			_childNode = _getJobListNode.appendChild(xml.createElementNS(mgt3NS, "Scope"));
+			var _childNode = _getJobListNode.appendChild(xml.createElementNS(mgt3NS, "Scope"));
 			xml.addNSDeclaration(mgt3NS, _childNode, true);
 		} else{
-			_childNode = _getJobListNode.appendChild(xml.createElementNS(mgtNS, "Scope"));
+			var _childNode = _getJobListNode.appendChild(xml.createElementNS(mgtNS, "Scope"));
 		}
 
 		if(this.scope.count){
 			_childNode.setAttribute("count", this.scope.count);
 		}
-
+		
 		if(this.scope.after){
 			_childNode.setAttribute("after", this.scope.after);
 		}
@@ -444,31 +430,31 @@ SSMILib.JobInfo.prototype.createMsg = function ()
 	}
 	// jobClientID
 	if(this.jobClientID){
-		_childNode = _getJobListNode.appendChild(xml.createElement("JobClientID"));
+		var _childNode = _getJobListNode.appendChild(xml.createElement("JobClientID"));
 		_childNode.appendChild(xml.createTextNode(this.jobClientID));
 	}
 
 	//	namespace定義(job)
 	if(this.respond){
 		if(this.childInfo){
-			_childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "RespondSelf"));
+			var _childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "RespondSelf"));
 		} else {
-			_childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "Respond"));
+			var _childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "Respond"));
 		}
 		_childNode.appendChild(xml.createElement(this.respond));
 	}
-
+	
 	//	namespace定義(mgt)
 	if(this.childInfo){
-		_childNode = _getJobListNode.appendChild(xml.createElement("ChildrenInfo"));
+		var _childNode = _getJobListNode.appendChild(xml.createElement("ChildrenInfo"));
 		_childNode.appendChild(xml.createTextNode(this.childInfo));
 		if(this.jobImage){
-			_childNode = _getJobListNode.appendChild(xml.createElement("JobImage"));
+			var _childNode = _getJobListNode.appendChild(xml.createElement("JobImage"));
 			_childNode.appendChild(xml.createTextNode(this.jobImage));
 		}
 		//	namespace定義(job)
 		if(this.respondChild){
-			_childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "RespondChildren"));
+			var _childNode = _getJobListNode.appendChild(xml.createElementNS(jobNS, "RespondChildren"));
 			_childNode.appendChild(xml.createElement(this.respondChild));
 		}
 	}
@@ -485,7 +471,7 @@ SSMILib.JobInfo.prototype.createMsg = function ()
 	}
 
 	if(this.scopeAfterSort.from || this.scopeAfterSort.to || this.scopeAfterSort.count){
-		_childNode = _getJobListNode.appendChild(xml.createElementNS(mgtNS, "ScopeAfterSort"));
+		var _childNode = _getJobListNode.appendChild(xml.createElementNS(mgtNS, "ScopeAfterSort"));
 		if(this.scopeAfterSort.count){
 			_childNode.setAttribute("count", this.scopeAfterSort.count);
 		}
@@ -498,7 +484,7 @@ SSMILib.JobInfo.prototype.createMsg = function ()
 	}
 
 	env.appendChild(body);
-
+	
 	var soapMsg = xml.rootElement;
 	return soapMsg;
 };
@@ -526,7 +512,7 @@ SSMILib.JobInfo.prototype.createMsg = function ()
  */
 SSMILib.JobInfo.prototype.getJobList = function(auth)
 {
-	this.requester.soapAction = '"http://www.fujixerox.co.jp/2003/12/ssm/management/job#GetJobList"';
+	this.requester.soapAction = '"http://www.fujifilm.com/fb/2021/03/ssm/management/job#GetJobList"';
 	this.requester.isDeviceReq = true;
 	this.requester.async = SSMILib.async;
 	if (auth) this.auth = auth;
@@ -536,15 +522,13 @@ SSMILib.JobInfo.prototype.getJobList = function(auth)
 	this.childInfo = false;
 	this.respondChild = "";
 	this.jobImage = false;
-
-	var _path;
-
+	
 	if(this.auth){
-		_path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Job";
+		var _path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Job";
 	} else{
-		_path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Anonymous/Job";
+		var _path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Anonymous/Job";
 	}
-
+	
 	var _msg = this.serializeToString();
 
 	this.requester.send(_path, _msg);
@@ -576,17 +560,15 @@ SSMILib.JobInfo.prototype.getJobList = function(auth)
  */
 SSMILib.JobInfo.prototype.getChildJobList = function(auth)
 {
-	this.requester.soapAction = '"http://www.fujixerox.co.jp/2007/07/ssm/management/job#GetJobListEx"';
+	this.requester.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/job#GetJobListEx"';
 	this.requester.isDeviceReq = true;
 	this.auth = auth;
 	this.requester.async = SSMILib.async;
 
-	var _path;
-
 	if(this.auth){
-		_path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Job";
+		var _path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Job";
 	} else{
-		_path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Anonymous/Job";
+		var _path = SSMILib.protocol + SSMILib.host + "/ssm/Management/Anonymous/Job";
 	}
 
 	/* 子ジョブのジョブIDを取得 */
@@ -624,16 +606,12 @@ SSMILib.JobInfo.prototype.getChildJobList = function(auth)
  */
 SSMILib.JobInfo.extractChildJobInfo = function(responseText, index)
 {
-	var _resText = responseText;
+	var _resText  = responseText;
 	var _startElementStr = '<rj:RelatedJobs';	//先頭文字列
 	var _endElementStr = '</rj:RelatedJobs>';	//終端文字列
 
 	var _start = _resText.indexOf(_startElementStr, 0);
 	var _end = _resText.lastIndexOf(_endElementStr);
-
-	var _node = null;
-	var _childNode;
-	var _childNodeList;
 
 	if(_start == -1 || _end == -1){
 		return null;
@@ -647,11 +625,11 @@ SSMILib.JobInfo.extractChildJobInfo = function(responseText, index)
 			_elementStr = _elementStr.split("  ").join("");
 		}
 
-		_node = XMLLib.createXMLObject(_elementStr);
+		var _node = XMLLib.createXMLObject(_elementStr);
 		if(index){
-			_childNodeList = _node.getElementsByTagName("JobInfo");
+			var _childNodeList = _node.getElementsByTagName("JobInfo");
 			if(_childNodeList.length){
-				_childNode = _childNodeList.item(index);
+				var _childNode = _childNodeList.item(index);
 				if(_childNode){
 					return _childNode;
 				}
@@ -686,7 +664,7 @@ SSMILib.JobInfo.extractChildJobInfo = function(responseText, index)
  */
 SSMILib.GetJobList = function(jobInfo, key)
 {
-
+	
 	var job = null;
 	if (jobInfo) { job = jobInfo; } else { job = new SSMILib.JobInfo(null); }
 	job.requester.successHandler = SSMILib.GetJobList.successCb;
@@ -701,17 +679,17 @@ SSMILib.GetJobList = function(jobInfo, key)
 		var _jobInfo = new Array();
 		_jobInfo[0] = new Object();
 		_jobInfo[0] = {JobID:"00000001-aaaa-bbbb-0000-0123456789ab",
-					Status:"completed",
-					StartTime:"2009-11-19T19:58:32+08:00",
-					CompleteTime: "2009-11-19T19:59:15+08:00",
-					User:"0001",
-					Name:"ユーザ0001",
+					Status:"completed", 
+					StartTime:"2009-11-19T19:58:32+08:00", 
+					CompleteTime: "2009-11-19T19:59:15+08:00", 
+					User:"0001", 
+					Name:"ユーザ0001", 
 					FaultReason:""};
 
 		SSMILib.onEvent("GetJobList", true, _jobInfo);
 		return;
 	}
-
+	
 	job.getJobList();
 	return;
 };
@@ -752,7 +730,7 @@ SSMILib.GetJobList.successCb = function(res)
 		_result = true;
 	}
 
-
+	
 	SSMILib.onEvent("GetJobList", _result, _jobInfo);
 	return;
 };
@@ -780,7 +758,7 @@ SSMILib.GetJobList.errorCb = function(res)
  * @param {String} jobId ジョブIDを指定する
  * @param {String} [key] 取得する情報の要素名を指定する<br>
  * 「01-03 SESAMi Service Management Interface Specification_JobAttriute.xls」を参照のこと<br>
- *
+ * 
  * @addon
  * @static
  * @lang ja
@@ -810,20 +788,20 @@ SSMILib.GetJob = function(jobInfo, jobId, key)
 		SSMILib.GetJob._key = key;
 	}
 
-	if (SSMILib.dummy) {
+	if (!SSMILib.dummy) {
 		var _jobInfo = new Object();
 		_jobInfo = {JobID:"00000001-aaaa-bbbb-0000-0123456789ab",
-					Status:"completed",
-					StartTime:"2009-11-19T19:58:32+08:00",
-					CompleteTime: "2009-11-19T19:59:15+08:00",
-					User:"0001",
-					Name:"ユーザ0001",
+					Status:"completed", 
+					StartTime:"2009-11-19T19:58:32+08:00", 
+					CompleteTime: "2009-11-19T19:59:15+08:00", 
+					User:"0001", 
+					Name:"ユーザ0001", 
 					FaultReason:""};
 
 		SSMILib.onEvent("GetJob", true, _jobInfo);
 		return;
 	}
-
+	
 	job.getJobList();
 	return;
 };
@@ -831,7 +809,6 @@ SSMILib.GetJob = function(jobInfo, jobId, key)
 /**
  * @private
  */
-/*
 SSMILib.GetJob.successCb = function(res)
 {
 	var _jobInfo = null;
@@ -860,44 +837,11 @@ SSMILib.GetJob.successCb = function(res)
 		_result = true;
 	}
 
-
+	
 	SSMILib.onEvent("GetJob", _result, _jobInfo);
 	return;
 };
-*/
 
-SSMILib.GetJob.successCb = function(res)
-{
-	var _jobInfo = null;
-	var _result = false;
-
-	if(!res.responseXML) {
-		SSMILib.onEvent("GetJob", _result, _jobInfo);
-		return;
-	}
-
-	var _jobInfoNode = res.responseXML.getElementsByTagName("JobInfo");
-	if(!_jobInfoNode){
-		SSMILib.onEvent("GetJob", _result, _jobInfo);
-		return;
-	}
-	if(SSMILib.GetJob._key){
-		var _key = SSMILib.GetJob._key;
-		var _keyNodes = _jobInfoNode[i].getElementsByTagName(_key);
-
-		if(_keyNodes){
-			_jobInfo = SSMILib.childNodeToProperty(_keyNodes[0]);
-			_result = true;
-		}
-	} else {
-		_jobInfo = SSMILib.childNodeToProperty(_jobInfoNode[0]);
-		_result = true;
-	}
-
-
-	SSMILib.onEvent("GetJob", _result, _jobInfo);
-	return;
-};
 /**
  * @private
  */
@@ -920,7 +864,7 @@ SSMILib.GetJob.errorCb = function(res)
  * @param {String} jobId ジョブIDを指定する
  * @param {String} [key] 取得する情報の要素名を指定する<br>
  * 「01-03 SESAMi Service Management Interface Specification_JobAttriute.xls」を参照のこと<br>
- *
+ * 
  * @addon
  * @static
  * @lang ja
@@ -953,17 +897,17 @@ SSMILib.GetJobInfo = function(auth, jobId, key)
 	if (SSMILib.dummy) {
 		var _jobInfo = new Object();
 		_jobInfo = {JobID:"00000001-aaaa-bbbb-0000-0123456789ab",
-					Status:"completed",
-					StartTime:"2009-11-19T19:58:32+08:00",
-					CompleteTime: "2009-11-19T19:59:15+08:00",
-					User:"0001",
-					Name:"ユーザ0001",
+					Status:"completed", 
+					StartTime:"2009-11-19T19:58:32+08:00", 
+					CompleteTime: "2009-11-19T19:59:15+08:00", 
+					User:"0001", 
+					Name:"ユーザ0001", 
 					FaultReason:""};
 
 		SSMILib.onEvent("GetJobInfo", true, _jobInfo);
 		return;
 	}
-
+	
 	job.getJobList(auth);
 	return;
 };
@@ -999,7 +943,7 @@ SSMILib.GetJobInfo.successCb = function(res)
 		_result = true;
 	}
 
-
+	
 	SSMILib.onEvent("GetJobInfo", _result, _jobInfo);
 	return;
 };
@@ -1063,16 +1007,16 @@ SSMILib.GetChildJobInfo = function(auth, jobId, key, index)
 	if (SSMILib.dummy) {
 		var _cJobInfo = new Object();
 		_cJobInfo = {ColorMode:"monochrome",
-					Size:"A4",
-					Type:"stationary",
-					BillingMeter: "METER_1",
-					Sheets:"1",
+					Size:"A4", 
+					Type:"stationary", 
+					BillingMeter: "METER_1", 
+					Sheets:"1", 
 					Impressions:"1"};
 
 		SSMILib.onEvent("GetChildJobInfo", true, _cJobInfo);
 		return;
 	}
-
+	
 	job.getChildJobList(auth);
 	return;
 };
@@ -1126,7 +1070,7 @@ SSMILib.GetChildJobInfo.successCb = function(res)
 		}
 	}
 	SSMILib.onEvent("GetChildJobInfo", _result, _jobInfo);
-
+		
 	return;
 };
 

@@ -3,7 +3,7 @@
  * デバイス内部で発生したイベントをDOMイベントとして受信し、<br>
  * 通知するためのJavaScriptライブラリ<br>
  *
- * @author Copyright(C) 2011-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.0
  * @lang ja
  */
@@ -13,7 +13,7 @@
  * JavaScript library for retrieving device events as DOM events and notifying<br>
  * these events.<br>
  *
- * @author Copyright(C) 2011-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.0
  * @lang en
  */

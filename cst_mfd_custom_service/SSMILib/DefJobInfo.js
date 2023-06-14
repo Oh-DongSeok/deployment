@@ -1,12 +1,12 @@
 /** 
  * @fileoverview ジョブ情報取得のための定数を定義する
- * @author Copyright(C) 2008 Fuji Xerox Co., Ltd. All rights reserved. 
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved. 
  * @version 1.0.1
  * @lang ja
  */
  /** 
  * @fileoverview Defines constants for retrieving job information.
- * @author Copyright(C) 2008 Fuji Xerox Co., Ltd. All rights reserved. 
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved. 
  * @version 1.0.1
  * @lang en
  */

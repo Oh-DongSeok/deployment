@@ -3,7 +3,7 @@
  * 以下のメソッドを提供する<br>
  * document.getElementsByClassName<br>
  * document.createElementNS
- * @author Copyright(C) 2007 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.2
  * @lang ja
  */
@@ -13,7 +13,7 @@
  * Provides the following methods:<br>
  * document.getElementsByClassName<br>
  * document.createElementNS
- * @author Copyright(C) 2007 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.2
  * @lang en
  */

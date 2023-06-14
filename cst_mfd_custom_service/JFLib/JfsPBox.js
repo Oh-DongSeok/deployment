@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおける親展ボックス配送ジョブを扱うクラスを定義する<br>
  * PBoxクラス<br><br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.1.1
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes for jobs handling Mailbox documents in Job Flow.<br>
  * PBox class
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.1.1
  * @lang en
  */

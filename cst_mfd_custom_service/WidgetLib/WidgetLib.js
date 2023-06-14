@@ -5,7 +5,7 @@
  * ウィジェットの種別に応じて、ポップアップやボタンとして扱うことができる。
  * 本ライブラリでウィジェットとして扱うノードには必ずID属性が必要になる。<br>
  * 
- * @author Copyright(C) 2009-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.2
  * @lang ja
  */
@@ -16,7 +16,7 @@
  * They can be handled as popups or buttons, according to widget type.
  * ID attributes are required for nodes to be handled as widgets.<br>
  * 
- * @author Copyright(C) 2009-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.2
  * @lang en
  */

@@ -4,7 +4,7 @@
  * ExecuteJFS.Send<br>
  * <br>
  * 使用するには<b>SSMILib/SSMILib.js</b>を参照すること
- * @author Copyright(C) 2011-2013 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.1
  * @lang ja
  *
@@ -15,7 +15,7 @@
  * ExecuteJFS.Send<br>
  * <br>
  * To use this file, see <b>SSMILib/SSMILib.js</b>.
- * @author Copyright(C) 2011-2013 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.1
  * @lang en
  */
@@ -299,28 +299,38 @@ SSMILib.ExecuteJFS.prototype.createMsg = function ()
 //	var header = xml.header;
 	var body = xml.body;
 
-	xml.addNSDeclaration(XMLLib.NS.JT, root, false);
-	xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	root.setAttribute("xmlns:xs", XMLLib.NS.XS);
+	root.setAttribute("xmlns:jtm", XMLLib.NS.JTM);
+	//xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	xml.addNSDeclaration(XMLLib.NS.JTM2, root, false);
+
 	var env = xml.createElementNS(XMLLib.NS.SOAP, 'Envelope');
+	//env.setAttribute("xml:lang","en");
 	xml.addNSDeclaration(XMLLib.NS.JT, env, true);
 	xml.addNSDeclaration(XMLLib.NS.SOAP, env, true);
 	xml.addNSDeclaration(XMLLib.NS.XSI, env, true);
+	env.setAttribute("xml:lang","en");
+	
 
 //	header = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Header'));
 
 	var excjt = body.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'ExecuteJobTemplate'));
 
-	var sjt = excjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
+	var sjt = excjt.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'JobTemplate'));
 	var jth = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplateHeader'));
 	var jt = this.jobtemplate.header.toXmlNode(xml, this.jobtemplate);
 	if (jth != null) jth.appendChild(jt);
-
+	
 	var node = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
 	//The code differ from JfsUtil.js
 	//node.appendChild(this.jobtemplate.header.toXmlNode(xml, this.jobtemplate));
+	// <jtm:RawData xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
 	var rawdataNode = node.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'RawData'));
+	rawdataNode.setAttribute("xmlns:soapENV", "http://schemas.xmlsoap.org/soap/envelope/");
+	rawdataNode.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
 
-	XMLLib.importNode(xml,rawdataNode,this.createJobTemplate());
+	XMLLib.importNode(xml, rawdataNode, this.createJobTemplate());
+
 	if(this.boxesInfo.length){
 		for(idx in this.boxesInfo){
 			if (this.boxesInfo[idx].MailBox && this.boxesInfo[idx].MailBox.Identifier) {
@@ -399,9 +409,11 @@ SSMILib.ExecuteJFS.prototype.createJobTemplate = function () {
 	xml.addNSDeclaration(XMLLib.NS.JT, root, false);
 	xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
 	var env = xml.createElementNS(XMLLib.NS.SOAP, 'Envelope');
+	//env.setAttribute("xml:lang","en");
 	xml.addNSDeclaration(XMLLib.NS.JT, env, true);
 	xml.addNSDeclaration(XMLLib.NS.SOAP, env, true);
 	xml.addNSDeclaration(XMLLib.NS.XSI, env, true);
+	env.setAttribute("xml:lang","en");
 
 	header = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Header'));
 
@@ -539,6 +551,7 @@ SSMILib.ExecuteJFS.Send = function(exeJfsObj, timeout){
 
 	_ws.token = SSMILib.RemoteAccess.Interceptor("WebService", _ws);
 
+	SSMILib.dummy = false;
 	if (SSMILib.dummy) {
 		var _returnObj = null;
 		//TODO Need to define dummy data
@@ -562,7 +575,7 @@ SSMILib.ExecuteJFS.successCb = function(res){
 	var _result = false;
 	var jobId = null;
 	jobId = res.responseXML.getElementsByTagNameNS("" +
-			"http://www.fujixerox.co.jp/2003/12/ssm/management/job",'JobID')[0].firstChild.nodeValue;
+			"http://www.fujifilm.com/fb/2021/03/ssm/management/job",'JobID')[0].firstChild.nodeValue;
 	if(jobId) _result = true;
 	jobId = SSMILib.RemoteAccess.Interceptor("SuccessCb", res, jobId);
 	SSMILib.onEvent("ExecuteJFS", _result, jobId);

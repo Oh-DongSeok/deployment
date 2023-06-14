@@ -4,7 +4,7 @@
  * GetPDLInfo<br>
 
  *
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.0
  * @lang ja
  */
@@ -12,7 +12,7 @@
  * @fileoverview Defines classes for retrieving supported PDL<br>
  * GetPDLInfo<br>
  *
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.0
  * @lang en
  */

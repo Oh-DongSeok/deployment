@@ -1,14 +1,14 @@
 ﻿/** 
  * @fileoverview Browser拡張機能利用のためのJavaScriptライブラリ(V3,V4,V5,XC向けANT=V0共通）
  *
- * @author Copyright(C) 2013 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.4.4
  * @lang ja
  */
 /** 
  * @fileoverview JavaScript library for using extended browser features (for V3, V4, V5, and ANT=V0 for XC)
  *
- * @author Copyright(C) 2013 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.4.4
  * @lang en
  */
@@ -103,15 +103,16 @@ BrowserExt.keyCode.FX_VK_CLEAR = 0;
 BrowserExt.Init = function()
 {
     if( navigator.userAgent.indexOf("ANTGalio/",0) >= 0 ) {
-      this.browserVersion = 0;
+      this.browserVersion = 5;
     }
     else {
       var pos = navigator.userAgent.indexOf("FX-EWB/",0);
       if( pos >= 0 ){
-        this.browserVersion = navigator.userAgent.substr(pos+7,1);
+        //this.browserVersion = navigator.userAgent.substr(pos+7,1);
+        this.browserVersion = 5;
       }
     }
-    this.browserVersion = 5; // 고정값으로 함
+    this.browserVersion = 5;
     if( document.EwbClass == null && this.browserVersion !=0 && this.browserVersion !=5 ) {
          var object = document.createElement("object");
          object.setAttribute("classid","EwbClass");
@@ -446,6 +447,7 @@ BrowserExt.SetScreenChange = function(service)
       ExitCUIMode(name);
       return true;
     }
+    //this.browserVersion = 5;
     if( this.browserVersion == 5 ) {
       return EwbClass.screenChange(name);
     }

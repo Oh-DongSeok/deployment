@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおけるプリント出力を扱うクラスを定義する<br>
  * Printクラス<br><br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.6.0
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes handling document print output in Job Flow:<br>
  * Print class
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.6.0
  * @lang en
  */
@@ -88,7 +88,7 @@ JFLib.Print = function()
 	 * @default Uncollate (false)
 	 * @lang en
 	 */ 
-	this.collate = true;
+	this.collate = false;
 
 	/**
 	 * 片面･両面プリントを指定する<br> 設定 - 任意
@@ -182,12 +182,6 @@ JFLib.Print = function()
      *  @type JFLib.ComPrint.SeconderyOutputColor
      *  @default しない
      *  @lang ja
-     */
-	/**
-     *  Specifies the color and the method of changing color for two-color printing.<br> IMPLIED.
-     *  @type JFLib.ComPrint.SeconderyOutputColor
-     *  @default Do not change color
-     *  @lang en
      */
     this.seconderyOutputColor = new JFLib.ComPrint.SeconderyOutputColor();
 	//Modification for 2Color Print (FXKIS : Soyeon, Hwang ) End

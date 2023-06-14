@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	<soap:Body>
+		<GetAttribute xmlns="http://www.fujifilm.com/fb/2021/04/ssm/management/statusConfig">
+			<Object name="urn:fujifilm:names:ssm:1.0:management:root">
+				<Attribute name="Name" />
+				<Attribute name="ServiceIdentifier" />
+				<Attribute name="Version" />
+				<Attribute name="SSLStatus" />
+				<Attribute name="SJFIVersion" />
+				<Attribute name="SSMIVersion" />
+			</Object>
+			<Object name="urn:fujifilm:names:ssm:1.0:management:productInformation">
+				<Attribute name="serialNumber" />
+				<Attribute name="productCode" />
+			</Object>
+			<Object name="urn:fujifilm:names:ssm:1.0:management:systemInformation">
+				<Attribute name="Name" />
+				<Attribute name="Contact" />
+				<Attribute name="Location" />
+				<Attribute name="Comment" />
+				<Attribute name="Locale" />
+			</Object>
+			<Object name="urn:fujifilm:names:ssm:1.0:management:scannerCapability">
+				<Attribute name="ColorMode" />
+			</Object>
+			<Object name="urn:fujifilm:names:ssm:1.0:management:printerCapability">
+				<Attribute name="ColorMode" />
+			</Object>
+			<Object name="urn:fujifilm:names:ssm:1.0:management:scannerStatus">
+				<Attribute name="DADFOriginalExist" />
+			</Object>
+		</GetAttribute>
+	</soap:Body>
+</soap:Envelope>

@@ -2,7 +2,7 @@ var DATA = {
 	"DEFAULT_CHECK":true,
 	"BAR_TITLE":"CST Print",
 	"TITLE_NAME":"Billing App",
-	"SERVER_URL":"http://192.168.0.61:9001/",
+	"SERVER_URL":"http://10.97.4.42:9001/",
 	"SERVICE":{
 		"SCAN":true,
 		"FAX":true,

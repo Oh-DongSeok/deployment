@@ -6,7 +6,7 @@
  * SetCsvLocalData 	<br>
  * DeletetCsvLocalData <br>
  *
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.1.0
  * @lang ja
  */
@@ -18,7 +18,7 @@
  * SetCsvLocalData 	<br>
  * DeleteCsvLocalData<br>
  *
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.1.0
  * @lang en
  */
@@ -182,7 +182,7 @@ SSMILib.CsvLocalData.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 
-	var cvs4NS	=	"http://www.fujixerox.co.jp/2010/06/ssm/management/csv";
+	var cvs4NS	=	"http://www.fujifilm.com/fb/2021/04/ssm/management/csv";
 	xml.addNSPrefix(cvs4NS, "csv4");
 
 	var mainTag = body.appendChild(xml.createElementNS(cvs4NS, this.type));
@@ -254,7 +254,7 @@ SSMILib.ListCsvLocalData = function(auth, area, filterObj)
 	_ws.successHandler = SSMILib.CsvLocalData.listSuccessCb;
 	_ws.errorHandler = SSMILib.CsvLocalData.listErrorCb;
 	//_ws.timeoutHandler = SSMILib.CsvLocalData.listErrorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2010/06/ssm/management/csv#ListCsvLocalData"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/csv#ListCsvLocalData"';
 	_ws.isDeviceReq = true;
 
 	if(auth){
@@ -291,7 +291,7 @@ SSMILib.CsvLocalData.listSuccessCb = function(res)
 	}
 
 	var _resNode = res.responseXML.getElementsByTagNameNS(
-			"http://www.fujixerox.co.jp/2010/06/ssm/management/csv","ListCsvLocalDataResponse");
+			"http://www.fujifilm.com/fb/2021/04/ssm/management/csv","ListCsvLocalDataResponse");
 
 	if(_resNode.length && _resNode[0].hasChildNodes()){
 		var _resNodeLen = _resNode[0].childNodes.length;
@@ -354,7 +354,7 @@ SSMILib.GetCsvLocalData = function(auth, id, area)
 	_ws.successHandler = SSMILib.CsvLocalData.getSuccessCb;
 	_ws.errorHandler = SSMILib.CsvLocalData.getErrorCb;
 	//_ws.timeoutHandler = SSMILib.ListCsvLocalData.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2010/06/ssm/management/csv#GetCsvLocalData"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/csv#GetCsvLocalData"';
 	_ws.isDeviceReq = true;
 
 	_ws.token = SSMILib.RemoteAccess.Interceptor("WebService", _ws);
@@ -395,7 +395,7 @@ SSMILib.CsvLocalData.getSuccessCb = function(res)
 	_dataList = SSMILib.RemoteAccess.Interceptor("SuccessCb", res, _dataList);
 
 	var _resNode = res.responseXML.getElementsByTagNameNS(
-			"http://www.fujixerox.co.jp/2010/06/ssm/management/csv","GetCsvLocalDataResponse");
+			"http://www.fujifilm.com/fb/2021/04/ssm/management/csv","GetCsvLocalDataResponse");
 
 	if(_resNode.length && _resNode[0].hasChildNodes()){
 		var _resNodeLen = _resNode[0].childNodes.length;
@@ -472,7 +472,7 @@ SSMILib.SetCsvLocalData = function(id, auth, data, area)
 	_ws.errorHandler = SSMILib.CsvLocalData.setErrorCb;
 	//_ws.timeoutHandler = SSMILib.CsvLocalData.setErrorCb;
 
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2010/06/ssm/management/csv#SetCsvLocalData"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/csv#SetCsvLocalData"';
 	_ws.isDeviceReq = true;
 
 	if(auth){
@@ -556,7 +556,7 @@ SSMILib.DeleteCsvLocalData = function(auth, id, area)
 	_ws.successHandler = SSMILib.CsvLocalData.delSuccessCb;
 	_ws.errorHandler = SSMILib.CsvLocalData.delErrorCb;
 	//_ws.timeoutHandler = SSMILib.CsvLocalData.delErrorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2010/06/ssm/management/csv#DeleteCsvLocalData"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/csv#DeleteCsvLocalData"';
 	_ws.isDeviceReq = true;
 
 	if(auth){

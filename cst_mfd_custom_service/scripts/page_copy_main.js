@@ -248,7 +248,10 @@ function saveScanSelection(){
 	glbSetting.selectScanSettings.manualMag 		= document.getElementById("box_copy_setting_manual_mag"	).value;
 	//glbSetting.selectScanSettings.outputMediumSize = document.getElementById("copy_setting_output_size").selectedIndex;
 	glbSetting.selectScanSettings.outputMediumSize 	= document.getElementById("copy_setting_output_size"	).value;
-	glbSetting.selectScanSettings.FeedDirection 	= glbInfo.trayInfo[document.getElementById("copy_setting_output_size").selectedIndex].FeedDirection;
+	
+	//glbSetting.selectScanSettings.FeedDirection 	= glbInfo.trayInfo[document.getElementById("copy_setting_output_size").selectedIndex].FeedDirection;
+	glbSetting.selectScanSettings.FeedDirection 	= 0;
+	
 	glbSetting.selectScanSettings.outputCopiese 	= document.getElementById("box_copy_setting_copies"		).value;
 	glbSetting.selectScanSettings.copies 			= document.getElementById("box_copy_setting_copies"		).value;
 }

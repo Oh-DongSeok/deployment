@@ -1,14 +1,14 @@
 ﻿/** 
  * @fileoverview ジョブフロー作成のために共通で使用される定数を定義する
  *
- * @author Copyright(C) 2007-2012 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants commonly used in creating Job Flow.
  *
- * @author Copyright(C) 2007-2012 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang en
  */

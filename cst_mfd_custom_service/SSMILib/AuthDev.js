@@ -3,7 +3,7 @@
  * ログイン/ログアウト処理に関して以下のメソッドを提供する<br>
  * Login/Logout<br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.2
  * @lang ja
  */
@@ -12,7 +12,7 @@
  * Provides the following methods for login/logout processing:<br>
  * Login/Logout<br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.2
  * @lang en
  */
@@ -105,7 +105,7 @@ SSMILib.Login.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 
-	var localNS = "http://www.fujixerox.co.jp/2009/01/ssm/management/local";
+	var localNS = "http://www.fujifilm.com/fb/2021/01/ssm/management/local";
 
 	xml.addNSPrefix(localNS, "lcl");
 
@@ -169,7 +169,7 @@ SSMILib.LoginDev = function(userId, password, realm, bltinUser, isKeyOperator)
 	_ws.successHandler = SSMILib.LoginDev.successCb;
 	_ws.errorHandler = SSMILib.LoginDev.errorCb;
 	//_ws.timeoutHandler = SSMILib.LoginDev.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2009/01/ssm/management/local#Login"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/01/ssm/management/local#Login"';
 	_ws.isDeviceReq = true;
 	var _targetURL = SSMILib.protocol + SSMILib.host + "/ssm/Management/Local";
 
@@ -207,7 +207,7 @@ SSMILib.LoginDev.successCb = function(res)
 	}
 	SSMILib.onEvent("LoginDev", _result, null);
 
-	return;
+	return
 };
 /**
  * @private
@@ -216,7 +216,7 @@ SSMILib.LoginDev.errorCb = function(res)
 {
 	SSMILib.onEvent("LoginDev", false, null);
 
-	return;
+	return
 };
 
 /**
@@ -250,7 +250,7 @@ SSMILib.Logout.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 
-	var localNS = "http://www.fujixerox.co.jp/2009/01/ssm/management/local";
+	var localNS = "http://www.fujifilm.com/fb/2021/01/ssm/management/local";
 
 	xml.addNSPrefix(localNS, "lcl");
 
@@ -281,7 +281,7 @@ SSMILib.LogoutDev = function()
 	_ws.successHandler = SSMILib.LogoutDev.successCb;
 	_ws.errorHandler = SSMILib.LogoutDev.errorCb;
 	//_ws.timeoutHandler = SSMILib.LogoutDev.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2009/01/ssm/management/local#Logout"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/01/ssm/management/local#Logout"';
 	_ws.isDeviceReq = true;
 	var _targetURL = SSMILib.protocol + SSMILib.host + "/ssm/Management/Local";
 
@@ -311,13 +311,13 @@ SSMILib.LogoutDev.successCb = function(res)
 	}
 	SSMILib.onEvent("LogoutDev", _result, null);
 
-	return;
+	return
 };
 SSMILib.LogoutDev.errorCb = function(res)
 {
 	SSMILib.onEvent("LogoutDev", false, null);
 
-	return;
+	return
 };
 
 /**
@@ -351,7 +351,7 @@ SSMILib.AuthStatus.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 
-	var local2NS = "http://www.fujixerox.co.jp/2010/02/ssm/management/local";
+	var local2NS = "http://www.fujifilm.com/fb/2021/02/ssm/management/local";
 
 	xml.addNSPrefix(local2NS, "lcl2");
 
@@ -384,7 +384,7 @@ SSMILib.GetAuthStatus = function(auth)
 	_ws.successHandler = SSMILib.GetAuthStatus.successCb;
 	_ws.errorHandler = SSMILib.GetAuthStatus.errorCb;
 	//_ws.timeoutHandler = SSMILib.LogoutDev.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2010/02/ssm/management/local#GetAuthenticationStatus"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/02/ssm/management/local#GetAuthenticationStatus"';
 	_ws.isDeviceReq = true;
 
 	if(auth){
@@ -437,5 +437,5 @@ SSMILib.GetAuthStatus.errorCb = function(res)
 {
 	SSMILib.onEvent("GetAuthStatus", false, null);
 
-	return;
+	return
 };

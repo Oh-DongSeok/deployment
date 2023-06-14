@@ -3,7 +3,7 @@
  * 以下のメソッドを提供する<br>
  * encode<br>
  * decode
- * @author Copyright(C) 2007-2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.1.1
  * @lang ja
  */
@@ -12,7 +12,7 @@
  * Provides the following methods:<br>
  * encode<br>
  * decode
- * @author Copyright(C) 2007-2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.1.1
  * @lang en
  */

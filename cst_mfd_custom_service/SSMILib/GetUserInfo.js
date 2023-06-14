@@ -3,7 +3,7 @@
  * ユーザの詳細情報取得に関して以下のメソッドを提供する<br>
  * GetUserInfo<br><br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.1
  * @lang ja
  */
@@ -12,7 +12,7 @@
  * Provides the following methods for retrieving user informatio details.<br>
  * GetUserInfo<br><br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.1
  * @lang en
  */
@@ -119,9 +119,9 @@ SSMILib.UserInfo.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 
-	var mgtNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management";
-	var userNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management/user";
-	var usiNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management/user/information";
+	var mgtNS	=	"http://www.fujifilm.com/fb/2020/12/ssm/management";
+	var userNS	=	"http://www.fujifilm.com/fb/2021/01/ssm/management/user";
+	var usiNS	=	"http://www.fujifilm.com/fb/2021/01/ssm/management/user/information";
 
 	xml.addNSPrefix(usiNS, "usi");
 	xml.addNSPrefix(mgtNS, "mgt");
@@ -189,7 +189,7 @@ SSMILib.GetUserInfo = function(start, key, count, end)
 	_ws.successHandler = SSMILib.GetUserInfo.successCb;
 	_ws.errorHandler = SSMILib.GetUserInfo.errorCb;
 	//_ws.timeoutHandler = SSMILib.GetUserInfo.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2003/12/ssm/management/user/information#GetUserInformation"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/01/ssm/management/user/information#GetUserInformation"';
 	_ws.isDeviceReq = true;
 	var _targetURL = SSMILib.protocol + SSMILib.host + "/ssm/Management/UserInformation";
 

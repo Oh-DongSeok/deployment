@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおける親展ボックスジョブを扱うクラスを定義する<br>
  * Mailboxクラス<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.0
  * @lang ja
  * 
@@ -11,7 +11,7 @@
  * @fileoverview Defines classes handling Mailbox jobs in Job Flow:<br>
  * Mailbox Class
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.2.0
  * @lang en
  * 

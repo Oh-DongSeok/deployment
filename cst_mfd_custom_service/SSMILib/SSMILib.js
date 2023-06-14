@@ -2,7 +2,7 @@
  * @fileoverview SESAMiI/F利用のためのクラス定義<br>
  * SESAMiI/F利用のために必要な基本となるクラスが定義される<br>
  * SSMILibを使用する際には、本ライブラリを必ず最初にロードすること
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.0
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes for using SESAMiI/F.<br>
  * Defines basic classes necessary for using SESAMiI/F.<br>
  * To use SSMILib, this library must be loaded first.
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.0
  * @lang en
  */
@@ -539,7 +539,7 @@ SSMILib.Filters = function(){
 SSMILib.Filters.prototype.toXmlNode = function (xml)
 {
 	if(this.filterType){
-		var mgtNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management";
+		var mgtNS	=	"http://www.fujifilm.com/fb/2020/12/ssm/management";
 		xml.addNSPrefix(mgtNS, "mgt");
 		var filters = xml.createElementNS(mgtNS, 'Filters');
 		var filter = xml.createElementNS(mgtNS, this.filterType);

@@ -1,8 +1,8 @@
-﻿/**
+/**
  * @fileoverview カスタム・サービス登録のためのクラス定義<br>
  * 以下のメソッドを提供する<br>
  * AddCsv<br>
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.0
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes for registering Custom Service to device.<br>
  * Provides the following methods:<br>
  * AddCsv<br>
- * @author Copyright(C) 2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.0
  * @lang en
  */
@@ -483,7 +483,7 @@ SSMILib.CsvAdd.prototype.createMsg = function()
 	var env = root;
 	var body = xml.body;
 	
-	var csvNs = "http://www.fujixerox.co.jp/2007/07/ssm/management/csv";
+	var csvNs = "http://www.fujifilm.com/fb/2021/01/ssm/management/csv";
 	xml.addNSPrefix(csvNs, "csv");
 	
 	var _addCsvNode = body.appendChild(xml.createElementNS(csvNs, "AddCsv"));
@@ -603,7 +603,7 @@ SSMILib.AddCsv = function(obj)
 	_ws.async = SSMILib.async;
 	_ws.successHandler = SSMILib.AddCsv.successCb;
 	_ws.errorHandler = SSMILib.AddCsv.errorCb;
-	_ws.soapAction = '"http://www.fujixerox.co.jp/2007/07/ssm/management/csv#AddCsv"';
+	_ws.soapAction = '"http://www.fujifilm.com/fb/2021/01/ssm/management/csv#AddCsv"';
 	_ws.isDeviceReq = true;
 	
 	var _targetURL = SSMILib.protocol + SSMILib.host + "/ssm/Management/Csv";
@@ -680,7 +680,7 @@ SSMILib.AddCsv.successCb = function(res)
 		return;
 	}
 	
-	var _resNode = res.responseXML.getElementsByTagNameNS("http://www.fujixerox.co.jp/2007/07/ssm/management/csv", "AddCsvResponse");
+	var _resNode = res.responseXML.getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/01/ssm/management/csv", "AddCsvResponse");
 	
 	if(_resNode.length){
 		_result = true;

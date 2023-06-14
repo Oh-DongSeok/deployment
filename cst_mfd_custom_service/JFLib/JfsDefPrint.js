@@ -1,14 +1,14 @@
 ﻿/** 
  * @fileoverview ジョブフローにおけるプリント・コピージョブを扱うクラスで使用される定数を定義する<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.4.0
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants used in classes handling Print/Copy jobs in Job Flow.
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2012 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.4.0
  * @lang en
  */
@@ -1129,13 +1129,6 @@ JFLib.NUPSHIFT = 'left';
  * @constant
  * @lang ja
  */
-/**
- * There is no need to explicitly call this constructor.
- * @class This class defines constants used in <a href="JFLib.Print.html#colorMode">OutputColor</a>.
- * @constructor There is no need to explicitly call this constructor.
- * @constant
- * @lang en
- */
 JFLib.PRINT_OUTPUTCOLOR = function() {};
 
 /**
@@ -1144,13 +1137,6 @@ JFLib.PRINT_OUTPUTCOLOR = function() {};
  * @constructor このコンストラクタを明示的に呼び出す必要はない
  * @constant
  * @lang ja
- */
-/**
- * There is no need to explicitly call this constructor.
- * @class This class defines constants used in <a href="JFLib.Print.html#colorMode">OutputColor</a>.
- * @constructor There is no need to explicitly call this constructor.
- * @constant
- * @lang en
  */
 JFLib.PRINT_OUTPUTCOLOR.METHOD = function() {};
 
@@ -1161,13 +1147,6 @@ JFLib.PRINT_OUTPUTCOLOR.METHOD = function() {};
  * @constant
  * @lang ja
  */
-/**
- * Specifies the color conversion processing based on the brightness of the document contents.
- * @final
- * @type String
- * @constant
- * @lang en
- */
 JFLib.PRINT_OUTPUTCOLOR.METHOD.BRIGHTNESS = "Brightness";
 
 /**
@@ -1176,13 +1155,6 @@ JFLib.PRINT_OUTPUTCOLOR.METHOD.BRIGHTNESS = "Brightness";
  * @type String
  * @constant
  * @lang ja
- */
-/**
- * Specifies the color conversion processing based on the saturation of the document contents.
- * @final
- * @type String
- * @constant
- * @lang en
  */
 JFLib.PRINT_OUTPUTCOLOR.METHOD.SATURATION = "Saturation";
 //Modification for 2Color Print (FXKIS : Soyeon, Hwang ) End

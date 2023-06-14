@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおけるプリント・コピージョブの共通クラスを定義する<br>
  * プリント・コピージョブ共通で使用される各種クラス<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2010-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes common to Print/Copy jobs in Job Flow.<br>
  * Classes used commonly by Print and Copy jobs.<br>
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2010-2012 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang en
  */
@@ -358,12 +358,6 @@ JFLib.ComPrint.PageSet.prototype.toXmlNode = function(xml)
  * @class 2色プリント時の色/変換方法を設定する。<br>
  * @lang ja
  */
-/**
- * Creates SeconderyOutputColor instance.
- * @constructor
- * @class Specifies the color used for two-color printing and the method for changing color.<br>
- * @lang en
- */
 JFLib.ComPrint.SeconderyOutputColor = function()
 {
 	/**
@@ -372,39 +366,20 @@ JFLib.ComPrint.SeconderyOutputColor = function()
 	 *	@default false
      *  @lang ja
 	 */
-	/**
-	 *	Specifies whether or not to specify an alternative color by true/false.<br>
-	 *	@type Bool
-	 *	@default false
-     *  @lang en
-	 */
 	this.enable = false;
 	
 	/**
 	 *	出力色<br>
 	 *	指定可能な値は, 以下の色に相当する定数のみである。<br>
-　	　*	- レッド<br>
-　	　*	- グリーン<br>
-　	　*	- ブルー<br>
-　	　*	- シアン<br>
-　	　*	- マゼンタ<br>
-　	　*	- イエロー<br>　	　
+　	　*	- レッド
+　	　*	- グリーン
+　	　*	- ブルー
+　	　*	- シアン
+　	　*	- マゼンタ
+　	　*	- イエロー	
 	 *	@type JFLib.NAMEDCOLOR
 	 *	@default null
      *  @lang ja
-	 */
-	/**
-	 *	Output color<br>
-	 *	Only the constants representing the following colors can be specified.<br>
-　	　*	- Red<br>
-　	　*	- Green<br>
-　	　*	- Blue<br>
-　	　*	- Cyan<br>
-　	　*	- Magenta<br>
-　	　*	- Yellow<br>
-	 *	@type JFLib.NAMEDCOLOR
-	 *	@default null
-     *  @lang en
 	 */
 	this.namedColor = "";
 	
@@ -414,12 +389,6 @@ JFLib.ComPrint.SeconderyOutputColor = function()
 	 *	@default null
      *  @lang ja
 	 */
-	/**
-	 *	The method for changing color<br>
-	 *	@type JFLib.PRINT_OUTPUTCOLOR.METHOD
-	 *	@default null
-     *  @lang en
-	 */
 	this.method = "";
 }
 
@@ -427,11 +396,6 @@ JFLib.ComPrint.SeconderyOutputColor = function()
  * @private
  * outputColorオブジェクトをxml node化する
  * @lang ja
- */
-/**
- * @private
- * Creates xml node from outputColor object
- * @lang en
  */
 JFLib.ComPrint.SeconderyOutputColor.prototype.toXmlNode = function (xml)
 {

@@ -8,7 +8,7 @@
  * のロードが必要となる。<br>
  * 本ファイルをロードするとこれらのファイルは自動でロードされる。<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2011 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.1
  * @lang ja 
  * 
@@ -23,7 +23,7 @@
  * must be loaded.<br>
  * These files are loaded automatically when this file is loaded.<br>
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2011 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.1
  * @lang en 
  * 

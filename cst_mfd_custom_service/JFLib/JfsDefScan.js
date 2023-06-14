@@ -1,15 +1,15 @@
 ﻿/** 
  * @fileoverview ジョブフローにおけるスキャン・コピージョブを扱うクラスで使用される定数を定義する<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2014 Fuji Xerox Co., Ltd. All rights reserved.
- * @version 2.5.0
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
+ * @version 2.4.0
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants used in classes handling Scan/Copy jobs in Job Flow.
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2014 Fuji Xerox Co., Ltd. All rights reserved.
- * @version 2.5.0
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
+ * @version 2.4.0
  * @lang en
  */
 
@@ -547,13 +547,6 @@ JFLib.IM.PHOTO = "Photo";
  * @type String
  * @constant
  * @lang ja
- */
-/**
- * Magazine (text and photo)
- * @final
- * @type String
- * @constant
- * @lang en
  */
 JFLib.IM.MAGAZINE = "Magazine";
 
@@ -3086,61 +3079,5 @@ JFLib.OCRLANG.EN = 'en';
  * @type String
  */
 JFLib.OCRLANG.DEFAULT = 'x-default';
-
-/**
- * このコンストラクタを明示的に呼び出す必要はない
- * @class 色空間を定義したクラス
- * @constructor このコンストラクタを明示的に呼び出す必要はない
- * @lang ja
- */
-/**
- * There is no need to explicitly call this constructor.
- * @class This class defines the color space.
- * @constructor There is no need to explicitly call this constructor.
- * @lang en 
- */
-JFLib.NAMEDCOLORSPACE = function(){};
-
-/**
- * 標準YCC
- * @constant
- * @type String
- * @lang ja
- */
-/**
- * Standard YCC
- * @constant
- * @type String
- * @lang en
- */
-JFLib.NAMEDCOLORSPACE.STDYCC = "sYCC";
-
-/**
- * デバイスRGB
- * @constant
- * @type String
- * @lang ja
- */
-/**
- * Device RGB (RGB colorspace defined by device.)
- * @constant
- * @type String
- * @lang en
- */
-JFLib.NAMEDCOLORSPACE.DRGB = "DeviceRGB";
-
-/**
- * デバイスYCC
- * @constant
- * @type String
- * @lang ja
- */
-/**
- * Device YCC (YCC colorspace defined by device.)
- * @constant
- * @type String
- * @lang en
- */
-JFLib.NAMEDCOLORSPACE.DYCC = "DeviceYCC";
 
 JFLib.JSIncluded("JfsDefScan");

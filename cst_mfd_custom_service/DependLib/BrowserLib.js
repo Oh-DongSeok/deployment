@@ -5,7 +5,7 @@
  * getScreenType<br>
  * getScreenWidth<br>
  * initialize
- * @author Copyright (C) 2008-2013 FujiXerox Co.,Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.0
  * @lang ja
  */
@@ -17,7 +17,7 @@
  * getScreenType<br>
  * getScreenWidth<br>
  * initialize
- * @author Copyright (C) 2008-2013 FujiXerox Co.,Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.1.0
  * @lang en
  */
@@ -219,6 +219,20 @@ BrowserLib.ScreenType =
 	 */
 	SVGA_ALL_SCREEN				:	"svga_all",
 	/**
+	 *	800×600の大きさでコンテンツがメニューバー付きで表示される
+	 *	@type String
+	 *	@static
+	 *	@constant
+	 *  @lang ja
+	 */
+	/**
+	 *	Custom Service application is dipslayed on 800×600 area with menu bar.
+	 *	@type String
+	 *	@static
+	 *	@constant
+	 *  @lang en
+	 */
+	/**
 	 *	1024×600の大きさでコンテンツがメッセージエリア付きで表示される
 	 *	@type String
 	 *	@static
@@ -233,20 +247,6 @@ BrowserLib.ScreenType =
 	 *  @lang en
 	 */
 	WSVGA_ALL_SCREEN				:	"wsvga_all",
-	/**
-	 *	800×600の大きさでコンテンツがメニューバー付きで表示される
-	 *	@type String
-	 *	@static
-	 *	@constant
-	 *  @lang ja
-	 */
-	/**
-	 *	Custom Service application is dipslayed on 800×600 area with menu bar.
-	 *	@type String
-	 *	@static
-	 *	@constant
-	 *  @lang en
-	 */
 	SVGA_WITH_MENUBAR			:	"svga_menu",
 	/**
 	 *	800×600の大きさでコンテンツがメッセージエリア付きで表示される

@@ -3,7 +3,7 @@
  * プリンター構成取得に関して以下のメソッドを提供する<br>
  * GetPrinterCapability<br><br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.1
  * @lang ja
  */
@@ -13,7 +13,7 @@
  * Provides the following methods for retrieving printer configuration information:<br>
  * GetPrinterCapability<br><br>
  *
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.1
  * @lang en
  */

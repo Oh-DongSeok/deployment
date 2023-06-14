@@ -1,14 +1,14 @@
 ﻿/** 
  * @fileoverview 文書転送を含むジョブフローのために共通で使用される定数を定義する<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants commonly used in creating Job Flows which specify document distribution.
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang en
  */
@@ -439,12 +439,6 @@ JFLib.SR.SYSTEM = 'System';
  * @constructor このコンストラクタを明示的に呼び出す必要はない
  * @lang ja
  */
-/**
- * There is no need to explicitly call this constructor.
- * @class This class defines constants used in the MRC (Mixed Raster Content) method.
- * @constructor There is no need to explicitly call this constructor.
- * @lang en
- */
 JFLib.MRCTYPE = function(){};
 
 /**
@@ -452,12 +446,6 @@ JFLib.MRCTYPE = function(){};
  * @type String
  * @constant
  * @lang ja
- */
-/**
- * The MRC (Mixed Raster Content) method is not used.
- * @type String
- * @constant
- * @lang en
  */
 JFLib.MRCTYPE.PLAIN = "";
 
@@ -467,12 +455,6 @@ JFLib.MRCTYPE.PLAIN = "";
  * @constant
  * @lang ja
  */
-/**
- * Creates multi-layered images.
- * @type String
- * @constant
- * @lang en
- */
 JFLib.MRCTYPE.MULTI_LAYER = "CreateMultiLayers";
 
 /**
@@ -480,12 +462,6 @@ JFLib.MRCTYPE.MULTI_LAYER = "CreateMultiLayers";
  * @type String
  * @constant
  * @lang ja
- */
-/**
- * Specifies whether to perform two-color output.
- * @type String
- * @constant
- * @lang en
  */
 JFLib.MRCTYPE.SPECIFIC_COLOR = "SpecificColor";
 
@@ -495,12 +471,6 @@ JFLib.MRCTYPE.SPECIFIC_COLOR = "SpecificColor";
  * @constant
  * @lang ja
  */
-/**
- * Automatic setting
- * @type String
- * @constant
- * @lang en
- */
 JFLib.MRCTYPE.AUTO = "Auto";
 
 /**
@@ -508,12 +478,6 @@ JFLib.MRCTYPE.AUTO = "Auto";
  * @class 文書の正立方法に用いられる定数を定義したクラス
  * @constructor このコンストラクタを明示的に呼び出す必要はない
  * @lang ja
- */
-/**
- * There is no need to explicitly call this constructor.
- * @class This class defines constants used for specifying the method of correcting the orientation of documents.
- * @constructor There is no need to explicitly call this constructor.
- * @lang en
  */
 JFLib.ORIENTATION = function(){};
 
@@ -524,13 +488,6 @@ JFLib.ORIENTATION = function(){};
  * @constant
  * @lang ja
  */
-/**
- * Does not correct the orientation of documents.
- * @final
- * @type String
- * @constant
- * @lang en
- */
 JFLib.ORIENTATION.NULL = "";
 
 /**
@@ -539,13 +496,6 @@ JFLib.ORIENTATION.NULL = "";
  * @type String
  * @constant
  * @lang ja
- */
-/**
- * Corrects the orientation of documents automatically.
- * @final
- * @type String
- * @constant
- * @lang en
  */
 JFLib.ORIENTATION.AUTO = "Auto";
 

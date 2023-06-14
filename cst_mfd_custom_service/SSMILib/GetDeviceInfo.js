@@ -4,7 +4,7 @@
  * 各メソッドは別ファイルとして定義される<br>
  * DeviceInfoクラス<br>
  * 
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.1
  * @lang ja
  */
@@ -14,7 +14,7 @@
  * Methods are defined as separate files.<br>
  * DeviceInfo Class <br>
  * 
- * @author Copyright(C) 2010 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.0.1
  * @lang en
  */
@@ -165,7 +165,7 @@ SSMILib.DeviceInfo.prototype.createMsg = function ()
 	var env = root;
 	var body = xml.body;
 	
-	var cfgNS = "http://www.fujixerox.co.jp/2003/12/ssm/management/statusConfig";
+	var cfgNS = "http://www.fujifilm.com/fb/2021/04/ssm/management/statusConfig";
 	xml.addNSPrefix(cfgNS, "cfg");
 
 	var _getAttrNode = body.appendChild(xml.createElementNS(cfgNS, "GetAttribute"));
@@ -179,7 +179,7 @@ SSMILib.DeviceInfo.prototype.createMsg = function ()
 		var _objLen = this.obj.length;
 		for (var i = 0; i < _objLen; i++){
 			_objNode = _getAttrNode.appendChild(xml.createElement("Object"));
-			_objNode.setAttribute("name", "urn:fujixerox:names:ssm:1.0:management:" + this.obj[i]);
+			_objNode.setAttribute("name", "urn:fujifilm:names:ssm:1.0:management:" + this.obj[i]);
 			if(this.identifier && this.identifier[i]){
 				_objNode.setAttribute("identifier", this.identifier[i]);
 			}
@@ -195,7 +195,7 @@ SSMILib.DeviceInfo.prototype.createMsg = function ()
 	/*クラス名が1つ引数として渡されていた時*/
 	} else {
 		_objNode = _getAttrNode.appendChild(xml.createElement("Object"));
-		_objNode.setAttribute("name", "urn:fujixerox:names:ssm:1.0:management:" + this.obj);
+		_objNode.setAttribute("name", "urn:fujifilm:names:ssm:1.0:management:" + this.obj);
 		if(this.identifier){
 			_objNode.setAttribute("identifier", this.identifier);
 		}
@@ -231,7 +231,7 @@ SSMILib.DeviceInfo.prototype.createMsg = function ()
  */
 SSMILib.DeviceInfo.prototype.getDeviceInfo = function(auth){
 
-	this.requester.soapAction = '"http://www.fujixerox.co.jp/2003/12/ssm/management/statusConfig#GetAttribute"';
+	this.requester.soapAction = '"http://www.fujifilm.com/fb/2021/04/ssm/management/statusConfig#GetAttribute"';
 	this.requester.isDeviceReq = true;
 	this.requester.async = SSMILib.async;
 	this.auth = auth;

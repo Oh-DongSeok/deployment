@@ -1,10 +1,18 @@
 ﻿/** 
  * @fileoverview ジョブフローにおける外部サービス連携処理を扱うクラスを定義する<br>
  * Invokeクラス<br>
- * 詳細については、「デバイス指示書言語仕様 外部サービス呼び出し編」 2.2.1 Invoke要素を参照
- *
- * @author Copyright(C) 2007-2009 FujiXerox Co., Ltd. All rights reserved.
- * @version 2.1.1
+ * 詳細については、「デバイス指示書言語仕様 外部サービス呼び出し編」 2.2.1 Invoke要素を参照<br>
+ * これらのクラスを使うためには
+ * <ul>
+ * <li>JfsDistribute.js
+ * <li>JfsDefDistribute.js
+ * <li>JfsDefInvoke.js
+ * </ul>
+ * のロードが必要となる。<br>
+ * 本ファイルをロードするとこれらのファイルは自動でロードされる。<br>
+ * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
+ * @version 2.2.0
  * @lang ja
  * 
  */
@@ -12,9 +20,17 @@
  * @fileoverview Defines classes used in External Service Requests (ESR) in Job Flow: <br>
  * Invoke class<br>
  * See Job Flow Sheet Language Specifications document on External Service Request (JSLS-0711) for details.
- *
- * @author Copyright(C) 2007-2009 FujiXerox Co., Ltd. All rights reserved.
- * @version 2.1.1
+ * To use these classes,
+ * <ul>
+ * <li>JfsDistribute.js
+ * <li>JfsDefDistribute.js
+ * <li>JfsDefInvoke.js
+ * </ul>
+ * must be loaded.<br>
+ * These files are loaded automatically when this file is loaded.<br>
+ * To use this file, see <b>JFLib/JfsCom.js</b>.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
+ * @version 2.2.0
  * @lang en
  * 
  */
@@ -511,6 +527,29 @@ JFLib.Invoke.Attach = function()
 	 */	
 	this.encode = JFLib.ENCODE.BINARY;
 
+	/**
+	 * MRC（Mixed Raster Content）方式を指定する。
+	 * @type JFLib.Distribute.MrcType
+	 * @default null
+	 * @lang ja
+	 */
+	this.mrcType = "";
+
+	/**
+	 * スキャン文書の正立を指定する。
+	 * @type JFLib.Distribute.Orientation
+	 * @default 正立方法を指定しない
+	 * @lang ja
+	 */
+	this.orientation = "";
+
+	/**
+	 * 文書のスキュー補正（傾き補正）の方式を指定する。
+	 * @type JFLib.Distribute.SkewCorrection
+	 * @default スキュー補正をしない
+	 * @lang ja
+	 */
+	this.skewCorrection = "";
 };
 /**
  * @private
@@ -526,6 +565,22 @@ JFLib.Invoke.Attach.prototype.toXmlNode = function(xml)
 	var serialize = attach.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Serialization'));
 	serialize.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Compression', 'NotSpecified'));
 	serialize.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Format', this.docFormat));
+
+	if(this.mrcType && this.mrcType.method != JFLib.MRCTYPE.PLAIN){
+		var mrcNode = this.mrcType.toXmlNode(xml);
+		if(mrcNode){
+			serialize.appendChild(mrcNode);
+		}
+	}
+
+	if(this.orientation && this.orientation.method != JFLib.ORIENTATION.NULL){
+		serialize.appendChild(this.orientation.toXmlNode(xml));
+	}
+
+	if(this.skewCorrection && this.skewCorrection.enable){
+		serialize.appendChild(this.skewCorrection.toXmlNode(xml));
+	}
+
 	attach.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'ContentTransferEncoding', this.encode));
 	
 	return attach;
@@ -779,7 +834,6 @@ JFLib.Invoke.Response = function()
 	 *  @lang en
 	 */	
 	this.handling = JFLib.HANDLING.NONE;
-	//this.handling = JFLib.HANDLING.FAULT; // 스캔 전송시에 027-724 에러가 발생합니다.(Fax테스트시에 건드린듯...)
 	/**
 	 *	応答メッセージ内の成否の判断に必要な要素へのパスを設定する
 	 *	指示書では//Invoke/Response/Judgement/Key/xpath属性に相当する<br>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jtm="http://www.fujifilm.com/fb/2021/03/ssm/management/jobTemplate" xmlns:jtm2="http://www.fujifilm.com/fb/2021/04/ssm/management/jobTemplate">
+ <soap:Body>
+  <jtm2:ExecuteJobTemplate>
+   <jtm2:JobTemplate>
+     <jtm:JobTemplateHeader xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" />
+     <jtm:JobTemplate>
+       <jtm:RawData xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" />
+     </jtm:JobTemplate>
+   </jtm2:JobTemplate>
+  </jtm2:ExecuteJobTemplate>
+ </soap:Body>
+</soap:Envelope>

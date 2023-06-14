@@ -1,14 +1,14 @@
 ﻿/** 
  * @fileoverview ジョブフローにおける親展Box格納ジョブを扱うクラスで使用される定数を定義する<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2007-2010 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.0.0
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants used in classes handling Mailbox store jobs in Job Flow.
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2007-2010 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.0.0
  * @lang en
  */

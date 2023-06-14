@@ -8,7 +8,7 @@
  * のロードが必要となる。<br>
  * 本ファイルのロード時に自動でロードされる。<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang ja
  */
@@ -22,7 +22,7 @@
  * must be loaded.<br>
  * It is loaded automatically upon loading this file.<br>
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.3.0
  * @lang en
  */
@@ -237,12 +237,6 @@ JFLib.Distribute.Retry = function(num, intval) {
  * @class MRC（Mixed Raster Content）方式を指定するクラス
  * @lang ja
  */
-/**
- * Creates MrcType instance.
- * @constructor
- * @class This class specifies the MRC (Mixed Raster Content) method.
- * @lang en
- */
 JFLib.Distribute.MrcType = function()
 {
 	/**
@@ -251,12 +245,6 @@ JFLib.Distribute.MrcType = function()
 	 * @default JFLib.MRCTYPE.PLAIN
 	 * @lang ja
 	 */
-	/**
-	 * Specifies the MRC (Mixed Raster Content) method.
-	 * @type JFLib.MRCTYPE
-	 * @default JFLib.MRCTYPE.PLAIN
-	 * @lang en
-	 */
 	this.method = JFLib.MRCTYPE.PLAIN;
 };
 
@@ -264,11 +252,6 @@ JFLib.Distribute.MrcType = function()
  * MrcTypeオブジェクトをxml node化する
  * @private
  * @lang ja
- */
-/**
- * Creates xml node from MrcType object
- * @private
- * @lang en
  */
 JFLib.Distribute.MrcType.prototype.toXmlNode = function(xml)
 {
@@ -297,12 +280,6 @@ JFLib.Distribute.MrcType.prototype.toXmlNode = function(xml)
  * @class スキャン文書の正立を指定するクラス
  * @lang ja
  */
-/**
- * Creates Orientation instance.
- * @constructor
- * @class This class specifies whether or not to correct the orientation of scanned documents.
- * @lang en
- */
 JFLib.Distribute.Orientation = function(){
 	
 	/**
@@ -310,12 +287,6 @@ JFLib.Distribute.Orientation = function(){
 	 * @type JFLib.ORIENTATION
 	 * @default JFLib.ORIENTATION.NULL
 	 * @lang ja
-	 */
-	/**
-	 * Specifies the method of correcting the orientation of scanned documents.
-	 * @type JFLib.ORIENTATION
-	 * @default JFLib.ORIENTATION.NULL
-	 * @lang en
 	 */
 	this.method = JFLib.ORIENTATION.NULL;
 
@@ -325,12 +296,6 @@ JFLib.Distribute.Orientation = function(){
 	 * @default JFLib.LANG.DEFAULT
 	 * @lang ja
 	 */
-	/**
-	 * Specifies the language to be used when the orientation of a scanned document is to be corrected automatically based on the type of characters in the document.
-	 * @type JFLib.LANG
-	 * @default JFLib.LANG.DEFAULT
-	 * @lang en
-	 */
 	this.lang = JFLib.LANG.DEFAULT;
 };
 
@@ -338,11 +303,6 @@ JFLib.Distribute.Orientation = function(){
  * Orientationオブジェクトをxml node化する
  * @private
  * @lang ja
- */
-/**
- * Creates xml node from Orientation object.
- * @private
- * @lang en
  */
 JFLib.Distribute.Orientation.prototype.toXmlNode = function(xml)
 {
@@ -359,39 +319,21 @@ JFLib.Distribute.Orientation.prototype.toXmlNode = function(xml)
  * @class スキュー補正設定を定義するクラス
  * @lang ja
  */
-/**
- * Creates SkewCorrection instance.
- * @constructor
- * @class This class defines skew correction settings.
- * @lang en
- */
 JFLib.Distribute.SkewCorrection = function()
 {
 	/**
 	 * スキュー補正を実施する/しない
-	 * @type Boolean
+	 * @type JFLib.SKEWCORRECTION.LINE
 	 * @default スキュー補正しない
 	 * @lang ja
-	 */
-	/**
-	 * Whether or not to correct skews
-	 * @type Boolean
-	 * @default Do not correct skews
-	 * @lang en
 	 */
 	this.enable = false;
 
 	/**
 	 * エッジの検出結果を利用した補正処理方式を指定する。
-	 * @type JFLib.Distribute.SkewCorrection.Line
+	 * @type JFLib.SKEWCORRECTION.LINE
 	 * @default null
 	 * @lang ja
-	 */
-	/**
-	 * Specifies whether to correct skews using the result of edge detection
-	 * @type JFLib.Distribute.SkewCorrection.Line
-	 * @default null
-	 * @lang en
 	 */
 	this.line = "";
 };
@@ -400,11 +342,6 @@ JFLib.Distribute.SkewCorrection = function()
  * SkewCorrectionオブジェクトをxml node化する
  * @private
  * @lang ja
- */
-/**
- * Creates xml node from SkewCorrection object
- * @private
- * @lang en
  */
 JFLib.Distribute.SkewCorrection.prototype.toXmlNode = function(xml)
 {
@@ -428,12 +365,6 @@ JFLib.Distribute.SkewCorrection.prototype.toXmlNode = function(xml)
  * @constructor このコンストラクタを明示的に呼び出す必要はない
  * @lang ja
  */
-/**
- * Defines the skew correction method that uses the result of edge detection.
- * @class This class defines the skew correction method that uses the result of edge detection.
- * @constructor There is no need to explicitly call this constructor.
- * @lang en
- */
 JFLib.Distribute.SkewCorrection.Line = function()
 {
 	/**
@@ -442,12 +373,6 @@ JFLib.Distribute.SkewCorrection.Line = function()
 	 * @default 0
 	 * @lang ja
 	 */
-	/**
-	 * Specifies the lower limit of the angle used for skew correction. The range of the angle is from 0 to 5.0. The value can be specified to the first decimal place.
-	 * @type float
-	 * @default 0
-	 * @lang en
-	 */
 	this.rangeMin = 0;
 	
 	/**
@@ -455,12 +380,6 @@ JFLib.Distribute.SkewCorrection.Line = function()
 	 * @type float
 	 * @default 5.0
 	 * @lang ja
-	 */
-	/**
-	 * Specifies the upper limit of the angle used for skew correction. The range of the angle is from 0 to 5.0. The value can be specified to the first decimal place.
-	 * @type float
-	 * @default 5.0
-	 * @lang en
 	 */
 	this.rangeMax = 5.0;
 };

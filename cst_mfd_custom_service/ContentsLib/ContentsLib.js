@@ -13,7 +13,7 @@
  * WebDAVLib以下のライブラリを使用する場合は、本ファイルより前にWebDAVLib以下のファイルのロードが必要となる<br>
  * <br>
  * 使用するには<b>SSMILib/SSMILib.js</b>を参照すること
- * @author Copyright(C) 2009-2013 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.4.0
  * @lang ja
  */
@@ -32,7 +32,7 @@
  * To use libraries under WebDAVLib, files under WebDAVLib must be loaded before loading this file.<br>
  * <br>
  * To use this file, see <b>SSMILib/SSMILib.js</b>.
- * @author Copyright(C) 2009-2013 Fuji Xerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 1.4.0
  * @lang en
  */
@@ -157,7 +157,7 @@ var ContentsLib = {
 	/** @private
 	 *  @constant
 	**/
-	nsCsProp: "http://www.fujixerox.co.jp/2008/01/cmfp/prop",
+	nsCsProp: "http://www.fujifilm.com/fb/2021/04/cmfp/prop",
 
 	serialNumber: "",
 	trackingId: "",
@@ -229,8 +229,9 @@ ContentsLib.init = function()
 	this._displayLog = false;
 	this._eventLogs = new Array();
 
-	BrowserExt.Init();
-	BrowserExt.SetCaptureEvent(ContentsLib._onHardKeyEvent);
+	BrowserExt.Initialize();
+	//BrowserExt.Init();
+	//BrowserExt.SetCaptureEvent(ContentsLib._onHardKeyEvent);
 
 	WidgetLib.init();
 	WidgetLib.setEventListener(ContentsLib._onWidgetEvent);
@@ -251,7 +252,7 @@ ContentsLib.init = function()
 
 	ContentsLib._initTexts(_lang);
 
-	BrowserExt.FocusKeyEvent();
+	//BrowserExt.FocusKeyEvent();
 	if (WebServiceLib.Communicator != undefined) {
 		ContentsLib._getCsProp();
 	}

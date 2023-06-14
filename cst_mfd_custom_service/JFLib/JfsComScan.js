@@ -2,7 +2,7 @@
  * @fileoverview ジョブフローにおけるスキャン・コピージョブの共通クラスを定義する<br>
  * スキャン・コピージョブ共通で使用される各種クラス<br>
  * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
- * @author Copyright(C) 2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.2.1
  * @lang ja
  */
@@ -10,7 +10,7 @@
  * @fileoverview Defines classes common to Scan/Copy jobs in Job Flow.<br>
  * Classes used in common by Scan/Copy jobs.<br>
  * To use this file, see <b>JFLib/JfsCom.js</b>.
- * @author Copyright(C) 2010 FujiXerox Co., Ltd. All rights reserved.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.2.1
  * @lang en
  */
@@ -535,13 +535,6 @@ JFLib.ComScan.Magnification.prototype.toXmlNode = function (xml)
  * @class 分割スキャンを指定するクラス<br>
  * @lang ja
  */
-/**
- * Creates SplitScan instance.
- * @constructor
- * @return None <br>
- * @class This class specifies Split Scan.<br>
- * @lang en
- */
 JFLib.ComScan.SplitScan = function()
 {
 	/**
@@ -550,12 +543,6 @@ JFLib.ComScan.SplitScan = function()
 	 *	@default しない
 	 *  @lang ja
 	 */
-	/**
-	 *	Specifies whether or not to perform Split Scan by true/false.<br>
-	 *	@type Bool
-	 *	@default false
-	 *  @lang en
-	 */
 	this.enable = false;
 	/**
 	 *	スキャン原稿の綴じ位置によって分割出力された2面の画像のページ順と向き設定する<br>設定 - <font color = "#ff0000">必須</font>
@@ -563,24 +550,12 @@ JFLib.ComScan.SplitScan = function()
 	 *	@default なし
 	 *  @lang ja
 	 */
-	/**
-	 *	Specifies the page sequence and orientation of two impressions that are output using Split Scan based on the binding position of the original<br>Setting - <font color = "#ff0000">REQUIRED.</font>
-	 *	@type JFLib.SPLITBOUND
-	 *	@default None
-	 *  @lang en
-	 */
 	this.boundAt = "";
 	/**
 	 *	分割出力された2面の画像のうちどちらの画像を出力するかを設定する<br>
 	 *	@type JFLib.SPLITEXTRACT
 	 *	@default なし
 	 *  @lang ja
-	 */
-	/**
-	 *	Specifies which image is to be output between two impressions that are output using Split Scan<br>
-	 *	@type JFLib.SPLITEXTRACT
-	 *	@default None
-	 *  @lang en
 	 */
 	this.extract = "";
 };

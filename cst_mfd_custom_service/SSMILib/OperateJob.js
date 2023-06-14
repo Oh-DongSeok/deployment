@@ -1,9 +1,9 @@
-﻿/** 
+/** 
  * @fileoverview ジョブ情報取得のためのクラス定義<br>
  * ジョブ情報取得の為に必要な基本的な以下のクラスが定義される<br>
  * JobInfoクラス
  *
- * @author Copyright(C) 2008-2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.2
  * @lang ja
  */
@@ -12,7 +12,7 @@
  * Defines basic classes required for retrieving job information.<br>
  * JobInfo Class.
  *
- * @author Copyright(C) 2008-2010 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 1.0.2
  * @lang en
  */
@@ -115,7 +115,7 @@ SSMILib.JobOperate.prototype.createMsg = function ()
 	var env = root;
 	var body = xml.body;
 
-	var jobNS	=	"http://www.fujixerox.co.jp/2003/12/ssm/management/job";
+	var jobNS	=	"http://www.fujifilm.com/fb/2021/03/ssm/management/job";
 	xml.addNSPrefix(jobNS, "job");
 
 	var _operateJobNode = body.appendChild(xml.createElement( "job:" + "OperateJob"));
@@ -155,7 +155,7 @@ SSMILib.JobOperate.prototype.createMsg = function ()
 
 SSMILib.JobOperate.prototype.execute = function(auth)
 {
-	this.requester.soapAction = '"http://www.fujixerox.co.jp/2003/12/ssm/management/job#OperateJob"';
+	this.requester.soapAction = '"http://www.fujifilm.com/fb/2021/03/ssm/management/job#OperateJob"';
 	this.auth = auth;
 	this.requester.async = SSMILib.async;
 	this.requester.isDeviceReq = true;

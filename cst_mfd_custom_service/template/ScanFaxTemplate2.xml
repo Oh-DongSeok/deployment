@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soapENV:Envelope xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xml:lang="en" >
+  <soapENV:Header>
+    <jt:JobTemplate jt:version="6.0.0" jt:profile="0" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+      <jt:Name>ScanFaxTemplate</jt:Name>
+      <jt:Description>Replaces the value for a job flow template and submit it to start FAX.</jt:Description>
+      <jt:Copyright>Copyright (c) 2021 FUJIFILM Business Innovation Corporation, All rights reserved.</jt:Copyright>
+      <jt:Author />
+      <jt:CreatedBy jt:identifier="0" />
+      <jt:CreationDateTime>2011-07-04T03:01:00+09:00</jt:CreationDateTime>
+      <jt:ModificationDateTime>2011-07-04T16:17:00+09:00</jt:ModificationDateTime>
+      <jt:TargetInterpreters>
+        <jt:MachineOID>1.3.6.1.4.1.297</jt:MachineOID>
+      </jt:TargetInterpreters>
+      <jt:ExecutionHints>
+        <jt:Resources>
+          <jt:Resource>Acquire/Scanner/BW</jt:Resource>
+          <jt:Resource>Distribute/Fax/G3</jt:Resource>
+        </jt:Resources>
+      </jt:ExecutionHints>
+    </jt:JobTemplate>
+  </soapENV:Header>
+  <soapENV:Body>
+    <jt:ProcessRequest xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+      <jt:DocumentProcess>
+        <jt:Acquire jt:container="Fax" jt:name="Scan">
+          <jt:Scanner>
+            <jt:InputMediumSize>
+              <jt:StandardMediumSize>ISO-A4LEF</jt:StandardMediumSize>
+            </jt:InputMediumSize>
+            <jt:HeadPosition>Top</jt:HeadPosition>
+            <jt:Duplex>Simplex</jt:Duplex>
+            <jt:ImageMode>Mixed</jt:ImageMode>
+            <jt:ColorMode>BlackAndWhite</jt:ColorMode>
+            <jt:Resolution>200x200/dpi</jt:Resolution>
+            <jt:Magnification>
+              <jt:Isotropic>100</jt:Isotropic>
+            </jt:Magnification>
+            <jt:OutputMediumSize>
+              <jt:StandardMediumSize>NotSpecified</jt:StandardMediumSize>
+            </jt:OutputMediumSize>
+            <jt:EnableNextOriginal>false</jt:EnableNextOriginal>
+          </jt:Scanner>
+        </jt:Acquire>
+        <jt:Distribute jt:container="Fax" jt:name="Fax">
+          <jt:Serialization>
+            <jt:Compression>NotSpecified</jt:Compression>
+            <jt:Format jt:linearize="false">NotSpecified</jt:Format>
+          </jt:Serialization>
+          <jt:Destinations>
+            <jt:Fax>
+              <jt:Name></jt:Name>
+              <jt:DialNumber></jt:DialNumber>
+              <jt:TransmissionMode>G3/Auto</jt:TransmissionMode>
+            </jt:Fax>
+          </jt:Destinations>
+        </jt:Distribute>
+      </jt:DocumentProcess>
+    </jt:ProcessRequest>
+  </soapENV:Body>
+</soapENV:Envelope>

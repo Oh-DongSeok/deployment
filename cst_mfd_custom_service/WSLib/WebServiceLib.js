@@ -2,16 +2,16 @@
  * @fileoverview Webサービスを呼び出すためのJavaScriptライブラリ<br>
  * 本ライブラリの利用には、XML.jsのロードが必要<br>
  * また、本ライブラリのロードに当たって、Base64.jsがロードされる<br>
- * @author Copyright(C) 2007-2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang ja
  */
-
+ 
 /**
  * @fileoverview JavaScript library for calling Web services.<br>
  * To use this library, XML.js must be loaded.<br>
  * Also, upon using loading this library, Base64.js is loaded as well.<br>
- * @author Copyright(C) 2007-2011 Fuji Xerox Co., Ltd. All rights reserved.<br>
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.<br>
  * @version 2.2.0
  * @lang en
  */
@@ -622,14 +622,14 @@ WebServiceLib.Communicator.prototype._getSoapFaultInfoNS1 = function(node)
 		}
 		//Append flt NS Handling, 2011/6/20, FXKIS Kwanghyun, Jang START
 		if(!_fault.subcode) {
-			var _subTag = _detailTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Subcode");
+			var _subTag = _detailTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Subcode");
 			if(_subTag.length) {
-				_valTag = _subTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Value");
+				_valTag = _subTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Value");
 				if (_valTag.length) _fault.subcode = _valTag[0].firstChild.nodeValue;
-
-				var _subSubTag = _subTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Subcode");
+	
+				var _subSubTag = _subTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Subcode");
 				if(_subSubTag.length) {
-					_valTag = _subSubTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Value");
+					_valTag = _subSubTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Value");
 					if (_valTag.length) _fault.subSubcode = _valTag[0].firstChild.nodeValue;
 				}
 			}
@@ -667,14 +667,14 @@ WebServiceLib.Communicator.prototype._getSoapFaultInfoAsNS1 = function(node)
 		}
 		//Append flt NS Handling, 2011/6/20, FXKIS Kwanghyun, Jang START
 		if(!_fault.subcode) {
-			var _subTag = _detailTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Subcode");
+			var _subTag = _detailTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Subcode");
 			if(_subTag.length) {
-				_valTag = _subTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Value");
+				_valTag = _subTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Value");
 				if (_valTag.length) _fault.subcode = _valTag[0].firstChild.nodeValue;
-
-				var _subSubTag = _subTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Subcode");
+	
+				var _subSubTag = _subTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Subcode");
 				if(_subSubTag.length) {
-					_valTag = _subSubTag[0].getElementsByTagNameNS("http://www.fujixerox.co.jp/2003/12/ssm/management/fault","Value");
+					_valTag = _subSubTag[0].getElementsByTagNameNS("http://www.fujifilm.com/fb/2021/04/ssm/management/fault","Value");
 					if (_valTag.length) _fault.subSubcode = _valTag[0].firstChild.nodeValue;
 				}
 			}
@@ -797,7 +797,7 @@ WebServiceLib.Communicator.prototype._getSoapFaultReason = function(node, isSoap
 	if(_reasonNode.length && _reasonNode[0].firstChild) {
 		_reasonValue =  _reasonNode[0].firstChild.nodeValue;
 	}
-
+	
 	return _reasonValue;
 };
 /**
@@ -884,8 +884,8 @@ WebServiceLib.Communicator.prototype.getSoapFaultInfo = function(res)
  * @public
  * @lang ja
  */
-
-
+ 
+ 
 /**
  * Attempts communication based on information set as properties and calls callback functions.<br>
  * NOTES:<br>
@@ -911,7 +911,7 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 	if(msg == 'undefined') {
 		return false;
 	}
-
+	
 	if(msg && typeof(msg) == 'object' && 'serializeToString' in msg) {
 		var _data = msg.serializeToString();
 	} else {
@@ -927,7 +927,7 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 	if(this.soapAction) {
 		_requester.setRequestHeader("SOAPAction", this.soapAction);
 	}
-
+	
 	if(this.contentType) {
 		_requester.setRequestHeader("Content-Type", this.contentType);
 	}
@@ -953,7 +953,7 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 			}
 		}
 	}
-
+	
 	if(this.async) {
 		var _thisCommObj = this;
 		if(BrowserLib.browser == BrowserLib.BrowserType.INSPIRIUM) {
@@ -995,7 +995,7 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 							clearTimeout(_targetObj._timerId);
 							_targetObj._timerId = null;
 						}
-
+						
 						_targetObj.response = _targetObj.getResponseInfo(_targetReq);
 						// tajima for webdav
 						if((200 <= _targetReq.status  && _targetReq.status < 300) && typeof(_targetObj.successHandler) == 'function') {
@@ -1034,10 +1034,10 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 					return true;
 				}, this.timeout);
 			}
-
+			
 			_requester.onreadystatechange = function() {
 				if (_requester.readyState==4) {
-					if(_timerId != null) {// 2010.09.13 Tajima
+					if(_timerId != null) {// 2010.09.13 Tajima 
 						clearTimeout(_timerId);
 						_timerId = null;
 					}
@@ -1091,7 +1091,7 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
  * @public
  * @lang ja
  */
-
+ 
  /**
  * Requests immediate job run to specified host.
  * @param {String/SOAPMsg} jobTemplate Serialized JobTemplate, or JobTemplate class instance.<br>
@@ -1101,14 +1101,11 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
  */
 WebServiceLib.Communicator.prototype.callJobExecService = function(jobTemplate, host)
 {
-	//var _host = host ? host : "localhost";
-	var _host = host ? host : gHost;
-	var _protocol = gProtocol ? gProtocol : "http://";
+	var _host = host ? host : "localhost";
 
 	this.isDeviceReq = true;
 	this.soapAction = '"' + XMLLib.NS.JTM2 + '#ExecuteJobTemplate' + '"';
-	//return this.send("http://" + _host + "/ssm/Management/JobTemplate/Execution", jobTemplate);
-	return this.send(_protocol + _host + "/ssm/Management/JobTemplate/Execution", jobTemplate);
+	return this.send("http://" + _host + "/ssm/Management/JobTemplate/Execution", jobTemplate);
 };
 
 /**
@@ -1118,7 +1115,7 @@ WebServiceLib.Communicator.prototype.callJobExecService = function(jobTemplate, 
  * @public
  * @lang ja
  */
-
+ 
  /**
  * Communicates by CGI with specified URL.
  * @param {String} url Communication destination URL.

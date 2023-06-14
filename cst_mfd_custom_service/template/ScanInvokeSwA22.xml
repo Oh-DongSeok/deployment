@@ -1,0 +1,180 @@
+<soapENV:Envelope xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+<soapENV:Header>
+<jt:JobTemplate jt:version="3.0.0" jt:profile="0">
+<jt:Name>ScanInvokeSwA</jt:Name>
+<jt:Description>Send a scanned document by SwA and call an external service.</jt:Description>
+<jt:Copyright>Copyright (c) 2021 FUJIFILM Business Innovation Corporation, All rights reserved.</jt:Copyright>
+<jt:Author>JFCreator 1.0</jt:Author>
+<jt:CreatedBy jt:identifier="0"/>
+<jt:CreationDateTime>2008-07-31T03:01:00+09:00</jt:CreationDateTime>
+<jt:ModificationDateTime>2008-07-31T10:43:00+09:00</jt:ModificationDateTime>
+<jt:TargetInterpreters>
+<jt:MachineOID>1.3.6.1.4.1.297</jt:MachineOID>
+</jt:TargetInterpreters>
+<jt:ExecutionHints>
+<jt:Resources>
+<jt:Resource>Acquire/Scanner/BW</jt:Resource>
+<jt:Resource>Acquire/Scanner/Color</jt:Resource>
+<jt:Resource>Acquire/Scanner/MultiLayers</jt:Resource>
+<jt:Resource>Invoke/WebService/Attachment</jt:Resource>
+</jt:Resources>
+</jt:ExecutionHints>
+</jt:JobTemplate>
+</soapENV:Header>
+<soapENV:Body>
+<jt:ProcessRequest>
+<jt:Setup>
+<jt:ExceptionHandler>
+<jt:CatchAll jt:action="ContinueProcess"> </jt:CatchAll>
+</jt:ExceptionHandler>
+</jt:Setup>
+<jt:DocumentProcess>
+<jt:Assign xmlns:ls="http://www.fujifilm.com/fb/2021/04/aip/library/linkageService">
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:JobTemplate/jt:Name/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:JobFlowID/node()"/>
+</jt:Duplicate>
+</jt:Assign>
+<jt:Acquire jt:container="JFCreator" jt:name="Scan">
+<jt:Scanner>
+<jt:InputMediumSize>
+<jt:StandardMediumSize>Auto</jt:StandardMediumSize>
+</jt:InputMediumSize>
+<jt:HeadPosition>Left</jt:HeadPosition>
+<jt:Duplex>Simplex</jt:Duplex>
+<jt:ImageMode>Mixed</jt:ImageMode>
+<jt:EnableNextOriginal>false</jt:EnableNextOriginal>
+<jt:ColorMode>Auto</jt:ColorMode>
+<jt:Darkness>Default</jt:Darkness>
+<jt:Resolution>200x200/dpi</jt:Resolution>
+<jt:CreateMultiLayers jt:withThumbnails="false">None</jt:CreateMultiLayers>
+<jt:OutputMediumSize>
+<jt:StandardMediumSize>NotSpecified</jt:StandardMediumSize>
+</jt:OutputMediumSize>
+<jt:Magnification>
+<jt:Isotropic>100</jt:Isotropic>
+</jt:Magnification>
+<jt:Compression>
+<jt:Bilevel>Auto</jt:Bilevel>
+<jt:Multilevel>JPEG</jt:Multilevel>
+<jt:LossyLevel>Default</jt:LossyLevel>
+</jt:Compression>
+</jt:Scanner>
+</jt:Acquire>
+<jt:Assign xmlns:ls="http://www.fujifilm.com/fb/2021/04/aip/library/linkageService">
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Acquire/jt:Scanner/jt:ColorMode/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:ColorMode/node()"/>
+</jt:Duplicate>
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Acquire/jt:Scanner/jt:Duplex/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:Duplex/node()"/>
+</jt:Duplicate>
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Acquire/jt:Scanner/jt:ImageCount/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:ImageCount/node()"/>
+</jt:Duplicate>
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Acquire/jt:Scanner/jt:InputMediumSize/jt:StandardMediumSize/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:InputMediumSize/node()"/>
+</jt:Duplicate>
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Acquire/jt:Scanner/jt:OutputMediumSize/jt:StandardMediumSize/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Request/jt:Prototype/jt:Message//ls:LinkSwA/ls:param/ls:OutputMediumSize/node()"/>
+</jt:Duplicate>
+</jt:Assign>
+<jt:Transform>
+<jt:OCR jt:lang="en" jt:compression="none"/>
+</jt:Transform>
+<jt:Invoke jt:container="JFCreator" jt:name="Invoke">
+<jt:Profile>
+<jt:Description jt:identifier="0">LinkageWebService</jt:Description>
+<jt:Target>http://localhost/LinkageWS/LinkageService.asmx</jt:Target>
+<jt:Type>SOAP/1.1</jt:Type>
+<jt:Schema>
+<jt:Namespace>http://www.fujifilm.com/fb/2021/04/aip/library/linkageService/</jt:Namespace>
+<jt:Location>http://localhost/LinkageWS/LinkageService.asmx?WSDL</jt:Location>
+</jt:Schema>
+<jt:MethodName>LinkSwA</jt:MethodName>
+</jt:Profile>
+<jt:Request>
+<jt:MessageType>RPC/Synchronous</jt:MessageType>
+<jt:AuthInfo>
+<jt:Method>Unauthenticated</jt:Method>
+<jt:OperatorName/>
+<jt:Password/>
+</jt:AuthInfo>
+<jt:SOAPAction>http://www.fujifilm.com/fb/2021/04/aip/library/linkageService#LinkSwA</jt:SOAPAction>
+<jt:Prototype>
+<jt:Message>
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+<soap:Body>
+<ls:LinkSwA xmlns:ls="http://www.fujifilm.com/fb/2021/04/aip/library/linkageService">
+<ls:param>
+<ls:UserString>null</ls:UserString>
+<ls:JobFlowID>null</ls:JobFlowID>
+<ls:ColorMode>null</ls:ColorMode>
+<ls:Duplex>null</ls:Duplex>
+<ls:ImageCount>0</ls:ImageCount>
+<ls:InputMediumSize>null</ls:InputMediumSize>
+<ls:OutputMediumSize>null</ls:OutputMediumSize>
+<ls:FileFormat>null</ls:FileFormat>
+<ls:FtpUrl>null</ls:FtpUrl>
+<ls:FtpPhysicalPath>null</ls:FtpPhysicalPath>
+<ls:FolderName>null</ls:FolderName>
+<ls:DocumentName>null</ls:DocumentName>
+</ls:param>
+</ls:LinkSwA>
+</soap:Body>
+</soap:Envelope>
+</jt:Message>
+<jt:Attachment jt:transfer="true">
+<jt:Regulation>SOAPMessagesWithAttachments</jt:Regulation>
+<jt:Serialization>
+<jt:Compression>NotSpecified</jt:Compression>
+<jt:Format jt:linearize="false">PDF</jt:Format>
+</jt:Serialization>
+<jt:ContentTransferEncoding>binary</jt:ContentTransferEncoding>
+</jt:Attachment>
+</jt:Prototype>
+<jt:TimeoutValue>60</jt:TimeoutValue>
+</jt:Request>
+<jt:Response>
+<jt:Handling>Fault</jt:Handling>
+<jt:Judgement>
+<jt:Value>
+<jt:Succeeded/>
+</jt:Value>
+</jt:Judgement>
+</jt:Response>
+</jt:Invoke>
+<jt:Assign jt:name="InvokeStringToWorkspace">
+<jt:Duplicate xsi:type="jt:Append">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Result/jt:String/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Workspace[@jt:name='InvokeResultString']/node()"/>
+</jt:Duplicate>
+</jt:Assign>
+<jt:Workspace jt:name="InvokeResultString"> InvokeResultString: </jt:Workspace>
+<jt:Assign jt:name="InvokeStringToComment">
+<jt:Duplicate xsi:type="jt:Append">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Workspace[@jt:name='InvokeResultString']/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Message/jt:Comment/node()"/>
+</jt:Duplicate>
+<jt:Duplicate xsi:type="jt:Replace">
+<jt:Source jt:xpath="//jt:DocumentProcess/jt:Invoke/jt:Result/jt:Messaging/node()"/>
+<jt:Destination jt:xpath="//jt:DocumentProcess/jt:Message/jt:Enabled/node()"/>
+</jt:Duplicate>
+</jt:Assign>
+<jt:Message jt:container="JFCreator" jt:name="Message">
+<jt:Enabled>false</jt:Enabled>
+<jt:Subject jt:lang="en" jt:encoding="iso-8859-1">error</jt:Subject>
+<jt:Comment jt:lang="en" jt:encoding="iso-8859-1">error</jt:Comment>
+<jt:Smtp>
+<jt:Address/>
+<jt:Name/>
+</jt:Smtp>
+</jt:Message>
+</jt:DocumentProcess>
+</jt:ProcessRequest>
+</soapENV:Body>
+</soapENV:Envelope>

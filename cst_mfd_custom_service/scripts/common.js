@@ -111,11 +111,19 @@ Common.onLoadEvent = function(event, id)
 				SSMILib.GetTcpIpInfo(false);
 				SSMILib.GetTrayInfo();
 			}else{
+				/*-----------------------------------------------------------------------------*/
+				jobSelecter = JOB_TYPE.COPY;
+				PageManager.changePage(CopyMainPage, PageManager.type.NORMAL);
+				currentPage = PageManager.getCurrentPage();
+				currentPage.EventHandler(arguments[0], arguments[1], arguments[2]);
+				/*-----------------------------------------------------------------------------*/
+				/*
 				KISUtil.debug("GetProductInformation:", "Fail");
 				glbNoticeInfo.type = NOTICE.FAIL;
 				glbNoticeInfo.message = Msg.NoticePopup.Msg_ResFail + " (GP)";
 				PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
 				currentPage = PageManager.getCurrentPage();
+				*/
 			}
 			break;
 		case "GetUser":
@@ -796,6 +804,11 @@ Common.onLoadEvent = function(event, id)
 					100);
 			}else{
 				KISUtil.debug("ExecuteJFS:", "Fail");
+				if(arguments[RESPONSE]){
+					KISUtil.debug("ExecuteJFS:", arguments[RESPONSE.DATA]);
+				}else{
+					KISUtil.debug("ExecuteJFS:", "no response");
+				}
 				glbNoticeInfo.type = NOTICE.FAIL;
 				glbNoticeInfo.message = Msg.NoticePopup.Msg_ResFail + " (EJ)";
 				PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
@@ -2863,34 +2876,52 @@ function loadScript(loc){
 }
 
 function testScanJobStart(){
+	/*
 	var jobTemplate 				= new JFLib.JobTemplate();
-	jobTemplate.category 			= "Scan Jobtemplage Test";
-	jobTemplate.name 				= "Scan Jobtemplage Test";
-	jobTemplate.header.name 		= "Scan Jobtemplage";
+	jobTemplate.category 			= "Scan Jobtemplate Test";
+	jobTemplate.name 				= "Scan Jobtemplate Test";
+	jobTemplate.header.name 		= "Scan Jobtemplate";
 	jobTemplate.header.description 	= "Scan to BridgeApp";
 	jobTemplate.header.identifier 	= "1";
 	jobTemplate.process 			= JFLib.PROCESS.SCAN;
 	var scanObj 					= new JFLib.Scan();
 	scanObj.outputMedium.size 		= JFLib.MS.A4LEF;
 	jobTemplate.setInputProcess(scanObj);
-	/* mailBox */
-	var outObj 						= new JFLib.Pbox();
-	outObj.boxNo 					= "1";
-	outObj.docName 					= "ScantoBridgeAppTest";
-	jobTemplate.addOutputProcess(outObj);
-	var exeJfsObj = new SSMILib.ExecuteJFS(jobTemplate);
+	glbFileTran 			= new JFLib.FileTransfer();
+	glbFileTran.url 		= "ftp://10.97.4.42/";
+	glbFileTran.loginName 	= "cst";
+	glbFileTran.password 	= "fujixerox1!";
+	glbFileTran.docName 	= "testScanJobStart";
+	glbFileTran.docFormat 	= JFLib.DOCFORMAT.PDF;
+	glbFileTran.folderName 	= "Spool";
+	jobTemplate.addOutputProcess(glbFileTran);
+	var exeJfsObj 			= new SSMILib.ExecuteJFS(jobTemplate);
 	SSMILib.ExecuteJFS.Send(exeJfsObj);
-	/* invoke */
-	/*
-	var invokeObj 					= new JFLib.Invoke();
-	var invokeProfile 				= new JFLib.Invoke.Profile();
-	invokeProfile.target 			= "http://192.168.0.61:9090/bridgeapp/scan/scanjob";
-	invokeObj.profile 				= invokeProfile;
-	var invokeRequest 				= new JFLib.Invoke.Request();
-	invokeRequest.attach 			= "PDF";
-	invokeRequest.messageBody 		= "testDocPdf";
-	invokeRequest.timeOut 			= 300;
-	invokeObj.request 				= invokeRequest;
 	*/
 
+	CopyJobMonitor.init(300);
+				CopyJobMonitor.startMonitor(
+					{
+						successCallback:function(){
+							setJobLogSave(true);
+							KISUtil.debug("successCallback", "");
+							if(flg_Dummy_Beep) {
+								PageManager.changePage(MenuPage, PageManager.type.NORMAL);
+								currentPage = PageManager.getCurrentPage();
+							}else{
+								BrowserExt.Beep(0);
+								BrowserExt.SetScreenChange("allservice");
+							}
+						},
+						errorCallback:function(){
+							setJobLogSave(false);
+							KISUtil.debug("errorCallback", "");
+						},
+						cancelCallback:function(){
+							setJobLogSave(false);
+							KISUtil.debug("cancelCallback", "");
+						},
+						jobcount: 1
+					},
+					100);
 }

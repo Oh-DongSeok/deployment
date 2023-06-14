@@ -1,14 +1,14 @@
-/** 
- * @fileoverview ジョブフローにおける外部サービス連携処理を扱うクラスで使用される定数を定義する
- *
- * @author Copyright(C) 2007-2009 Fuji Xerox Co., Ltd. All rights reserved.
+﻿/** 
+ * @fileoverview ジョブフローにおける外部サービス連携処理を扱うクラスで使用される定数を定義する<br>
+ * 使用するには<b>JFLib/JfsCom.js</b>を参照すること
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.1.1
  * @lang ja
  */
 /** 
  * @fileoverview Defines constants use din classes handling external web requests (ESR) in Job Flow.
- *
- * @author Copyright(C) 2007-2009 Fuji Xerox Co., Ltd. All rights reserved.
+ * To use this file, see <b>JFLib/JfsCom.js</b>.
+ * @author Copyright(C) 2021 FUJIFILM Business Innovation Corp. All rights reserved.
  * @version 2.1.1
  * @lang en
  */
