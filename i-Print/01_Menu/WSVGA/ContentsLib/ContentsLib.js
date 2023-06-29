@@ -137,7 +137,7 @@ var ContentsLib = {
 	 * @type String
 	 * @lang en
 	 */
-	contentsCopyRight: "",
+	contentsCopyRight: "Copyright(C) 2023 FUJIFILM Business Innovation Korea Co., Ltd. All rights reserved.",
 
 	/**
 	 * コンテンツのアイコンURLを表す

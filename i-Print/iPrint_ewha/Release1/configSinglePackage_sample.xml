@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SFXInstall>
+    <AddCsv>
+        <Name>AIP_53007</Name>
+		<Description>This is a billing solution.</Description>
+		<VendorName>Fuji Xerox Korea Co., Ltd.</VendorName>
+		<!--
+        <StartTiming>
+            <Timing>ServicesHome</Timing>
+			<Timing>Authentication</Timing>
+        </StartTiming>
+		-->
+        <DisplayMode>
+			<ToolBar>false</ToolBar>
+			<StatusBar>false</StatusBar>
+            <SoftCoreKeypad>true</SoftCoreKeypad>
+			<SupportedViewModes>
+				<Mode>
+					<Size>WVGA</Size>
+					<Generation>8</Generation>
+				</Mode>
+			</SupportedViewModes>
+        </DisplayMode>
+        <SendInformation>
+            <Status>true</Status>
+        </SendInformation>
+        <SendAuthorizedRight>true</SendAuthorizedRight>
+        <ServiceAccessRule>
+            <Authenticate>false</Authenticate>
+            <Visible>false</Visible>
+        </ServiceAccessRule>
+		<!--
+        <EWBVersion>5</EWBVersion>
+		-->
+        <FunctionCode>0</FunctionCode>
+        <SetupOptions>
+            <Option>UpgradeInstallation</Option>
+        </SetupOptions>
+    </AddCsv>
+    <UserInterface>
+        <Strings lang="ja">
+            <DisplayName>Print(WVGA)</DisplayName>
+            <DialogTitle>Print(WVGA)</DialogTitle>
+            <Description>AIP-00001(800x480解像度専用)</Description>
+            <VendorName>Fuji Xerox Korea Co., Ltd.</VendorName>
+        </Strings>
+        <Strings lang="en">
+            <DisplayName>Print(WVGA)</DisplayName>
+            <DialogTitle>Print(WVGA)</DialogTitle>
+            <Description>AIP-00001(800x480 resolution only)</Description>
+            <VendorName>Fuji Xerox Korea Co., Ltd.</VendorName>
+        </Strings>
+        <Strings lang="ko">
+            <DisplayName>프린트(WVGA)</DisplayName>
+            <DialogTitle>프린트(WVGA)</DialogTitle>
+            <Description>AIP-00001(800x480 해상도 전용)</Description>
+            <VendorName>Fuji Xerox Korea Co., Ltd.</VendorName>
+        </Strings>
+    </UserInterface>
+    <Restrictions>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.20</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.18</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.9</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.7</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.5</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.1.1</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.20</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.18</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.9</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.7</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.5</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.3.1</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.2.4</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.2.5</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.40.2.6</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.5.4</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.5.5</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.5.6</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.6.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.6.4</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.41.1.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.7.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.7.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.41.2.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.8.1</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.8.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.9.1</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.9.2</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.9.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.41.3.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.17.6</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.17.7</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.1</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.3</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.5</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.7</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.9</MachineRestriction>
+		<MachineRestriction>1.3.6.1.4.1.297.1.11.93.1.39.18.18</MachineRestriction>
+    </Restrictions>
+</SFXInstall>

@@ -1,0 +1,13 @@
+Test User ID
+ID: 12345
+PW: 12345
+
+Server IP: 192.168.200.102
+Server Port: 11180
+
+Driver관련
+문제 발생시에는
+AnySpool.exe 와 TASCLNT.exe 프로세스 중지후
+AnySpool.exe 를 재시작
+
+Print Serial No : 130350

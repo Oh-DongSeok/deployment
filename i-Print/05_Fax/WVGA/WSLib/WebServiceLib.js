@@ -1102,9 +1102,12 @@ WebServiceLib.Communicator.prototype.send = function(url, msg)
 WebServiceLib.Communicator.prototype.callJobExecService = function(jobTemplate, host)
 {
 	var _host = host ? host : "localhost";
+	//var _host = host ? host : gHost;
+	//var _protocol = gProtocol ? gProtocol : "http://";
 
 	this.isDeviceReq = true;
 	this.soapAction = '"' + XMLLib.NS.JTM2 + '#ExecuteJobTemplate' + '"';
+	//return this.send(_protocol + _host + "/ssm/Management/JobTemplate/Execution", jobTemplate);
 	return this.send("http://" + _host + "/ssm/Management/JobTemplate/Execution", jobTemplate);
 };
 

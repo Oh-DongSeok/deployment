@@ -127,7 +127,7 @@ XMLLib.NS.JT = 'http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate';
  * @constant
  * @lang en
  */
-XMLLib.NS.JTM = 'http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate';
+XMLLib.NS.JTM = 'http://www.fujifilm.com/fb/2021/03/ssm/management/jobTemplate';
 /**
  * SESAMi Service Managementでの指示書実行機能の名前空間URI
  * @final
@@ -158,6 +158,22 @@ XMLLib.NS.JTM2 = 'http://www.fujifilm.com/fb/2021/04/ssm/management/jobTemplate'
  * @lang en
  */
 XMLLib.NS.XSI = 'http://www.w3.org/2001/XMLSchema-instance';
+/**
+ * XMLスキーマ名前空間URI
+ * @final
+ * @type String
+ * @constant
+ * @lang ja
+ */
+/**
+ * XML schema namespace URI.
+ * @final
+ * @type String
+ * @constant
+ * @lang en
+ * * xmlns:xs="http://www.w3.org/2001/XMLSchema"
+ */
+XMLLib.NS.XS = 'http://www.w3.org/2001/XMLSchema';
 /**
  * SOAPFault名前空間URI
  * @final
@@ -383,6 +399,12 @@ XMLLib.XMLBase.prototype.createElementNS = function ( namespace, name )
 
     //要素へ属性を追加する（属性には属性値となるnamespace値も格納)
     //例 : xmlns:adrs="http://www.fujifilm.com/fb/2021/04/ssm/management/addressBook"
+	if (name == "JobTemplateHeader"){
+		var attrnode = this.xmlDoc.createAttribute("xmlns:jt");
+		attrnode.nodeValue = XMLLib.NS.JT;
+		node.setAttributeNode(attrnode);
+		ns.defined = true;
+	}
 	if (! ns.defined) {
 	    //属性を追加する
 	    //例 : xmlns:adrs

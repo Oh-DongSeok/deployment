@@ -1,0 +1,408 @@
+<?xml version="1.0"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:element name="SFXInstall">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="AddCsv" type="AddCsv" minOccurs="0" />
+				<xsd:element name="AddXCPPlugin" type="AddXCPPlugin" minOccurs="0" />
+				<xsd:element name="AddKey" type="AddKey" minOccurs="0" />
+				<xsd:element name="JobFlowSheet" type="JobFlowSheet" minOccurs="0" />
+				<xsd:element name="StatusConfigOnInstallation" type="StatusConfigOnInstallation" minOccurs="0" />
+				<xsd:element name="StatusConfigOnUninstallation" type="StatusConfigOnUninstallation" minOccurs="0" />
+				<xsd:element name="UserInterface" type="UserInterface" minOccurs="0" />
+				<xsd:element name="Restrictions" type="Restrictions" minOccurs="0" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+       	<xsd:complexType name="AddCsv">
+           
+           <xsd:sequence>
+                      	<xsd:element name="Name" type="xsd:string" minOccurs="0" />
+                       	<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+                       	<xsd:element name="VendorName" type="xsd:string" minOccurs="0"/>
+						<xsd:element name="SmallIconUrl" type="SmallIconUrl" minOccurs="0" maxOccurs="4" />
+						<xsd:element name="SmallIconFilePath" type="SmallIconFilePath" minOccurs="0" maxOccurs="4" />
+                       	<xsd:element name="StartTiming" type="StartTiming" minOccurs="0"/>
+                       	<xsd:element name="DisplayMode" type="DisplayMode" minOccurs="0"/>
+                       	<xsd:element name="AuthInformation" type="AuthInformation" minOccurs="0"/>
+                       	<xsd:element name="SendInformation" type="SendInformation" minOccurs="0"/>
+                       	<xsd:element name="SendAuthorizedRight" type="xsd:boolean" minOccurs="0"/>
+                       	<xsd:element name="ServiceAccessRule" type="ServiceAccessRule" minOccurs="0"/>
+			<xsd:element name="EWBVersion" type="EWBVersion" minOccurs="0"/>
+			<xsd:element name="FunctionCode" type="FunctionCode" minOccurs="0"/>
+	   		<xsd:element name="SetupOptions" type="CsvSetupOptions" minOccurs="0">
+			</xsd:element>
+	   </xsd:sequence>
+		<xsd:attribute name="type" use="optional" type="typeEnum"/>
+       </xsd:complexType>
+
+	<xsd:complexType name="AddXCPPlugin">
+		<xsd:sequence>
+			<xsd:element name="XCPPlugin" type="XCPPlugin" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="AddKey">
+		<xsd:sequence>
+			<xsd:element name="Key" type="Key" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Restrictions">
+		<xsd:sequence>
+			<xsd:element name="MachineRestriction" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="SSMIVersion" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="SSLRequired" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="InstallTimeout" type="InstallTimeout" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="JobFlowSheet">
+		<xsd:sequence>
+			<xsd:element name="Type" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Execution"/>
+						<xsd:enumeration value="Regular"/>
+						<xsd:enumeration value="ImageLog"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="FileName" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="StatusConfigOnInstallation">
+		<xsd:sequence>
+			<xsd:element name="ImageLog" type="ImageLog" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="StatusConfigOnUninstallation">
+		<xsd:sequence>
+			<xsd:element name="ImageLog" type="ImageLog" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ImageLog">
+		<xsd:sequence>
+			<xsd:element name="Status" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="AutoTransfer" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="TransferLevel" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="High"/>
+						<xsd:enumeration value="Low"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TransferMode" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Unknown"/>
+						<xsd:enumeration value="Pause"/>
+						<xsd:enumeration value="PerJob"/>
+						<xsd:enumeration value="UserSpecified"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="TransferAtJobCompletion" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="TransferAtPowerOn" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="TransferAtFixedIdlePeriod" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="TransferAtUntransferredLogFull" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="TransferAtTime" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="CreationLevel" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="High"/>
+						<xsd:enumeration value="Low"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="Resolution" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="200dpi"/>
+						<xsd:enumeration value="100dpi"/>
+						<xsd:enumeration value="72dpi"/>
+						<xsd:enumeration value="50dpi"/>
+						<xsd:enumeration value="25dpi"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CreationRange" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="AllPages"/>
+						<xsd:enumeration value="OnlyPage1"/>
+						<xsd:enumeration value="Page1To2"/>
+						<xsd:enumeration value="Page1To3"/>
+						<xsd:enumeration value="Page1To4"/>
+						<xsd:enumeration value="Page1To5"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="CreationCopy" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="CreationPrint" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="CreationScan" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="CreationFax" type="xsd:boolean" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="UserInterface">
+		<xsd:sequence>
+			<xsd:element name="Indexable" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="Revision" type="Revision" minOccurs="0"/>
+			<xsd:element name="InstallerViewVersion" type="InstallerViewVersion" minOccurs="0"/>
+			<xsd:element name="InstallationOnly" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="SetupSelection" type="SetupSelection" minOccurs="0"/>
+			<xsd:element name="DisplayReinstallRetainSettings" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="DisplayRemoveRemoveSettings" type="xsd:boolean" minOccurs="0" />
+			<xsd:element name="Strings" type="Strings" minOccurs="0" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="Str80">
+    		<xsd:restriction base="xsd:string">
+       			<xsd:minLength value="1"/>
+	       		<xsd:maxLength value="80"/>
+    		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="Strings">
+		<xsd:sequence>
+			<xsd:element name="DisplayName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="DialogTitle" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="VendorName" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Copyright" type="Str80" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="lang" use="required" type="xsd:language" /> 
+	</xsd:complexType>
+
+	<xsd:complexType name="StartTiming">
+		<xsd:sequence>
+			<xsd:element name="Timing" minOccurs="0" maxOccurs="unbounded">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Authentication"/>
+						<xsd:enumeration value="Opening"/>
+						<xsd:enumeration value="ServicesHome"/>
+						<xsd:enumeration value="AccountIDPrompt"/>
+                                                <xsd:enumeration value="Help"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="DisplayMode">
+		<xsd:sequence>
+			<xsd:element name="ToolBar" type="xsd:boolean"/>
+			<xsd:element name="StatusBar" type="xsd:boolean"/>
+			<xsd:element name="SoftCoreKeypad" type="xsd:boolean" minOccurs="0"/>
+			<xsd:element name="SupportedViewModes" type="ViewModes" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="AuthInformation">
+		<xsd:sequence>
+			<xsd:element name="Source">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="RegisteredInfo"/>
+						<xsd:enumeration value="UserInput"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+			<xsd:element name="User" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="Password" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SendInformation">
+		<xsd:sequence>
+			<xsd:element name="Status" type="xsd:boolean"/>
+			<xsd:element name="Type" minOccurs="0">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="Private"/>
+						<xsd:enumeration value="Public"/>
+						<xsd:enumeration value="PublicICCardID"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="ServiceAccessRule">
+		<xsd:sequence>
+			<xsd:element name="Authenticate" type="xsd:boolean"/>
+			<xsd:element name="Visible" type="xsd:boolean"/>
+		</xsd:sequence>
+		<xsd:attribute name="KeepSettings" use="optional" type="xsd:boolean" default="false"/> 
+	</xsd:complexType>
+
+	<xsd:simpleType name="EWBVersion">
+		<xsd:restriction base="xsd:int">
+		        <xsd:minInclusive value="3" />
+		        <xsd:maxInclusive value="5" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="FunctionCode">
+		<xsd:restriction base="xsd:unsignedShort">
+      		        <xsd:maxInclusive value="65535"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="XCPPlugin">
+		<xsd:sequence>
+			<xsd:element name="Identifier" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FileName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="Version"  type="XCPVersion" minOccurs="0" maxOccurs="1" />
+			<xsd:element name="SetupOptions"  type="XCPSetupOptions" minOccurs="0" maxOccurs="1" />
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="Key">
+		<xsd:sequence>
+			<xsd:element name="FileName" type="xsd:string" minOccurs="1" maxOccurs="1"/>
+			<xsd:element name="FormatType" type="formatTypeEnum" minOccurs="1" maxOccurs="1"/>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:simpleType name="InstallTimeout">
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="Revision">
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="1" />
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="InstallerViewVersion">
+		<xsd:restriction base="xsd:int">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="3" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="SetupSelection">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="All"/>
+			<xsd:enumeration value="InstallationOnly"/>
+			<xsd:enumeration value="UnInstallationOnly"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="XCPVersion">
+		<xsd:restriction base="xsd:string">
+            <xsd:pattern value="\d{1,}.\d{1,}.\d{1,}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="XCPSetupOptions">
+		<xsd:sequence>
+			<xsd:element name="Option" minOccurs="0" maxOccurs="unbounded">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="UpgradeInstallation"/>
+						<xsd:enumeration value="InstallationOnly"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="CsvSetupOptions">
+		<xsd:sequence>
+			<xsd:element name="Option" minOccurs="0" maxOccurs="1">
+				<xsd:simpleType>
+					<xsd:restriction base="xsd:string">
+						<xsd:enumeration value="UpgradeInstallation"/>
+					</xsd:restriction>
+				</xsd:simpleType>
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+
+	<xsd:complexType name="SmallIconUrl">
+		<xsd:simpleContent>
+			<xsd:extension base="httpURL">
+				<xsd:attribute name="size" type="SmallIconSizeEnum"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="httpURL">
+		<xsd:restriction base="xsd:anyURI">
+			<xsd:pattern value="http://.*"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="SmallIconSizeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="48x48"/>
+			<xsd:enumeration value="132x98"/>
+			<xsd:enumeration value="124x92"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="ViewModes">
+		<xsd:sequence>
+			<xsd:element name="Mode" type="ViewMode" minOccurs="0" maxOccurs="unbounded">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="ViewMode">
+		<xsd:sequence>
+			<xsd:element name="Size" type="ViewSizeEnum">
+			</xsd:element>
+			<xsd:element name="Generation" type="ViewGenerationEnum">
+			</xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:simpleType name="ViewSizeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="WVGA">
+			</xsd:enumeration>
+			<xsd:enumeration value="SVGA">
+			</xsd:enumeration>
+			<xsd:enumeration value="WSVGA">
+			</xsd:enumeration>
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="ViewGenerationEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="8"/>
+			<xsd:enumeration value="9"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:simpleType name="typeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="1"/>
+			<xsd:enumeration value="2"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+	<xsd:complexType name="SmallIconFilePath">
+		<xsd:simpleContent>
+			<xsd:extension base="xsd:string">
+				<xsd:attribute name="size" type="SmallIconSizeEnum"/>
+			</xsd:extension>
+		</xsd:simpleContent>
+	</xsd:complexType>
+
+	<xsd:simpleType name="formatTypeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="X.509"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>

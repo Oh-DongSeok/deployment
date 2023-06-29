@@ -1,0 +1,9 @@
+var DATA =
+{
+	ADDRESS:"",
+	PORT:"",
+	CREDIT_PAYMENT:"",
+	I_MONEY_PAYMENT:"",
+	PRINT_USE:"",
+	COPY_USE:""
+}

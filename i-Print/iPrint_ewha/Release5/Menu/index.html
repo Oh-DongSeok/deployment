@@ -1,0 +1,115 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<meta http-equiv="Content-Style-Type" content="text/css"/>
+		<meta http-equiv="Content-Script-Type" content="text/javascirpt"/>
+		<link rel="stylesheet" type="text/css" href="./css/reset_min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<!--config-->
+		<script type="text/javascript" src="./config/config.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./data/data.js" charset="UTF-8"></script>
+		<!--<script type="text/javascript">
+			var day = new Date();
+			var timeStamp = day.getTime();
+			document.write("<script type='text/javascript' src='http://localhost/cs/CS_RM_XXXX0/data/data.js?tic=" + timeStamp + " charset='UTF-8'>" + "</" + "script>");
+		</script>-->
+		<!--libs-->
+		<script type="text/javascript" src="./scripts/base64.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/sha256.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./SystemEventLib/SystemEventLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./DependLib/BrowserExt.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./DependLib/BrowserLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/XML.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/Base64.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/LogLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/DeviceLogLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/ToolsLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/User.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WSLib/WebServiceLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ContentsLib/ContentsLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WidgetLib/WidgetLib.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./SSMILib/SSMILib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetAccountConfig.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetRoot.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetUser.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/AuthDev.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetTrayInfo.js" charset="UTF-8"></script>		
+		<script type="text/javascript" src="./SSMILib/GetUserInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/ExecuteJFS.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/CsvLocalData.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/ListCsv.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetChainLink.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetTcpIpInfo.js" charset="UTF-8"></script>
+
+		<script type="text/javascript" src="./JFLib/JfsCom.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefScan.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefCopy.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsPrint.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsUtil.js" charset="UTF-8"></script>
+		<!--resources-->
+		<script type="text/javascript" src="./msg/msg_lang.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./msg/jfs_lang.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./resource/image.js" charset="UTF-8"></script>
+		<!--data&util-->
+		<script type="text/javascript" src="./scripts/KISUtil.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/model.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/json2.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/common.js" charset="UTF-8"></script>
+		<!--controls-->
+		<script type="text/javascript" src="./scripts/pageManager.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/messageManager.js" charset="UTF-8"></script>
+		<!--pages-->
+		<script type="text/javascript" src="./scripts/pageSource.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/templatePage.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./scripts/page_waiting.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/page_login.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/page_admin.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/page_serviceSelect.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_confirm.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./scripts/popup_error.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_warn.js" charset="UTF-8"></script>
+	</head>
+	<body>
+		<!-- status bar -->
+		<!-- display CS title and user name-->
+		<div id="bar_status" class="bar">
+			<!--<img id="img_csTitle" />-->
+			<!--<img id="icn_csLogo" class="icon" />-->
+			<div id="lbl_csTitle" class="lbl" ></div>
+			<div id="tray_status"></div>
+			<div id="lyr_userName">
+			<div id="txt_user"></div>
+			<img id="icn_user" class="userIconHide" />
+			</div>
+		</div>
+		<!-- slide message -->
+		<div id="message_area" style="display: none;z-index: 10">
+			<img id="img_MA_backGroundImage" class="bg" />
+			<div id="txt_message_1" class="lbl"></div>
+			<div id="txt_message_2" class="lbl"></div>
+			<div id="txt_message_3" class="lbl"></div>
+		</div>
+		<div id="pageWrapper" class="pageWrapper"></div>
+		<div id="lyr_serviceForm">
+			<div id="floatingCirclesG">
+				<div class="f_circleG" id="frotateG_01"></div>
+				<div class="f_circleG" id="frotateG_02"></div>
+				<div class="f_circleG" id="frotateG_03"></div>
+				<div class="f_circleG" id="frotateG_04"></div>
+				<div class="f_circleG" id="frotateG_05"></div>
+				<div class="f_circleG" id="frotateG_06"></div>
+				<div class="f_circleG" id="frotateG_07"></div>
+				<div class="f_circleG" id="frotateG_08"></div>
+			</div>
+			<iframe src="" frameborder="0" id="frm_serviceForm"></iframe></div>
+			<script type="text/javascript">
+				window.onload = function(){ setTimeout("Common.onLoadBody();",100);};
+			</script>
+	</body>
+</html>

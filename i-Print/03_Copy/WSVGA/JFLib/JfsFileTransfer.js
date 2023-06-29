@@ -253,8 +253,16 @@ JFLib.FileTransfer.prototype.toXmlNode = function (xml)
 	auth.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Method', 'OperatornamePassword'));
 	auth.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'OperatorName', this.loginName));
 	auth.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Password', this.password));
-	file.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'FolderName', this.folderName));
-	file.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'DocumentName', this.docName));
+	var folderName = xml.createElementNSwithText(XMLLib.NS.JT, 'FolderName', this.folderName);
+	folderName.setAttribute("jt:lang","en");
+	folderName.setAttribute("jt:encoding","iso-8859-1");
+	file.appendChild(folderName);
+	var docName = xml.createElementNSwithText(XMLLib.NS.JT, 'DocumentName', this.docName);
+	docName.setAttribute("jt:lang","en");
+	docName.setAttribute("jt:encoding","iso-8859-1");
+	file.appendChild(docName);
+	//file.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'FolderName', this.folderName));
+	//file.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'DocumentName', this.docName));
 
 	return dist;
 

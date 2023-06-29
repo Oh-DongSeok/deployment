@@ -1,6 +1,24 @@
 ﻿function getImages(imgBit){
 	var path="./image"+imgBit+"/";
 	return {
+		//SoftKey Pad
+		BTN_SCK_AUTH_PRESS: "./image/btn_auth_key_press.png",
+		BTN_SCK_AUTH_OFF: "./image/btn_auth_key_off.png",
+		BTN_SCK_NUM_PRESS: "./image/btn_num_key_press.png",
+		BTN_SCK_NUM_OFF: "./image/btn_num_key_off.png",
+
+		BTN_SCK_MUL_OFF: "./image/btn_mul_key_off.png",
+		BTN_SCK_SHARP_OFF: "./image/btn_sharp_key_off.png",
+		BTN_SCK_PAUSE_OFF: "./image/btn_pause_key_off.png",
+		BTN_SCK_COMEBACK_OFF: "./image/btn_comeback_key_off.png",
+		BTN_SCK_SHORTEN_OFF: "./image/btn_shorten_key_off.png",
+
+		BTN_SCK_MENU_OFF: "./image/btn_menu_key_off.png",
+		BTN_SCK_STOP_OFF: "./image/btn_stop_key_off.png",
+		BTN_SCK_MENU_STOP_PRESS: "./image/btn_menu_stop_key_press.png",
+		BTN_SCK_START_OFF: "./image/btn_start_key_off.png",
+		BTN_SCK_START_PRESS: "./image/btn_start_key_press.png",
+		
 		COMMON:{
 			LOGO : "./skin/logo.png",
 			//BACKGROUND

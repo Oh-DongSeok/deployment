@@ -576,7 +576,8 @@ JFLib.Scan.prototype.toXmlNode = function (xml)
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Sharpness', this.sharpness));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Saturation', this.saturation));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'BleedthroughRemoval', this.bleedthroughRemoval));
-  scan.appendChild(xml.createElementNS(XMLLib.NS.JT, 'ImageCount'));
+  //scan.appendChild(xml.createElementNS(XMLLib.NS.JT, 'ImageCount'));
+  scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'ImageCount', "1"));
   scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Resolution', this.resolution));
   var nextoriginal = scan.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'EnableNextOriginal', this.nextoriginal));
   if (this.whenScannedFrom) {

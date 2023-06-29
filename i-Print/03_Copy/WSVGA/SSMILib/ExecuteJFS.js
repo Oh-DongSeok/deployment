@@ -299,18 +299,24 @@ SSMILib.ExecuteJFS.prototype.createMsg = function ()
 //	var header = xml.header;
 	var body = xml.body;
 
-	xml.addNSDeclaration(XMLLib.NS.JT, root, false);
-	xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	//xml.addNSDeclaration(XMLLib.NS.JT, root, false);
+	//xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	root.setAttribute("xmlns:xs", XMLLib.NS.XS);
+	root.setAttribute("xmlns:jtm", XMLLib.NS.JTM);
+	xml.addNSDeclaration(XMLLib.NS.JTM2, root, false);
+
 	var env = xml.createElementNS(XMLLib.NS.SOAP, 'Envelope');
 	xml.addNSDeclaration(XMLLib.NS.JT, env, true);
 	xml.addNSDeclaration(XMLLib.NS.SOAP, env, true);
 	xml.addNSDeclaration(XMLLib.NS.XSI, env, true);
+	env.setAttribute("xml:lang","en");
 
 //	header = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Header'));
 
 	var excjt = body.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'ExecuteJobTemplate'));
 
-	var sjt = excjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
+	//var sjt = excjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
+	var sjt = excjt.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'JobTemplate'));
 	var jth = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplateHeader'));
 	var jt = this.jobtemplate.header.toXmlNode(xml, this.jobtemplate);
 	if (jth != null) jth.appendChild(jt);
@@ -318,9 +324,14 @@ SSMILib.ExecuteJFS.prototype.createMsg = function ()
 	var node = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
 	//The code differ from JfsUtil.js
 	//node.appendChild(this.jobtemplate.header.toXmlNode(xml, this.jobtemplate));
+	// <jtm:RawData xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
 	var rawdataNode = node.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'RawData'));
+	rawdataNode.setAttribute("xmlns:soapENV", "http://schemas.xmlsoap.org/soap/envelope/");
+	rawdataNode.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
 
-	XMLLib.importNode(xml,rawdataNode,this.createJobTemplate());
+	XMLLib.importNode(xml, rawdataNode, this.createJobTemplate());
+
+	//XMLLib.importNode(xml,rawdataNode,this.createJobTemplate());
 	if(this.boxesInfo.length){
 		for(idx in this.boxesInfo){
 			if (this.boxesInfo[idx].MailBox && this.boxesInfo[idx].MailBox.Identifier) {
@@ -402,6 +413,7 @@ SSMILib.ExecuteJFS.prototype.createJobTemplate = function () {
 	xml.addNSDeclaration(XMLLib.NS.JT, env, true);
 	xml.addNSDeclaration(XMLLib.NS.SOAP, env, true);
 	xml.addNSDeclaration(XMLLib.NS.XSI, env, true);
+	env.setAttribute("xml:lang","en");
 
 	header = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Header'));
 

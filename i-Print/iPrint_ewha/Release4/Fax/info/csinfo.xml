@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ServiceDescription xmlns="http://www.fujixerox.co.jp/2007/08/ssm/cmfp/serviceDescription">
+<IconLabel>Billing IPrint</IconLabel>
+<Description>Billing Custom Service for IPrint</Description>
+</ServiceDescription>

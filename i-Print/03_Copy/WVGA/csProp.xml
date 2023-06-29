@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0"?>
 <cmfp:Description xmlns:cmfp="http://www.fujifilm.com/fb/2021/04/cmfp/prop">
   <cmfp:Id>AIP-53008</cmfp:Id>
-  <cmfp:Version>3.0.0</cmfp:Version>
+  <cmfp:Version>3.0.1</cmfp:Version>
   <cmfp:Copyright>Copyright(C) 2023 FUJIFILM Business innovation Korea Co., Ltd. All rights reserved.</cmfp:Copyright>
   <cmfp:Reference>
     <cmfp:LibInfo version="3.2.4">ALL</cmfp:LibInfo>

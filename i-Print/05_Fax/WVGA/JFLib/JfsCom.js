@@ -1202,10 +1202,10 @@ JFLib.Header = function()
 	/**
 	 * Job Flow Language Specification version.<br> IMPLIED.
 	 * @type String
-	 * @default '3.0.9'
+	 * @default '3.0.9' -> 6.0.0 에 맞도록 일부 수정
 	 * @lang en
 	 */
-	this.version =				'3.0.9';
+	this.version =				'6.0.0';
 	/**
 	 * ジョブフローの言語要素構成の範囲を設定する<br> 設定 - 任意
 	 * @type JFLib.LANGPROFILE
@@ -1231,7 +1231,7 @@ JFLib.Header = function()
 	 * @default null
 	 * @lang en
 	 */
-	this.copyright =			'';
+	this.copyright =			'Copyright (c) 2023 FUJIFILM Business Innovation Corporation, All rights reserved.';
 	/**
 	 * ジョブフローの著作者を設定する<br> 設定 - 任意
 	 * @type String
@@ -1309,7 +1309,7 @@ JFLib.Header = function()
 	 * @default "1.3.6.1.4.1"
 	 * @lang en
 	 */
-	this.machineoid =			new Array("1.3.6.1.4.1");
+	this.machineoid =			new Array("1.3.6.1.4.1.297");
 	/**
 	 * ジョブフローの検索キーワードを設定する<br> 設定 - 任意
 	 * キーワードはpushメソッドにより複数設定することが可能
@@ -1335,6 +1335,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 
 	xml.setAttributeNS(jt, XMLLib.NS.JT, 'version', this.version);
 	xml.setAttributeNS(jt, XMLLib.NS.JT, 'profile', this.profile);
+	jt.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate"); // FB용 추가
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Name', this.name));
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Description', this.description));
 	jt.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Copyright', this.copyright));
@@ -1367,6 +1368,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 			jobtemplate.notification[i].addRscNode(xml,rsnode);
 		}
 	}
+	/* 2023/06/14 불필요함 (Error 발생)
 	var jobat = node.appendChild(xml.createElementNS(XMLLib.NS.JT, 'JobAttributes'));
 	if(jobtemplate.name) {
 		jobat.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Name', jobtemplate.name));
@@ -1375,6 +1377,7 @@ JFLib.Header.prototype.toXmlNode = function (xml, jobtemplate)
 		var cate = jobat.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Categories'));
 		cate.appendChild(xml.createElementNSwithText(XMLLib.NS.JT, 'Category', jobtemplate.category));
 	}
+	*/
 	var kws = jt.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Keywords'));
 	var keyLen = this.keyword.length;
 	if (keyLen) {
@@ -1772,11 +1775,16 @@ JFLib.JobTemplate.prototype.addNotification = function(nt)
 JFLib.JobTemplate.prototype.createProcessRequest = function (xml) 
 {
 	var pr = xml.createElementNS(XMLLib.NS.JT, 'ProcessRequest');
+	pr.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
+
+	// 불필요 삭제
+	/*
 	var setup = pr.appendChild(xml.createElementNS(XMLLib.NS.JT, 'Setup'));
 	//setup.appendChild(xml.createElementNS(XMLLib.NS.JT, "OperatorInputs"));
 	var eh = setup.appendChild(xml.createElementNS(XMLLib.NS.JT, 'ExceptionHandler'));
 	var ca = eh.appendChild(xml.createElementNS(XMLLib.NS.JT, 'CatchAll'));
 	xml.setAttributeNS(ca, XMLLib.NS.JT, 'action', this.process);
+	*/
 	return pr;
 };
 
@@ -1812,23 +1820,30 @@ JFLib.JobTemplate.prototype.createMsg = function ()
 	var header = xml.header;
 	var body = xml.body;
 
-	xml.addNSDeclaration(XMLLib.NS.JT, root, false);
-	xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	//xml.addNSDeclaration(XMLLib.NS.JT, root, false);
+	//xml.addNSDeclaration(XMLLib.NS.JTM, root, false);
+	root.setAttribute("xmlns:xs", XMLLib.NS.XS);
+	root.setAttribute("xmlns:jtm", XMLLib.NS.JTM);
+	xml.addNSDeclaration(XMLLib.NS.JTM2, root, false);
+
 	var env = xml.createElementNS(XMLLib.NS.SOAP, 'Envelope');
 	xml.addNSDeclaration(XMLLib.NS.JT, env, true);
 	xml.addNSDeclaration(XMLLib.NS.SOAP, env, true);
 	xml.addNSDeclaration(XMLLib.NS.XSI, env, true);
-	xml.addNSDeclaration(XMLLib.NS.XENC, env, true);
+	//xml.addNSDeclaration(XMLLib.NS.XENC, env, true);
+	env.setAttribute("xml:lang","en");
 
 	header = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Header'));
 
 	var node = body.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'ExecuteJobTemplate'));
-	var sjt = node.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
+	var sjt = node.appendChild(xml.createElementNS(XMLLib.NS.JTM2, 'JobTemplate'));
 	node = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplateHeader'));
 	node.appendChild(this.header.toXmlNode(xml, this));
 	node = sjt.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'JobTemplate'));
 
 	var encoded = node.appendChild(xml.createElementNS(XMLLib.NS.JTM, 'RawData'));
+	encoded.setAttribute("xmlns:soapENV", "http://schemas.xmlsoap.org/soap/envelope/");
+	encoded.setAttribute("xmlns:jt", "http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate");
 	
 	body = env.appendChild(xml.createElementNS(XMLLib.NS.SOAP, 'Body'));
 	
