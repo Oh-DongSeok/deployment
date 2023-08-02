@@ -1,0 +1,123 @@
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jtm="http://www.fujifilm.com/fb/2021/03/ssm/management/jobTemplate" xmlns:jtm2="http://www.fujifilm.com/fb/2021/04/ssm/management/jobTemplate">
+    <soap:Body>
+        <jtm2:ExecuteJobTemplate>
+            <jtm2:JobTemplate>
+                <jtm:JobTemplateHeader xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+                    <jt:JobTemplate jt:version="6.0.0" jt:profile="0" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+                        <jt:Name>Scan to MailBox</jt:Name>
+                        <jt:Description> </jt:Description>
+                        <jt:Copyright>Copyright (c) 2023 FUJIFILM Business Innovation Corporation, All rights reserved.</jt:Copyright>
+                        <jt:Author></jt:Author>
+                        <jt:CreatedBy jt:identifier="1"></jt:CreatedBy>
+                        <jt:CreationDateTime>2023-07-11T09:24:52+09:00</jt:CreationDateTime>
+                        <jt:ModificationDateTime>2023-07-11T09:24:52+09:00</jt:ModificationDateTime>
+                        <jt:TargetInterpreters>
+                            <jt:MachineOID>1.3.6.1.4.1.297</jt:MachineOID>
+                        </jt:TargetInterpreters>
+                        <jt:ExecutionHints>
+                            <jt:Resources>
+                                <jt:Resource>Acquire/Scanner/BW</jt:Resource>
+                                <jt:Resource>Acquire/Scanner/Color</jt:Resource>
+                                <jt:Resource>Distribute/FileTransfer</jt:Resource>
+                            </jt:Resources>
+                        </jt:ExecutionHints>
+                        <jt:Keywords/>
+                    </jt:JobTemplate>
+                </jtm:JobTemplateHeader>
+                <jtm:JobTemplate>
+                    <jtm:RawData xmlns:soapENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+                        <soap:Envelope xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xml:lang="en">
+                            <soap:Header>
+                                <jt:JobTemplate jt:version="6.0.0" jt:profile="0" xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+                                    <jt:Name>Scan to MailBox</jt:Name>
+                                    <jt:Description> </jt:Description>
+                                    <jt:Copyright>Copyright (c) 2023 FUJIFILM Business Innovation Corporation, All rights reserved.</jt:Copyright>
+                                    <jt:Author></jt:Author>
+                                    <jt:CreatedBy jt:identifier="1"></jt:CreatedBy>
+                                    <jt:CreationDateTime>2023-07-11T09:24:52+09:00</jt:CreationDateTime>
+                                    <jt:ModificationDateTime>2023-07-11T09:24:52+09:00</jt:ModificationDateTime>
+                                    <jt:TargetInterpreters>
+                                        <jt:MachineOID>1.3.6.1.4.1.297</jt:MachineOID>
+                                    </jt:TargetInterpreters>
+                                    <jt:ExecutionHints>
+                                        <jt:Resources>
+                                            <jt:Resource>Acquire/Scanner/BW</jt:Resource>
+                                            <jt:Resource>Acquire/Scanner/Color</jt:Resource>
+                                            <jt:Resource>Distribute/FileTransfer</jt:Resource>
+                                        </jt:Resources>
+                                    </jt:ExecutionHints>
+                                    <jt:Keywords/>
+                                </jt:JobTemplate>
+                            </soap:Header>
+                            <soap:Body>
+                                <jt:ProcessRequest xmlns:jt="http://www.fujifilm.com/fb/2021/04/ssm/jobTemplate">
+                                    <jt:DocumentProcess>
+                                        <jt:Acquire jt:container="Document">
+                                            <jt:Scanner>
+                                                <jt:InputMediumSize>
+                                                    <jt:StandardMediumSize>Auto</jt:StandardMediumSize>
+                                                </jt:InputMediumSize>
+                                                <jt:HeadPosition>Default</jt:HeadPosition>
+                                                <jt:Duplex jt:scanFrom="Both">Simplex</jt:Duplex>
+                                                <jt:ImageMode>Default</jt:ImageMode>
+                                                <jt:ColorMode>BlackAndWhite</jt:ColorMode>
+                                                <jt:EnableBackgroundElimination>Default</jt:EnableBackgroundElimination>
+                                                <jt:CreateMultiLayers jt:withThumbnails="false">None</jt:CreateMultiLayers>
+                                                <jt:Darkness>Default</jt:Darkness>
+                                                <jt:Contrast>Default</jt:Contrast>
+                                                <jt:Brightness>Default</jt:Brightness>
+                                                <jt:Sharpness>Default</jt:Sharpness>
+                                                <jt:Saturation>Default</jt:Saturation>
+                                                <jt:BleedthroughRemoval>Default</jt:BleedthroughRemoval>
+                                                <jt:ImageCount>1</jt:ImageCount>
+                                                <jt:Resolution>200x200/dpi</jt:Resolution>
+                                                <jt:EnableNextOriginal>false</jt:EnableNextOriginal>
+                                                <jt:OutputMediumSize>
+                                                    <jt:StandardMediumSize>NotSpecified</jt:StandardMediumSize>
+                                                </jt:OutputMediumSize>
+                                                <jt:Magnification>
+                                                    <jt:Isotropic>100</jt:Isotropic>
+                                                </jt:Magnification>
+                                                <jt:EdgeErase>
+                                                    <jt:Instruction>Default</jt:Instruction>
+                                                </jt:EdgeErase>
+                                                <jt:CenterErase>
+                                                    <jt:LineClip jt:direction="SecondaryScan" jt:unit="mm">Default</jt:LineClip>
+                                                </jt:CenterErase>
+                                                <jt:Compression>
+                                                    <jt:Bilevel>Auto</jt:Bilevel>
+                                                    <jt:LossyLevel>Default</jt:LossyLevel>
+                                                </jt:Compression>
+                                                <jt:NextOriginalParam jt:lock="false"/>
+                                            </jt:Scanner>
+                                        </jt:Acquire>
+                                        <jt:Distribute jt:container="Document" jt:numberOfRetry="0" jt:retryInterval="30">
+                                            <jt:Serialization>
+                                                <jt:Compression>NotSpecified</jt:Compression>
+                                                <jt:Format>PDF</jt:Format>
+                                            </jt:Serialization>
+                                            <jt:Destinations>
+                                                <jt:FileTransfer>
+                                                    <jt:Name></jt:Name>
+                                                    <jt:FilingPolicy>NewAutoGenerate</jt:FilingPolicy>
+                                                    <jt:Repository>ftp://192.168.0.61/</jt:Repository>
+                                                    <jt:AuthInfo>
+                                                        <jt:Method>OperatornamePassword</jt:Method>
+                                                        <jt:OperatorName>ftpuser</jt:OperatorName>
+                                                        <jt:Password>fujixerox1!</jt:Password>
+                                                    </jt:AuthInfo>
+                                                    <jt:FolderName jt:lang="en" jt:encoding="iso-8859-1"></jt:FolderName>
+                                                    <jt:DocumentName jt:lang="en" jt:encoding="iso-8859-1">undefined_20230711_09092452534</jt:DocumentName>
+                                                </jt:FileTransfer>
+                                            </jt:Destinations>
+                                        </jt:Distribute>
+                                    </jt:DocumentProcess>
+                                </jt:ProcessRequest>
+                            </soap:Body>
+                        </soap:Envelope>
+                    </jtm:RawData>
+                </jtm:JobTemplate>
+            </jtm2:JobTemplate>
+        </jtm2:ExecuteJobTemplate>
+    </soap:Body>
+</soap:Envelope>
