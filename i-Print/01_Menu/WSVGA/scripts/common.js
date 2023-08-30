@@ -29,7 +29,7 @@ Common.onLoadBody = function()
 
 	if(glbConfigError){return;} //환경설정파일 에러 발생시 메뉴화면 표시 중단을 위해
 
-	BrowserExt.SetScreenChange("popup:faultAll"); //2016.05.17 Chone 디바이스 에러 화면을 표시함
+	//BrowserExt.SetScreenChange("popup:faultAll"); //2016.05.17 Chone 디바이스 에러 화면을 표시함
 
 	//복합기 언어설정에 따른 문자열과 이미지셋 선택
 	//var lang = BrowserExt.GetAcceptLanguage();
@@ -56,6 +56,9 @@ Common.onLoadBody = function()
 
 	ContentsLib.contentsName = Msg.Common.title || Msg.Common.CSName;
 
+	//대기 페이지로 전환
+	PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
+
 	//시리얼No취득용
 	SSMILib.GetProductInformation();
 
@@ -63,8 +66,7 @@ Common.onLoadBody = function()
 
 	SSMILib.GetAccountConfig();
 
-	//대기 페이지로 전환
-	PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
+	
 
 	//슬라이드 메시지 초기화
 	MessageManager.init();
@@ -235,6 +237,12 @@ Common.onLoadEvent = function(event, id)
 						return "";
 				}
 			};
+			/*
+			if (SSMILib.dummy) {
+				//ServiceManager.removeService();
+				PageManager.changePage(LoginPage, (PageManager.getCurrentPage() == ConfirmPopup)?PageManager.type.ROLLBACK:PageManager.type.NORMAL);
+			}
+			*/
 			SSMILib.GetTcpIpInfo(false);	// Tray 정보 취득후 IP정보를 재 취득한다.
 			break;
 			//유저정보취득
@@ -256,6 +264,9 @@ Common.onLoadEvent = function(event, id)
 					glbInfo.userInfo = {};
 					//glbInfo.userInfo.isAdmin = !(glbDevInfo.User.index > 0);
 					glbInfo.userInfo.isAdmin = isSytemAdmin(users[0]);
+					if (SSMILib.dummy) {
+						glbInfo.userInfo.isAdmin = true;
+					}
 					//유저가 어드민인가?
 					if(glbInfo.userInfo.isAdmin){
 						//지정 유저인경우

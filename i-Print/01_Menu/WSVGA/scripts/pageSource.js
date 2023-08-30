@@ -115,7 +115,13 @@ glbPageSource["page_admin"]=
 		'<img id="img_LP_cancel" class="btnBg"/>' +
 		'<div id="lbl_LP_cancel" class="lbl"></div>' +
 	'</div>'+ 
-	'<button id="btn_LP_native">Native UI</button>';
+	'<button id="btn_LP_native">Native UI</button>'
+	'<label id="lbl_LP_cs_url">' +
+	'</label>' +
+	'<label id="lbl_LP_cs_port">' +
+	'</label>' +
+	'<input type="text" id="tbx_LP_cs_url" maxlength="128">' +
+	'<input type="text" id="tbx_LP_cs_port" maxlength="128">';
 glbPageSource["page_serviceSelect"]='<div id="lyr_SS_header">'
 										+ '<span class="lbl" id="tit_SS_header"></span>'
 										+ '<span id="lbl_SS_Balance" class="lbl"></span>'

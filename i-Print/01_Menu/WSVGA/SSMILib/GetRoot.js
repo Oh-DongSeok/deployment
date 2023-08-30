@@ -98,6 +98,18 @@ SSMILib.GetProductInformation = function()
 	var dev = new SSMILib.DeviceInfo("productInformation", "");
 	dev.requester.successHandler = SSMILib.GetProductInformation.successCb;
 	dev.requester.errorHandler = SSMILib.GetProductInformation.errorCb;
+	if (SSMILib.dummy) {
+		var responseXML = new Object();
+		responseXML.serialNumber 	= "123456";
+		responseXML.productCode 	= "TM12345";
+		responseXML.familyCode 		= "FM123";
+		responseXML.DocumentRawFormatVersion 	= "1.0.0";
+		responseXML.GenerationNumber 			= "234";
+		responseXML.sha 						= "jfaieh";
+
+		SSMILib.onEvent("GetProductInformation", true, responseXML);
+		return;
+	}
 
 	dev.getDeviceInfo(false);
 	return;

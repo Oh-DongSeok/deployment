@@ -43,8 +43,9 @@ SSMILib.GetTcpIpInfo = function()
 
 	if (SSMILib.dummy) {
 		var responseXML = new Object();
+		responseXML.IPAddress = "10.97.4.100";
 
-		SSMILib.onEvent("GetTcpIpInfo", true, _returnObj);
+		SSMILib.onEvent("GetTcpIpInfo", true, responseXML);
 		return;
 	}
 

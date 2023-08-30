@@ -103,7 +103,7 @@ SSMILib.GetUser = function()
 
 	if (SSMILib.dummy) {
 		var _userList = new Array();
-		_userList[0] = {UserID:"11111", DisplayName:"Adiministrator", CardId:"11111", Index: "-1"};
+		_userList[0] = {UserID:"ch", DisplayName:"Adiministrator", CardId:"11111", Index: "-1"};
 		SSMILib.onEvent("GetUser", true, _userList);
 		return;
 	}

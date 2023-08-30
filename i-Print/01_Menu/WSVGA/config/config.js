@@ -48,7 +48,7 @@
 			{ name:"fax"  , key:"AIP_00004", func:false }
 			*/
 			
-			{ name:"print", key:"AIP_53007", func:false },
+			{ name:"print", key:"testFolder01", func:false },
 			{ name:"copy" ,	key:"AIP_53008", func:false },
 			{ name:"scan" ,	key:"AIP_53009", func:false },
 			{ name:"fax"  , key:"AIP_53010", func:false }

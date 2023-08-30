@@ -12,25 +12,25 @@ AdminSettingPage.ID = "page_admin";
 AdminSettingPage._initModel = function() {
     this._data = {
         buttonList: [
-            { id: "btn_LP_confirm", type: WidgetLib.ButtonType.NORMAL, attr: { targetImgId: "img_LP_confirm", offImg: Img.BTN_OPN_OFF, pressImg: Img.BTN_OPN_PRESS, disableImg: Img.BTN_OPN_DIS } }, 
-            { id: "btn_LP_cancel", type: WidgetLib.ButtonType.NORMAL, attr: { targetImgId: "img_LP_cancel", offImg: Img.BTN_OPN_OFF, pressImg: Img.BTN_OPN_PRESS, disableImg: Img.BTN_OPN_DIS } },
-            { id: "btn_LP_native", type: WidgetLib.ButtonType.NORMAL}
+            { id: "btn_LP_confirm",     type: WidgetLib.ButtonType.NORMAL, attr: { targetImgId: "img_LP_confirm", offImg: Img.BTN_OPN_OFF, pressImg: Img.BTN_OPN_PRESS, disableImg: Img.BTN_OPN_DIS } }, 
+            { id: "btn_LP_cancel",      type: WidgetLib.ButtonType.NORMAL, attr: { targetImgId: "img_LP_cancel", offImg: Img.BTN_OPN_OFF, pressImg: Img.BTN_OPN_PRESS, disableImg: Img.BTN_OPN_DIS } },
+            { id: "btn_LP_native",      type: WidgetLib.ButtonType.NORMAL}
         ],
         imageList: [
             //{id:"img_LP_bg", src:Img.IMG_LP_BG},
-            { id: "img_LP_mainLogo", src: Img.IMG_LP_LOGO }
+            { id: "img_LP_mainLogo",    src: Img.IMG_LP_LOGO }
         ],
         textList: [
             //{id : "lbl_LP_id", text: Msg.Menu.LOGIN_ID_LABEL},
             //{id : "lbl_LP_password", text: Msg.Menu.LOGIN_PW_LABEL},
-            { id: "lbl_LP_serverIP", text: "서버주소 : " }, 
-            { id: "lbl_LP_serverPort", text: "포트 : " }, 
+            { id: "lbl_LP_serverIP",    text: "서버주소 : " }, 
+            { id: "lbl_LP_serverPort",  text: "포트 : " }, 
             { id: "lbl_LP_isCreditUse", text: "스캔 사용여부" }, 
             { id: "lbl_LP_isImoneyUse", text: "팩스 사용여부" }, 
-            { id: "lbl_LP_isPrint", text: "출력 사용여부" }, 
-            { id: "lbl_LP_isCopy", text: "복사 사용여부" }, 
-            { id: "lbl_LP_confirm", text: "확인" }, 
-            { id: "lbl_LP_cancel", text: "취소" }
+            { id: "lbl_LP_isPrint",     text: "출력 사용여부" }, 
+            { id: "lbl_LP_isCopy",      text: "복사 사용여부" }, 
+            { id: "lbl_LP_confirm",     text: "확인" }, 
+            { id: "lbl_LP_cancel",      text: "취소" }
 
 
         ]

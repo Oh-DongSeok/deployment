@@ -49,11 +49,11 @@ SSMILib.GetTrayInfo = function()
 		var _trayCollect = new Array();
 		_trayCollect[0] = {Status:"READY", MediumSize:"A4", FeedDirection:"LEF", CurrentLevel: "25", Name:"TRAY1"};
 		_trayCollect[1] = {Status:"READY", MediumSize:"A4", FeedDirection:"SEF", CurrentLevel: "100", Name:"TRAY2"};
-		_trayCollect[2] = {Status:"READY", MediumSize:"A3", FeedDirection:"SEF", CurrentLevel: "50", Name:"TRAY3"};
-		_trayCollect[3] = {Status:"EMPTY", MediumSize:"JIS_B5", FeedDirection:"LEF", CurrentLevel: "0", Name:"TRAY4"};
-		_trayCollect[4] = {Status:"READY", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY5(Bypass)"};
-		_trayCollect[5] = {Status:"READY", MediumSize:"A4", FeedDirection:"SEF", CurrentLevel: "100", Name:"TRAY6"};
-		_trayCollect[6] = {Status:"READY", MediumSize:"A5", FeedDirection:"LEF", CurrentLevel: "100", Name:"TRAY7"};
+		_trayCollect[2] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY3"};
+		_trayCollect[3] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY4"};
+		_trayCollect[4] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY5(Bypass)"};
+		_trayCollect[5] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY6"};
+		_trayCollect[6] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:"TRAY7"};
 		_trayCollect[7] = {Status:"NOTEXIST", MediumSize:"Unknown", FeedDirection:"Unknown", CurrentLevel: "-2", Name:""};
 
 		SSMILib.onEvent("GetTrayInfo", true, _trayCollect);
