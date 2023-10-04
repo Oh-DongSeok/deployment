@@ -831,27 +831,16 @@ function onReadyStateChangeEventHandler()
 {
 	if (this.readyState == 4){
 		if (this.status == 200){
-			glbNoticeInfo.type = NOTICE.INFO;
-			glbNoticeInfo.message = Msg.NoticePopup.Msg_PowerOff;
-			PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
-			currentPage = PageManager.getCurrentPage();
+
 		} else{
-			if(flg_Dummy_Beep)return;
-			glbNoticeInfo.type = NOTICE.FAIL;
-			glbNoticeInfo.message = Msg.NoticePopup.Msg_WriteFail;
-			PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
-			currentPage = PageManager.getCurrentPage();
-			/*
-			var param = {title:Msg.WarnPopup.title, type:"", message : Msg.errorMessage.ERRCODE017, targetPage:true};
-			WarnPopup._message = param;
-			PageManager.changePage(WarnPopup,PageManager.type.NORMAL);
-			*/
+			alert("data.js 설정 오류");
 		}
 	}
 	else{
 		KISUtil.debug("save_content_to_file/this.readyState",this.readyState);
 	}
 };
+
 
 var PrintCountManager = function(){
 	this.config = {min : 1, max : 1000, enableFlag:true};
@@ -1729,6 +1718,8 @@ function getUnitPrice(jobInfo)
 function setScreenType()
 {
 	/* 表示領域の取得 */
+	glbInfo.screenWidth 	= BrowserLib.getScreenWidth();
+	glbInfo.screenHeight 	= BrowserLib.getScreenHeight();
 	var _scrType = null;
 	if ( BrowserLib ) {
 		_scrType = BrowserLib.getScreenType();
@@ -1736,24 +1727,16 @@ function setScreenType()
 	/* 表示開始位置 */
 	if ( _scrType && _scrType == BrowserLib.ScreenType.WVGA_ALL_SCREEN ){
 		glbInfo.screenType 		= BrowserLib.ScreenType.WVGA_ALL_SCREEN;
-		glbInfo.screenWidth 	= 800;
-		glbInfo.screenHeight 	= 480;
 		glbInfo.pageHeight 		= 440;
 	} else if ( _scrType && _scrType == BrowserLib.ScreenType.SVGA_ALL_SCREEN ){
 		glbInfo.screenType 		= BrowserLib.ScreenType.SVGA_ALL_SCREEN;
-		glbInfo.screenWidth 	= 800;
-		glbInfo.screenHeight 	= 600;
 		glbInfo.pageHeight 		= 560;
 	}else if ( _scrType && _scrType == BrowserLib.ScreenType.WSVGA_ALL_SCREEN ){
 		glbInfo.screenType 		= BrowserLib.ScreenType.WSVGA_ALL_SCREEN;
-		glbInfo.screenWidth 	= 1024;
-		glbInfo.screenHeight 	= 600;
 		glbInfo.pageHeight 		= 560;
 	}else{
 		// Default는 WVGA
 		glbInfo.screenType 		= BrowserLib.ScreenType.WVGA_ALL_SCREEN;
-		glbInfo.screenWidth 	= 800;
-		glbInfo.screenHeight 	= 480;
 		glbInfo.pageHeight 		= 440;
 	}
 }

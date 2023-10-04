@@ -60,8 +60,19 @@ Common.onLoadBody = function()
 			glbCount = glbimgList.length; // 이미지수만큼 반복
 			glbCount = glbCount - 1;
 			var imageAttribute = document.getElementById("img_MP_top_banner");
-			imageAttribute.setAttribute("width", "800");
-			imageAttribute.setAttribute("height", "480");
+			imageAttribute.setAttribute("width", glbInfo.screenWidth.toString());
+			imageAttribute.setAttribute("height", glbInfo.screenHeight.toString());
+			var startBtnLeft = glbInfo.screenWidth - 80;
+			var leftPx = startBtnLeft.toString() + "px";
+			var startBtnAttr = document.getElementById("btn_MP_start");
+			startBtnAttr.style.left = leftPx;
+			var prefBtnTop = glbInfo.screenHeight - 40;
+			var prefBtnLeft = glbInfo.screenWidth - 40;
+			var topPx = prefBtnTop.toString() + "px";
+			var leftPx = prefBtnLeft.toString() + "px";
+			var prefBtnAttr = document.getElementById("btn_MP_setting");
+			prefBtnAttr.style.top = topPx;
+			prefBtnAttr.style.left = leftPx;
 			
 			Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 			start();
@@ -93,7 +104,29 @@ function getTimeOut(){
 
 }
 function startMain(){
+	clearInterval (time);
 	BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+}
+function openSetting(){
+	clearInterval (time);
+	PageManager.changePage(OTIDPopup, PageManager.type.NORMAL);
+}
+function openPreference(){
+	BrowserExt.Beep(0);
+    var tbxOTID = document.getElementById("tbx_OTID");
+    if (!tbxOTID.value) {
+        BrowserExt.Beep(1);
+        return;
+    }
+	if(tbxOTID.value == PREFERENCE_PASSWORD){
+		PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
+	}
+	else{
+		alert("암호가 일치하지 않습니다.");
+	}
+}
+function cancelPreference(){
+	BrowserExt.SetScreenChange("allservice");
 }
 // image count setting function
 function setCount(imgCnt){
