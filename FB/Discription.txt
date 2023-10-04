@@ -1,0 +1,19 @@
+We found some bug during operation of Custom service for billing. Please consider below status about this bug case.
+We would like to get signature for bug-fixed version. Could i send bug-fixed version files to you secure-deliver to get signature?
+
+(1) Trouble case : A JobTemplate error occurs when using FTP to deliver Scan documents for Copy, Scan, or Fax to the server.
+					(It is believed that there may have been changes related to FileTransfer in JFLib.)
+(2) Trouble case customer : i-Print, CST Solution
+
+(3) Cause of Bug : There was a difference between the JobTemplate created with the existing JFLib and the latest JobTemplate.
+                    Location of XML and addition of language, etc.
+(4) How to fix Bug : Made some modifications to JFLib so that it is generated identically to the latest JobTemplate.
+
+(5) Impacted Version (Before Day3) by this bug : 7 Kinds of version
+	-AIP-53006_CST_v3.0.9
+	-AIP-53008_WSVGA_iPrint_v3.0.0/AIP-53008_WVGA_iPrint_v3.0.0
+	-AIP-53009_WSVGA_iPrint_v3.0.0/AIP-53009_WVGA_iPrint_v3.0.0
+	-AIP-53010_WSVGA_iPrint_v3.0.0/AIP-53010_WVGA_iPrint_v3.0.0
+(6) Which source's part will be modifixed to fix bug : 
+	Change files JfsCom.js, JfsFileTransfer.js, JfsScan.js, XML.js 
+	For information related to changes, please check the JobTemplate before and after changes.
