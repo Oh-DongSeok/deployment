@@ -1,0 +1,8 @@
+Printing
+Deprecations
+macOS has removed the functionality for converting PostScript and EPS files to PDF format. 
+As a result, CoreGraphics’ CGPSConverter returns an error when invoked, 
+ImageIO no longer converts EPS files, 
+NSEPSImageRep does not display EPS files, 
+and PMPrinterPrintWithFile does not accept a PostScript file for non-PostScript print queues. 
+(110019863)
