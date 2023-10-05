@@ -1,0 +1,130 @@
+﻿<!DOCTYPE HTML>
+<html lang="ko">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+		<meta http-equiv="Content-Style-Type" content="text/css"/>
+		<meta http-equiv="Content-Script-Type" content="text/javascirpt"/>
+		<meta http-equiv="Access-Control-Allow-Origin" content="*" />
+		<link rel="stylesheet" type="text/css" href="./css/reset_min.css" />
+		<link rel="stylesheet" type="text/css" href="./css/main.css" />
+		<style type="text/css">
+		</style>
+		<!--config-->
+		<script type="text/javascript" src="./config/config.js" charset="UTF-8"></script>
+		<!--libs-->
+		<script type="text/javascript" src="./scripts/sha256.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./WebDAVLib/WebDAVLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WebDAVLib/Mailbox.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WebDAVLib/Document.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./SystemEventLib/SystemEventLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./DependLib/BrowserExtCom.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./DependLib/BrowserLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/XML.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/base64.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ToolsLib/LogLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WSLib/WebServiceLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./ContentsLib/ContentsLib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./WidgetLib/WidgetLib.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./SSMILib/SSMILib.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetMailBox.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetAccountConfig.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetUser.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/AuthDev.js" charset="UTF-8"></script>		
+		<script type="text/javascript" src="./SSMILib/GetUserInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetCustomizeDeviceInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetScannerCapability.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetPrinterCapability.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetTrayInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetPDLInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/ExecuteJFS.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/CsvLocalData.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetRoot.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/GetJobInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./SSMILib/StoredDocument.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./JFLib/JfsCom.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefScan.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefCopy.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsPrint.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsUtil.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsScan.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefFileTransfer.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsFileTransfer.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsPBox.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsDefPBox.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsPrint.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsMailbox.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./JFLib/JfsUtil.js" charset="UTF-8"></script>
+		<!--resources-->
+		<script type="text/javascript" src="./msg/msg.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./msg/jfs_lang.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./resource/image.js" charset="UTF-8"></script>
+		<!--data&util-->
+		<script type="text/javascript" src="./scripts/KISUtil.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/model.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/common.js" charset="UTF-8"></script>
+		<!--controls-->
+		<script type="text/javascript" src="./scripts/pageManager.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/messageManager.js" charset="UTF-8"></script>
+		<!--pages-->
+		<script type="text/javascript" src="./scripts/pageSource.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/templatePage.js" charset="UTF-8"></script>
+		
+		<script type="text/javascript" src="./scripts/page_waiting.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/page_main.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/page_etcFunc.js" charset="UTF-8"></script>
+
+		<script type="text/javascript" src="./scripts/popup_result.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_magnification.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_pageSplit.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_sizeInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_traySelection.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_confirm.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_chargeInfo.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_payment.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_printing.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_error.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/popup_warn.js" charset="UTF-8"></script>
+		<script type="text/javascript" src="./scripts/softKeypad.js" 			charset="UTF-8"></script>
+	</head>
+	<body>
+		<!-- status bar -->
+		<!-- display CS title and user name-->
+		<div id="bar_status" class="statusBar">
+			<!--<img id="img_csTitle" />-->
+			<img id="icn_title" class="icon" />
+			<div id="txt_title" class="title"></div>
+			<img src="" alt="" class="btn" id="btn_serviceSelect" />
+			<img src="" alt="" class="btn" id="btn_logout" />
+		</div>
+		<!-- slide message -->
+		<div id="message_area" style="display: none;z-index: 10">
+			<img id="img_MA_backGroundImage" class="bg" />
+			<div id="txt_message_1" class="lbl"></div>
+			<div id="txt_message_2" class="lbl"></div>
+			<div id="txt_message_3" class="lbl"></div>
+		</div>
+		<div id="pageWrapper" class="pageWrapper">
+				<!-- div#lyr_TS_tray.btnGroup>ul>li.item$*4>div.btn#btn_TS_tray_menu_$>img.bg#img_TS_tray_menu_$+img.icn#icn_TS_tray_menu_$+div.lbl0#lbl_TS_tray_menu_$_0+div.lbl1#lbl_TS_tray_menu_$_1 -->
+		</div>
+		<script type="text/javascript">
+			window.onload = function(){ setTimeout("Common.onLoadBody();",100);};
+	        window.addEventListener('load', function(e) {
+	            window.applicationCache.addEventListener('updateready', function(e) {
+	                if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+	                    window.applicationCache.swapCache();
+	                                                     
+	                    if (confirm('A new version of this site is available. Load it?')) {
+	                        window.location.reload();
+	                    }
+	                } else {}
+	            },false);
+	        },false);
+	            
+	    </script>
+	</body>
+</html>
