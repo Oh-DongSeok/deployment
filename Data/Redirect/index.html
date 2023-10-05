@@ -1,0 +1,62 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" 		content="text/html;charset=UTF-8"/>
+	<meta http-equiv="Content-Style-Type" 	content="text/css"/>
+	<meta http-equiv="Content-Script-Type" 	content="text/javascirpt"/>
+	<link rel="stylesheet" type="text/css" 	href="./css/reset_min.css" />
+	<link rel="stylesheet" type="text/css" 	href="./css/main.css" />
+	<!--config-->
+	<script type="text/javascript" src="./data/data.js" charset="UTF-8"></script>
+	<!--libs-->
+	<script type="text/javascript" src="./DependLib/BrowserExtCom.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./DependLib/BrowserLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/XML.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/Base64.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./WSLib/WebServiceLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ContentsLib/ContentsLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./WidgetLib/WidgetLib.js" charset="UTF-8"></script>
+	<!--SSMILib-->
+	<script type="text/javascript" src="./SSMILib/SSMILib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetUser.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetDeviceInfo.js" charset="UTF-8"></script>
+	<!--resources-->
+	<script type="text/javascript" src="./msg/msg_lang.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./resource/image.js" charset="UTF-8"></script>
+	<!--data&util-->
+	<script type="text/javascript" src="./scripts/KISUtil.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/model.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/pageManager.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/common.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/messageManager.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_source.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/templatePage.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/htmlTagCreater.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_preference.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_waiting.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_notice.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+</head>
+<body id="body">
+	<!-- display main area -->
+	<div id="main_area" class="">
+
+	</div>
+	<script language="javascript">
+		var lang = navigator.language;
+		switch(lang){
+			case "ko":
+			case "zh-CN":
+			case "en":
+			case "ja":
+				var fileLang = "ko";
+				break;
+			default:
+				var fileLang = "ko";
+				break;
+		}
+		document.body.setAttribute("lang", lang);
+		setTimeout("Common.onLoadBody();",200);
+	</script>
+</body>
+</html>
