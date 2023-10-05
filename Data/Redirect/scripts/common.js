@@ -59,6 +59,10 @@ Common.onLoadBody = function()
 			//BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
 			glbCount = glbimgList.length; // 이미지수만큼 반복
 			glbCount = glbCount - 1;
+			var imageAttribute = document.getElementById("img_MP_top_banner");
+			imageAttribute.setAttribute("width", "800");
+			imageAttribute.setAttribute("height", "480");
+			
 			Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 			start();
 			

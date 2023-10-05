@@ -204,3 +204,8 @@ option {
 	left: 35px;
 	font-size: 20px;
 }
+#btn_MP_setting{
+	position: absolute;
+	top: 990px;
+	left: 550px;
+}

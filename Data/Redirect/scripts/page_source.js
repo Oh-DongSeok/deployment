@@ -1,6 +1,9 @@
 var glbPageSource = [];
 glbPageSource["page_waiting"]='<img id="img_MP_top_banner">'
-	+ '<button id="btn_MP_start" onClick="startMain()">시작</button>';
+	+ '<button id="btn_MP_start" onClick="startMain()">시작</button>'
+	+ '<button id="btn_MP_setting" onClick="openSetting()">'
+		+ '<img id="img_MP_setting" class="btnBg" src="../image/setting.png"/>'
+	+ '</button>';
 glbPageSource["pop_noticePopup"] =
 	'<div id="tit_NT_title" class="lbl"></div>'
 	+ '<div id="tit_NT_message" class="lbl"></div>'
