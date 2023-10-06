@@ -14,7 +14,8 @@ var glbConfigData 	= {
 	VIEW_TIME		: DATA.VIEW_TIME,
 	VIEW_MODE		: DATA.VIEW_MODE,
 	HTML_URL 		: DATA.HTML_URL,
-	IMG_URL 		: DATA.IMG_URL
+	IMG_URL 		: DATA.IMG_URL,
+	SERVER_URL		: DATA.SERVER_URL
 };
 var glbInterval;
 var glbConfig 			= {};

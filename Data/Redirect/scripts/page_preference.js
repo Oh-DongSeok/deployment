@@ -59,6 +59,7 @@ PreferencePage.updateDisplay = function(){
 	document.getElementById("txt_PF_img3").value 		= glbConfigData.IMG_URL[2];
 	document.getElementById("txt_PF_img4").value 		= glbConfigData.IMG_URL[3];
 	document.getElementById("txt_PF_img5").value 		= glbConfigData.IMG_URL[4];
+	document.getElementById("txt_PF_server_url").value 	= glbConfigData.SERVER_URL;
 };
 
 
@@ -74,6 +75,7 @@ function set_content_to_data(){
 	glbConfigData.IMG_URL[2] 	= document.getElementById("txt_PF_img3").value;
 	glbConfigData.IMG_URL[3] 	= document.getElementById("txt_PF_img4").value;
 	glbConfigData.IMG_URL[4] 	= document.getElementById("txt_PF_img5").value;
+	glbConfigData.SERVER_URL 	= document.getElementById("txt_PF_server_url").value;
 
 	var temp 	= "var DATA = " + JSON.stringify(glbConfigData);
 	var temp 	= temp.replace('"TITLE_NAME"', 'TITLE_NAME');
@@ -82,6 +84,7 @@ function set_content_to_data(){
 	var temp 	= temp.replace('"VIEW_TIME"', 'VIEW_TIME');
 	var temp 	= temp.replace('"VIEW_MODE"', 'VIEW_MODE');
 	var temp 	= temp.replace('"HTML_URL"', 'HTML_URL');
+	var temp	= temp.replace('"SERVER_URL"', 'SERVER_URL');
 	var result	= temp.replace('"IMG_URL"', 'IMG_URL');
 	return result;
 }
@@ -99,7 +102,6 @@ function save_content_to_file(content, filename){
     httpRequest.open("PUT", filename, true);
     httpRequest.onreadystatechange = onReadyStateChangeEventHandler();
     httpRequest.send(content);
-	alert("저장되었습니다.");
 }
 saveSetting = function(){
 	var mode = document.getElementById("view_change_setting").value;
@@ -114,6 +116,7 @@ saveSetting = function(){
 	}else{
 		var content = set_content_to_data();
 		save_content_to_file(content, ".data/data.js");
+		alert("저장되었습니다.");
 	}
 }
 cancelSetting = function(){

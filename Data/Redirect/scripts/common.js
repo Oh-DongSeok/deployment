@@ -50,7 +50,7 @@ Common.onLoadBody = function()
 		for(var i=0; i<glbConfigData.IMG_URL.length; i++){
 			if(isUrl(glbConfigData.IMG_URL[i])){
 				glbimgList.push(glbConfigData.IMG_URL[i]);
-				loadScript(glbConfigData.IMG_URL[i]);
+				//loadScript(glbConfigData.IMG_URL[i]);
 			}
 		}
 		if(glbimgList.length > 0){
@@ -73,7 +73,8 @@ Common.onLoadBody = function()
 			var prefBtnAttr = document.getElementById("btn_MP_setting");
 			prefBtnAttr.style.top = topPx;
 			prefBtnAttr.style.left = leftPx;
-			
+			setCount(glbimgList.length);
+			alert(glbImageCnt);
 			Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 			start();
 			
@@ -91,6 +92,7 @@ function getTimeOut(){
 	glbCount = glbCount - 1;
 	if( glbCount >= 0) {  // 카운트 진행중
 		setCount(glbimgList.length);
+		alert(glbImageCnt);
 		Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 	}
 	else if ( glbCount < 0 ) {
@@ -212,7 +214,7 @@ Common.onLoadEvent = function(event, id)
 }
 function loadScript(loc){
 	var tag = document.createElement("script");
-	tag.setAttribute("type", "text/javascript");
+	tag.setAttribute("type", "image/javascript");
 	tag.setAttribute("src", loc);
 	tag.setAttribute("charset", "UTF-8");
 	document.getElementsByTagName("head")[0].appendChild(tag);

@@ -8,4 +8,5 @@ var DATA = {
 
 	HTML_URL 	: "web1",
 	IMG_URL		: ["http://localhost/image/test01.png", "http://localhost/image/test02.png", "http://localhost/image/test03.png"],
+	SERVER_URL	: "http://localhost/data/data.js"
 };

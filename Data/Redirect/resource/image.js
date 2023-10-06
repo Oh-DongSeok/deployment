@@ -3,6 +3,7 @@ var Img = {
 		File명은 모두 소문자로 작성합니다.
 		(대소문자 구분에 따른 오류 방지.)
 	*/
+	MAIN_SETTING_BG				: "./image/setting.png",
 	// OTID popup
 	BG_OTID_POPUP				: "./image/IM_BK00_2.png",
 	ICN_CF_CONFIRM_OFF			:"./image/BTN_SML_OFF.png",
