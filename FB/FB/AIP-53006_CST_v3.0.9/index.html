@@ -1,0 +1,162 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/>
+	<meta http-equiv="Content-Style-Type" content="text/css"/>
+	<meta http-equiv="Content-Script-Type" content="text/javascirpt"/>
+	<link rel="stylesheet" type="text/css" href="./css/reset_min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<!--config-->
+	<script type="text/javascript" src="./data/data.js" charset="UTF-8"></script>
+	<!--libs-->
+	<script type="text/javascript" src="./SystemEventLib/SystemEventLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./DependLib/BrowserExtCom.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./DependLib/BrowserLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/XML.js" charset="UTF-8"></script>
+	<!--<script type="text/javascript" src="./ToolsLib/Base64.js" charset="UTF-8"></script>-->
+	<script type="text/javascript" src="./ToolsLib/md5.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/LogLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/DeviceLogLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/ToolsLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ToolsLib/User.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./WSLib/WebServiceLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./ContentsLib/ContentsLib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./WidgetLib/WidgetLib.js" charset="UTF-8"></script>
+	<!--lib-->
+	<script type="text/javascript" src="./lib/Base64.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./lib/DeviceCapabilities2.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./lib/JFCreator2.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./lib/JFManager2.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./lib/JobManager2.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./lib/WebServiceReq2.js" charset="UTF-8"></script>
+	<!--SSMILib-->
+	<script type="text/javascript" src="./SSMILib/SSMILib.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetAccountConfig.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetRoot.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetUser.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/AuthDev.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetTrayInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetUserInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/ExecuteJFS.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/CsvLocalData.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/ListCsv.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetChainLink.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetTcpIpInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetDeviceInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetAccessory.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetAdrsBookMgtInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetDisplayInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetFaxInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetG3Channels.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetOptions.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetPDLInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetPrinterCapability.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetRoot.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetScannerCapability.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetJobInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/ExecuteJFS.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/Media.js" charset="UTF-8"></script>
+	<!--SSMILib Server용 -->
+	<script type="text/javascript" src="./SSMILib/GetBillingPolicy.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetPrintInformation.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/GetRegiDeviceInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/Print.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/Delete.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/PriceTechLeader.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/PriceJetWork.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/PriceJetWorks.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SetTrayInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/ReqTrayInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SetJobLog.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SetCopyJobInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SetScanJobInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SetFaxJobInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SenderScanJob.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./SSMILib/SenderFaxJob.js" charset="UTF-8"></script>
+	<!--JFLib-->
+	<script type="text/javascript" src="./JFLib/JfsCom.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsComScan.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsComPrint.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefCom.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefPrint.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefScan.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefDistribute.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefPBox.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDefInvoke.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsDistribute.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsMailbox.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsPBox.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsPrint.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsScan.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsUtil.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsMedia.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsMediaStore.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsInvoke.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./JFLib/JfsFileTransfer.js" charset="UTF-8"></script>
+	<!--resources-->
+	<script type="text/javascript" src="./msg/msg_lang.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./resource/image.js" charset="UTF-8"></script>
+	<!--data&util-->
+	<script type="text/javascript" src="./scripts/KISUtil.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/model.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/pageManager.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/common.js" charset="UTF-8"></script>
+
+	<!--<script type="text/javascript" src="./scripts/PageManager.js" charset="UTF-8"></script>-->
+	<script type="text/javascript" src="./scripts/messageManager.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_source.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/templatePage.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/htmlTagCreater.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_preference.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_preference2.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_menu.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_waiting.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_otid.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_fileList.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_copy_main.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_scan_main.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_scan_type_select.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_fax_main.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/page_notice.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/popup_chargeInfo.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/popup_printing.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/popup_scanning.js" charset="UTF-8"></script>
+	<script type="text/javascript" src="./scripts/util.js" charset="UTF-8"></script>
+</head>
+<body id="body">
+	<!-- status bar -->
+	<!-- display CS titil and Tray remaining icon -->
+	<div id="bar_status" class="bar">
+		<!--<img id="img_csTitle" />-->
+		<img id="icn_TB_logo" class="icon" />
+		<div id="lbl_TB_csTitle" class="lbl" ></div>
+		<div id="lyr_TB_trayInfo" class="lyr">
+			<div id="lbl_TB_traySize_0" class="lbl" ></div>
+			<img id="icn_TB_trayStatus_0" class="icon" />
+			<div id="lbl_TB_traySize_1" class="lbl" ></div>
+			<img id="icn_TB_trayStatus_1" class="icon" />
+			<div id="lbl_TB_traySize_2" class="lbl" ></div>
+			<img id="icn_TB_trayStatus_2" class="icon" />
+			<div id="lbl_TB_traySize_3" class="lbl" ></div>
+			<img id="icn_TB_trayStatus_3" class="icon" />
+		</div>
+	</div>
+	<script language="javascript">
+		var lang = navigator.language;
+		switch(lang){
+			case "ko":
+				var fileLang = "ko";
+				break;
+			case "zh-CN":
+				var fileLang = "zh-cn";
+				break;
+			case "en":
+			default:
+				var fileLang = "en";
+				break;
+		}
+		document.body.setAttribute("lang", lang);
+		setTimeout("Common.onLoadBody();",200);
+	</script>
+</body>
+</html>
