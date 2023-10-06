@@ -57,6 +57,8 @@ var CONDITION = {
 };
 
 var SET_SCREEN_TYPE 	= BrowserLib.ScreenType.WSVGA_ALL_SCREEN;
+var SET_SCREEN_WIDTH    = 800;
+var SET_SCREEN_HEIGHT   = 480;
 //var REMOTE_MACHINE 	= "192.168.0.200";
 //var REMOTE_MACHINE 	= "10.97.4.222";
 //var CS_OPERATION_MODE = CONDITION.FIREFOX_DEBUG;
@@ -134,8 +136,16 @@ if(flg_Dummy_Beep)
 
 	BrowserLib.getScreenType = function()
 	{
-		return SET_SCREEN_TYPE;
+		return BrowserLib.ScreenType.SVGA_ALL_SCREEN;
 	}
+	BrowserLib.getScreenWidth = function()
+	{
+		return SET_SCREEN_WIDTH;
+	}
+	BrowserLib.getScreenHeight = function()
+	{
+		return SET_SCREEN_HEIGHT;
+	};
 }
 
 /**

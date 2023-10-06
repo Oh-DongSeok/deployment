@@ -5,6 +5,7 @@
  */
 var gProtocol 				= "http://";
 var CONFIG_DATA_FILE_NAME 	= "./data/data.js";
+var PREFERENCE_PASSWORD 	= "6789"
 
 var glbConfigData 	= {
 	TITLE_NAME		: DATA.TITLE_NAME,
@@ -25,6 +26,7 @@ var glbCount 			= 0;
 
 function initInfo()
 {
+	
 }
 /**
  * Server 주소 취득

@@ -177,6 +177,20 @@ option {
 	width: 500px;
 	height: 30px;
 }
+#lbl_PF_server_url{
+	position: absolute;
+	top: 430px;
+	left: 10px;
+	color: black;
+	font-size: 20px;
+}
+#txt_PF_server_url{
+	position: absolute;
+	top: 430px;
+	left: 250px;
+	width: 500px;
+	height: 30px;
+}
 #btn_PF_setting_save{
 	position: absolute;
 	top: 10px;
@@ -206,6 +220,87 @@ option {
 }
 #btn_MP_setting{
 	position: absolute;
-	top: 990px;
-	left: 550px;
+	top: 440px;
+	left: 760px;
 }
+/***************************************** OTID 페이지 기본 레이아웃 **********************************************/
+#lyr_OTID_wrapper{
+	position : absolute;
+ 	top : 0px;
+ 	left : 0px;
+ 	width : 800px;
+	background-color: #4b6cb7;
+}
+#lyr_Chg_wrapper{
+	position : absolute;
+ 	top : 0px;
+ 	left : 0px;
+ 	width : 800px;
+	background-color: #4b6cb7;
+}
+#lbl_OTID_guide {
+	position : absolute;
+	top : 90px;
+	left : 40px;
+	display : block;
+	width : 400px;
+	text-align: center;
+	font-weight: bold;
+	color:#fff;
+}
+
+#tbx_OTID {
+	position : absolute;
+	top : 157px;
+	left : 40px;
+	width : 400px;
+	height: 60px;
+	font-size : 30px;
+	background: white;
+}
+
+#btn_OTID_confirm {
+	position : absolute;
+	top : 250px;
+	left : 60px;
+	width : 150px;
+	height: 35px;
+	font-weight: bold;
+}
+
+#btn_OTID_cancel {
+	position : absolute;
+	top : 250px;
+	left : 270px;
+	width : 150px;
+	height: 35px;
+	font-weight: bold;
+}
+
+/************************************* Soft Core Keypad Start **************************************/
+#soft_core_keypad{
+	position: absolute;
+	top: 50px;
+	left: 490px;
+	width: 224px;
+	height: 278px;
+	background-color: lightgray;
+	overflow:auto;
+}
+#btn_num_key1{		position:absolute; top:11px; left:9px; width: 68px; height:63px;color: #ffffff}
+#btn_num_key2{		position:absolute; top:11px; left:78px; width: 68px; height:63px;}
+#btn_num_key3{		position:absolute; top:11px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key4{		position:absolute; top:75px; left:9px; width: 68px; height:63px;}
+#btn_num_key5{		position:absolute; top:75px; left:78px; width: 68px; height:63px;}
+#btn_num_key6{		position:absolute; top:75px; left:147px; width: 68px; height:63px;}
+
+#btn_num_key7{		position:absolute; top:139px; left:9px; width: 68px; height:63px;}
+#btn_num_key8{		position:absolute; top:139px; left:78px; width: 68px; height:63px;}
+#btn_num_key9{		position:absolute; top:139px; left:147px; width: 68px; height:63px;}
+
+#btn_mul_key{		position:absolute; top:203px; left:9px; width: 68px; height:63px;}
+#btn_num_key0{		position:absolute; top:203px; left:78px; width: 68px; height:63px;}
+#btn_sharp_key{		position:absolute; top:203px; left:147px; width: 68px; height:63px;}
+
+/************************************* Soft Core Keypad End **************************************/

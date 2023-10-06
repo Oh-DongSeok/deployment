@@ -101,11 +101,60 @@ function save_content_to_file(content, filename){
     httpRequest.send(content);
 	alert("저장되었습니다.");
 }
-
 saveSetting = function(){
-	var content = set_content_to_data();
-	save_content_to_file(content, ".data/data.js");
+	var mode = document.getElementById("view_change_setting").value;
+	if(mode == "server"){
+		var serverUrl = document.getElementById("txt_PF_server_url").value;
+		if(serverUrl == ""){
+			alert("서버 주소를 입력해주세요.");
+		}else{
+			dataSetting(serverUrl);
+			alert("data 설정 완료");
+		}		
+	}else{
+		var content = set_content_to_data();
+		save_content_to_file(content, ".data/data.js");
+	}
 }
 cancelSetting = function(){
 	BrowserExt.SetScreenChange("menuto:native_menu");
 }
+function dataSetting(url){
+	var xhr 		= new XMLHttpRequest();
+	var setScript 	= "";
+	
+	xhr.onreadystatechange = function () {
+		if (xhr.readyState === xhr.DONE) {
+			if (xhr.status === 200 || xhr.status === 201) {
+				setScript = xhr.responseText;
+				setData(setScript);
+			} else {
+				alert("data 설정 오류");
+			}
+		}
+	};
+	xhr.open('GET', url, true);
+	xhr.send();
+}
+
+function setData(data){
+	var filepath = "./data/data.js";
+	var httpRequest = createXMLHttpRequest();
+	httpRequest.open("PUT", filepath, true);
+	httpRequest.onreadystatechange = onReadyStateChangeEventHandler["setData"];
+	httpRequest.send(data);
+}
+var onReadyStateChangeEventHandler = {
+	
+	setData:function(){
+		if (this.readyState == 4){
+			if (this.status == 200){
+				
+			} else{
+				alert("data.js 설정 오류");
+			}
+		}else{
+			
+		}
+	}
+};
