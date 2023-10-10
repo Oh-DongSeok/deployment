@@ -222,9 +222,16 @@ option {
 	position: absolute;
 	top: 440px;
 	left: 760px;
-	width: 33px;
-	height: 33px;
+	width: 34px;
+	height: 34px;
 	background-color: transparent;
+}
+#img_MP_setting{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
 }
 /***************************************** OTID 페이지 기본 레이아웃 **********************************************/
 #lyr_OTID_wrapper{
@@ -364,8 +371,15 @@ option {
 	position: absolute;
 	top: 440px;
 	left: 760px;
-	width: 33px;
-	height: 33px;
+	width: 34px;
+	height: 34px;
 	background-color: transparent;
+}
+#img_NT_admin{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 30px;
+	height: 30px;
 }
 /************************************* Notice Page End      **************************************/

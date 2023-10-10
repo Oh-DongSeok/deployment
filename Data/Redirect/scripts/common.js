@@ -59,8 +59,9 @@ Common.onLoadBody = function()
 				//loadScript(glbConfigData.IMG_URL[i]);
 			}
 		}
-		checkUrl(glbimgList[0]);
+		//checkUrl(glbimgList[0]);
 		if(glbimgList.length > 0){
+			checkUrl(glbimgList[0]);
 			PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
 			// image view
 			//BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
@@ -69,10 +70,15 @@ Common.onLoadBody = function()
 			var imageAttribute = document.getElementById("img_MP_top_banner");
 			imageAttribute.setAttribute("width", glbInfo.screenWidth.toString());
 			imageAttribute.setAttribute("height", glbInfo.screenHeight.toString());
+			
 			var startBtnLeft = glbInfo.screenWidth - 80;
+			if(glbConfigData.BTN_POSITION != "1"){
+				startBtnLeft = 10;
+			}
 			var leftPx = startBtnLeft.toString() + "px";
 			var startBtnAttr = document.getElementById("btn_MP_start");
 			startBtnAttr.style.left = leftPx;
+
 			var prefBtnTop = glbInfo.screenHeight - 40;
 			var prefBtnLeft = glbInfo.screenWidth - 40;
 			var topPx = prefBtnTop.toString() + "px";
