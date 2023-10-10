@@ -97,10 +97,9 @@ function set_content_to_data(){
  **************************************************************/
 function save_content_to_file(content, filename){
 	KISUtil.debug("save_content_to_file/"+content, filename);
-	//if(flg_Dummy_Beep) return; //개발중엔 동작하지 않도록
     var httpRequest = createXMLHttpRequest();
     httpRequest.open("PUT", filename, true);
-    httpRequest.onreadystatechange = onReadyStateChangeEventHandler();
+    httpRequest.onreadystatechange = onReadyStateChangeEventHandler["setData"];
     httpRequest.send(content);
 }
 saveSetting = function(){
@@ -115,7 +114,7 @@ saveSetting = function(){
 		}		
 	}else{
 		var content = set_content_to_data();
-		save_content_to_file(content, ".data/data.js");
+		setData(content);
 		alert("저장되었습니다.");
 	}
 }
@@ -148,7 +147,6 @@ function setData(data){
 	httpRequest.send(data);
 }
 var onReadyStateChangeEventHandler = {
-	
 	setData:function(){
 		if (this.readyState == 4){
 			if (this.status == 200){

@@ -215,13 +215,16 @@ option {
 	top: 10px;
 	left: 10px;
 	width: 70px;
-	left: 35px;
+	height: 35px;
 	font-size: 20px;
 }
 #btn_MP_setting{
 	position: absolute;
 	top: 440px;
 	left: 760px;
+	width: 33px;
+	height: 33px;
+	background-color: transparent;
 }
 /***************************************** OTID 페이지 기본 레이아웃 **********************************************/
 #lyr_OTID_wrapper{

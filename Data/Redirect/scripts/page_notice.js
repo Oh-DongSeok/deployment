@@ -16,12 +16,8 @@ NoticePopup._initModel=function()
 {
     this._data = {
         buttonList:[
-            {id:"btn_NT_confirm",   type:WidgetLib.ButtonType.NORMAL,status:{enable:true}, attr:{targetImgId:"img_NT_confirm",  offImg: Img.BTN_NOR_OFF, onImg:Img.BTN_NOR_ON, pressImg: Img.BTN_NOR_PRESS, disableImg: Img.BTN_NOR_DIS}},
-			{id:"btn_NT_retry",   	type:WidgetLib.ButtonType.NORMAL,status:{enable:true}, attr:{targetImgId:"img_NT_retry",    offImg: Img.BTN_NOR_OFF, onImg:Img.BTN_NOR_ON, pressImg: Img.BTN_NOR_PRESS, disableImg: Img.BTN_NOR_DIS}},
-            {id:"btn_NT_admin",   	type:WidgetLib.ButtonType.NORMAL,status:{enable:true}, attr:{targetImgId:"img_NT_admin",    offImg: Img.BTN_NOR_OFF, onImg:Img.BTN_NOR_ON, pressImg: Img.BTN_NOR_PRESS, disableImg: Img.BTN_NOR_DIS}},
         ],
         imageList:[
-            {id:"img_NT_qrcode",    src: Img.IMG_NO_QR_CODE}
 
         ],
         imageList:[],

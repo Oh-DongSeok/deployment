@@ -827,21 +827,6 @@ function load_content_to_file(filePath, callback){
     httpRequest.send();
 }
 
-function onReadyStateChangeEventHandler()
-{
-	if (this.readyState == 4){
-		if (this.status == 200){
-
-		} else{
-			alert("data.js 설정 오류");
-		}
-	}
-	else{
-		KISUtil.debug("save_content_to_file/this.readyState",this.readyState);
-	}
-};
-
-
 var PrintCountManager = function(){
 	this.config = {min : 1, max : 1000, enableFlag:true};
 	this.currentNum = 1;

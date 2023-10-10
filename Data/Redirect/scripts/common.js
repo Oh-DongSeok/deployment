@@ -41,7 +41,7 @@ Common.onLoadBody = function()
 		if(glbConfigData.HTML_URL == ""){
 			PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
 		}else{
-			BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+			BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 		}
 		// 
 	}else{
@@ -53,6 +53,7 @@ Common.onLoadBody = function()
 				//loadScript(glbConfigData.IMG_URL[i]);
 			}
 		}
+		checkUrl(glbimgList[0]);
 		if(glbimgList.length > 0){
 			PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
 			// image view
@@ -74,7 +75,6 @@ Common.onLoadBody = function()
 			prefBtnAttr.style.top = topPx;
 			prefBtnAttr.style.left = leftPx;
 			setCount(glbimgList.length);
-			alert(glbImageCnt);
 			Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 			start();
 			
@@ -92,7 +92,6 @@ function getTimeOut(){
 	glbCount = glbCount - 1;
 	if( glbCount >= 0) {  // 카운트 진행중
 		setCount(glbimgList.length);
-		alert(glbImageCnt);
 		Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 	}
 	else if ( glbCount < 0 ) {
@@ -869,3 +868,24 @@ Common.setObjectEnable = function(id, enable){
 	}
 };
 
+// 서버 주소 동작 확인
+function checkUrl(url){
+	var xhr = new XMLHttpRequest();
+	xhr.open("GET", url, true);
+	xhr.onreadystatechange = checkedUrlEvent["checkUrl"];
+	xhr.send();
+}
+var checkedUrlEvent = {
+	checkUrl: function(){
+		if (this.readyState == 4){
+			if (this.status == 200){
+
+			} else{
+				alert("서버와 연결이 안됩니다. \n관리자에 문의해주세요.\n메뉴페이지로 이동합니다.");
+				BrowserExt.SetScreenChange("menuto:native_menu");
+			}
+		}else{
+			
+		}
+	}
+}
