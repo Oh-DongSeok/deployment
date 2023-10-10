@@ -22,11 +22,10 @@ NoticePopup._initModel=function()
         ],
         imageList:[],
         textList:[
-            {id:"tit_NT_title",     text:Msg.NoticePopup.Title_Info},
-            {id:"tit_NT_message",   text:Msg.NoticePopup.Msg_Other},
-            {id:"lbl_NT_confirm",   text:Msg.NoticePopup.btnConfirm},
-		    {id:"lbl_NT_retry",		text:Msg.NoticePopup.btnRetry},
-            {id:"lbl_NT_admin",		text:Msg.NoticePopup.btnAdmin}
+            {id:"tit_NT_title",     text:"알림"},
+            {id:"tit_NT_message01",   text:"서버와 연결이 안됩니다."},
+            {id:"tit_NT_message02",   text:"관리자에 문의해주세요."},
+            {id:"tit_NT_message03",   text:"메뉴페이지로 이동합니다."}
         ]
     };
 };
@@ -48,32 +47,35 @@ NoticePopup.cssChange = function()
         INFO    : 80ff80
         DEFAULT : bfbfff
     */
-    switch(glbNoticeInfo.type){
-        case NOTICE.INFO:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#80ff80";
-            break;
-        case NOTICE.WARN:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#fff780";
-            break;
-        case NOTICE.FAIL:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#ff8080";
-            break;
-        case NOTICE.MOBILE_INFO:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#2b2b2b";
-            document.getElementById("tit_NT_title").style.color           = "#fff";
-            document.getElementById("tit_NT_message").style.color         = "#fff";
-            break;
-        case NOTICE.FAX_INFO:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#2b2b2b";
-            document.getElementById("tit_NT_title").style.color           = "#fff";
-            document.getElementById("tit_NT_message").style.color         = "#fff";
-            break;
-        default:
-            document.getElementById(NoticePopup.ID).style.backgroundColor = "#bfbfff";
-            break;
-    }
-    document.getElementById(NoticePopup.ID).style.height    = glbInfo.pageHeight.toString() + "px";
+    document.getElementById(NoticePopup.ID).style.backgroundColor = "#fff780";
+    document.getElementById(NoticePopup.ID).style.height    = glbInfo.screenHeight.toString() + "px";
     document.getElementById(NoticePopup.ID).style.width     = glbInfo.screenWidth.toString() + "px";
+    // Message Position
+    var msgHeight   = glbInfo.screenHeight - 200;
+    var msgWidth    = glbInfo.screenWidth - 200;
+    var msgTop      = 50;
+    var msgLeft     = 100;
+
+    var msgAttr     = document.getElementById("tit_NT_message");
+    var msgAttr01   = document.getElementById("tit_NT_message01");
+    var msgAttr02   = document.getElementById("tit_NT_message02");
+    var msgAttr03   = document.getElementById("tit_NT_message03");
+    msgAttr.style.top       = msgTop.toString() + "px";
+    msgAttr.style.left      = msgLeft.toString() + "px";
+    msgAttr.style.height    = msgHeight.toString() + "px";
+    msgAttr.style.width     = msgWidth.toString() + "px";
+    msgAttr.style.backgroundColor = "#bfbfff";
+    msgAttr01.style.width   = msgWidth.toString() + "px";
+    msgAttr02.style.width   = msgWidth.toString() + "px";
+    msgAttr03.style.width   = msgWidth.toString() + "px";
+
+    var prefBtnTop  = glbInfo.screenHeight - 40;
+	var prefBtnLeft = glbInfo.screenWidth - 40;
+	var topPx       = prefBtnTop.toString() + "px";
+	var leftPx      = prefBtnLeft.toString() + "px";
+	var prefBtnAttr = document.getElementById("btn_NT_admin");
+	prefBtnAttr.style.top = topPx;
+	prefBtnAttr.style.left = leftPx;
 }
 
  /**
@@ -81,81 +83,5 @@ NoticePopup.cssChange = function()
   */
 NoticePopup.updateDisplay = function()
 {
-    /*
-    BrowserExt.Beep(0);
-    WidgetLib.setWidgetStatus("btn_FL_Print",{enable:true});		//버튼 활성화
 
-    Common.changeVisibility('btn_confirm','block');
-    Common.setPosition("btn_DP_CP_cancel","right","100px");
-    Common.changeVisibility('txt_CP_msg0','block');
-    Common.changeVisibility('txt_CP_msg1','block');
-    */
-    switch(glbNoticeInfo.type){
-        case NOTICE.INFO:
-            Common.setText('tit_NT_title', Msg.NoticePopup.Title_Info);
-            Common.setText('tit_NT_message', glbNoticeInfo.message);
-            break;
-        case NOTICE.WARN:
-            Common.setText('tit_NT_title', Msg.NoticePopup.Title_Warn);
-            Common.setText('tit_NT_message', glbNoticeInfo.message);
-            break;
-        case NOTICE.FAIL:
-            Common.setText('tit_NT_title', Msg.NoticePopup.Title_Fail);
-            Common.setText('tit_NT_message', glbNoticeInfo.message);
-            break;
-        case NOTICE.MOBILE_INFO:
-            if(glbJobLogInfo.qrcodeMobileUrl != "NO_IMAGE"){
-                Common.setImage("img_NT_qrcode", glbJobLogInfo.qrcodeMobileUrl);
-                document.getElementById("img_NT_qrcode").style.height    = "240px";
-                document.getElementById("img_NT_qrcode").style.width     = "240px";
-                Common.setText('tit_NT_message', glbNoticeInfo.message);
-            }else{
-                Common.setText('tit_NT_message', Msg.NoticePopup.Msg_MOBILE_Url_NO_QR);
-            }
-            break;
-        case NOTICE.FAX_INFO:
-            if(glbJobLogInfo.qrcodeUrl != "NO_IMAGE"){
-                Common.setImage("img_NT_qrcode", glbJobLogInfo.qrcodeUrl);
-                Common.setText('tit_NT_message', glbNoticeInfo.message);
-            }else{
-                Common.setText('tit_NT_message', Msg.NoticePopup.Msg_FAX_Send_Search_NO_QR);
-            }
-            break;
-        default:
-            Common.setText('tit_NT_title', Msg.NoticePopup.Title_Info);
-            break;
-    }
-
-	if(glbNoticeInfo.message == Msg.NoticePopup.Msg_NONE_PC  + " (NP)"){
-        Common.changeVisibility("btn_NT_confirm",   "none" );
-        Common.changeVisibility("btn_NT_retry",     "block");
-        Common.changeVisibility("btn_NT_admin",     "none" );
-        Common.changeVisibility("img_NT_qrcode",    "none" );
-	}else{
-        Common.changeVisibility("btn_NT_confirm",   "block");
-		Common.changeVisibility("btn_NT_retry",     "none" );
-        Common.changeVisibility("btn_NT_admin",     "block");
-        Common.changeVisibility("img_NT_qrcode",    "none" );
-	}
-    if(glbNoticeInfo.type == NOTICE.MOBILE_INFO){
-        Common.changeVisibility("btn_NT_retry",     "none" );
-        Common.changeVisibility("btn_NT_admin",     "none" );
-        Common.changeVisibility("btn_NT_confirm",   "block");
-        Common.changeVisibility("img_NT_qrcode",    "block");
-    }
-    if(glbNoticeInfo.type == NOTICE.FAX_INFO){
-        Common.changeVisibility("btn_NT_retry",     "none" );
-        Common.changeVisibility("btn_NT_admin",     "none" );
-        Common.changeVisibility("btn_NT_confirm",   "block");
-        Common.changeVisibility("img_NT_qrcode",    "block");
-    }
-
-/*
-    if(glbNoticeInfo.message == Msg.NoticePopup.Msg_Auth){
-        Common.setText('lbl_NT_retry', Msg.NoticePopup.btnSetting);
-		Common.changeVisibility("btn_NT_retry","block");
-	}else{
-		Common.changeVisibility("btn_NT_retry","none");
-	}
-    */
 };

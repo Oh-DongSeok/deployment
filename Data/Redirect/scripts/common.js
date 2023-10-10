@@ -32,15 +32,21 @@ Common.onLoadBody = function()
 	PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
 	if(glbConfigData.VIEW_TIME == "0"){
 		if(isUrl(glbConfigData.HTML_URL)){
-			BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+			checkUrl(glbConfigData.HTML_URL);
+			BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 		}else{
-			PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
+			if(glbConfigData.HTML_URL == ""){
+				PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
+			}else{
+				BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+			}
 		}
 	}
 	if(glbConfigData.DATA_TYPE == "html"){
 		if(glbConfigData.HTML_URL == ""){
 			PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
 		}else{
+			checkUrl(glbConfigData.HTML_URL);
 			BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 		}
 		// 
@@ -74,7 +80,6 @@ Common.onLoadBody = function()
 			var prefBtnAttr = document.getElementById("btn_MP_setting");
 			prefBtnAttr.style.top = topPx;
 			prefBtnAttr.style.left = leftPx;
-			setCount(glbimgList.length);
 			Common.setImage("img_MP_top_banner", glbimgList[glbImageCnt]);
 			start();
 			
@@ -97,7 +102,12 @@ function getTimeOut(){
 	else if ( glbCount < 0 ) {
 		clearInterval(time);
 		if(glbConfigData.HTML_URL != ""){
-			BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+			if(isUrl(glbConfigData.HTML_URL)){
+				checkUrl(glbConfigData.HTML_URL);
+				BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
+			}else{
+				BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+			}
 		}else{
 			PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
 		}
@@ -131,6 +141,12 @@ function cancelPreference(){
 }
 // image count setting function
 function setCount(imgCnt){
+	if(glbImageCnt == imgCnt - 1){
+		glbImageCnt = 0;
+	}else{
+		glbImageCnt++;
+	}
+	/*
 	if(glbConfigData.VIEW_MODE == "1"){
 		if(glbImageCnt == imgCnt - 1){
 			glbImageCnt = 0;
@@ -140,6 +156,7 @@ function setCount(imgCnt){
 	}else{
 		glbImageCnt = randomNum(0, imgCnt - 1);
 	}
+	*/
 }
 function randomNum(min, max){
 	var randNum = Math.floor(Math.random()*(max-min+1)) + min;
@@ -881,8 +898,9 @@ var checkedUrlEvent = {
 			if (this.status == 200){
 
 			} else{
-				alert("서버와 연결이 안됩니다. \n관리자에 문의해주세요.\n메뉴페이지로 이동합니다.");
-				BrowserExt.SetScreenChange("menuto:native_menu");
+				//alert("서버와 연결이 안됩니다. \n관리자에 문의해주세요.\n메뉴페이지로 이동합니다.");
+				//BrowserExt.SetScreenChange("menuto:native_menu");
+				PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
 			}
 		}else{
 			

@@ -52,7 +52,7 @@ PreferencePage.updateDisplay = function(){
 	}
 	document.getElementById("view_time_setting").selectedIndex 		= glbConfigData.VIEW_TIME;
 	document.getElementById("view_change_setting").selectedIndex 	= glbConfigData.VIEW_CHANGE - 1;
-	document.getElementById("view_mode_setting").selectedIndex 		= glbConfigData.VIEW_MODE - 1;
+	document.getElementById("btn_position_setting").selectedIndex 	= glbConfigData.BTN_POSITION - 1;
 	document.getElementById("txt_PF_html_url").value	= glbConfigData.HTML_URL;
 	document.getElementById("txt_PF_img1").value 		= glbConfigData.IMG_URL[0];
 	document.getElementById("txt_PF_img2").value 		= glbConfigData.IMG_URL[1];
@@ -68,7 +68,7 @@ function set_content_to_data(){
 	glbConfigData.DATA_TYPE 	= document.getElementById("type_use_setting").value;
 	glbConfigData.VIEW_CHANGE 	= document.getElementById("view_change_setting").value;
 	glbConfigData.VIEW_TIME 	= document.getElementById("view_time_setting").value;
-	glbConfigData.VIEW_MODE 	= document.getElementById("view_mode_setting").value;
+	glbConfigData.BTN_POSITION 	= document.getElementById("btn_position_setting").value;
 	glbConfigData.HTML_URL 		= document.getElementById("txt_PF_html_url").value;
 	glbConfigData.IMG_URL[0] 	= document.getElementById("txt_PF_img1").value;
 	glbConfigData.IMG_URL[1] 	= document.getElementById("txt_PF_img2").value;
@@ -82,7 +82,7 @@ function set_content_to_data(){
 	var temp 	= temp.replace('"DATA_TYPE"', 'DATA_TYPE');
 	var temp 	= temp.replace('"VIEW_CHANGE"', 'VIEW_CHANGE');
 	var temp 	= temp.replace('"VIEW_TIME"', 'VIEW_TIME');
-	var temp 	= temp.replace('"VIEW_MODE"', 'VIEW_MODE');
+	var temp 	= temp.replace('"BTN_POSITION"', 'BTN_POSITION');
 	var temp 	= temp.replace('"HTML_URL"', 'HTML_URL');
 	var temp	= temp.replace('"SERVER_URL"', 'SERVER_URL');
 	var result	= temp.replace('"IMG_URL"', 'IMG_URL');
