@@ -6,7 +6,7 @@ var DATA = {
 	VIEW_CHANGE	: "local",
 	BTN_POSITION: "1",
 
-	HTML_URL 	: "http://127.0.0.1/test",
-	IMG_URL		: ["http://127.0.0.1/image/test01.png", "", "", "", ""],
-	SERVER_URL	: "http://127.0.0.1/data/data.js"
+	HTML_URL 	: "",
+	IMG_URL		: ["", "", "", "", ""],
+	SERVER_URL	: ""
 };

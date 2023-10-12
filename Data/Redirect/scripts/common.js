@@ -32,7 +32,7 @@ Common.onLoadBody = function()
 	PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
 	if(glbConfigData.VIEW_TIME == "0"){
 		if(isUrl(glbConfigData.HTML_URL)){
-			checkUrl(glbConfigData.HTML_URL);
+			checkUrl(glbConfigData.HTML_URL, "HEAD");
 			BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 		}else{
 			if(glbConfigData.HTML_URL == ""){
@@ -46,7 +46,7 @@ Common.onLoadBody = function()
 		if(glbConfigData.HTML_URL == ""){
 			PageManager.changePage(PreferencePage, PageManager.type.NORMAL);
 		}else{
-			checkUrl(glbConfigData.HTML_URL);
+			checkUrl(glbConfigData.HTML_URL, "HEAD");
 			BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 		}
 		// 
@@ -61,7 +61,7 @@ Common.onLoadBody = function()
 		}
 		//checkUrl(glbimgList[0]);
 		if(glbimgList.length > 0){
-			checkUrl(glbimgList[0]);
+			checkUrl(glbimgList[0], "GET");
 			PageManager.changePage(WaitingPage, PageManager.type.NORMAL);
 			// image view
 			//BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
@@ -109,7 +109,7 @@ function getTimeOut(){
 		clearInterval(time);
 		if(glbConfigData.HTML_URL != ""){
 			if(isUrl(glbConfigData.HTML_URL)){
-				checkUrl(glbConfigData.HTML_URL);
+				checkUrl(glbConfigData.HTML_URL, "HEAD");
 				BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
 			}else{
 				BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
@@ -122,7 +122,12 @@ function getTimeOut(){
 }
 function startMain(){
 	clearInterval (time);
-	BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+	if(isUrl(glbConfigData.HTML_URL)){
+		checkUrl(glbConfigData.HTML_URL, "HEAD");
+		BrowserExt.SetScreenChange("changeDisplay:URL:" + glbConfigData.HTML_URL);
+	}else{
+		BrowserExt.SetScreenChange("menuto:" + glbConfigData.HTML_URL);
+	}
 }
 function openSetting(){
 	clearInterval (time);
@@ -892,24 +897,35 @@ Common.setObjectEnable = function(id, enable){
 };
 
 // 서버 주소 동작 확인
-function checkUrl(url){
+function checkUrl(url, type){
+	var method = "HEAD";
+	if(type == "HEAD"){
+		method = "HEAD";
+	}else{
+		method = "GET";
+	}
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET", url, true);
+	xhr.open(method, url, true);
 	xhr.onreadystatechange = checkedUrlEvent["checkUrl"];
 	xhr.send();
 }
 var checkedUrlEvent = {
 	checkUrl: function(){
+		
 		if (this.readyState == 4){
 			if (this.status == 200){
 
 			} else{
 				//alert("서버와 연결이 안됩니다. \n관리자에 문의해주세요.\n메뉴페이지로 이동합니다.");
 				//BrowserExt.SetScreenChange("menuto:native_menu");
+				clearInterval (time);
 				PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
 			}
 		}else{
-			
+			if(this.status != 200){
+				clearInterval (time);
+				PageManager.changePage(NoticePopup, PageManager.type.NORMAL);
+			}
 		}
 	}
 }
