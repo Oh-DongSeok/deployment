@@ -3,5 +3,21 @@ UI는 이를 감안하여 입력 항목이 좌측에 주요내용이 표시되�
 Day3 이후 Softkey pad가 삭제되어 입력이 필요한 경우 EWB의 keyboard가 아래에서 표시됩니다. 
 숫자키가 아닌 Qwerty 키보드가 표시되므로 화면의 대부분을 가리게 됩니다.
 이때문에 입력시 확인이 필요한 주요 정보가 가려지게 됩니다.
-개발자는 EWB  키보드에 익숙하기 때문에 큰 문제라고 인식 하고 있지 않았습니다만, 
-최근 고객사 대모에서 화면을 대부분 차지하는 키보드가 표시되어 기존화면의 대부분을 가리게 되어 사용자가  키 입력이 힘들다는 지적이 있었습니다.
+개발자는 EWB  키보드에 익숙하기 때문에 큰 문제라고 인식 하고 있지 않았습니다. 
+최근 고객사 대모에서 화면을 대부분 차지하는 키보드가 표시되어, 
+기존화면의 대부분을 가리게 되어 사용자가 키 입력이 힘들다는 지적이 있었습니다.
+
+Before Day3, the Softkey pad was always displayed on the right side of the WSVGA panel, 
+and the WVGA panel was slid from the left side. 
+The UI was designed to display the main content on the left side of the input items, considering this. 
+After Day3, the Softkey pad was removed and the EWB keyboard was displayed from the bottom when input was needed. 
+Since the Qwerty keyboard is displayed instead of the numeric key, most of the screen is covered. 
+This causes important information that needs to be checked when entering to be hidden. 
+Developers were not aware of this as a big problem because they were familiar with the EWB keyboard. 
+Recently, Demo, a customer company, pointed out that it is difficult for users to enter keys 
+because the keyboard that occupies most of the screen is displayed and covers most of the original screen.
+
+Because it is a specification without a soft keypad, we urgently added 10Key.
+We added 10Key urgently and the developer missed the change history.
+
+
