@@ -22,15 +22,15 @@
 {
 	"division"	: "xxxxx",
 	"serverUrl"	: "https://xxx.xxx.xxx.xxx:9009/"
-	"status" 	: "success", 	// -- 성공/실패 여부 (성공 : "success", 실패 : "failure")
-	"reason" 	: ["실패 사유"]	// -- 실패 시 사유
+	"status" 	: "success",
+	"reason" 	: ["실패 사유"]
 }
 ```
 
-* division : 소속 정보
-* serverUrl : 해당 사용자의 서버 주소
-* status : 성공/실패 여부 (성공 : "success", 실패 : "failure")
-* reason : string 실패 시 사유
+ - division : 소속 정보
+ - serverUrl : 해당 사용자의 서버 주소
+ - status : 성공/실패 여부 (성공 : "success", 실패 : "failure")
+ - reason : string 실패 시 사유
 
     - 실패 사유
         - 존재하지 않는 사용자
