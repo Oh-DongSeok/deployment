@@ -1,0 +1,50 @@
+﻿
+트랜잭트 설치를 실행하고 있습니다.
+
+설치의 Install 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Install 단계는 완료되었으며 Commit 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Commit 단계가 완료되었습니다.
+
+트랜잭트 설치가 완료되었습니다.
+
+트랜잭트 설치를 실행하고 있습니다.
+
+설치의 Install 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Install 단계를 진행하는 동안 예외가 발생했습니다.
+System.InvalidOperationException: '.' 컴퓨터의 서비스 제어 관리자를 열 수 없습니다. 이 작업을 수행하려면 추가 권한이 필요합니다.
+다음 오류 메시지와 함께 내부 예외 System.ComponentModel.Win32Exception이(가) Throw되었습니다. 액세스가 거부되었습니다
+
+설치의 Rollback 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Rollback 단계가 완료되었습니다.
+
+트랜잭트 설치가 완료되었습니다.
+
+트랜잭트 설치를 실행하고 있습니다.
+
+설치의 Install 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Install 단계를 진행하는 동안 예외가 발생했습니다.
+System.InvalidOperationException: '.' 컴퓨터의 서비스 제어 관리자를 열 수 없습니다. 이 작업을 수행하려면 추가 권한이 필요합니다.
+다음 오류 메시지와 함께 내부 예외 System.ComponentModel.Win32Exception이(가) Throw되었습니다. 액세스가 거부되었습니다
+
+설치의 Rollback 단계를 시작하고 있습니다.
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.exe 어셈블리의 진행 상황을 보려면 로그 파일 내용을 검토하십시오.
+파일은 C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Release\SmartWhereGate.InstallLog 위치에 있습니다.
+
+Rollback 단계가 완료되었습니다.
+
+트랜잭트 설치가 완료되었습니다.

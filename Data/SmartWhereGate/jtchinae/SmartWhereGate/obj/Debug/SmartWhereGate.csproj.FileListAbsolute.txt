@@ -1,0 +1,12 @@
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Debug\SmartWhereGate.exe.config
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Debug\SmartWhereGate.exe
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\Debug\SmartWhereGate.pdb
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.csproj.AssemblyReference.cache
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.g.resources
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\FXKIS.SmartWhere.Gate.ProjectInstaller.resources
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\FXKIS.SmartWhere.Gate.SmartWhereGate.resources
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.csproj.GenerateResource.cache
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.csproj.CoreCompileInputs.cache
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.csproj.CopyComplete
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.exe
+C:\Users\fujifilm\Documents\svn\FxkSol\SmartWhereGate\branches\jtchinae\SmartWhereGate\obj\Debug\SmartWhereGate.pdb
