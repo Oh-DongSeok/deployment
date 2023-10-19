@@ -8,7 +8,7 @@
 ----
 
 ### Request Example Value
-```
+```json
 {
 	"userId"	:"xxxxx",
 	"deviceIp"	:"xxx.xxx.xxx.xxx"
@@ -18,10 +18,10 @@
 
 ----
 ### Response Example Value
-```
+```json
 {
 	"division"	: "xxxxx",
-	"serverUrl"	: "https://xxx.xxx.xxx.xxx:9009/"
+	"serverUrl"	: "https://xxx.xxx.xxx.xxx:9009/",
 	"status" 	: "success",
 	"reason" 	: ["실패 사유"]
 }
@@ -38,3 +38,4 @@
         - 소속을 알 수 없는 사용자
         - DB와 연결 오류
         - 해당 소속 주소 없음
+
