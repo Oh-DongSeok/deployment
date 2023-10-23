@@ -1,0 +1,199 @@
+﻿{
+  "Database": {
+    "Host"      : "13.197.1.105",
+    "Port"      : 9556,
+    "Name"      : "ANYWHERE",
+    "ID"        : "uNboIeOiGxuDCALFSoEYQQ==",
+    "Password"  : "lX4pLAw/gb0jDXVvf7jnQi5xjvHGUpWl3R+sD4clo94=",
+    "TimeoutMS" : 10000
+  },
+
+  "Common": {
+    "PathSmartWhereDataRootDirectory"   : "C:\\SmartWhere\\",
+    "PathSpoolDirectory"                : "Spool\\",
+    "PathErrorSpoolDirectory"           : "ErrSpool\\",
+    "PathMetadataDirectory"             : "Metadata\\",
+    "PathPrintJobDirectory"             : "PrintJob\\",
+    "PathContingencyDirectory"          : "Contingency\\",
+    "PathFontDataDirectory"             : "FontData\\",
+    "PathWatermarkImageDirectory"       : "WatermarkImage\\",
+    "PathImageProcessingDirectory"      : "ImageProcessing\\",
+    "PathApprovalProcessingDirectory"   : "ApprovalProcessing\\",
+    "PathImageLogProcessingDirectory"   : "ImageLogProcessing\\",
+    "PathPrintingByFileSpoolDirectory"  : "PrintingByFile\\",
+    "PathLogDirectory"                  : "Logs\\",
+    "LogLevel"                          : "Debug"
+  },
+
+  "Recv": {
+    "Mode"                          : "Both",
+    "PortRaw"                       : 9100,
+    "ListenThreadCount"             : 32,
+    "ConnectTimeoutMS"              : 3000,
+    "ReadTimeoutMS"                 : 5000,
+    "ListenRetryCount"              : 5,
+    "ListenRetryIntervalMS"         : 100,
+    "CleanTimeoutMin"               : 10,
+    "CleanIntervalMS"               : 1000,
+    "BufferSize"                    : 524288,
+    "SendAttemptCount"              : 3
+
+  },
+
+  "Analyzer": {
+    "Host"                          : "127.0.0.1",
+    "Port"                          : 8888,
+    "PortHeavy"                     : 8889,
+    "UseApproval"                   : false,
+    "ThreadLimitCount"              : 10,
+    "ThreadLimitCountHeavy"         : 2,
+    "ListenRetryCount"              : 5,
+    "ListenRetryIntervalMS"         : 100,
+    "AcceptWaitingTimeoutMS"        : 5000,
+    "AnalyzeTimeoutMin"             : 60,
+    "AnalyzeTimeoutMinHeavy"        : 60,
+    "SpoolRecvTimeoutSec"           : 30,
+    "SizeLimit"                     : 10485760,
+    "AbortSizeLimit"                : 115343360,
+    "ThreadGap"                     : 2000
+  },
+
+  "PostScheduler": {
+    "Port"                          : 9009,
+    "PrintingModuleCount"           : 10,
+    "PrintingModuleTimeoutMin"      : 60,
+    "ReadTimeoutMS"                 : 5000,
+    "ListenRetryCount"              : 5,
+    "ListenRetryIntervalMS"         : 100,
+    "AcceptWaitingTimeoutMS"        : 5000,
+    "DocumentListLimitCount"        : 80,
+    "IsListDescending"              : false,
+    "ServerIndex"                   : 0,
+    "EncryptedCertificatePassword"  : "Jnz1teRYdtlt2vzt+E9/IxEzezCto9QrKj267KFl9FM=",
+    "ActiveDirectoryDomain"         : "dc01.fujixerox.net",
+    "ActiveDirectoryHashMode"       : "Normal",
+    "ActiveDirectoryUsedSSL"        : false
+  },
+
+  "PrintingModule": {
+    "NameForMMD2"                   : "SmartWhere_PrintingModule.exe",
+    "PortForMMD2"                   : 9100,
+    "UseMMD2"                       : true,
+
+    "NameForMobile"                 : "SmartWhere_PrintingModule_Mobile.exe",
+    "PortForMobile"                 : 9100,
+    "UseMobile"                     : true,
+
+    "UsePrintingByDevice"           : true,
+    "UsePrintingByFile"             : false
+  },
+
+  "Approval": {
+    "PathPdfConverterExecutable"    : "",
+    "PathPdfConverterReference"     : "",
+    "WebServiceURI"                 : "http://127.0.0.1/approve/apprinter.do?method=approvalDraft",
+    "ConvertRetryCount"             : 5,
+    "ConvertRetryIntervalMS"        : 100,
+    "HttpTimeoutMS"                 : 3000
+  },
+
+  "ImageLog": {
+    "PathPdfConverterExecutable"    : "",
+    "PathPdfConverterReference"     : "",
+    "ServerHost"                    : "127.0.0.1",
+    "ServerPort"                    : 80,
+    "ConvertRetryCount"             : 5,
+    "ConvertRetryIntervalMS"        : 100,
+    "HttpTimeoutMS"                 : 3000
+  },
+
+  "Mobile": {
+    "Port"                          : 9515,
+    "BufferSize"                    : 524288,
+    "ReadTimeoutMS"                 : 5000,
+    "WaitTimeoutMS"                 : 3000,
+    "ListenRetryCount"              : 5,
+    "ListenRetryIntervalMS"         : 100,
+    "InsertAttemptCount"            : 3,
+    "InsertTimeoutMS"               : 1000,
+    "RemainDays"                    : 1,
+    "VeryPdfOption"                 : "",
+    "ExternalProcessTimeoutMS"      : 300000
+  },
+
+  "Background": {
+    "CleaningIntervalMinutes"       : 10
+  },
+
+  "Watcher": {
+    "IntervalMS"                    : 3000,
+    "DictionaryService": {
+      "SmartWhere_ReceiveService": {
+        "Name"                      : "SmartWhere_ReceiveService",
+        "Port"                      : 515,
+        "UseNetwork"                : true,
+        "ProcessName"               : "SmartWhere_ReceiveService.exe"
+      },
+      "SmartWhere_AnalyzeService": {
+        "Name"                      : "SmartWhere_AnalyzeService",
+        "Port"                      : 8888,
+        "UseNetwork"                : true,
+        "ProcessName"               : "SmartWhere_AnalyzeService.exe"
+      },
+      "SmartWhere_PostScheduleService": {
+        "Name"                      : "SmartWhere_PostScheduleService",
+        "Port"                      : 9009,
+        "UseNetwork"                : true,
+        "ProcessName"               : "SmartWhere_PostScheduleService.exe"
+      },
+      "SmartWhere_BackgroundService": {
+        "Name"                      : "SmartWhere_BackgroundService",
+        "Port"                      : 0,
+        "UseNetwork"                : false,
+        "ProcessName"               : "SmartWhere_BackgroundService.exe"
+      },
+      "PdfReceive": {
+        "Name"                      : "PdfReceive",
+        "Port"                      : 5555,
+        "UseNetwork"                : true,
+        "ProcessName"               : "PdfReceive.exe"
+      }
+    }
+  },
+
+  "MacOS": {
+    "Port"                          : 8515,
+    "BufferSize"                    : 524288,
+    "ReadTimeoutMS"                 : 5000,
+    "WaitTimeoutMS"                 : 3000,
+    "ListenRetryCount"              : 5,
+    "ListenRetryIntervalMS"         : 100,
+    "InsertAttemptCount"            : 3,
+    "InsertTimeoutMS"               : 1000,
+    "RemainDays"                    : 1,
+    "VeryPdfOption"                 : "",
+    "ExternalProcessTimeoutMS"      : 300000
+  },
+  "Email": {
+    "Host"                          : "mailhost.sgp.fujixerox.com",
+    "DefaultTo"                     : "sooyong.park3@kor.fujixerox.com",
+    "DefaultHelpDeskMail"           : "sooyong.park3@kor.fujixerox.com",
+    "From"                          : "no-reply@kor.fujixerox.com",
+    "UserName"                      : "redmine@kor.fujixerox.com",
+    "SpoolCompleteSubject"          : "대용량 파일 Spool이 완료되었습니다.",
+    "SpoolReadySubject"             : "대용량 파일이 Spool되었습니다.",
+    "SpoolAbortSubject"             : "대용량 파일 Spool이 취소되었습니다.",
+    "SpoolReadyBody"                : "대용량 파일이 Spool되었습니다.",
+    "SpoolAbortBody"                : "파일 용량이 너무 커 Spool이 취소되었습니다. Helpdesk에 문의해주세요.",
+    "SpoolCompleteBody"             : "대용량 파일 Spool이 완료되었습니다.",
+    "DefaultBody"                   : "테스트",
+    "Domain"                        : "kor.fujixerox.com",
+    "LoginRequest"                  : false,
+    "UnlockComponent"               : "FUJXERMAILQ_PJ4uZnzxoS4P",
+    "Port"                          : 25,
+    "IsMailUse"                     : true,
+    "PassWord"                      : "",
+    "Query"                         : "SELECT [EMAIL] FROM [XPMS_STD].[dbo].[T_LX_USER_DETAIL] WHERE USERID = ",
+    "QueryTimeoutMS"                : 5000
+  }
+}

@@ -22,6 +22,7 @@
 {
 	"division"	: "xxxxx",
 	"serverUrl"	: "https://xxx.xxx.xxx.xxx:9009/",
+    "protocol"  : "JSON ",
 	"status" 	: "success",
 	"reason" 	: ["실패 사유"]
 }
@@ -29,6 +30,7 @@
 
  - division : 소속 정보
  - serverUrl : 해당 사용자의 서버 주소
+ - protocol : Print Server 통신 시에 Data Protocol 방식(XML: 기존 WebService용, JSON: 신규 서비스 용)
  - status : 성공/실패 여부 (성공 : "success", 실패 : "failure")
  - reason : string 실패 시 사유
 

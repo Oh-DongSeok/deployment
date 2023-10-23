@@ -1,0 +1,141 @@
+﻿<local:PageBase x:Class="FXKIS.SmartWhere.CommonIF.PagePostScheduler"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+                xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                mc:Ignorable="d" d:DesignHeight="500" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility"   Value="Auto"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment"          Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type xctk:IntegerUpDown}">
+            <Setter Property="HorizontalAlignment"        Value="Left"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="MinWidth"                   Value="150"/>
+            <Setter Property="Margin"                     Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background"  Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" Value="DarkGray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type local:NetworkPortUpDown}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth"            Value="150"/>
+            <Setter Property="Margin"              Value="5"/>
+        </Style>
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="230"/>
+        </Style>
+
+        <Style x:Key="SingleRowStyle" TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label                   Grid.Row="0" Grid.Column="0" Content="PORT"/>
+            <local:NetworkPortUpDown Grid.Row="0" Grid.Column="1" x:Name="NumPort"/>
+
+            <Label                   Grid.Row="1" Grid.Column="0" Content="PRINTING MODULE COUNT"/>
+            <xctk:IntegerUpDown      Grid.Row="1" Grid.Column="1" x:Name="NumPrintingModuleCount"/>
+            
+            <Label                   Grid.Row="2" Grid.Column="0" Content="PRINTING MODULE TIMEOUT (MIN)"/>
+            <xctk:IntegerUpDown      Grid.Row="2" Grid.Column="1" x:Name="NumPrintingModuleTimeout"/>
+            
+            <Label                   Grid.Row="3" Grid.Column="0" Content="READ TIMEOUT (MS)"/>
+            <xctk:IntegerUpDown      Grid.Row="3" Grid.Column="1" x:Name="NumRequestReadingTimeoutMS"/>
+            
+            <Label                   Grid.Row="4" Grid.Column="0" Content="LISTEN RETRY COUNT"/>
+            <xctk:IntegerUpDown      Grid.Row="4" Grid.Column="1" x:Name="NumHttpListenStartingRetryCount"/>
+            
+            <Label                   Grid.Row="5" Grid.Column="0" Content="LISTEN RETRY INTERVAL (MS)"/>
+            <xctk:IntegerUpDown      Grid.Row="5" Grid.Column="1" x:Name="NumHttpListenStartingRetryIntervalMS"/>
+            
+            <Label                   Grid.Row="6" Grid.Column="0" Content="ACCEPT WAITING TIMEOUT (MS)"/>
+            <xctk:IntegerUpDown      Grid.Row="6" Grid.Column="1" x:Name="NumHttpAcceptWaitingTimeoutMS"/>
+
+            <Label                   Grid.Row="7" Grid.Column="0" Content="DOCUMENT LIST LIMIT COUNT"/>
+            <xctk:IntegerUpDown      Grid.Row="7" Grid.Column="1" x:Name="NumDocumentListLimitCount"/>
+
+            <Label                   Grid.Row="8" Grid.Column="0" Content="LIST IS DESCENDING"/>
+            <CheckBox                Grid.Row="8" Grid.Column="1" x:Name="ChkIsListDescending"/>
+
+            <Label                   Grid.Row="9" Grid.Column="0" Content="SERVER INDEX"/>
+            <xctk:IntegerUpDown      Grid.Row="9" Grid.Column="1" x:Name="NumServerIndex"/>
+
+            <Label                   Grid.Row="10" Grid.Column="0" Content="CERTIFICATE PASSWORD"/>
+            <PasswordBox             Grid.Row="10" Grid.Column="1" x:Name="TxtCertificatePassword"/>
+
+            <Label                   Grid.Row="11" Grid.Column="0" Content="ACTIVE DIRECTORY DOMAIN"/>
+            <TextBox                 Grid.Row="11" Grid.Column="1" x:Name="TxtActiveDirectoryDomain"/>
+            
+            <Label                   Grid.Row="12" Grid.Column="0" Content="ACTIVE DIRECTORY SSL"/>
+            <CheckBox                Grid.Row="12" Grid.Column="1" x:Name="ChkActiveDirectoryUsedSSL"/>
+
+            <Label                   Grid.Row="13" Grid.Column="0" Content="ACTIVE DIRECTORY HASH MODE"/>
+            <ComboBox                Grid.Row="13" Grid.Column="1" x:Name="CmbActiveDirectoryHash" Width="150">
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashNormal" Content="NORMAL"/>
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashMD5"    Content="MD5"/>
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashSHA1"   Content="SHA1"/>
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashSHA256" Content="SHA256"/>
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashSHA512" Content="SHA512"/>
+                <ComboBoxItem x:Name="CmbitemActiveDirectoryHashSHA384" Content="SHA384"/>
+            </ComboBox>
+            
+        </Grid>
+    </ScrollViewer>
+</local:PageBase>

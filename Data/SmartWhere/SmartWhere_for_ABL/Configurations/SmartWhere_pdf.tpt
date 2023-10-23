@@ -1,0 +1,253 @@
+;This is a basic .tpt used for Option III conversions.  With Option III, only
+; the functions in [JobParams] are accepted.
+;
+; ($PTDAT) is a macro for the "application data" folder that applies
+; ($PTPGM) is a macro for the "program files" folder that applies
+; ($TPTDIR) is the macro for the folder where the .tpt script resides 
+;
+;======================================================================
+;
+;; These is a sample of the [UI-Variables] section.  It is used to declare 
+;; which values in the [JobParam] section can be set from the contents of a
+;; external text file provided on the command line.
+;;
+;; The sample file that sets those contents is UI.TXT (see .\scripts\vardemo\ folder)
+;; The command line to use that file is:  pclxform vardemo.tpt -uivars=ui.txt
+;;
+;;======================================================================
+;;[UI-Variables]
+;;======================================================================
+;;OverlayDir           JobParam    String      dflt=""    "Directory for overlay file"
+;;OverlayFilename      JobParam    String      dflt=""    "Overlay filename"
+;
+;;======================================================================
+[JobParams]
+
+InputDir=C:\\SmartWhere\\OrgSpool\\lp\\
+InFilename=dfA005_57C6C9AA-6572-4D1E-BDD7-309192314969
+OutputPath=C:\\SmartWhere\\ImageLog\\lp\\
+Outfilename=Z0020_B3E5FB5E-63B8-493D-B689-B299A0FF9CE6.pdf
+
+Conversion=pdfraster
+Compression=JBIG2Compression
+RemoveMargins=false
+Silent=false
+
+SetPref ( PREF_QUIETMODE,		1 )	; 0 = issue errmgs on screen
+SetPref ( PREF_NOSAVE_LOG,		0 )	; 1= does not save the log file			 
+SetPref ( PREF_NOSAVE_MAP,		1 )	; 1= does not save the font map file			 
+SetPref ( PREF_EXTRACT_TEXT,		0 )	; 1=Extract text objects into a .tnx file	 		 
+SetPref ( PREF_EXTRACT_FONT,		0 )	; 1=Add all the font metric data to the .tnx file. 
+SetPref ( PREF_EXTRACT_PJL,           0 )     ; 1=extract PJL comments found in PCL
+
+SetPref ( PREF_INTL_PGRNG_FROM,0 )	; PDF Convert Start Page( *** Do Not Edit ***)
+SetPref ( PREF_INTL_PGRNG_THRU,0 )	; PDF Convert End Page( *** Do Not Edit ***)
+
+;; Optional JobParams
+;; ==================
+;AuxDir=
+;AuxFilename=
+;CDRSDir=
+;CDRSFilename=
+;CharacterOffset=
+;ExitReportDir=.\out
+;ExitReportFilename=exit.log
+;ExtractAllText=0
+;FieldFlags=
+;HorzRes=300
+;Keycode=(provided by PageTech for custom scripts)
+;LandRotate=1
+;LogPageSizes=
+;MultiPage=true
+;MultiStrip=false
+;NoProgBar=false
+;OutputResolution=
+;OverlayDir=.\
+;OverlayFilename=logoC3.tif
+;OverlayOffsetX=16
+;OverlayOffsetY=40
+;PdfImageType=
+;PdfLibPath=[DIR\PATH]
+;PdfTetPath=[DIR\PATH]
+;PdfTextOverlay=
+;QrastFlags=
+;RasterFieldCheckText=
+;SedEnviron=
+;Silent=true
+;StopOnError=false
+;VertRes=300
+;;
+;;  Set Preference JobParams that override the preferences set in the PTC32.INI
+;;  file that is shared by other programs and that could be changed by them.
+;;  The commented Section headers refer to the PTC32.ini sections.
+;;
+;;  YOU SHOULD ALWAYS MAKE SURE THAT ALL THE PTC32.INI PREFERENCES ARE SET IN
+;;  IN THE SETPREF SECTION BELOW.  AND, NEVER RELY ON THE SAME PTC32.INI FILE 
+;;  THAT OTHER PROGRAMS LIKE PCLTOOL.EXE MAY CHANGE INADVERTENTLY !!!
+;;
+[Preferences]
+SetPref ( PREF_INTL_RESET_DEFAULTS,    0 )     ; 1=ignores preferences set in PTC32.ini
+SetPref ( PREF_CONVERT_FONTS,		1 )	; converts, but does not save converted fonts		 
+;SetPref ( PREF_KEEP_HIX,		0 )	; keeps the low-level index file upon exit	 	
+;SetPref ( PREF_LINE_TERM,		0 ) 	; sets the end of line termination value	
+;SetPref ( PREF_NOSAVE_LOG,		0 )	; 1= does not save the log file			 
+;SetPref ( PREF_NOSAVE_MAP,		0 )	; 1= does not save the font map file			 
+;SetPref ( PREF_PAPERDIM_HEIGHT_100, 1100 )	; height of paper in 100 per inch
+;SetPref ( PREF_PAPERDIM_WIDTH_100,  1400 )	; width  of paper in 100 per inch
+;SetPref ( PREF_PAPER_SIZE,  PAPER_CUSTOM )	; sets the paper size if not set in the PCL
+;SetPref ( PREF_PASS_RASTER,		1 )	; pass raster data found in vector formats or mode
+;SetPref ( PREF_RESCAN,			1 )	; rescan the available fonts 	
+;SetPref ( PREF_SAVE_CONVERTED_FONTS,	0 )	; saves the fonts after conversion			 
+;SetPref ( PREF_USE_INPFNAME_FOR_LOG,	1 )	; use the input filename for the .log file	
+;SetPref ( PREF_USE_INPFPATH_FOR_HIX,	1 )	; use the input path for the .hix file
+;SetPref ( SPREF_FONTMAP,	ptc32.map )	; set the name of the font map file	
+;SetPref ( SPREF_HIXPATH,	   (null) )	; "path"
+;SetPref ( SPREF_LOGFILE,	ptc32.log )	; See Silent or QuietMode=
+;SetPref ( SPREF_TEMPPATH,          (null )	; Sets to Windows temp folder if not specified
+;
+;;  [Misc]:
+;SetPref ( PREF_DISABLEHPGL,		0 )     ; 0 = ignore all HPGL/2 commands in PCL
+SetPref ( PREF_INTL_DEL_REP_SOFT_FONTS, 0 )    ; 0 = disable purge of re-defined soft fonts
+;                                               ;     disabled if PREF_INTL_OPT_DLOAD_FONTS=1
+;                                               ;     Only engage at direction of PageTech
+;SetPref ( PREF_INTL_FILLSTATE_WHITE,   0 )     ; 0 = ignore original fill state
+;SetPref ( PREF_INTL_IMGCACHE_MBYTES,  30 )     ; 30 = Mbytes of image cache
+;SetPref ( PREF_INTL_OBJRELAYER,	0 )	; 0 = allow relayer
+;SetPref ( PREF_INTL_OPT_DLOAD_FONTS,   0 )     ; 0 = disable optimizing of download fonts
+;                                               ;     not active during indexing
+;SetPref ( PREF_INTL_PDFCOMPRESSED,     1 )     ; 1 = compress all raster data in PDF
+;SetPref ( PREF_INTL_REUSE_IMAGES,      0 )     ; 0 = Don't detect/reuse images in vector PDF.
+;SetPref ( PREF_DETECT_OVERLAY,         1 )     ; 1 = Optimize overlay for vector PDF output
+;SetPref ( PREF_PDF_PERCHAR,		0 )	; 0 = Do not explicitly place each char. in PDF 	 
+;SetPref ( PREF_QUIETMODE,		0 )	; 0 = issue errmgs on screen
+;SetPref ( PREF_REM_MARGINS,	     true )	; 1 = remove printer margins in raster output.
+;SetPref ( SPREF_INTL_ASCIIMAP,	   (null) )	; "path"		  
+;SetPref ( SPREF_INTL_ASCIIOUT,	   (null) )	; "path"	 ".\missed.pcl"
+;SetPref ( PREF_INTL_CHECK_DRIVER_GEN_PCL, 1 )  ; DEF=0=do not check 
+;                                               ;     1=check for PCLMagic driver generated pcl
+;SetPref ( PREF_INTL_INDEX_JIT		1 )     ; DEF=0=Disable Just-In-Time Indexing when viewing PCL
+;                                               ;     1=Enable for viewing of PCL6 or some PCL3GUI files
+;SetPref ( PREF_INTL_JIT_SUSPEND_IF_PCL, 1 )    ; DEF=0=controlled only by JITIndexing setting
+;                                               ;     1=if JITIndexing=1 then, suspend JIT after 1st pg
+;						;     if file is PCL
+;SetPref ( PREF_INTL_NEWFF1TTF,        	1 )     ; DEF=1=Use V11.0 double-byte FastFonts 
+;                                               ;     0=Use pre-V11.0 single-byte FastFonts
+;SetPref ( PREF_INTL_PDFR_SUPPRESS_GLOBSYM, 0 ) ; DEF=0, 1=Fixes JBIG2 raster PDF with MAC Preview apps.
+;SetPref ( PREF_INTL_PDFTTFEMBEDSUBSET,	1 )     ; DEF=1=Use only chars needed in TTF embedded in vector PDF
+;                                               ;     0=Use all characters in TTF embedded in vector PDF
+;SetPref ( PREF_INTL_TRACK_SCRAMBLED_TEXT, 0 )  ; DEF=1=Reports when scrambled text is encountered
+;SetPref ( PREF_KEEP_OFFPAGE_TEXT,	0 )     ; DEF=0=Ignore text that is placed outside printable area
+;SetPref ( PREF_INTL_OPT_DLOAD_FONTS,   0 )     ; DEF=0=Optimize download bitmap fonts
+;SetPref ( PREF_INTL_AUTO_ROTATE,	0 )     ; DEF=0=Do not force a landscape rotation when rendering
+;
+;;  [Preload]:
+;SetPref ( SPREF_INTL_PRELOAD_BASE,  (null)	; "path" to File1 of PCL fonts, macros, sigs
+;                                               ; Ask us if you need to use File2 and File3
+;;  [Text Extraction]:
+;SetPref ( PREF_EXTRACT_TEXT,		1 )	; 1=Extract text objects into a .tnx file	 		 
+;SetPref ( PREF_EXTRACT_FONT,		1 )	; 1=Add all the font metric data to the .tnx file. 
+;SetPref ( PREF_EXTRACT_PJL,            1 )     ; 1=extract PJL comments found in PCL
+;
+[SavedValues]:
+;SetPref ( PREF_COMPRESSION,		2 )	; Group 4 (TIFF) or "Compression="
+;SetPref ( PREF_DEST_FILE_TYPE,		2 )	; TIFF (see Compression)
+;SetPref ( PREF_DUPLEXBLANKS,		0 )	; 1=remove all blank duplex pages	 	 
+;SetPref ( PREF_EMBEDPDFFONTS,		2 )	; 2=Embed .TTF's, but map to Windows Core Fonts
+;SetPref ( PREF_EXTRABOLDLTRGOTHIC,	0 )	; same as ExtraBoldMonospace in PTC32.INI)
+;SetPref ( PREF_HONORCOLOR,		0 )	; 1=convert any color found in the PCL to monochrome	 	  
+;SetPref ( PREF_HORZ_RES,	      300 )	; Horizontal resolution of rendered output file
+;SetPref ( PREF_MULTI_PAGE,		0 )	; 0=allow multi-page output files if format supports it	 
+;SetPref ( PREF_MULTI_STRIP,		1 )	; 1=break-up large raster objects into smaller strips 		 
+;SetPref ( PREF_PDF_RASTTEXT,		0 )	; same as PdfTextOverlay in PTC32.INI
+;SetPref ( PREF_SOURCE_FILTER,		1 )	; 2=List all *.* input file types	
+;SetPref ( PREF_VERT_RES,	      300 )	; Vertical resolution of rendered output file	
+;SetPref ( PREF_INTL_PGRNG_MODE,2 )	;
+;SetPref ( PREF_INTL_PGRNG_FROM,1 )	; PDF Convert Start Page
+;SetPref ( PREF_INTL_PGRNG_THRU,5 )	; PDF Convert End Page
+
+;
+;;  [Debug]:
+;SetPref ( PREF_IGNORE_NONRASTER,	0 )	; 1=Ignore all non-raster objects during conversion	
+;SetPref ( PREF_IGNORE_RASTER,		0 )	; 1=Ignore all raster objects during conversion	
+;SetPref ( PREF_IGNORE_TEXT,		0 )	; 1=Ignore all text during conversion	
+;
+[PCLXL]
+;SetPref ( PCLXL,                    1 ) ; 1=Unsupported (use PTC32.ini)
+;SetPref ( PCLXLOutput,              1 ) ; 1=Unsupported (use PTC32.ini)
+;
+;;  [Warnings]:
+;SetPref ( PREF_AUTO_LLINX,		1 )	; 1=Always create a low-level index			
+;SetPref ( PREF_CONF_OVERWRITE, 	0 )	; 1=Always ask before you overwrite a file	 
+;SetPref ( PREF_WARN_CONVERTFONTS,	0 )	; 1=Warn if download fonts found when convert fonts is off	 
+;SetPref ( PREF_WARN_PASSRASTER,	0 )	; 1=Warn if raster found when convert raster is off		 
+;
+;;  [Defaults]:
+;SetPref ( PREF_DEFAULT_DUPLEX, 	0 )	; Simplex/Duplex
+;SetPref ( PREF_DEFAULT_FONTBOLD,	0 )	; Normal
+;SetPref ( PREF_DEFAULT_FONTITAL,	0 )	; Not Italic 
+;SetPref ( PREF_DEFAULT_LINESPERPAGE,	0 )	; 0=>60 LPP
+;SetPref ( PREF_DEFAULT_PITCH100,    1000 )	; 1000
+;SetPref ( PREF_DEFAULT_POINT100,    1200 )	; 1200
+;SetPref ( PREF_DEFAULT_SYMSET,	      277 )	; Roman-8 ("8U") 
+;SetPref ( PREF_DEFAULT_TYPEFACE,	3 )	; Courier	 
+;SetPref ( PREF_DEF_ORIENT,		0 )	; portrait
+;
+;;  [Calibration]:
+;SetPref ( CALIB_NOSCALE,		0 )	; 0=do not scale
+;SetPref ( CALIB_HORZ,		 	0 )	; 0=horizontal offset
+;SetPref ( CALIB_VERT, 			0 )	; 0=vertical offset		
+;SetPref ( CALIB_WIDTH,		      100 )	; 100=no width scaling			
+;SetPref ( CALIB_HEIGHT,	      100 )	; 100=no height scaling
+;;======================================================================
+[PdfParams]
+
+;; security settings
+OwnerPassword	=	
+UserPassword	=	
+Permissions	=	2052	; add the bit masks in pdfdflt.h or see PDF spec
+EncryptBits	=	40	; multiple of 8. Use 40 for compatibilty with Reader 3.x & 4.x
+
+;; document open attributes
+Magnification	=	default	; use percent number, or default, FitWindow, FitWidth, FitVisible
+PageMode	=	default	; use default, UseNone, UseOutlines, UseThumbs
+PageLayout	=	default	; use default, SinglePage, Continuous, Facing
+StartPage	=	0	; starting page number, 1 == first page, 0 for don't specify
+
+;; document open boolean attributes. All default to false (0)
+ResizeWindow	=	0
+CenterWindow	=	0
+DisplayDocTitle	=	0
+FullScreen	=	0
+HideToolbar	=	0
+HideMenubar	=	0
+HideWindowTools	=	0
+
+;; PDF info can be specified here if desired
+;Producer        =       Generated by PageTech
+Creator		=	SmartWhere v1.0
+Author		=	Fujixerox Korea www.fujixerox.co.kr
+Title		=	Fujixerox Korea www.fujixerox.co.kr
+Subject		=	Fujixerox Korea www.fujixerox.co.kr
+Keywords	=	inv# pol# ssn any# key1 key2
+DescWriter      =       Description Writer
+CopyrightNotice =       Copyright Notice
+WebStatementURL =       URL where copyright information resides
+CopyrightStatus =       Unknown     ; unless marked Copyrighted or Public Domain
+PdfVersion      =       14  ; 13=V1.3, 14=V1.4, 15=V1.5, 16=V1.6, 17=V1.7
+PdfALevel       =       0   ; 0=None, 1=1b, 2=1a with both forcing PdfVersion=14
+;
+;;======================================================================
+[Fields]
+
+;;========Any changes below this line require a new key code============
+[Pre-Job]
+
+;;======================================================================
+[Page-Job]
+
+;;======================================================================
+[End-Job]
+
+;;======================================================================
+[End]
+

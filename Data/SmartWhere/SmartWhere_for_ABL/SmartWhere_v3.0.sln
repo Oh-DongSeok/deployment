@@ -1,0 +1,530 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_ReceiveService", "Services\Receive\SmartWhere_ReceiveService.csproj", "{9C759127-66BE-49C8-89EC-F8276DB38A88}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{E03E6B5B-470A-4FD4-A404-E971FB24754E}"
+	ProjectSection(SolutionItems) = preProject
+		Configurations\Log-ABLPdfReceive.xml = Configurations\Log-ABLPdfReceive.xml
+		Configurations\LogConfig-AnalyzeService.xml = Configurations\LogConfig-AnalyzeService.xml
+		Configurations\LogConfig-AnalyzeServiceHeavy.xml = Configurations\LogConfig-AnalyzeServiceHeavy.xml
+		Configurations\LogConfig-BackgroundService.xml = Configurations\LogConfig-BackgroundService.xml
+		Configurations\LogConfig-PostScheduleService.xml = Configurations\LogConfig-PostScheduleService.xml
+		Configurations\LogConfig-PrintingModule.xml = Configurations\LogConfig-PrintingModule.xml
+		Configurations\LogConfig-PrintingModule_Mac.xml = Configurations\LogConfig-PrintingModule_Mac.xml
+		Configurations\LogConfig-PrintingModule_Mobile.xml = Configurations\LogConfig-PrintingModule_Mobile.xml
+		Configurations\LogConfig-ReceiveService.xml = Configurations\LogConfig-ReceiveService.xml
+		Configurations\LogConfig-ReceiveService_Mac.xml = Configurations\LogConfig-ReceiveService_Mac.xml
+		Configurations\LogConfig-ReceiveService_Mobile.xml = Configurations\LogConfig-ReceiveService_Mobile.xml
+		Configurations\LogConfig-WatchService.xml = Configurations\LogConfig-WatchService.xml
+		Configurations\PdfReceive_Environment.json = Configurations\PdfReceive_Environment.json
+		Configurations\PostSchedule.pfx = Configurations\PostSchedule.pfx
+		Configurations\SmartWhere_Environment.json = Configurations\SmartWhere_Environment.json
+		Configurations\SmartWhere_pdf.tpt = Configurations\SmartWhere_pdf.tpt
+		Configurations\XmlTemplate.xml = Configurations\XmlTemplate.xml
+	EndProjectSection
+	ProjectSection(FolderGlobals) = preProject
+		__JSONSchema = http://json.schemastore.org/bungee-plugin
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{A43AEC8D-97B6-47E6-A26E-19B97F892492}"
+	ProjectSection(SolutionItems) = preProject
+		Libraries\CommonLibrary.dll = Libraries\CommonLibrary.dll
+		Libraries\DotNetStat.dll = Libraries\DotNetStat.dll
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_Interface", "Libraries\SmartWhere_Interface\SmartWhere_Interface.csproj", "{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_ConfigTool", "Tools\ConfigTool\SmartWhere_ConfigTool.csproj", "{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared-between-Projects", "Shared-between-Projects", "{2F199C15-9999-4A05-B2A5-66E6A778111F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_AnalyzeService", "Services\Analyze\SmartWhere_AnalyzeService.csproj", "{10AB8612-6535-40BF-8894-A4B93FFADE0A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Primary Services", "Primary Services", "{1AF222F5-900D-4033-8766-014B1064A7B2}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Secondary Services", "Secondary Services", "{359FE26A-4D85-4B2E-8B99-337F7F4636BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Support_Tools", "Support_Tools", "{D5B5901C-4692-44CF-BFDA-CAD66E6D29EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnInformationLibrary", "Libraries\PrnInformationLibrary\PrnInformationLibrary.csproj", "{9B8C747A-7CBE-4312-B151-CE92462B7381}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnAnalyzeLibrary", "Libraries\PrnAnalyzeLibrary\PrnAnalyzeLibrary.csproj", "{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_Policies", "Libraries\SmartWhere_Policies\SmartWhere_Policies.csproj", "{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_Metadata", "Libraries\SmartWhere_Metadata\SmartWhere_Metadata.csproj", "{DFD3E098-9105-482D-942B-B01D423273FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnProcessLibrary", "Libraries\PrnProcessLibrary\PrnProcessLibrary.csproj", "{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{A0269DA6-D466-4BD4-A84B-592D7CBC918C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Font", "Font", "{E26D7AF6-173D-46DF-94E4-70A5B4B4DC77}"
+	ProjectSection(SolutionItems) = preProject
+		Data\Font\ANTQUAB.ttf.dat = Data\Font\ANTQUAB.ttf.dat
+		Data\Font\ANTQUABI.ttf.dat = Data\Font\ANTQUABI.ttf.dat
+		Data\Font\ANTQUAI.ttf.dat = Data\Font\ANTQUAI.ttf.dat
+		Data\Font\arial.ttf.dat = Data\Font\arial.ttf.dat
+		Data\Font\arialbd.ttf.dat = Data\Font\arialbd.ttf.dat
+		Data\Font\arialbi.ttf.dat = Data\Font\arialbi.ttf.dat
+		Data\Font\ariali.ttf.dat = Data\Font\ariali.ttf.dat
+		Data\Font\ARIALN.ttf.dat = Data\Font\ARIALN.ttf.dat
+		Data\Font\ARIALNB.ttf.dat = Data\Font\ARIALNB.ttf.dat
+		Data\Font\ARIALNBI.ttf.dat = Data\Font\ARIALNBI.ttf.dat
+		Data\Font\ARIALNI.ttf.dat = Data\Font\ARIALNI.ttf.dat
+		Data\Font\ARIALUNI.ttf.dat = Data\Font\ARIALUNI.ttf.dat
+		Data\Font\ariblk.ttf.dat = Data\Font\ariblk.ttf.dat
+		Data\Font\batang.ttc.Batang.dat = Data\Font\batang.ttc.Batang.dat
+		Data\Font\batang.ttc.BatangChe.dat = Data\Font\batang.ttc.BatangChe.dat
+		Data\Font\batang.ttc.Gungsuh.dat = Data\Font\batang.ttc.Gungsuh.dat
+		Data\Font\batang.ttc.GungsuhChe.dat = Data\Font\batang.ttc.GungsuhChe.dat
+		Data\Font\BKANT.ttf.dat = Data\Font\BKANT.ttf.dat
+		Data\Font\BOOKOS.ttf.dat = Data\Font\BOOKOS.ttf.dat
+		Data\Font\BOOKOSB.ttf.dat = Data\Font\BOOKOSB.ttf.dat
+		Data\Font\BOOKOSBI.ttf.dat = Data\Font\BOOKOSBI.ttf.dat
+		Data\Font\BOOKOSI.ttf.dat = Data\Font\BOOKOSI.ttf.dat
+		Data\Font\calibri.ttf.dat = Data\Font\calibri.ttf.dat
+		Data\Font\calibrib.ttf.dat = Data\Font\calibrib.ttf.dat
+		Data\Font\calibrii.ttf.dat = Data\Font\calibrii.ttf.dat
+		Data\Font\calibril.ttf.dat = Data\Font\calibril.ttf.dat
+		Data\Font\calibrili.ttf.dat = Data\Font\calibrili.ttf.dat
+		Data\Font\calibriz.ttf.dat = Data\Font\calibriz.ttf.dat
+		Data\Font\cambria.ttc.Cambria Math.dat = Data\Font\cambria.ttc.Cambria Math.dat
+		Data\Font\cambria.ttc.Cambria.dat = Data\Font\cambria.ttc.Cambria.dat
+		Data\Font\cambriab.ttf.dat = Data\Font\cambriab.ttf.dat
+		Data\Font\cambriai.ttf.dat = Data\Font\cambriai.ttf.dat
+		Data\Font\cambriaz.ttf.dat = Data\Font\cambriaz.ttf.dat
+		Data\Font\Candara.ttf.dat = Data\Font\Candara.ttf.dat
+		Data\Font\Candarab.ttf.dat = Data\Font\Candarab.ttf.dat
+		Data\Font\Candarai.ttf.dat = Data\Font\Candarai.ttf.dat
+		Data\Font\Candaraz.ttf.dat = Data\Font\Candaraz.ttf.dat
+		Data\Font\CENTURY.ttf.dat = Data\Font\CENTURY.ttf.dat
+		Data\Font\comic.ttf.dat = Data\Font\comic.ttf.dat
+		Data\Font\comicbd.ttf.dat = Data\Font\comicbd.ttf.dat
+		Data\Font\comici.ttf.dat = Data\Font\comici.ttf.dat
+		Data\Font\comicz.ttf.dat = Data\Font\comicz.ttf.dat
+		Data\Font\consola.ttf.dat = Data\Font\consola.ttf.dat
+		Data\Font\consolab.ttf.dat = Data\Font\consolab.ttf.dat
+		Data\Font\consolai.ttf.dat = Data\Font\consolai.ttf.dat
+		Data\Font\consolaz.ttf.dat = Data\Font\consolaz.ttf.dat
+		Data\Font\constan.ttf.dat = Data\Font\constan.ttf.dat
+		Data\Font\constanb.ttf.dat = Data\Font\constanb.ttf.dat
+		Data\Font\constani.ttf.dat = Data\Font\constani.ttf.dat
+		Data\Font\constanz.ttf.dat = Data\Font\constanz.ttf.dat
+		Data\Font\corbel.ttf.dat = Data\Font\corbel.ttf.dat
+		Data\Font\corbelb.ttf.dat = Data\Font\corbelb.ttf.dat
+		Data\Font\corbeli.ttf.dat = Data\Font\corbeli.ttf.dat
+		Data\Font\corbelz.ttf.dat = Data\Font\corbelz.ttf.dat
+		Data\Font\cour.ttf.dat = Data\Font\cour.ttf.dat
+		Data\Font\courbd.ttf.dat = Data\Font\courbd.ttf.dat
+		Data\Font\courbi.ttf.dat = Data\Font\courbi.ttf.dat
+		Data\Font\couri.ttf.dat = Data\Font\couri.ttf.dat
+		Data\Font\estre.ttf.dat = Data\Font\estre.ttf.dat
+		Data\Font\framd.ttf.dat = Data\Font\framd.ttf.dat
+		Data\Font\framdit.ttf.dat = Data\Font\framdit.ttf.dat
+		Data\Font\GARA.ttf.dat = Data\Font\GARA.ttf.dat
+		Data\Font\GARABD.ttf.dat = Data\Font\GARABD.ttf.dat
+		Data\Font\GARAIT.ttf.dat = Data\Font\GARAIT.ttf.dat
+		Data\Font\gautami.ttf.dat = Data\Font\gautami.ttf.dat
+		Data\Font\georgia.ttf.dat = Data\Font\georgia.ttf.dat
+		Data\Font\georgiab.ttf.dat = Data\Font\georgiab.ttf.dat
+		Data\Font\georgiai.ttf.dat = Data\Font\georgiai.ttf.dat
+		Data\Font\georgiaz.ttf.dat = Data\Font\georgiaz.ttf.dat
+		Data\Font\GOTHIC.ttf.dat = Data\Font\GOTHIC.ttf.dat
+		Data\Font\GOTHICB.ttf.dat = Data\Font\GOTHICB.ttf.dat
+		Data\Font\GOTHICBI.ttf.dat = Data\Font\GOTHICBI.ttf.dat
+		Data\Font\GOTHICI.ttf.dat = Data\Font\GOTHICI.ttf.dat
+		Data\Font\gulim.ttc.Dotum.dat = Data\Font\gulim.ttc.Dotum.dat
+		Data\Font\gulim.ttc.DotumChe.dat = Data\Font\gulim.ttc.DotumChe.dat
+		Data\Font\gulim.ttc.gulim.dat = Data\Font\gulim.ttc.gulim.dat
+		Data\Font\gulim.ttc.gulimche.dat = Data\Font\gulim.ttc.gulimche.dat
+		Data\Font\H2GPRM.ttf.dat = Data\Font\H2GPRM.ttf.dat
+		Data\Font\H2GSRB.ttf.dat = Data\Font\H2GSRB.ttf.dat
+		Data\Font\H2GTRE.ttf.dat = Data\Font\H2GTRE.ttf.dat
+		Data\Font\H2GTRM.ttf.dat = Data\Font\H2GTRM.ttf.dat
+		Data\Font\H2HDRM.ttf.dat = Data\Font\H2HDRM.ttf.dat
+		Data\Font\H2MJRE.ttf.dat = Data\Font\H2MJRE.ttf.dat
+		Data\Font\H2MJSM.ttf.dat = Data\Font\H2MJSM.ttf.dat
+		Data\Font\H2MKPB.ttf.dat = Data\Font\H2MKPB.ttf.dat
+		Data\Font\H2PORL.ttf.dat = Data\Font\H2PORL.ttf.dat
+		Data\Font\H2PORM.ttf.dat = Data\Font\H2PORM.ttf.dat
+		Data\Font\H2SA1M.ttf.dat = Data\Font\H2SA1M.ttf.dat
+		Data\Font\HMFMMUEX.ttc.Expo M.dat = Data\Font\HMFMMUEX.ttc.Expo M.dat
+		Data\Font\HMFMMUEX.ttc.MoeumT R.dat = Data\Font\HMFMMUEX.ttc.MoeumT R.dat
+		Data\Font\HMFMOLD.ttf.dat = Data\Font\HMFMOLD.ttf.dat
+		Data\Font\HMFMPYUN.ttf.dat = Data\Font\HMFMPYUN.ttf.dat
+		Data\Font\HMKMAMI.ttf.dat = Data\Font\HMKMAMI.ttf.dat
+		Data\Font\HMKMMAG.ttf.dat = Data\Font\HMKMMAG.ttf.dat
+		Data\Font\HMKMOLD.ttf.DAT = Data\Font\HMKMOLD.ttf.DAT
+		Data\Font\HMKMRHD.ttf.dat = Data\Font\HMKMRHD.ttf.dat
+		Data\Font\hyhwpeq.ttf.dat = Data\Font\hyhwpeq.ttf.dat
+		Data\Font\Impact.ttf.dat = Data\Font\Impact.ttf.dat
+		Data\Font\kartika.ttf.dat = Data\Font\kartika.ttf.dat
+		Data\Font\l_10646.ttf.dat = Data\Font\l_10646.ttf.dat
+		Data\Font\latha.ttf.dat = Data\Font\latha.ttf.dat
+		Data\Font\lucon.ttf.dat = Data\Font\lucon.ttf.dat
+		Data\Font\malgun.ttf.dat = Data\Font\malgun.ttf.dat
+		Data\Font\malgunbd.ttf.dat = Data\Font\malgunbd.ttf.dat
+		Data\Font\micross.ttf.dat = Data\Font\micross.ttf.dat
+		Data\Font\msgothic.ttc.ms gothic.dat = Data\Font\msgothic.ttc.ms gothic.dat
+		Data\Font\msgothic.ttc.MS Gothic.datXP = Data\Font\msgothic.ttc.MS Gothic.datXP
+		Data\Font\msgothic.ttc.MS PGothic.dat = Data\Font\msgothic.ttc.MS PGothic.dat
+		Data\Font\msgothic.ttc.MS PGothic.datxp = Data\Font\msgothic.ttc.MS PGothic.datxp
+		Data\Font\msgothic.ttc.MS UI Gothic.dat = Data\Font\msgothic.ttc.MS UI Gothic.dat
+		Data\Font\msgothic.ttc.MS UI Gothic.datxp = Data\Font\msgothic.ttc.MS UI Gothic.datxp
+		Data\Font\msmincho.ttc.MS Mincho.dat = Data\Font\msmincho.ttc.MS Mincho.dat
+		Data\Font\msmincho.ttc.MS Mincho.datxp = Data\Font\msmincho.ttc.MS Mincho.datxp
+		Data\Font\msmincho.ttc.MS PMincho.dat = Data\Font\msmincho.ttc.MS PMincho.dat
+		Data\Font\msmincho.ttc.MS PMincho.datxp = Data\Font\msmincho.ttc.MS PMincho.datxp
+		Data\Font\MTCORSVA.ttf.dat = Data\Font\MTCORSVA.ttf.dat
+		Data\Font\NanumGothic.ttf.dat = Data\Font\NanumGothic.ttf.dat
+		Data\Font\NanumGothicBold.ttf.dat = Data\Font\NanumGothicBold.ttf.dat
+		Data\Font\NanumGothicExtraBold.ttf.dat = Data\Font\NanumGothicExtraBold.ttf.dat
+		Data\Font\NanumMyeongjo.ttf.dat = Data\Font\NanumMyeongjo.ttf.dat
+		Data\Font\NanumMyeongjoBold.ttf.dat = Data\Font\NanumMyeongjoBold.ttf.dat
+		Data\Font\NanumMyeongjoExtraBold.ttf.dat = Data\Font\NanumMyeongjoExtraBold.ttf.dat
+		Data\Font\NGULIM.ttf.dat = Data\Font\NGULIM.ttf.dat
+		Data\Font\pala.ttf.dat = Data\Font\pala.ttf.dat
+		Data\Font\palab.ttf.dat = Data\Font\palab.ttf.dat
+		Data\Font\palabi.ttf.dat = Data\Font\palabi.ttf.dat
+		Data\Font\palai.ttf.dat = Data\Font\palai.ttf.dat
+		Data\Font\REFSAN.ttf.dat = Data\Font\REFSAN.ttf.dat
+		Data\Font\segoeui.ttf.dat = Data\Font\segoeui.ttf.dat
+		Data\Font\segoeuib.ttf.dat = Data\Font\segoeuib.ttf.dat
+		Data\Font\segoeuii.ttf.dat = Data\Font\segoeuii.ttf.dat
+		Data\Font\segoeuiz.ttf.dat = Data\Font\segoeuiz.ttf.dat
+		Data\Font\simsun.ttc.NSimSun.dat = Data\Font\simsun.ttc.NSimSun.dat
+		Data\Font\simsun.ttc.SimSun.dat = Data\Font\simsun.ttc.SimSun.dat
+		Data\Font\SupportFontReg.ini = Data\Font\SupportFontReg.ini
+		Data\Font\sylfaen.ttf.dat = Data\Font\sylfaen.ttf.dat
+		Data\Font\tahoma.ttf.dat = Data\Font\tahoma.ttf.dat
+		Data\Font\tahomabd.ttf.dat = Data\Font\tahomabd.ttf.dat
+		Data\Font\times.ttf.dat = Data\Font\times.ttf.dat
+		Data\Font\timesbd.ttf.dat = Data\Font\timesbd.ttf.dat
+		Data\Font\timesbi.ttf.dat = Data\Font\timesbi.ttf.dat
+		Data\Font\timesi.ttf.dat = Data\Font\timesi.ttf.dat
+		Data\Font\trebuc.ttf.dat = Data\Font\trebuc.ttf.dat
+		Data\Font\trebucbd.ttf.dat = Data\Font\trebucbd.ttf.dat
+		Data\Font\trebucbi.ttf.dat = Data\Font\trebucbi.ttf.dat
+		Data\Font\trebucit.ttf.dat = Data\Font\trebucit.ttf.dat
+		Data\Font\verdana.ttf.dat = Data\Font\verdana.ttf.dat
+		Data\Font\verdanab.ttf.dat = Data\Font\verdanab.ttf.dat
+		Data\Font\verdanai.ttf.dat = Data\Font\verdanai.ttf.dat
+		Data\Font\verdanaz.ttf.dat = Data\Font\verdanaz.ttf.dat
+		Data\Font\Xerox Sans Expert-Bold.ttf.dat = Data\Font\Xerox Sans Expert-Bold.ttf.dat
+		Data\Font\Xerox Sans Expert-BoldItalic.ttf.dat = Data\Font\Xerox Sans Expert-BoldItalic.ttf.dat
+		Data\Font\Xerox Sans Expert-ExtraBold.ttf.dat = Data\Font\Xerox Sans Expert-ExtraBold.ttf.dat
+		Data\Font\Xerox Sans Expert-Italic.ttf.dat = Data\Font\Xerox Sans Expert-Italic.ttf.dat
+		Data\Font\Xerox Sans Expert-Light.ttf.dat = Data\Font\Xerox Sans Expert-Light.ttf.dat
+		Data\Font\Xerox Sans Expert-LightItalic.ttf.dat = Data\Font\Xerox Sans Expert-LightItalic.ttf.dat
+		Data\Font\Xerox Sans Expert-Thin.ttf.dat = Data\Font\Xerox Sans Expert-Thin.ttf.dat
+		Data\Font\Xerox Sans Expert-ThinItalic.ttf.dat = Data\Font\Xerox Sans Expert-ThinItalic.ttf.dat
+		Data\Font\Xerox Sans Expert.ttf.dat = Data\Font\Xerox Sans Expert.ttf.dat
+		Data\Font\XeroxSans-Bold.ttf.dat = Data\Font\XeroxSans-Bold.ttf.dat
+		Data\Font\XeroxSans-BoldItalic.ttf.dat = Data\Font\XeroxSans-BoldItalic.ttf.dat
+		Data\Font\XeroxSans-ExtraBold.ttf.dat = Data\Font\XeroxSans-ExtraBold.ttf.dat
+		Data\Font\XeroxSans-Italic.ttf.dat = Data\Font\XeroxSans-Italic.ttf.dat
+		Data\Font\XeroxSans-Light.ttf.dat = Data\Font\XeroxSans-Light.ttf.dat
+		Data\Font\XeroxSans-LightItalic.ttf.dat = Data\Font\XeroxSans-LightItalic.ttf.dat
+		Data\Font\XeroxSans-Thin.ttf.dat = Data\Font\XeroxSans-Thin.ttf.dat
+		Data\Font\XeroxSans-ThinItalic.ttf.dat = Data\Font\XeroxSans-ThinItalic.ttf.dat
+		Data\Font\XeroxSans.otf.dat = Data\Font\XeroxSans.otf.dat
+		Data\Font\XeroxSans.ttf.dat = Data\Font\XeroxSans.ttf.dat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_PostScheduleService", "Services\PostSchedule\SmartWhere_PostScheduleService.csproj", "{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "External Modules", "External Modules", "{6AC29808-5483-4A15-A337-80FDD3143845}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_ReceiveService_Mobile", "Services\Receive_Mobile\SmartWhere_ReceiveService_Mobile.csproj", "{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D} = {F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5} = {D43F3D92-2D6F-492B-B663-935D12FFAFC5}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_PrintingModule_Mobile", "Modules\PrintingModule_Mobile\SmartWhere_PrintingModule_Mobile.csproj", "{486154F8-E72B-495A-8641-CC7A87193058}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D} = {F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_PrintingModule", "Modules\PrintingModule\SmartWhere_PrintingModule.csproj", "{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnImageLibrary", "Libraries\PrnImageLibrary\PrnImageLibrary.csproj", "{7D96B0FD-FACB-4403-814B-FCDE68C82806}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{7A904BB1-1E32-41B9-9BFA-B24BE0156A83}"
+	ProjectSection(SolutionItems) = preProject
+		Scripts\Service_Install.bat = Scripts\Service_Install.bat
+		Scripts\Service_Start_All.bat = Scripts\Service_Start_All.bat
+		Scripts\Service_Start_All_without_watcher.bat = Scripts\Service_Start_All_without_watcher.bat
+		Scripts\Service_Stop_All.bat = Scripts\Service_Stop_All.bat
+		Scripts\Service_Uninstall.bat = Scripts\Service_Uninstall.bat
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_BackgroundService", "Services\Background\SmartWhere_BackgroundService.csproj", "{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_WatchService", "Services\Watch\SmartWhere_WatchService.csproj", "{08BFB60C-BE75-4F10-AA16-44C67219D5B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnApprovalLibrary", "Libraries\PrnApprovalLibrary\PrnApprovalLibrary.csproj", "{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PrnImageLogLibrary", "Libraries\PrnImageLogLibrary\PrnImageLogLibrary.csproj", "{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfConvertingConnector", "Libraries\PdfConvertingConnector\PdfConvertingConnector.csproj", "{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_ReceiveService_Mac", "Services\Receive_Mac\SmartWhere_ReceiveService_Mac.csproj", "{59DCD489-3E6A-4787-A59D-C5152B464602}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D} = {F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlLibrary", "Libraries\XmlLibrary\XmlLibrary.csproj", "{D43F3D92-2D6F-492B-B663-935D12FFAFC5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_PrintingModule_Mac", "Modules\PrintingModule_Mac\SmartWhere_PrintingModule_Mac.csproj", "{A74661E6-721C-4DFE-810C-DF315A7EF7A0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfLibrary", "Libraries\PdfLibrary\PdfLibrary.csproj", "{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ABL_Environment", "Libraries\ABL_Environment\ABL_Environment.csproj", "{9B47D36A-A747-4184-9A8A-81C652F39424}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataForm", "Libraries\DataForm\DataForm.csproj", "{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PdfReceive", "Services\PdfReceive\PdfReceive.csproj", "{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321} = {0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SmartWhere_AnalyzeService_Heavy", "Services\AnalyzeHeavy\SmartWhere_AnalyzeService_Heavy.csproj", "{5037085A-8442-4BA1-8D12-04F95096E20E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailSender", "Libraries\EmailSender\EmailSender.csproj", "{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatabaseBridge_Interface", "Libraries\DatabaseBridge_Interface\DatabaseBridge_Interface.csproj", "{310CBC65-7EDF-49C9-9E5C-AECE72154129}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Debug|x64.ActiveCfg = Debug|x64
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Debug|x64.Build.0 = Debug|x64
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Release|Any CPU.ActiveCfg = Release|x64
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Release|x64.ActiveCfg = Release|x64
+		{9C759127-66BE-49C8-89EC-F8276DB38A88}.Release|x64.Build.0 = Release|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Debug|x64.ActiveCfg = Debug|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Debug|x64.Build.0 = Debug|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Release|Any CPU.ActiveCfg = Release|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Release|x64.ActiveCfg = Release|x64
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D}.Release|x64.Build.0 = Release|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Debug|x64.ActiveCfg = Debug|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Debug|x64.Build.0 = Debug|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Release|Any CPU.ActiveCfg = Release|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Release|x64.ActiveCfg = Release|x64
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6}.Release|x64.Build.0 = Release|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Debug|x64.ActiveCfg = Debug|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Debug|x64.Build.0 = Debug|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Release|Any CPU.ActiveCfg = Release|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Release|x64.ActiveCfg = Release|x64
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A}.Release|x64.Build.0 = Release|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Debug|x64.ActiveCfg = Debug|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Debug|x64.Build.0 = Debug|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Release|Any CPU.ActiveCfg = Release|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Release|x64.ActiveCfg = Release|x64
+		{9B8C747A-7CBE-4312-B151-CE92462B7381}.Release|x64.Build.0 = Release|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Debug|x64.ActiveCfg = Debug|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Debug|x64.Build.0 = Debug|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Release|Any CPU.ActiveCfg = Release|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Release|x64.ActiveCfg = Release|x64
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B}.Release|x64.Build.0 = Release|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Debug|x64.ActiveCfg = Debug|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Debug|x64.Build.0 = Debug|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Release|Any CPU.ActiveCfg = Release|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Release|x64.ActiveCfg = Release|x64
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321}.Release|x64.Build.0 = Release|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Debug|x64.ActiveCfg = Debug|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Debug|x64.Build.0 = Debug|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Release|Any CPU.ActiveCfg = Release|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Release|x64.ActiveCfg = Release|x64
+		{DFD3E098-9105-482D-942B-B01D423273FD}.Release|x64.Build.0 = Release|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Debug|x64.ActiveCfg = Debug|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Debug|x64.Build.0 = Debug|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Release|Any CPU.ActiveCfg = Release|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Release|x64.ActiveCfg = Release|x64
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F}.Release|x64.Build.0 = Release|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Debug|x64.ActiveCfg = Debug|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Debug|x64.Build.0 = Debug|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Release|Any CPU.ActiveCfg = Release|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Release|x64.ActiveCfg = Release|x64
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}.Release|x64.Build.0 = Release|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Debug|x64.ActiveCfg = Debug|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Debug|x64.Build.0 = Debug|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Release|Any CPU.ActiveCfg = Release|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Release|x64.ActiveCfg = Release|x64
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540}.Release|x64.Build.0 = Release|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Debug|x64.ActiveCfg = Debug|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Debug|x64.Build.0 = Debug|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Release|Any CPU.ActiveCfg = Release|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Release|x64.ActiveCfg = Release|x64
+		{486154F8-E72B-495A-8641-CC7A87193058}.Release|x64.Build.0 = Release|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Debug|x64.ActiveCfg = Debug|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Debug|x64.Build.0 = Debug|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Release|Any CPU.ActiveCfg = Release|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Release|x64.ActiveCfg = Release|x64
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D}.Release|x64.Build.0 = Release|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Debug|x64.ActiveCfg = Debug|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Debug|x64.Build.0 = Debug|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Release|Any CPU.ActiveCfg = Release|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Release|x64.ActiveCfg = Release|x64
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806}.Release|x64.Build.0 = Release|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Debug|x64.ActiveCfg = Debug|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Debug|x64.Build.0 = Debug|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Release|Any CPU.ActiveCfg = Release|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Release|x64.ActiveCfg = Release|x64
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878}.Release|x64.Build.0 = Release|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Debug|x64.ActiveCfg = Debug|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Debug|x64.Build.0 = Debug|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Release|Any CPU.ActiveCfg = Release|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Release|x64.ActiveCfg = Release|x64
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1}.Release|x64.Build.0 = Release|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Debug|x64.ActiveCfg = Debug|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Debug|x64.Build.0 = Debug|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Release|Any CPU.ActiveCfg = Release|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Release|x64.ActiveCfg = Release|x64
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30}.Release|x64.Build.0 = Release|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Debug|x64.ActiveCfg = Debug|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Debug|x64.Build.0 = Debug|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Release|Any CPU.ActiveCfg = Release|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Release|x64.ActiveCfg = Release|x64
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22}.Release|x64.Build.0 = Release|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Debug|x64.ActiveCfg = Debug|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Debug|x64.Build.0 = Debug|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Release|Any CPU.ActiveCfg = Release|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Release|x64.ActiveCfg = Release|x64
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A}.Release|x64.Build.0 = Release|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Debug|x64.ActiveCfg = Debug|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Debug|x64.Build.0 = Debug|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Release|Any CPU.ActiveCfg = Release|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Release|x64.ActiveCfg = Release|x64
+		{59DCD489-3E6A-4787-A59D-C5152B464602}.Release|x64.Build.0 = Release|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Debug|x64.ActiveCfg = Debug|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Debug|x64.Build.0 = Debug|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Release|Any CPU.ActiveCfg = Release|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Release|x64.ActiveCfg = Release|x64
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5}.Release|x64.Build.0 = Release|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Debug|x64.ActiveCfg = Debug|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Debug|x64.Build.0 = Debug|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Release|Any CPU.ActiveCfg = Release|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Release|x64.ActiveCfg = Release|x64
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0}.Release|x64.Build.0 = Release|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Debug|x64.ActiveCfg = Debug|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Debug|x64.Build.0 = Debug|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Release|Any CPU.ActiveCfg = Release|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Release|x64.ActiveCfg = Release|x64
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D}.Release|x64.Build.0 = Release|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Debug|x64.ActiveCfg = Debug|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Debug|x64.Build.0 = Debug|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Release|Any CPU.ActiveCfg = Release|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Release|x64.ActiveCfg = Release|x64
+		{9B47D36A-A747-4184-9A8A-81C652F39424}.Release|x64.Build.0 = Release|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Debug|x64.ActiveCfg = Debug|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Debug|x64.Build.0 = Debug|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Release|Any CPU.ActiveCfg = Release|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Release|x64.ActiveCfg = Release|x64
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4}.Release|x64.Build.0 = Release|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Debug|x64.ActiveCfg = Debug|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Debug|x64.Build.0 = Debug|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Release|Any CPU.ActiveCfg = Release|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Release|x64.ActiveCfg = Release|x64
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF}.Release|x64.Build.0 = Release|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Debug|x64.ActiveCfg = Debug|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Debug|x64.Build.0 = Debug|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Release|Any CPU.ActiveCfg = Release|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Release|x64.ActiveCfg = Release|x64
+		{5037085A-8442-4BA1-8D12-04F95096E20E}.Release|x64.Build.0 = Release|x64
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Debug|x64.ActiveCfg = Debug|x64
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Debug|x64.Build.0 = Debug|x64
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Release|x64.ActiveCfg = Release|x64
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9}.Release|x64.Build.0 = Release|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Debug|x64.ActiveCfg = Debug|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Debug|x64.Build.0 = Debug|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Release|Any CPU.ActiveCfg = Release|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Release|x64.ActiveCfg = Release|x64
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9C759127-66BE-49C8-89EC-F8276DB38A88} = {1AF222F5-900D-4033-8766-014B1064A7B2}
+		{A43AEC8D-97B6-47E6-A26E-19B97F892492} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{2D2D6F8A-4F7A-46F4-A6F8-8DF6C8E8FB3D} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{718F74BE-1A7C-4E09-91F9-D86C6AE50FD6} = {D5B5901C-4692-44CF-BFDA-CAD66E6D29EC}
+		{10AB8612-6535-40BF-8894-A4B93FFADE0A} = {1AF222F5-900D-4033-8766-014B1064A7B2}
+		{9B8C747A-7CBE-4312-B151-CE92462B7381} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{E58B68F1-14B6-4202-B4B2-DEB6CA472D2B} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{0B4CF915-D1F2-49D0-8B1B-506FDD2D6321} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{DFD3E098-9105-482D-942B-B01D423273FD} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{C059A57B-6F2A-4E15-8EE7-85FA1C23BF4F} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{E26D7AF6-173D-46DF-94E4-70A5B4B4DC77} = {A0269DA6-D466-4BD4-A84B-592D7CBC918C}
+		{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4} = {1AF222F5-900D-4033-8766-014B1064A7B2}
+		{FDCD8DB7-F00C-4814-BBD9-22B330FF8540} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+		{486154F8-E72B-495A-8641-CC7A87193058} = {6AC29808-5483-4A15-A337-80FDD3143845}
+		{0805E994-9CC6-4A4A-8C63-BBEE9D23287D} = {6AC29808-5483-4A15-A337-80FDD3143845}
+		{7D96B0FD-FACB-4403-814B-FCDE68C82806} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{7A904BB1-1E32-41B9-9BFA-B24BE0156A83} = {D5B5901C-4692-44CF-BFDA-CAD66E6D29EC}
+		{1DACA69F-6496-47EE-9B9E-4B14AB8E3878} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+		{08BFB60C-BE75-4F10-AA16-44C67219D5B1} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+		{CB96D0DD-C6BA-4F4B-BD6E-1DEAD6331E30} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{28D80FA3-7E78-4FB7-BB01-F7E05967AD22} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{1F9246CC-EEF0-4B88-9857-9CE3BDFE4D3A} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{59DCD489-3E6A-4787-A59D-C5152B464602} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+		{D43F3D92-2D6F-492B-B663-935D12FFAFC5} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{A74661E6-721C-4DFE-810C-DF315A7EF7A0} = {6AC29808-5483-4A15-A337-80FDD3143845}
+		{F5407412-0FB9-4DB3-9F90-6E8F4A46A56D} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{9B47D36A-A747-4184-9A8A-81C652F39424} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{0E012484-11A6-4F66-B143-9BBEA2EAA3F4} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{5A603DB0-5410-4B86-93DB-ED45E9EC74FF} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+		{5037085A-8442-4BA1-8D12-04F95096E20E} = {1AF222F5-900D-4033-8766-014B1064A7B2}
+		{6942E196-72C4-4A2C-92E0-C82A4F09D0E9} = {2F199C15-9999-4A05-B2A5-66E6A778111F}
+		{310CBC65-7EDF-49C9-9E5C-AECE72154129} = {359FE26A-4D85-4B2E-8B99-337F7F4636BB}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F51E6A78-AA07-4D19-B54E-5FB1F8ED96E8}
+	EndGlobalSection
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN2019 - Subversion Support for Visual Studio
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,101 @@
+﻿<local:PageBase x:Class="FXKIS.SmartWhere.CommonIF.PageApproval"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+                xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility"   Value="Auto"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment"          Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type xctk:IntegerUpDown}">
+            <Setter Property="HorizontalAlignment"        Value="Left"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="MinWidth"                   Value="150"/>
+            <Setter Property="Margin"                     Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background"  Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" Value="DarkGray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type local:NetworkPortUpDown}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth"            Value="150"/>
+            <Setter Property="Margin"              Value="5"/>
+        </Style>
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="200"/>
+        </Style>
+
+        <Style x:Key="SingleRowStyle" TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label              Grid.Row="0" Grid.Column="0" Content="PDF CONVERTER PATH"/>
+            <TextBox            Grid.Row="0" Grid.Column="1" x:Name="TxtPathPdfConverterExecutable"/>
+            
+            <Label              Grid.Row="1" Grid.Column="0" Content="PDF CONVERTER REFERENCE"/>
+            <TextBox            Grid.Row="1" Grid.Column="1" x:Name="TxtPathPdfConverterReference"/>
+            
+            <Label              Grid.Row="2" Grid.Column="0" Content="WEB SERVICE URI"/>
+            <TextBox            Grid.Row="2" Grid.Column="1" x:Name="TxtWebServiceURI"/>
+
+            <Label              Grid.Row="3" Grid.Column="0" Content="CONVERT RETRY COUNT"/>
+            <xctk:IntegerUpDown Grid.Row="3" Grid.Column="1" x:Name="NumConvertRetryCount"/>
+            
+            <Label              Grid.Row="4" Grid.Column="0" Content="CONVERT RETRY INTERVAL (MS)"/>
+            <xctk:IntegerUpDown Grid.Row="4" Grid.Column="1" x:Name="NumConvertRetryIntervalMS"/>
+
+            <Label              Grid.Row="5" Grid.Column="0" Content="HTTP TIMEOUT (MS)"/>
+            <xctk:IntegerUpDown Grid.Row="5" Grid.Column="1" x:Name="NumHttpTimeoutMS"/>
+        </Grid>
+    </ScrollViewer>
+</local:PageBase>

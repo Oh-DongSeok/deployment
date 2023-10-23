@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PwgPrintJobTicket>
+	<DocumentProcessing>
+		<MediaCol>
+			<MediaLocations>
+				<MediaLocation>AutoSelect</MediaLocation>
+			</MediaLocations>
+			<MediaSizeName>a4</MediaSizeName>
+		</MediaCol>
+		<Copies>1</Copies>
+		<SheetCollate>Collated</SheetCollate>
+		<ColorEffectsType>Color</ColorEffectsType>
+		<PrintQuality>Normal</PrintQuality>
+		<Sides>OneSided</Sides>
+		<NumberUp>2</NumberUp>
+	</DocumentProcessing>
+	<JobProcessing>
+		<AdditionalContentType>DocumentAndMarkups</AdditionalContentType>
+	</JobProcessing>
+	<JobDescription>
+		<JobName>문서명</JobName>
+		<ContentsBridgeMode>5</ContentsBridgeMode>
+	</JobDescription>
+</PwgPrintJobTicket>

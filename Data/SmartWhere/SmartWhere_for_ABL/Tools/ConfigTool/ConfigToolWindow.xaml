@@ -1,0 +1,318 @@
+﻿<Window x:Class="FXKIS.SmartWhere.CommonIF.ConfigToolWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d" MinWidth="800" MinHeight="600"
+        Icon="Resources/SmartWhere_48x48.ico" Title="SmartWhere Configuration Editor"
+        Width="800" Height="600" Loaded="Window_Loaded">
+    <Window.Resources>
+        
+        <!-- Common Control Style -->
+
+        <Style TargetType="{x:Type TabControl}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="TabStripPlacement"          Value="Left"/>
+            <Setter Property="Margin"                     Value="5"/>
+
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type TabItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TabItem}">
+                        <Grid>
+                            <Border Name="Border" Margin="0" Background="Transparent" BorderBrush="DarkGray" BorderThickness="1" CornerRadius="0">
+                                <ContentPresenter x:Name="ContentSite" HorizontalAlignment="Stretch" VerticalAlignment="Center" ContentSource="Header" Margin="12, 2" RecognizesAccessKey="True"/>
+                            </Border>
+                        </Grid>
+
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Panel.ZIndex" Value="100" />
+                                <Setter TargetName="Border" Property="Background"      Value="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"/>
+                                <Setter TargetName="Border" Property="BorderThickness" Value="1" />
+                            </Trigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="True"/>
+                                    <Condition Property="IsEnabled" Value="False"/>
+                                </MultiTrigger.Conditions>
+
+                                <Setter TargetName="Border" Property="Background"  Value="{DynamicResource {x:Static SystemColors.GradientActiveCaptionBrushKey}}"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray" />
+                                <Setter Property="Foreground" Value="DarkGray" />
+                            </MultiTrigger>
+
+                            <MultiTrigger>
+                                <MultiTrigger.Conditions>
+                                    <Condition Property="IsSelected" Value="False"/>
+                                    <Condition Property="IsEnabled" Value="False"/>
+                                </MultiTrigger.Conditions>
+
+                                <Setter TargetName="Border" Property="Background"  Value="#FFF9F9F9"/>
+                                <Setter TargetName="Border" Property="BorderBrush" Value="DarkGray"/>
+                                <Setter Property="Foreground" Value="DarkGray" />
+                            </MultiTrigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment"   Value="Center"/>
+        </Style>
+
+        <Style TargetType="{x:Type xctk:IntegerUpDown}">
+            <Style.Triggers>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background"  Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" Value="DarkGray"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+
+
+        <!-- Specific Control Style -->
+
+        <Style x:Key="TabHeaderStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize"   Value="13"/>
+            <Setter Property="Padding"    Value="5, 3"/>
+        </Style>
+
+        <Style x:Key="PrimaryFunctionButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="FontWeight"                 Value="Bold"/>
+            <Setter Property="FontSize"                   Value="16"/>
+            <Setter Property="Margin"                     Value="1, 0"/>
+        </Style>
+
+        <Style x:Key="LabelStyle" TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style x:Key="ValueTextBoxStyle" TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="VerticalAlignment"          Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+            <Setter Property="Height" Value="30"/>
+        </Style>
+
+        <Style x:Key="MiniButtonStyle" TargetType="Button">
+            <Setter Property="FontSize" Value="9"/>
+            <Setter Property="Margin"   Value="0"/>
+        </Style>
+
+        <Style x:Key="PageStyle" TargetType="{x:Type UserControl}">
+            <Setter Property="Margin" Value="10"/>
+        </Style>
+
+        <Style x:Key="SingleRowLabelStyle" TargetType="Label">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="FontWeight"                 Value="Bold"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="105"/>
+        </Style>
+
+        <Style x:Key="MiniButtonColumnStyle" TargetType="ColumnDefinition">
+            <Setter Property="Width" Value="75"/>
+        </Style>
+
+        <Style x:Key="TopRowStyle" TargetType="RowDefinition">
+            <Setter Property="Height" Value="55"/>
+        </Style>
+
+        <Style x:Key="BottomRowStyle" TargetType="RowDefinition">
+            <Setter Property="Height" Value="55"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Style="{StaticResource TopRowStyle}"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Style="{StaticResource BottomRowStyle}"/>
+        </Grid.RowDefinitions>
+        
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Style="{StaticResource MiniButtonColumnStyle}"/>
+            </Grid.ColumnDefinitions>
+
+            <Label   Grid.Column="0" Content="CONFIG FILE" Style="{StaticResource SingleRowLabelStyle}"/>
+            <TextBox Grid.Column="1" x:Name="TxtPath" IsEnabled="False" Style="{StaticResource ValueTextBoxStyle}"/>
+            <Grid    Grid.Column="2" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" x:Name="BtnLoadAs" Content="LOAD AS..." Style="{StaticResource MiniButtonStyle}" Click="BtnLoadAs_Click"/>
+                <Button Grid.Row="2" x:Name="BtnSaveAs" Content="SAVE AS..." Style="{StaticResource MiniButtonStyle}" Click="BtnSaveAs_Click"/>
+            </Grid>
+        </Grid>
+        
+        <TabControl Grid.Row="1">
+            <!-- DATABASE -->
+            <TabItem x:Name="TabDatabase">
+                <TabItem.Header>
+                    <TextBlock Text="+ DATABASE" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageDatabase x:Name="PageDB" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- COMMON -->
+            <TabItem x:Name="TabCommon">
+                <TabItem.Header>
+                    <TextBlock Text="+ COMMON" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageCommon x:Name="PageCommon" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- BACKGROUND -->
+            <TabItem x:Name="TabBackground">
+                <TabItem.Header>
+                    <TextBlock Text="+ BACKGROUND" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageBackground x:Name="PageBackground" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- WATCHER -->
+            <TabItem x:Name="TabWatcher">
+                <TabItem.Header>
+                    <TextBlock Text="+ WATCHER" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageWatcher x:Name="PageWatcher" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- RECEIVE -->
+            <TabItem x:Name="TabRecv">
+                <TabItem.Header>
+                    <TextBlock Text="+ RECEIVE" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageReceiveService x:Name="PageRecv" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- ANALYZER -->
+            <TabItem x:Name="TabAnalyzer">
+                <TabItem.Header>
+                    <TextBlock Text="+ ANALYZER" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageAnalyzerService x:Name="PageAnalyzer" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- POST SCHEDULER -->
+            <TabItem x:Name="TabPostScheduler">
+                <TabItem.Header>
+                    <TextBlock Text="+ POST SCHEDULER" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+                
+                <local:PagePostScheduler x:Name="PagePostScheduler" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+            
+            <!-- PRINTING MODULE -->
+            <TabItem x:Name="TabPrintingMdoule">
+                <TabItem.Header>
+                    <TextBlock Text="+ PRINTING MODULE" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PagePrintingModule x:Name="PagePrintingModule" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- APPROVAL -->
+            <TabItem x:Name="TabApproval">
+                <TabItem.Header>
+                    <TextBlock Text="+ APPROVAL" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageApproval x:Name="PageApproval" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+            
+            <!-- IMAGE LOG -->
+            <TabItem x:Name="TabImageLog">
+                <TabItem.Header>
+                    <TextBlock Text="+ IMAGE LOG" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageImageLog x:Name="PageImageLog" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- MOBILE -->
+            <TabItem x:Name="TabMobile">
+                <TabItem.Header>
+                    <TextBlock Text="+ MOBILE" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageMobile x:Name="PageMobile" Style="{StaticResource PageStyle}"/>
+            </TabItem>
+
+            <!-- MAC OS -->
+            <TabItem x:Name="TabMacOS">
+                <TabItem.Header>
+                    <TextBlock Text="+ MAC OS" Style="{StaticResource TabHeaderStyle}"/>
+                </TabItem.Header>
+
+                <local:PageMacOS x:Name="PageMacOS" Style="{StaticResource PageStyle}"/>
+            </TabItem>            
+        </TabControl>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Style="{StaticResource MiniButtonColumnStyle}"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.Column="0" Margin="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" x:Name="BtnLoad" Content="LOAD" Style="{StaticResource PrimaryFunctionButtonStyle}" Click="BtnLoad_Click"/>
+                <Button Grid.Column="1" x:Name="BtnSave" Content="SAVE" Style="{StaticResource PrimaryFunctionButtonStyle}" Click="BtnSave_Click"/>
+            </Grid>
+            
+            <Grid Grid.Column="1" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="1"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <Button Grid.Row="0" x:Name="BtnDefault" Content="DEFAULT" Style="{StaticResource MiniButtonStyle}" Click="BtnDefault_Click"/>
+                <Button Grid.Row="2" x:Name="BtClear"    Content="CLEAR"   Style="{StaticResource MiniButtonStyle}" Click="BtClear_Click"/>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

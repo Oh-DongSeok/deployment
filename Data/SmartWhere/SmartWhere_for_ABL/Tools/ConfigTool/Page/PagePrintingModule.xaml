@@ -1,0 +1,106 @@
+﻿<local:PageBase x:Class="FXKIS.SmartWhere.CommonIF.PagePrintingModule"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+                xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+                mc:Ignorable="d" d:DesignHeight="900" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility"   Value="Auto"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment"          Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type local:NetworkPortUpDown}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth"            Value="150"/>
+            <Setter Property="Margin"              Value="5"/>
+        </Style>
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="145"/>
+        </Style>
+
+        <Style x:Key="SingleRowStyle" TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label                   Grid.Row="0" Grid.Column="0" Content="NAME :: MMD2"/>
+            <TextBox                 Grid.Row="0" Grid.Column="1" x:Name="TxtNameForMMD2"/>
+
+            <Label                   Grid.Row="1" Grid.Column="0" Content="PORT :: MMD2"/>
+            <local:NetworkPortUpDown Grid.Row="1" Grid.Column="1" x:Name="NumPortForMMD2"/>
+
+            <Label                   Grid.Row="2" Grid.Column="0" Content="NAME :: MOBILE"/>
+            <TextBox                 Grid.Row="2" Grid.Column="1" x:Name="TxtNameForMobile"/>
+
+            <Label                   Grid.Row="3" Grid.Column="0" Content="PORT :: MOBILE"/>
+            <local:NetworkPortUpDown Grid.Row="3" Grid.Column="1" x:Name="NumPortForMobile"/>
+
+            <Label                   Grid.Row="4" Grid.Column="0" Content="NAME :: MAC OS"/>
+            <TextBox                 Grid.Row="4" Grid.Column="1" x:Name="TxtNameForMacOS"/>
+
+            <Label                   Grid.Row="5" Grid.Column="0" Content="PORT :: MAC OS"/>
+            <local:NetworkPortUpDown Grid.Row="5" Grid.Column="1" x:Name="NumPortForMacOS"/>
+
+            <Label                   Grid.Row="6" Grid.Column="0" Content="USE :: MMD2"/>
+            <CheckBox                Grid.Row="6" Grid.Column="1" x:Name="ChkUseMMD2"/>
+
+            <Label                   Grid.Row="7" Grid.Column="0" Content="USE :: MOBILE"/>
+            <CheckBox                Grid.Row="7" Grid.Column="1" x:Name="ChkUseMobile"/>
+
+            <Label                   Grid.Row="8" Grid.Column="0" Content="USE :: MAC OS"/>
+            <CheckBox                Grid.Row="8" Grid.Column="1" x:Name="ChkUseMacOS"/>
+
+            <Label                   Grid.Row="9" Grid.Column="0" Content="PRINTING :: BY DEVICE"/>
+            <CheckBox                Grid.Row="9" Grid.Column="1" x:Name="ChkUsePrintingByDevice" IsEnabled="False"/>
+
+            <Label                   Grid.Row="10" Grid.Column="0" Content="PRINTING :: BY FILE"/>
+            <CheckBox                Grid.Row="10" Grid.Column="1" x:Name="ChkUsePrintingByFile"  IsEnabled="False"/>
+        </Grid>
+    </ScrollViewer>
+</local:PageBase>

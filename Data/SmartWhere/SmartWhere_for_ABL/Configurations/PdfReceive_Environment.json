@@ -1,0 +1,15 @@
+{
+  "VeryPdfOption": "",
+  "ServerIdx": 0,
+  "HttpHost": "127.0.0.1",
+  "HttpPort": 5555,
+  "DBBridgeHost": "13.197.1.105",
+  "DBBridgePort": 9559,
+  "LimitClientCnt": 3000,
+  "WaitTimeoutMS": 3000,
+  "ThreadTimeoutSec": 300,
+  "ProcessTimeoutMS": 300000,
+  "ListenRetryCount": 5,
+  "ListenRetryIntervalMS": 100,
+  "MemoryReleaseIntervalMS": 3600000
+}

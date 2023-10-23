@@ -1,0 +1,103 @@
+﻿<Window x:Class="FXKIS.SmartWhere.CommonIF.MonitoringServiceWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        
+        Title="Monitoring Service"
+        Height="250" Width="500"
+        ResizeMode="NoResize">
+    <Window.Resources>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+            <Setter Property="VerticalAlignment"   Value="Center"/>
+            <Setter Property="Margin"              Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="VerticalAlignment"          Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type local:NetworkPortUpDown}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth"            Value="150"/>
+            <Setter Property="Margin"              Value="5"/>
+        </Style>
+
+        <Style x:Key="ButtonColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="80"/>
+        </Style>
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="120"/>
+        </Style>
+
+        <Style x:Key="SingleRowStyle" TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="40"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label                   Grid.Row="0" Grid.Column="0" Content="SERVICE NAME"/>
+            <TextBox                 Grid.Row="0" Grid.Column="1" x:Name="TxtName"/>
+            
+            <Label                   Grid.Row="1" Grid.Column="0" Content="PORT"/>
+            <local:NetworkPortUpDown Grid.Row="1" Grid.Column="1" x:Name="NumPort" IsEnabled="False"/>
+            
+            <Label                   Grid.Row="2" Grid.Column="0" Content="USE NETWORK"/>
+            <CheckBox                Grid.Row="2" Grid.Column="1" x:Name="ChkUseNetwork" Checked="ChkUseNetwork_Checked" Unchecked="ChkUseNetwork_Unchecked"/>
+
+            <Label                   Grid.Row="3" Grid.Column="0" Content="PROCESS NAME"/>
+            <TextBox                 Grid.Row="3" Grid.Column="1" x:Name="TxtProcessName"/>
+        </Grid>
+        
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Style="{StaticResource ButtonColumnStyle}"/>
+                <ColumnDefinition Style="{StaticResource ButtonColumnStyle}"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1" x:Name="BtnOK"     Content="OK"     IsDefault="True" Click="BtnOK_Click"/>
+            <Button Grid.Column="2" x:Name="BtnCancel" Content="CANCEL" IsCancel="True"/>
+        </Grid>
+    </Grid>
+</Window>

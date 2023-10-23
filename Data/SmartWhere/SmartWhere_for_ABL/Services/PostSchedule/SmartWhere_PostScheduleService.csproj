@@ -1,0 +1,220 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E9FF94E7-8DAF-4DDA-B2A9-103343833AB4}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FXKIS.SmartWhere.PostSchedule</RootNamespace>
+    <AssemblyName>SmartWhere_PostScheduleService</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>false</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>..\..\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>none</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\SmartWhere_48x48.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CommonLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libraries\CommonLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="DatabaseBridge_Interface">
+      <HintPath>..\..\Libraries\DatabaseBridge_Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.10.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices.AccountManagement" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CSHttpProcess.cs" />
+    <Compile Include="CSIF\CSMessage.cs" />
+    <Compile Include="CSIF\CSRequestBase.cs" />
+    <Compile Include="CSIF\CSResponseBase.cs" />
+    <Compile Include="CSIF\Data\ExecutedPrintFile.cs" />
+    <Compile Include="CSIF\Data\LimitedUUIDInformation.cs" />
+    <Compile Include="CSIF\Data\PrintFile.cs" />
+    <Compile Include="CSIF\Data\PrintListInformation.cs" />
+    <Compile Include="CSIF\Data\PrintSelectedFile.cs" />
+    <Compile Include="CSIF\Data\UsageInformation.cs" />
+    <Compile Include="CSIF\Data\UserInformation.cs" />
+    <Compile Include="CSRequestProcessor.cs" />
+    <Compile Include="CSIF\Function\PrintEventArgs.cs" />
+    <Compile Include="CSIF\HTTP\HttpHandler.cs" />
+    <Compile Include="CSIF\HTTP\HttpRequestInfo.cs" />
+    <Compile Include="CSIF\Request\CSRequestCommon.cs" />
+    <Compile Include="CSIF\Request\CSRequestDeleteSelected.cs" />
+    <Compile Include="CSIF\Request\CSRequestPrintAll.cs" />
+    <Compile Include="CSIF\Request\CSRequestPrintSelected.cs" />
+    <Compile Include="CSIF\Request\CSRequestRegisterCard.cs" />
+    <Compile Include="CSIF\Response\CSResponseCommon.cs" />
+    <Compile Include="CSIF\Response\CSResponseGetPrnListPolicy.cs" />
+    <Compile Include="CSIF\Response\CSResponseGetUsagePrnCnt.cs" />
+    <Compile Include="CSIF\Response\CSResponseRegisterCard.cs" />
+    <Compile Include="Database\ProcedureFunction.cs" />
+    <Compile Include="Data\PrintJobFileInformation.cs" />
+    <Compile Include="ExecutePrintingModule.cs" />
+    <Compile Include="Data\ExeProcessInformation.cs" />
+    <Compile Include="CSHttpServer.cs" />
+    <Compile Include="PostScheduleService.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="PostScheduleService.Designer.cs">
+      <DependentUpon>PostScheduleService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="ProjectInstaller.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ProjectInstaller.Designer.cs">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Database\ProcedureConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PostScheduleService.resx">
+      <DependentUpon>PostScheduleService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProjectInstaller.resx">
+      <DependentUpon>ProjectInstaller.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\SQL_StoredProcedure\SP_Delete_Selected.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Available_Color_Cnt.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Function_Ctrl.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Job_Auth.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Policy_Priority.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Prn_for_Print_Selected.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Prn_List_for_Print_All.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Prn_List_Policy.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Template_ID_to_Dept.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Template_ID_to_User.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_Usage_Prn_Cnt.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Get_User_Count.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Is_Linked_To_Image_Log.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Register_Card.sql" />
+    <Content Include="Database\SQL_StoredProcedure\SP_Update_Job_Status.sql" />
+    <Content Include="Resources\SmartWhere_48x48.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Libraries\SmartWhere_Interface\SmartWhere_Interface.csproj">
+      <Project>{2d2d6f8a-4f7a-46f4-a6f8-8df6c8e8fb3d}</Project>
+      <Name>SmartWhere_Interface</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Database\SQL_TableCreation\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy /y "$(SolutionDir)Configurations\*.*" "$(TargetDir)"
+copy /y "$(SolutionDir)Scripts\*.*" "$(TargetDir)"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

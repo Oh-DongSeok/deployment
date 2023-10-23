@@ -1,0 +1,80 @@
+﻿<local:PageBase x:Class="FXKIS.SmartWhere.CommonIF.PageDatabase"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+                xmlns:local="clr-namespace:FXKIS.SmartWhere.CommonIF"
+                mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <Style TargetType="{x:Type ScrollViewer}">
+            <Setter Property="HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="VerticalScrollBarVisibility"   Value="Auto"/>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Padding"                    Value="5, 0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="TextWrapping"               Value="NoWrap"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="VerticalContentAlignment"   Value="Center"/>
+            <Setter Property="Margin"                     Value="5"/>
+        </Style>
+
+        <Style TargetType="{x:Type local:NetworkPortUpDown}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="MinWidth"            Value="150"/>
+            <Setter Property="Margin"              Value="5"/>
+        </Style>
+
+        <Style x:Key="LabelColumnStyle" TargetType="{x:Type ColumnDefinition}">
+            <Setter Property="Width" Value="90"/>
+        </Style>
+
+        <Style x:Key="SingleRowStyle" TargetType="{x:Type RowDefinition}">
+            <Setter Property="Height" Value="35"/>
+        </Style>
+    </UserControl.Resources>
+
+    <ScrollViewer>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Style="{StaticResource LabelColumnStyle}"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Style="{StaticResource SingleRowStyle}"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Label                   Grid.Row="0" Grid.Column="0" Content="HOST"/>
+            <TextBox                 Grid.Row="0" Grid.Column="1" x:Name="TxtHost"/>
+            
+            <Label                   Grid.Row="1" Grid.Column="0" Content="PORT"/>
+            <local:NetworkPortUpDown Grid.Row="1" Grid.Column="1" x:Name="NumPort"/>
+            
+            <Label                   Grid.Row="2" Grid.Column="0" Content="NAME"/>
+            <TextBox                 Grid.Row="2" Grid.Column="1" x:Name="TxtName"/>
+            
+            <Label                   Grid.Row="3" Grid.Column="0" Content="ID"/>
+            <TextBox                 Grid.Row="3" Grid.Column="1" x:Name="TxtID"/>
+            
+            <Label                   Grid.Row="4" Grid.Column="0" Content="PASSWORD"/>
+            <PasswordBox             Grid.Row="4" Grid.Column="1" x:Name="TxtPassword"/>
+        </Grid>
+    </ScrollViewer>
+</local:PageBase>
