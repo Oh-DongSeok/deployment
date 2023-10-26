@@ -20,4 +20,53 @@ because the keyboard that occupies most of the screen is displayed and covers mo
 Because it is a specification without a soft keypad, we urgently added 10Key.
 We added 10Key urgently and the developer missed the change history.
 
+image
+btn_mul_key_off.png
+btn_num_key_press.png
+btn_num_key0_off.png
+btn_num_key1_off.png
+btn_num_key2_off.png
+btn_num_key3_off.png
+btn_num_key4_off.png
+btn_num_key5_off.png
+btn_num_key6_off.png
+btn_num_key7_off.png
+btn_num_key8_off.png
+btn_num_key9_off.png
+btn_sharp_key_off.png
+icon_no_qrcode.png
+IMG_PAPER_LEF.png
+IMG_PAPER_SEF.png
 
+DoCharge.js
+GetCustomizeDeviceInfo.js
+SenderFaxJob.js
+SenderScanJob.js
+SetCopyJobInfo.js
+SetFaxJobInfo.js
+SetScanJobInfo.js
+
+Lib
+Base64.js
+DeviceCapabilities2.js
+JFCreator2.js
+JFManager2.js
+JobManager2.js
+WebServiceReq2.js
+
+template
+CreateFolderTemplate2.xml
+DeleteFolderTemplate2.xml
+ExecuteJobTemplate2.xml
+GetDeviceInformationTemplate2.xml
+GetDistributionCapabilitiesSupportedTemplate2.xml
+GetDistributionCapabilitiesTemplate2.xml
+GetJobListTemplate2.xml
+GetOptionCollectionTemplate2.xml
+GetOptionsTemplate2.xml
+GetPrintCapabilitiesTemplate2.xml
+GetScannerCapabilitiesTemplate2.xml
+GetSSLPortTemplate2.xml
+ScanFaxTemplate2.xml
+ScanFileTransferInvoke22.xml
+ScanInvokeSwA22.xml
