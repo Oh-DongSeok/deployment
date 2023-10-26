@@ -28,16 +28,21 @@
 }
 ```
 
- - division : 소속 정보
- - serverUrl : 해당 사용자의 서버 주소
- - protocol : Print Server 통신 시에 Data Protocol 방식(XML: 기존 WebService용, JSON: 신규 서비스 용)
- - status : 성공/실패 여부 (성공 : "success", 실패 : "failure")
- - reason : string 실패 시 사유
+|항목|타입|내용|비고|
+|--:|:--:|:--|:--|
+|division|String|소속 정보||
+|serverUrl|String|해당 사용자의 서버 주소||
+|protocol|String|Print Server 통신 시에 Data Protocol 방식|XML: 기존 WebService용 <br>JSON: 신규 서비스 용|
+|status|String|성공/실패 여부|성공 : "success" <br>실패 : "failure"|
+|reason|String배열|실패 시 사유||
 
-    - 실패 사유
-        - 존재하지 않는 사용자
-        - 존재하지 않는 복합기 (복합기가 아닌 외부 호출인 경우 탐지용)
-        - 소속을 알 수 없는 사용자
-        - DB와 연결 오류
-        - 해당 소속 주소 없음
+
+|실패 사유|
+|:--|
+|존재하지 않는 사용자|
+|존재하지 않는 복합기 (복합기가 아닌 외부 호출인 경우 탐지용)|
+|소속을 알 수 없는 사용자|
+|DB와 연결 오류|
+|해당 소속 주소 없음|
+
 
